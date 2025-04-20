@@ -4,6 +4,18 @@ import ApplicationWindow from './ApplicationWindow';
 import Calculator from './apps/Calculator';
 import Notepad from './apps/Notepad';
 import TicTacToe from './apps/TicTacToe';
+import { 
+  Terminal, 
+  Settings, 
+  Globe, 
+  FolderOpen, 
+  Music, 
+  Calendar, 
+  Mail, 
+  Calculator as CalculatorIcon, 
+  FileEdit, 
+  Gamepad2 
+} from 'lucide-react';
 
 const Desktop = () => {
   const { t } = useTranslation();
@@ -11,16 +23,16 @@ const Desktop = () => {
 
   // Desktop icons configuration
   const desktopIcons = [
-    { id: 'terminal', name: t('desktop.terminal'), icon: '🖥️' },
-    { id: 'settings', name: t('desktop.settings'), icon: '⚙️' },
-    { id: 'browser', name: t('desktop.browser'), icon: '🌐' },
-    { id: 'files', name: t('desktop.files'), icon: '📁' },
-    { id: 'music', name: t('desktop.music'), icon: '🎵' },
-    { id: 'calendar', name: t('desktop.calendar'), icon: '📅' },
-    { id: 'mail', name: t('desktop.mail'), icon: '✉️' },
-    { id: 'calculator', name: t('desktop.calculator'), icon: '🧮', app: Calculator },
-    { id: 'notepad', name: t('desktop.notepad'), icon: '📝', app: Notepad },
-    { id: 'tictactoe', name: t('desktop.tictactoe'), icon: '🎮', app: TicTacToe }
+    { id: 'terminal', name: t('desktop.terminal'), icon: <Terminal size={24} color="#f89422" /> },
+    { id: 'settings', name: t('desktop.settings'), icon: <Settings size={24} color="#f89422" /> },
+    { id: 'browser', name: t('desktop.browser'), icon: <Globe size={24} color="#f89422" /> },
+    { id: 'files', name: t('desktop.files'), icon: <FolderOpen size={24} color="#f89422" /> },
+    { id: 'music', name: t('desktop.music'), icon: <Music size={24} color="#f89422" /> },
+    { id: 'calendar', name: t('desktop.calendar'), icon: <Calendar size={24} color="#f89422" /> },
+    { id: 'mail', name: t('desktop.mail'), icon: <Mail size={24} color="#f89422" /> },
+    { id: 'calculator', name: t('desktop.calculator'), icon: <CalculatorIcon size={24} color="#f89422" />, app: Calculator },
+    { id: 'notepad', name: t('desktop.notepad'), icon: <FileEdit size={24} color="#f89422" />, app: Notepad },
+    { id: 'tictactoe', name: t('desktop.tictactoe'), icon: <Gamepad2 size={24} color="#f89422" />, app: TicTacToe }
   ];
 
   // Ouvrir une fenêtre d'application

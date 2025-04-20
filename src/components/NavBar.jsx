@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Home, FolderOpen, Apps, Settings, Clock, User } from 'lucide-react';
 
 const NavBar = ({ items, activeItem, onSelect, username }) => {
   const [currentTime, setCurrentTime] = useState(
@@ -32,12 +33,13 @@ const NavBar = ({ items, activeItem, onSelect, username }) => {
       <div className="navbar-right">
         {username && (
           <div className="nav-user">
-            <span className="nav-user-icon">👤</span>
+            <User size={20} color="#f89422" className="nav-user-icon" />
             <span className="nav-user-name">{username}</span>
           </div>
         )}
         <div className="nav-clock">
-          {currentTime}
+          <Clock size={16} className="nav-clock-icon" />
+          <span>{currentTime}</span>
         </div>
       </div>
     </nav>

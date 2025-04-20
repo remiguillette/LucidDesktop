@@ -5,6 +5,7 @@ import Desktop from './Desktop';
 import Settings from './Settings';
 import Login from './Login';
 import userService from '../services/userService';
+import { Home, FolderOpen, Apps, Settings as SettingsIcon } from 'lucide-react';
 
 const App = () => {
   const { t } = useTranslation();
@@ -45,10 +46,10 @@ const App = () => {
 
   // Navigation items for the bottom navbar
   const navItems = [
-    { id: 'desktop', label: t('navbar.desktop'), icon: '🏠' },
-    { id: 'files', label: t('navbar.files'), icon: '📁' },
-    { id: 'apps', label: t('navbar.apps'), icon: '📱' },
-    { id: 'settings', label: t('navbar.settings'), icon: '⚙️' }
+    { id: 'desktop', label: t('navbar.desktop'), icon: <Home size={24} color="#f89422" /> },
+    { id: 'files', label: t('navbar.files'), icon: <FolderOpen size={24} color="#f89422" /> },
+    { id: 'apps', label: t('navbar.apps'), icon: <Apps size={24} color="#f89422" /> },
+    { id: 'settings', label: t('navbar.settings'), icon: <SettingsIcon size={24} color="#f89422" /> }
   ];
 
   // Render the current view based on navigation selection
@@ -72,7 +73,7 @@ const App = () => {
     return (
       <div className="loading-screen">
         <div className="loading-container">
-          <img src="./assets/logo.svg" alt="BeaverOS Logo" className="loading-logo" />
+          <img src="./assets/beaver.png" alt="BeaverOS Logo" className="loading-logo" />
           <div className="loading-spinner"></div>
           <div className="loading-text">BeaverOS</div>
         </div>
