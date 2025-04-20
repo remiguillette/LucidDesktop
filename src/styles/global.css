@@ -3,8 +3,12 @@
   --primary-color: #f89422;
   --bg-color: #121212;
   --bg-light: #1e1e1e;
+  --bg-lighter: #252525;
   --text-color: #f5f5f5;
   --navbar-height: 60px;
+  --window-header: #1a1a1a;
+  --window-border: #333;
+  --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -60,10 +64,24 @@ a {
   height: var(--navbar-height);
   background-color: var(--bg-light);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-top: 1px solid #333;
   z-index: 1000;
+  padding: 0 15px;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  justify-content: flex-start;
+}
+
+.navbar-right {
+  justify-content: flex-end;
 }
 
 .nav-item {
@@ -147,6 +165,56 @@ a {
   padding-bottom: 10px;
 }
 
+.settings-user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.settings-user-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-right: 15px;
+}
+
+.settings-user-details {
+  flex: 1;
+}
+
+.settings-username {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.settings-user-role {
+  font-size: 14px;
+  color: #888;
+}
+
+.settings-logout-button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #cc3636;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.settings-logout-button:hover {
+  background-color: #e04444;
+}
+
 .settings-option {
   display: flex;
   justify-content: space-between;
@@ -203,4 +271,596 @@ input:checked + .toggle-slider {
 
 input:checked + .toggle-slider:before {
   transform: translateX(26px);
+}
+
+/* Application Window Styles */
+.app-window {
+  position: absolute;
+  background-color: var(--bg-light);
+  border: 1px solid var(--window-border);
+  border-radius: 4px;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 100;
+  user-select: none;
+}
+
+.window-titlebar {
+  height: 36px;
+  background-color: var(--window-header);
+  border-bottom: 1px solid var(--window-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  cursor: move;
+}
+
+.window-title-left {
+  display: flex;
+  align-items: center;
+}
+
+.window-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.window-title {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.window-control {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 50%;
+  color: var(--text-color);
+}
+
+.window-control.minimize {
+  background-color: #747474;
+}
+
+.window-control.maximize {
+  background-color: #747474;
+}
+
+.window-control.close {
+  background-color: #cc3636;
+}
+
+.window-control:hover {
+  opacity: 0.8;
+}
+
+.window-content {
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+}
+
+.app-window.maximized {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Poignées de redimensionnement */
+.window-resize-handle {
+  position: absolute;
+  background: transparent;
+  z-index: 101;
+}
+
+/* Coins */
+.nw-resize {
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nwse-resize;
+}
+
+.ne-resize {
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nesw-resize;
+}
+
+.sw-resize {
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nesw-resize;
+}
+
+.se-resize {
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nwse-resize;
+}
+
+.se-resize::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+}
+
+/* Bords */
+.n-resize {
+  top: 0;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.e-resize {
+  top: 8px;
+  right: 0;
+  bottom: 8px;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+.s-resize {
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.w-resize {
+  top: 8px;
+  left: 0;
+  bottom: 8px;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+/* Calculator App Styles */
+.calculator-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.calculator-display {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  padding: 20px;
+  text-align: right;
+  font-size: 36px;
+  font-weight: bold;
+  height: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid var(--window-border);
+}
+
+.calculator-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1px;
+  flex: 1;
+  background-color: var(--window-border);
+}
+
+.calculator-button {
+  background-color: var(--bg-lighter);
+  border: none;
+  font-size: 24px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calculator-button:hover {
+  background-color: #333;
+}
+
+.calculator-button:active {
+  background-color: #444;
+}
+
+.calculator-button.zero {
+  grid-column: span 2;
+}
+
+.calculator-button.operator {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.calculator-button.operator:hover {
+  background-color: #e48419;
+}
+
+.calculator-button.special {
+  background-color: #2a2a2a;
+}
+
+/* Notepad App Styles */
+.notepad-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-light);
+}
+
+.notepad-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-lighter);
+  border-bottom: 1px solid var(--window-border);
+}
+
+.notepad-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.notepad-button {
+  background-color: var(--bg-light);
+  border: 1px solid var(--window-border);
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.notepad-button:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.notepad-filename {
+  color: var(--text-color);
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.notepad-editor {
+  flex: 1;
+  border: none;
+  resize: none;
+  padding: 15px;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Courier New', monospace;
+}
+
+.notepad-editor:focus {
+  outline: none;
+}
+
+.notepad-editor::placeholder {
+  color: #666;
+}
+
+/* TicTacToe App Styles */
+.tictactoe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  height: 100%;
+  width: 100%;
+}
+
+.tictactoe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.tictactoe-header h3 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin: 0;
+}
+
+.tictactoe-reset-button {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.tictactoe-reset-button:hover {
+  background-color: #e48419;
+}
+
+.tictactoe-status {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+  background-color: var(--bg-lighter);
+}
+
+.tictactoe-status.winner {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+}
+
+.tictactoe-status.draw {
+  background-color: rgba(255, 152, 0, 0.2);
+  color: #FF9800;
+}
+
+.tictactoe-board {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: var(--window-border);
+}
+
+.tictactoe-row {
+  display: flex;
+  gap: 5px;
+}
+
+.tictactoe-square {
+  width: 80px;
+  height: 80px;
+  background-color: var(--bg-lighter);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.tictactoe-square:hover {
+  background-color: #333;
+}
+
+/* Navbar User Display */
+.nav-user {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  color: var(--text-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-user-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.nav-user-name {
+  font-size: 14px;
+}
+
+.nav-clock {
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* Loading Screen Styles */
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(248, 148, 34, 0.2);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Login Screen Styles */
+.login-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  background-image: linear-gradient(to bottom right, rgba(20, 20, 20, 0.9), rgba(5, 5, 5, 0.95));
+}
+
+.login-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: var(--bg-light);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-logo {
+  margin-bottom: 30px;
+}
+
+.login-logo img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.login-logo h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.login-form {
+  text-align: left;
+}
+
+.login-error {
+  background-color: rgba(255, 76, 76, 0.1);
+  color: #ff4c4c;
+  border: 1px solid #ff4c4c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--window-border);
+  color: var(--text-color);
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-group small {
+  display: block;
+  color: #888;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #e48419;
+}
+
+.login-button:disabled {
+  background-color: #a16012;
+  cursor: not-allowed;
+}
+
+.login-version {
+  margin-top: 30px;
+  color: #777;
+  font-size: 12px;
 }

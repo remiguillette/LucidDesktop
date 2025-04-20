@@ -1,0 +1,17 @@
+{
+  "name": "beaveros",
+  "displayName": "BeaverOS",
+  "description": "BeaverOS - Système d'exploitation de bureau",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "window": {
+    "title": "BeaverOS",
+    "icon": "src/assets/logo.png",
+    "width": 1024,
+    "height": 768,
+    "min_width": 800,
+    "min_height": 600,
+    "position": "center",
+    "frame": true
+  }
+}

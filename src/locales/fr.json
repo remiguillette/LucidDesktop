@@ -3,6 +3,19 @@
     "title": "BeaverOS",
     "description": "Système d'exploitation de bureau"
   },
+  "login": {
+    "username": "Nom d'utilisateur",
+    "usernamePlaceholder": "Entrez votre nom d'utilisateur",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "passwordHint": "Pour cette démo, n'importe quel mot de passe fonctionnera",
+    "login": "Se connecter",
+    "loggingIn": "Connexion en cours...",
+    "errors": {
+      "noUsername": "Veuillez entrer un nom d'utilisateur",
+      "wrongPassword": "Mot de passe incorrect"
+    }
+  },
   "navbar": {
     "desktop": "Bureau",
     "files": "Fichiers",
@@ -17,7 +30,9 @@
     "music": "Musique",
     "calendar": "Calendrier",
     "mail": "Courrier",
-    "calculator": "Calculatrice"
+    "calculator": "Calculatrice",
+    "notepad": "Bloc-notes",
+    "tictactoe": "Morpion"
   },
   "views": {
     "files": {
@@ -34,6 +49,8 @@
     }
   },
   "settings": {
+    "user": "Utilisateur",
+    "logout": "Se déconnecter",
     "appearance": "Apparence",
     "darkTheme": "Thème sombre",
     "language": "Langue",
@@ -44,5 +61,27 @@
     "about": "À propos de BeaverOS",
     "viewInfo": "Voir les informations",
     "version": "Version"
+  },
+  "apps": {
+    "calculator": {
+      "title": "Calculatrice"
+    },
+    "notepad": {
+      "title": "Bloc-notes",
+      "untitled": "Sans titre",
+      "new": "Nouveau",
+      "save": "Enregistrer",
+      "rename": "Renommer",
+      "confirmNew": "Le document actuel n'est pas enregistré. Voulez-vous continuer?",
+      "promptRename": "Entrez un nouveau nom pour le document:",
+      "placeholder": "Commencez à écrire ici..."
+    },
+    "tictactoe": {
+      "title": "Morpion",
+      "newGame": "Nouvelle partie",
+      "nextPlayer": "Tour du joueur: {{player}}",
+      "winner": "Le joueur {{player}} a gagné!",
+      "draw": "Match nul!"
+    }
   }
 }

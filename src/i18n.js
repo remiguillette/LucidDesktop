@@ -14,6 +14,19 @@ const resources = {
         "title": "BeaverOS",
         "description": "Desktop Operating System"
       },
+      "login": {
+        "username": "Username",
+        "usernamePlaceholder": "Enter your username",
+        "password": "Password",
+        "passwordPlaceholder": "Enter your password",
+        "passwordHint": "For this demo, any password will work",
+        "login": "Log in",
+        "loggingIn": "Logging in...",
+        "errors": {
+          "noUsername": "Please enter a username",
+          "wrongPassword": "Incorrect password"
+        }
+      },
       "navbar": {
         "desktop": "Desktop",
         "files": "Files",
@@ -28,7 +41,9 @@ const resources = {
         "music": "Music",
         "calendar": "Calendar",
         "mail": "Mail",
-        "calculator": "Calculator"
+        "calculator": "Calculator",
+        "notepad": "Notepad",
+        "tictactoe": "Tic-Tac-Toe"
       },
       "views": {
         "files": {
@@ -45,6 +60,8 @@ const resources = {
         }
       },
       "settings": {
+        "user": "User",
+        "logout": "Log out",
         "appearance": "Appearance",
         "darkTheme": "Dark theme",
         "language": "Language",
@@ -55,6 +72,28 @@ const resources = {
         "about": "About BeaverOS",
         "viewInfo": "View information",
         "version": "Version"
+      },
+      "apps": {
+        "calculator": {
+          "title": "Calculator"
+        },
+        "notepad": {
+          "title": "Notepad",
+          "untitled": "Untitled",
+          "new": "New",
+          "save": "Save",
+          "rename": "Rename",
+          "confirmNew": "Current document is not saved. Do you want to continue?",
+          "promptRename": "Enter a new name for the document:",
+          "placeholder": "Start typing here..."
+        },
+        "tictactoe": {
+          "title": "Tic-Tac-Toe",
+          "newGame": "New Game",
+          "nextPlayer": "Next player: {{player}}",
+          "winner": "Winner: {{player}}",
+          "draw": "Draw!"
+        }
       }
     }
   }

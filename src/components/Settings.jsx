@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Settings = () => {
+const Settings = ({ onLogout, username }) => {
   const { t, i18n } = useTranslation();
   const [darkTheme, setDarkTheme] = useState(true);
   const [notifications, setNotifications] = useState(true);
@@ -21,6 +21,22 @@ const Settings = () => {
   return (
     <div className="main-content">
       <div className="settings-container">
+        <div className="settings-section">
+          <h2 className="settings-title">{t('settings.user')}</h2>
+          <div className="settings-user-info">
+            <div className="settings-user-avatar">👤</div>
+            <div className="settings-user-details">
+              <div className="settings-username">{username}</div>
+              <div className="settings-user-role">Administrateur</div>
+            </div>
+          </div>
+          <div className="settings-option">
+            <button className="settings-logout-button" onClick={onLogout}>
+              {t('settings.logout')}
+            </button>
+          </div>
+        </div>
+        
         <div className="settings-section">
           <h2 className="settings-title">{t('settings.appearance')}</h2>
           

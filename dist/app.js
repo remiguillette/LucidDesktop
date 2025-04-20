@@ -5119,12 +5119,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBar */ "./src/components/NavBar.jsx");
 /* harmony import */ var _Desktop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Desktop */ "./src/components/Desktop.jsx");
 /* harmony import */ var _Settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Settings */ "./src/components/Settings.jsx");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Login */ "./src/components/Login.jsx");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -5137,6 +5139,49 @@ var App = function App() {
     _useState2 = _slicedToArray(_useState, 2),
     currentView = _useState2[0],
     setCurrentView = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    isLoggedIn = _useState4[0],
+    setIsLoggedIn = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    username = _useState6[0],
+    setUsername = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isLoading = _useState8[0],
+    setIsLoading = _useState8[1];
+
+  // Vérifier si l'utilisateur est déjà connecté au chargement
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Simuler un chargement initial
+    var timer = setTimeout(function () {
+      var savedUsername = localStorage.getItem('beaveros-username');
+      if (savedUsername) {
+        setUsername(savedUsername);
+        setIsLoggedIn(true);
+      }
+      setIsLoading(false);
+    }, 1000);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, []);
+
+  // Gérer la connexion utilisateur
+  var handleLogin = function handleLogin(username) {
+    localStorage.setItem('beaveros-username', username);
+    setUsername(username);
+    setIsLoggedIn(true);
+  };
+
+  // Gérer la déconnexion utilisateur
+  var handleLogout = function handleLogout() {
+    localStorage.removeItem('beaveros-username');
+    setUsername('');
+    setIsLoggedIn(false);
+    setCurrentView('desktop');
+  };
 
   // Navigation items for the bottom navbar
   var navItems = [{
@@ -5171,20 +5216,358 @@ var App = function App() {
           className: "main-content"
         }, t('views.apps.title'));
       case 'settings':
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Settings__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Settings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          onLogout: handleLogout,
+          username: username
+        });
       default:
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Desktop__WEBPACK_IMPORTED_MODULE_3__["default"], null);
     }
   };
+
+  // Afficher un écran de chargement
+  if (isLoading) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "loading-screen"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "loading-container"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "./assets/logo.svg",
+      alt: "BeaverOS Logo",
+      className: "loading-logo"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "loading-spinner"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "loading-text"
+    }, "BeaverOS")));
+  }
+
+  // Afficher l'écran de connexion si l'utilisateur n'est pas connecté
+  if (!isLoggedIn) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Login__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      onLogin: handleLogin
+    });
+  }
+
+  // Afficher l'interface principale si l'utilisateur est connecté
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "app-container"
   }, renderView(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     items: navItems,
     activeItem: currentView,
-    onSelect: setCurrentView
+    onSelect: setCurrentView,
+    username: username
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./src/components/ApplicationWindow.jsx":
+/*!**********************************************!*\
+  !*** ./src/components/ApplicationWindow.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+var ApplicationWindow = function ApplicationWindow(_ref) {
+  var title = _ref.title,
+    icon = _ref.icon,
+    initialPosition = _ref.initialPosition,
+    initialSize = _ref.initialSize,
+    children = _ref.children,
+    onClose = _ref.onClose;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialPosition || {
+      x: 50,
+      y: 50
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    position = _useState2[0],
+    setPosition = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialSize || {
+      width: 600,
+      height: 400
+    }),
+    _useState4 = _slicedToArray(_useState3, 2),
+    size = _useState4[0],
+    setSize = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isDragging = _useState6[0],
+    setIsDragging = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isResizing = _useState8[0],
+    setIsResizing = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      x: 0,
+      y: 0
+    }),
+    _useState10 = _slicedToArray(_useState9, 2),
+    resizeDirection = _useState10[0],
+    setResizeDirection = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      x: 0,
+      y: 0
+    }),
+    _useState12 = _slicedToArray(_useState11, 2),
+    dragOffset = _useState12[0],
+    setDragOffset = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState14 = _slicedToArray(_useState13, 2),
+    isMaximized = _useState14[0],
+    setIsMaximized = _useState14[1];
+  var windowRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var prevSizeRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var prevPositionRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // Position initiale au centre de l'écran si non spécifiée
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!initialPosition && windowRef.current) {
+      var centerX = (window.innerWidth - size.width) / 2;
+      var centerY = (window.innerHeight - size.height) / 3;
+      setPosition({
+        x: Math.max(0, centerX),
+        y: Math.max(0, centerY)
+      });
+    }
+  }, []);
+
+  // Gestionnaire pour commencer le glissement
+  var handleDragStart = function handleDragStart(e) {
+    if (isMaximized) return; // Pas de glissement en mode maximisé
+    e.preventDefault();
+    setIsDragging(true);
+    var rect = e.currentTarget.getBoundingClientRect();
+    setDragOffset({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+  };
+
+  // Gestionnaire pour commencer le redimensionnement
+  var handleResizeStart = function handleResizeStart(e, direction) {
+    if (isMaximized) return; // Pas de redimensionnement en mode maximisé
+    e.preventDefault();
+    e.stopPropagation();
+    setIsResizing(true);
+    setResizeDirection(direction);
+    setDragOffset({
+      x: e.clientX,
+      y: e.clientY,
+      initialWidth: size.width,
+      initialHeight: size.height,
+      initialX: position.x,
+      initialY: position.y
+    });
+  };
+
+  // Gestionnaire de mouvement (glissement et redimensionnement)
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleMouseMove = function handleMouseMove(e) {
+      if (isDragging) {
+        var newX = e.clientX - dragOffset.x;
+        var newY = e.clientY - dragOffset.y;
+
+        // S'assurer que la fenêtre reste dans les limites visibles
+        setPosition({
+          x: Math.max(0, Math.min(newX, window.innerWidth - size.width)),
+          y: Math.max(0, Math.min(newY, window.innerHeight - size.height))
+        });
+      } else if (isResizing) {
+        var deltaX = e.clientX - dragOffset.x;
+        var deltaY = e.clientY - dragOffset.y;
+
+        // Calcul de la nouvelle taille et position en fonction de la direction
+        var newWidth = dragOffset.initialWidth;
+        var newHeight = dragOffset.initialHeight;
+        var _newX = dragOffset.initialX;
+        var _newY = dragOffset.initialY;
+
+        // Redimensionnement horizontal
+        if (resizeDirection.x !== 0) {
+          if (resizeDirection.x < 0) {
+            // Redimensionner depuis la gauche
+            newWidth = Math.max(200, dragOffset.initialWidth - deltaX);
+            _newX = dragOffset.initialX + dragOffset.initialWidth - newWidth;
+          } else {
+            // Redimensionner depuis la droite
+            newWidth = Math.max(200, dragOffset.initialWidth + deltaX);
+          }
+        }
+
+        // Redimensionnement vertical
+        if (resizeDirection.y !== 0) {
+          if (resizeDirection.y < 0) {
+            // Redimensionner depuis le haut
+            newHeight = Math.max(150, dragOffset.initialHeight - deltaY);
+            _newY = dragOffset.initialY + dragOffset.initialHeight - newHeight;
+          } else {
+            // Redimensionner depuis le bas
+            newHeight = Math.max(150, dragOffset.initialHeight + deltaY);
+          }
+        }
+        setSize({
+          width: newWidth,
+          height: newHeight
+        });
+        setPosition({
+          x: _newX,
+          y: _newY
+        });
+      }
+    };
+    var handleMouseUp = function handleMouseUp() {
+      setIsDragging(false);
+      setIsResizing(false);
+    };
+    if (isDragging || isResizing) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    }
+    return function () {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging, isResizing, dragOffset, resizeDirection]);
+
+  // Fonction pour maximiser/restaurer la fenêtre
+  var toggleMaximize = function toggleMaximize() {
+    if (isMaximized) {
+      // Restaurer la taille et la position précédentes
+      setSize(prevSizeRef.current);
+      setPosition(prevPositionRef.current);
+    } else {
+      // Sauvegarder la taille et la position actuelles
+      prevSizeRef.current = size;
+      prevPositionRef.current = position;
+
+      // Maximiser la fenêtre (avec marge de 5px pour les bords de l'écran)
+      setSize({
+        width: window.innerWidth - 10,
+        height: window.innerHeight - 65 // Tenir compte de la barre de navigation
+      });
+      setPosition({
+        x: 5,
+        y: 5
+      });
+    }
+    setIsMaximized(!isMaximized);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    ref: windowRef,
+    className: "app-window ".concat(isMaximized ? 'maximized' : ''),
+    style: {
+      width: "".concat(size.width, "px"),
+      height: "".concat(size.height, "px"),
+      left: "".concat(position.x, "px"),
+      top: "".concat(position.y, "px")
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-titlebar",
+    onMouseDown: handleDragStart,
+    onDoubleClick: toggleMaximize
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-title-left"
+  }, icon && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "window-icon"
+  }, icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "window-title"
+  }, title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-controls"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "window-control minimize",
+    title: "Minimiser"
+  }, "_"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "window-control maximize",
+    title: isMaximized ? "Restaurer" : "Maximiser",
+    onClick: toggleMaximize
+  }, isMaximized ? '❐' : '□'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "window-control close",
+    title: "Fermer",
+    onClick: onClose
+  }, "\xD7"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-content"
+  }, children), !isMaximized && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle nw-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: -1,
+        y: -1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle n-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 0,
+        y: -1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle ne-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 1,
+        y: -1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle e-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 1,
+        y: 0
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle se-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 1,
+        y: 1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle s-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 0,
+        y: 1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle sw-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: -1,
+        y: 1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle w-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: -1,
+        y: 0
+      });
+    }
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ApplicationWindow);
 
 /***/ }),
 
@@ -5202,11 +5585,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var _ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ApplicationWindow */ "./src/components/ApplicationWindow.jsx");
+/* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
+/* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
+/* harmony import */ var _apps_TicTacToe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/TicTacToe */ "./src/components/apps/TicTacToe.jsx");
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
 
 
 var Desktop = function Desktop() {
   var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
     t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    openWindows = _useState2[0],
+    setOpenWindows = _useState2[1];
 
   // Desktop icons configuration
   var desktopIcons = [{
@@ -5240,11 +5645,54 @@ var Desktop = function Desktop() {
   }, {
     id: 'calculator',
     name: t('desktop.calculator'),
-    icon: '🧮'
+    icon: '🧮',
+    app: _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    id: 'notepad',
+    name: t('desktop.notepad'),
+    icon: '📝',
+    app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    id: 'tictactoe',
+    name: t('desktop.tictactoe'),
+    icon: '🎮',
+    app: _apps_TicTacToe__WEBPACK_IMPORTED_MODULE_5__["default"]
   }];
+
+  // Ouvrir une fenêtre d'application
+  var openApplication = function openApplication(app) {
+    var appExists = desktopIcons.find(function (icon) {
+      return icon.id === app;
+    });
+    if (!appExists) {
+      console.error("Application ".concat(app, " not found"));
+      return;
+    }
+
+    // Générer un ID unique pour cette instance de fenêtre
+    var windowId = "".concat(app, "-").concat(Date.now());
+
+    // Ajouter la fenêtre à l'état
+    setOpenWindows([].concat(_toConsumableArray(openWindows), [{
+      id: windowId,
+      appId: app,
+      title: appExists.name,
+      icon: appExists.icon,
+      component: appExists.app
+    }]));
+  };
+
+  // Fermer une fenêtre d'application
+  var closeWindow = function closeWindow(windowId) {
+    setOpenWindows(openWindows.filter(function (window) {
+      return window.id !== windowId;
+    }));
+  };
+
+  // Gestion du clic sur une icône du bureau
   var handleIconClick = function handleIconClick(iconId) {
     console.log("Opening ".concat(iconId));
-    // Here you would implement the logic to open applications
+    openApplication(iconId);
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "desktop"
@@ -5260,9 +5708,142 @@ var Desktop = function Desktop() {
     }, icon.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "desktop-icon-text"
     }, icon.name));
+  }), openWindows.map(function (window) {
+    var AppComponent = window.component;
+    return AppComponent ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: window.id,
+      title: window.title,
+      icon: window.icon,
+      onClose: function onClose() {
+        return closeWindow(window.id);
+      },
+      initialPosition: {
+        x: 100 + openWindows.indexOf(window) * 30,
+        y: 50 + openWindows.indexOf(window) * 30
+      },
+      initialSize: {
+        width: 600,
+        height: 400
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(AppComponent, null)) : null;
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Desktop);
+
+/***/ }),
+
+/***/ "./src/components/Login.jsx":
+/*!**********************************!*\
+  !*** ./src/components/Login.jsx ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var Login = function Login(_ref) {
+  var onLogin = _ref.onLogin;
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    username = _useState2[0],
+    setUsername = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    password = _useState4[0],
+    setPassword = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    error = _useState6[0],
+    setError = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isLoading = _useState8[0],
+    setIsLoading = _useState8[1];
+
+  // Simuler le processus de connexion
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    if (!username) {
+      setError(t('login.errors.noUsername'));
+      return;
+    }
+    setIsLoading(true);
+    setError('');
+
+    // Simuler un délai d'authentification
+    setTimeout(function () {
+      setIsLoading(false);
+
+      // Pour cette démonstration, n'importe quel nom d'utilisateur est accepté
+      // mais le mot de passe est optionnel
+      onLogin(username);
+    }, 1500);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-screen"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-logo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    src: "./assets/logo.svg",
+    alt: "BeaverOS Logo"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "BeaverOS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    className: "login-form",
+    onSubmit: handleSubmit
+  }, error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-error"
+  }, error), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "username"
+  }, t('login.username')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    id: "username",
+    value: username,
+    onChange: function onChange(e) {
+      return setUsername(e.target.value);
+    },
+    placeholder: t('login.usernamePlaceholder'),
+    disabled: isLoading,
+    autoFocus: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "password"
+  }, t('login.password')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "password",
+    id: "password",
+    value: password,
+    onChange: function onChange(e) {
+      return setPassword(e.target.value);
+    },
+    placeholder: t('login.passwordPlaceholder'),
+    disabled: isLoading
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("small", null, t('login.passwordHint'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "submit",
+    className: "login-button",
+    disabled: isLoading
+  }, isLoading ? t('login.loggingIn') : t('login.login'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-version"
+  }, "BeaverOS v1.0.0")));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
 
 /***/ }),
 
@@ -5279,13 +5860,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 var NavBar = function NavBar(_ref) {
   var items = _ref.items,
     activeItem = _ref.activeItem,
-    onSelect = _ref.onSelect;
+    onSelect = _ref.onSelect,
+    username = _ref.username;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date().toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit'
+    })),
+    _useState2 = _slicedToArray(_useState, 2),
+    currentTime = _useState2[0],
+    setCurrentTime = _useState2[1];
+
+  // Mettre à jour l'heure chaque minute
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var timer = setInterval(function () {
+      setCurrentTime(new Date().toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+      }));
+    }, 60000);
+    return function () {
+      return clearInterval(timer);
+    };
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     className: "navbar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "navbar-left"
   }, items.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       key: item.id,
@@ -5298,7 +5908,17 @@ var NavBar = function NavBar(_ref) {
     }, item.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "nav-text"
     }, item.label));
-  }));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "navbar-right"
+  }, username && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "nav-user"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "nav-user-icon"
+  }, "\uD83D\uDC64"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "nav-user-name"
+  }, username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "nav-clock"
+  }, currentTime)));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavBar);
 
@@ -5326,7 +5946,9 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
-var Settings = function Settings() {
+var Settings = function Settings(_ref) {
+  var onLogout = _ref.onLogout,
+    username = _ref.username;
   var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
     t = _useTranslation.t,
     i18n = _useTranslation.i18n;
@@ -5358,6 +5980,25 @@ var Settings = function Settings() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "settings-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "settings-title"
+  }, t('settings.user')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-user-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-user-avatar"
+  }, "\uD83D\uDC64"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-user-details"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-username"
+  }, username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-user-role"
+  }, "Administrateur"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "settings-logout-button",
+    onClick: onLogout
+  }, t('settings.logout')))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "settings-section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     className: "settings-title"
@@ -5432,6 +6073,497 @@ var Settings = function Settings() {
 
 /***/ }),
 
+/***/ "./src/components/apps/Calculator.jsx":
+/*!********************************************!*\
+  !*** ./src/components/apps/Calculator.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var Calculator = function Calculator() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('0'),
+    _useState2 = _slicedToArray(_useState, 2),
+    display = _useState2[0],
+    setDisplay = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState4 = _slicedToArray(_useState3, 2),
+    firstOperand = _useState4[0],
+    setFirstOperand = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState6 = _slicedToArray(_useState5, 2),
+    operator = _useState6[0],
+    setOperator = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    waitingForSecondOperand = _useState8[0],
+    setWaitingForSecondOperand = _useState8[1];
+
+  // Fonction pour gérer les clics sur les touches numériques
+  var inputDigit = function inputDigit(digit) {
+    if (waitingForSecondOperand) {
+      setDisplay(digit);
+      setWaitingForSecondOperand(false);
+    } else {
+      setDisplay(display === '0' ? digit : display + digit);
+    }
+  };
+
+  // Fonction pour gérer la décimale
+  var inputDecimal = function inputDecimal() {
+    if (waitingForSecondOperand) {
+      setDisplay('0.');
+      setWaitingForSecondOperand(false);
+      return;
+    }
+    if (!display.includes('.')) {
+      setDisplay(display + '.');
+    }
+  };
+
+  // Fonction pour gérer les opérateurs
+  var handleOperator = function handleOperator(nextOperator) {
+    var inputValue = parseFloat(display);
+    if (firstOperand === null) {
+      setFirstOperand(inputValue);
+    } else if (operator) {
+      var result = performCalculation();
+      setDisplay(String(result));
+      setFirstOperand(result);
+    }
+    setWaitingForSecondOperand(true);
+    setOperator(nextOperator);
+  };
+
+  // Fonction pour effectuer le calcul
+  var performCalculation = function performCalculation() {
+    var inputValue = parseFloat(display);
+    if (operator === '+') {
+      return firstOperand + inputValue;
+    } else if (operator === '-') {
+      return firstOperand - inputValue;
+    } else if (operator === '*') {
+      return firstOperand * inputValue;
+    } else if (operator === '/') {
+      return firstOperand / inputValue;
+    }
+    return inputValue;
+  };
+
+  // Fonction pour calculer le résultat final (=)
+  var calculateResult = function calculateResult() {
+    if (!operator || firstOperand === null) {
+      return;
+    }
+    var inputValue = parseFloat(display);
+    var result = performCalculation();
+    setDisplay(String(result));
+    setFirstOperand(result);
+    setOperator(null);
+    setWaitingForSecondOperand(false);
+  };
+
+  // Fonction pour réinitialiser la calculatrice
+  var resetCalculator = function resetCalculator() {
+    setDisplay('0');
+    setFirstOperand(null);
+    setOperator(null);
+    setWaitingForSecondOperand(false);
+  };
+
+  // Fonction pour changer le signe
+  var toggleSign = function toggleSign() {
+    var newValue = parseFloat(display) * -1;
+    setDisplay(String(newValue));
+  };
+
+  // Fonction pour calculer le pourcentage
+  var calculatePercentage = function calculatePercentage() {
+    var currentValue = parseFloat(display);
+    var percentValue = currentValue / 100;
+    setDisplay(String(percentValue));
+  };
+
+  // Disposition des boutons de la calculatrice
+  var calculatorButtons = [{
+    text: 'C',
+    action: resetCalculator,
+    className: 'calculator-button special'
+  }, {
+    text: '+/-',
+    action: toggleSign,
+    className: 'calculator-button special'
+  }, {
+    text: '%',
+    action: calculatePercentage,
+    className: 'calculator-button special'
+  }, {
+    text: '÷',
+    action: function action() {
+      return handleOperator('/');
+    },
+    className: 'calculator-button operator'
+  }, {
+    text: '7',
+    action: function action() {
+      return inputDigit('7');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '8',
+    action: function action() {
+      return inputDigit('8');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '9',
+    action: function action() {
+      return inputDigit('9');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '×',
+    action: function action() {
+      return handleOperator('*');
+    },
+    className: 'calculator-button operator'
+  }, {
+    text: '4',
+    action: function action() {
+      return inputDigit('4');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '5',
+    action: function action() {
+      return inputDigit('5');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '6',
+    action: function action() {
+      return inputDigit('6');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '-',
+    action: function action() {
+      return handleOperator('-');
+    },
+    className: 'calculator-button operator'
+  }, {
+    text: '1',
+    action: function action() {
+      return inputDigit('1');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '2',
+    action: function action() {
+      return inputDigit('2');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '3',
+    action: function action() {
+      return inputDigit('3');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '+',
+    action: function action() {
+      return handleOperator('+');
+    },
+    className: 'calculator-button operator'
+  }, {
+    text: '0',
+    action: function action() {
+      return inputDigit('0');
+    },
+    className: 'calculator-button zero'
+  }, {
+    text: '.',
+    action: inputDecimal,
+    className: 'calculator-button'
+  }, {
+    text: '=',
+    action: calculateResult,
+    className: 'calculator-button operator'
+  }];
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "calculator-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "calculator-display"
+  }, display), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "calculator-keypad"
+  }, calculatorButtons.map(function (button, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      key: index,
+      className: button.className,
+      onClick: button.action
+    }, button.text);
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Calculator);
+
+/***/ }),
+
+/***/ "./src/components/apps/Notepad.jsx":
+/*!*****************************************!*\
+  !*** ./src/components/apps/Notepad.jsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var Notepad = function Notepad() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(t('apps.notepad.untitled')),
+    _useState4 = _slicedToArray(_useState3, 2),
+    fileName = _useState4[0],
+    setFileName = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isSaved = _useState6[0],
+    setIsSaved = _useState6[1];
+
+  // Détecter les changements de contenu
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (content !== '') {
+      setIsSaved(false);
+    }
+  }, [content]);
+
+  // Gérer les changements dans la zone de texte
+  var handleChange = function handleChange(e) {
+    setContent(e.target.value);
+  };
+
+  // Simuler une opération de sauvegarde
+  var handleSave = function handleSave() {
+    console.log("Saving: ".concat(fileName, " with content: ").concat(content));
+    setIsSaved(true);
+    // Dans une véritable application, cela sauvegarderait le contenu dans un système de fichiers
+  };
+
+  // Simuler une opération "nouveau document"
+  var handleNew = function handleNew() {
+    if (!isSaved) {
+      var confirmNew = window.confirm(t('apps.notepad.confirmNew'));
+      if (!confirmNew) return;
+    }
+    setContent('');
+    setFileName(t('apps.notepad.untitled'));
+    setIsSaved(true);
+  };
+
+  // Simuler une opération de changement de nom
+  var handleRename = function handleRename() {
+    var newName = prompt(t('apps.notepad.promptRename'), fileName);
+    if (newName && newName.trim() !== '') {
+      setFileName(newName.trim());
+    }
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-toolbar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-buttons"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleNew,
+    title: t('apps.notepad.new')
+  }, t('apps.notepad.new')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleSave,
+    title: t('apps.notepad.save')
+  }, t('apps.notepad.save')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleRename,
+    title: t('apps.notepad.rename')
+  }, t('apps.notepad.rename'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-filename"
+  }, fileName, !isSaved && ' *')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
+    className: "notepad-editor",
+    value: content,
+    onChange: handleChange,
+    placeholder: t('apps.notepad.placeholder')
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Notepad);
+
+/***/ }),
+
+/***/ "./src/components/apps/TicTacToe.jsx":
+/*!*******************************************!*\
+  !*** ./src/components/apps/TicTacToe.jsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var TicTacToe = function TicTacToe() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(Array(9).fill(null)),
+    _useState2 = _slicedToArray(_useState, 2),
+    board = _useState2[0],
+    setBoard = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    xIsNext = _useState4[0],
+    setXIsNext = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('playing'),
+    _useState6 = _slicedToArray(_useState5, 2),
+    gameStatus = _useState6[0],
+    setGameStatus = _useState6[1]; // 'playing', 'draw', 'winner'
+
+  // Vérifier s'il y a un gagnant
+  var calculateWinner = function calculateWinner(squares) {
+    var lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+    for (var i = 0; i < lines.length; i++) {
+      var _lines$i = _slicedToArray(lines[i], 3),
+        a = _lines$i[0],
+        b = _lines$i[1],
+        c = _lines$i[2];
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        return squares[a];
+      }
+    }
+    return null;
+  };
+
+  // Gérer le clic sur une case
+  var handleClick = function handleClick(i) {
+    // Ne rien faire si le jeu est terminé ou si la case est déjà remplie
+    if (gameStatus !== 'playing' || board[i]) {
+      return;
+    }
+    var newBoard = board.slice();
+    newBoard[i] = xIsNext ? 'X' : 'O';
+    setBoard(newBoard);
+    setXIsNext(!xIsNext);
+
+    // Vérifier s'il y a un gagnant ou un match nul
+    var winner = calculateWinner(newBoard);
+    if (winner) {
+      setGameStatus('winner');
+    } else if (newBoard.every(function (square) {
+      return square !== null;
+    })) {
+      setGameStatus('draw');
+    }
+  };
+
+  // Réinitialiser le jeu
+  var resetGame = function resetGame() {
+    setBoard(Array(9).fill(null));
+    setXIsNext(true);
+    setGameStatus('playing');
+  };
+
+  // Rendu de chaque case
+  var renderSquare = function renderSquare(i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      className: "tictactoe-square",
+      onClick: function onClick() {
+        return handleClick(i);
+      }
+    }, board[i]);
+  };
+
+  // Message d'état du jeu
+  var renderStatus = function renderStatus() {
+    if (gameStatus === 'winner') {
+      var winner = calculateWinner(board);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "tictactoe-status winner"
+      }, t('apps.tictactoe.winner', {
+        player: winner
+      }));
+    } else if (gameStatus === 'draw') {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "tictactoe-status draw"
+      }, t('apps.tictactoe.draw'));
+    } else {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "tictactoe-status"
+      }, t('apps.tictactoe.nextPlayer', {
+        player: xIsNext ? 'X' : 'O'
+      }));
+    }
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, t('apps.tictactoe.title')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "tictactoe-reset-button",
+    onClick: resetGame
+  }, t('apps.tictactoe.newGame'))), renderStatus(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-board"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-row"
+  }, renderSquare(0), renderSquare(1), renderSquare(2)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-row"
+  }, renderSquare(3), renderSquare(4), renderSquare(5)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-row"
+  }, renderSquare(6), renderSquare(7), renderSquare(8))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TicTacToe);
+
+/***/ }),
+
 /***/ "./src/i18n.js":
 /*!*********************!*\
   !*** ./src/i18n.js ***!
@@ -5462,6 +6594,19 @@ var resources = {
         "title": "BeaverOS",
         "description": "Desktop Operating System"
       },
+      "login": {
+        "username": "Username",
+        "usernamePlaceholder": "Enter your username",
+        "password": "Password",
+        "passwordPlaceholder": "Enter your password",
+        "passwordHint": "For this demo, any password will work",
+        "login": "Log in",
+        "loggingIn": "Logging in...",
+        "errors": {
+          "noUsername": "Please enter a username",
+          "wrongPassword": "Incorrect password"
+        }
+      },
       "navbar": {
         "desktop": "Desktop",
         "files": "Files",
@@ -5476,7 +6621,9 @@ var resources = {
         "music": "Music",
         "calendar": "Calendar",
         "mail": "Mail",
-        "calculator": "Calculator"
+        "calculator": "Calculator",
+        "notepad": "Notepad",
+        "tictactoe": "Tic-Tac-Toe"
       },
       "views": {
         "files": {
@@ -5493,6 +6640,8 @@ var resources = {
         }
       },
       "settings": {
+        "user": "User",
+        "logout": "Log out",
         "appearance": "Appearance",
         "darkTheme": "Dark theme",
         "language": "Language",
@@ -5503,6 +6652,28 @@ var resources = {
         "about": "About BeaverOS",
         "viewInfo": "View information",
         "version": "Version"
+      },
+      "apps": {
+        "calculator": {
+          "title": "Calculator"
+        },
+        "notepad": {
+          "title": "Notepad",
+          "untitled": "Untitled",
+          "new": "New",
+          "save": "Save",
+          "rename": "Rename",
+          "confirmNew": "Current document is not saved. Do you want to continue?",
+          "promptRename": "Enter a new name for the document:",
+          "placeholder": "Start typing here..."
+        },
+        "tictactoe": {
+          "title": "Tic-Tac-Toe",
+          "newGame": "New Game",
+          "nextPlayer": "Next player: {{player}}",
+          "winner": "Winner: {{player}}",
+          "draw": "Draw!"
+        }
       }
     }
   }
@@ -5529,7 +6700,7 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(react_i18next__WEBPACK_IMPOR
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"login":{"username":"Nom d\'utilisateur","usernamePlaceholder":"Entrez votre nom d\'utilisateur","password":"Mot de passe","passwordPlaceholder":"Entrez votre mot de passe","passwordHint":"Pour cette démo, n\'importe quel mot de passe fonctionnera","login":"Se connecter","loggingIn":"Connexion en cours...","errors":{"noUsername":"Veuillez entrer un nom d\'utilisateur","wrongPassword":"Mot de passe incorrect"}},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice","notepad":"Bloc-notes","tictactoe":"Morpion"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"user":"Utilisateur","logout":"Se déconnecter","appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"},"apps":{"calculator":{"title":"Calculatrice"},"notepad":{"title":"Bloc-notes","untitled":"Sans titre","new":"Nouveau","save":"Enregistrer","rename":"Renommer","confirmNew":"Le document actuel n\'est pas enregistré. Voulez-vous continuer?","promptRename":"Entrez un nouveau nom pour le document:","placeholder":"Commencez à écrire ici..."},"tictactoe":{"title":"Morpion","newGame":"Nouvelle partie","nextPlayer":"Tour du joueur: {{player}}","winner":"Le joueur {{player}} a gagné!","draw":"Match nul!"}}}');
 
 /***/ })
 
