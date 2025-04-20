@@ -16,6 +16,14 @@ author = "agent"
 task = "workflow.run"
 args = "BeaverOS-Build"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "BeaverOS-Start-NWjs"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "BeaverOS-Preview"
+
 [[workflows.workflow]]
 name = "BeaverOS-Build"
 author = "agent"
@@ -30,5 +38,38 @@ task = "packager.installForAll"
 task = "shell.exec"
 args = "mkdir -p dist && npx webpack && cp src/index.html dist/ && cp -r src/assets dist/ && echo \"Build completed successfully. The application is ready to be packaged with NW.js.\""
 
+[[workflows.workflow]]
+name = "BeaverOS-Start-NWjs"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd dist && npx nw ."
+
+[[workflows.workflow]]
+name = "BeaverOS-Preview"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx webpack && cp -r src/assets dist/ && node dev-server.js"
+waitForPort = 5000
+
 [deployment]
 run = ["sh", "-c", "npm install && npm install nw react react-dom i18next react-i18next babel-loader @babel/core @babel/preset-env @babel/preset-react style-loader css-loader webpack webpack-cli electron-installer-debian && npx webpack && nw ."]
+
+[[ports]]
+localPort = 5000
+externalPort = 80

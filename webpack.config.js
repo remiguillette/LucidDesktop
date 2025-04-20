@@ -7,11 +7,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.js'
   },
-  target: 'node-webkit',
-  node: {
-    __dirname: false,
-    __filename: false
-  },
+  // Pour le développement web, utiliser 'web' au lieu de 'node-webkit'
+  target: 'web',
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },

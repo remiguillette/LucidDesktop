@@ -1,6 +1,1020 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/global.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/global.css ***!
+  \*********************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `/* Global CSS for BeaverOS */
+:root {
+  --primary-color: #f89422;
+  --bg-color: #121212;
+  --bg-light: #1e1e1e;
+  --bg-lighter: #252525;
+  --text-color: #f5f5f5;
+  --navbar-height: 60px;
+  --window-header: #1a1a1a;
+  --window-border: #333;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--bg-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #333;
+  z-index: 1000;
+  padding: 0 15px;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  justify-content: flex-start;
+}
+
+.navbar-right {
+  justify-content: flex-end;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: rgba(248, 148, 34, 0.1);
+}
+
+.nav-item.active {
+  background-color: rgba(248, 148, 34, 0.2);
+}
+
+.nav-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.nav-text {
+  font-size: 12px;
+}
+
+.desktop {
+  position: relative;
+  height: calc(100vh - var(--navbar-height));
+  background-color: var(--bg-color);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 20px;
+  overflow: auto;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.desktop-icon:hover {
+  background-color: rgba(248, 148, 34, 0.1);
+}
+
+.desktop-icon-img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.desktop-icon-text {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.settings-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.settings-section {
+  margin-bottom: 30px;
+}
+
+.settings-title {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.settings-user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.settings-user-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-right: 15px;
+}
+
+.settings-user-details {
+  flex: 1;
+}
+
+.settings-username {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.settings-user-role {
+  font-size: 14px;
+  color: #888;
+}
+
+.settings-logout-button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #cc3636;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.settings-logout-button:hover {
+  background-color: #e04444;
+}
+
+.settings-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #252525;
+}
+
+.settings-label {
+  color: var(--text-color);
+}
+
+/* Custom checkbox and toggle styling */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Application Window Styles */
+.app-window {
+  position: absolute;
+  background-color: var(--bg-light);
+  border: 1px solid var(--window-border);
+  border-radius: 4px;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 100;
+  user-select: none;
+}
+
+.window-titlebar {
+  height: 36px;
+  background-color: var(--window-header);
+  border-bottom: 1px solid var(--window-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  cursor: move;
+}
+
+.window-title-left {
+  display: flex;
+  align-items: center;
+}
+
+.window-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.window-title {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.window-control {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 50%;
+  color: var(--text-color);
+}
+
+.window-control.minimize {
+  background-color: #747474;
+}
+
+.window-control.maximize {
+  background-color: #747474;
+}
+
+.window-control.close {
+  background-color: #cc3636;
+}
+
+.window-control:hover {
+  opacity: 0.8;
+}
+
+.window-content {
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+}
+
+.app-window.maximized {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Poignées de redimensionnement */
+.window-resize-handle {
+  position: absolute;
+  background: transparent;
+  z-index: 101;
+}
+
+/* Coins */
+.nw-resize {
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nwse-resize;
+}
+
+.ne-resize {
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nesw-resize;
+}
+
+.sw-resize {
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nesw-resize;
+}
+
+.se-resize {
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  cursor: nwse-resize;
+}
+
+.se-resize::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+}
+
+/* Bords */
+.n-resize {
+  top: 0;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.e-resize {
+  top: 8px;
+  right: 0;
+  bottom: 8px;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+.s-resize {
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  cursor: ns-resize;
+}
+
+.w-resize {
+  top: 8px;
+  left: 0;
+  bottom: 8px;
+  width: 4px;
+  cursor: ew-resize;
+}
+
+/* Calculator App Styles */
+.calculator-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.calculator-display {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  padding: 20px;
+  text-align: right;
+  font-size: 36px;
+  font-weight: bold;
+  height: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid var(--window-border);
+}
+
+.calculator-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1px;
+  flex: 1;
+  background-color: var(--window-border);
+}
+
+.calculator-button {
+  background-color: var(--bg-lighter);
+  border: none;
+  font-size: 24px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calculator-button:hover {
+  background-color: #333;
+}
+
+.calculator-button:active {
+  background-color: #444;
+}
+
+.calculator-button.zero {
+  grid-column: span 2;
+}
+
+.calculator-button.operator {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.calculator-button.operator:hover {
+  background-color: #e48419;
+}
+
+.calculator-button.special {
+  background-color: #2a2a2a;
+}
+
+/* Notepad App Styles */
+.notepad-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-light);
+}
+
+.notepad-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-lighter);
+  border-bottom: 1px solid var(--window-border);
+}
+
+.notepad-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.notepad-button {
+  background-color: var(--bg-light);
+  border: 1px solid var(--window-border);
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.notepad-button:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.notepad-filename {
+  color: var(--text-color);
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.notepad-editor {
+  flex: 1;
+  border: none;
+  resize: none;
+  padding: 15px;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Courier New', monospace;
+}
+
+.notepad-editor:focus {
+  outline: none;
+}
+
+.notepad-editor::placeholder {
+  color: #666;
+}
+
+/* TicTacToe App Styles */
+.tictactoe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  height: 100%;
+  width: 100%;
+}
+
+.tictactoe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.tictactoe-header h3 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin: 0;
+}
+
+.tictactoe-reset-button {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.tictactoe-reset-button:hover {
+  background-color: #e48419;
+}
+
+.tictactoe-status {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+  background-color: var(--bg-lighter);
+}
+
+.tictactoe-status.winner {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+}
+
+.tictactoe-status.draw {
+  background-color: rgba(255, 152, 0, 0.2);
+  color: #FF9800;
+}
+
+.tictactoe-board {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: var(--window-border);
+}
+
+.tictactoe-row {
+  display: flex;
+  gap: 5px;
+}
+
+.tictactoe-square {
+  width: 80px;
+  height: 80px;
+  background-color: var(--bg-lighter);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.tictactoe-square:hover {
+  background-color: #333;
+}
+
+/* Navbar User Display */
+.nav-user {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  color: var(--text-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-user-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.nav-user-name {
+  font-size: 14px;
+}
+
+.nav-clock {
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* Loading Screen Styles */
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(248, 148, 34, 0.2);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Login Screen Styles */
+.login-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  background-image: linear-gradient(to bottom right, rgba(20, 20, 20, 0.9), rgba(5, 5, 5, 0.95));
+}
+
+.login-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: var(--bg-light);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-logo {
+  margin-bottom: 30px;
+}
+
+.login-logo img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.login-logo h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.login-form {
+  text-align: left;
+}
+
+.login-error {
+  background-color: rgba(255, 76, 76, 0.1);
+  color: #ff4c4c;
+  border: 1px solid #ff4c4c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--window-border);
+  color: var(--text-color);
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.form-group small {
+  display: block;
+  color: #888;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #e48419;
+}
+
+.login-button:disabled {
+  background-color: #a16012;
+  cursor: not-allowed;
+}
+
+.login-version {
+  margin-top: 30px;
+  color: #777;
+  font-size: 12px;
+}
+`, "",{"version":3,"sources":["webpack://./src/styles/global.css"],"names":[],"mappings":"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","sourcesContent":["/* Global CSS for BeaverOS */\n:root {\n  --primary-color: #f89422;\n  --bg-color: #121212;\n  --bg-light: #1e1e1e;\n  --bg-lighter: #252525;\n  --text-color: #f5f5f5;\n  --navbar-height: 60px;\n  --window-header: #1a1a1a;\n  --window-border: #333;\n  --shadow-color: rgba(0, 0, 0, 0.5);\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  overflow: hidden;\n  height: 100vh;\n  width: 100vw;\n}\n\nbutton, input, select, textarea {\n  font-family: inherit;\n  color: inherit;\n}\n\na {\n  color: var(--primary-color);\n  text-decoration: none;\n}\n\n#root {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  width: 100vw;\n}\n\n.app-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.main-content {\n  flex: 1;\n  overflow: auto;\n  padding: 20px;\n}\n\n.navbar {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: var(--navbar-height);\n  background-color: var(--bg-light);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-top: 1px solid #333;\n  z-index: 1000;\n  padding: 0 15px;\n}\n\n.navbar-left, .navbar-right {\n  display: flex;\n  align-items: center;\n}\n\n.navbar-left {\n  justify-content: flex-start;\n}\n\n.navbar-right {\n  justify-content: flex-end;\n}\n\n.nav-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 8px 16px;\n  color: var(--primary-color);\n  cursor: pointer;\n  transition: all 0.2s ease;\n}\n\n.nav-item:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.nav-item.active {\n  background-color: rgba(248, 148, 34, 0.2);\n}\n\n.nav-icon {\n  font-size: 24px;\n  margin-bottom: 4px;\n}\n\n.nav-text {\n  font-size: 12px;\n}\n\n.desktop {\n  position: relative;\n  height: calc(100vh - var(--navbar-height));\n  background-color: var(--bg-color);\n  padding: 20px;\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  grid-gap: 20px;\n  overflow: auto;\n}\n\n.desktop-icon {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  padding: 10px;\n  border-radius: 5px;\n}\n\n.desktop-icon:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.desktop-icon-img {\n  width: 48px;\n  height: 48px;\n  margin-bottom: 8px;\n}\n\n.desktop-icon-text {\n  color: var(--primary-color);\n  text-align: center;\n  font-size: 14px;\n  word-break: break-word;\n}\n\n.settings-container {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.settings-section {\n  margin-bottom: 30px;\n}\n\n.settings-title {\n  color: var(--primary-color);\n  margin-bottom: 15px;\n  border-bottom: 1px solid #333;\n  padding-bottom: 10px;\n}\n\n.settings-user-info {\n  display: flex;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\n.settings-user-avatar {\n  width: 64px;\n  height: 64px;\n  background-color: var(--primary-color);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 32px;\n  margin-right: 15px;\n}\n\n.settings-user-details {\n  flex: 1;\n}\n\n.settings-username {\n  font-size: 18px;\n  font-weight: 500;\n  color: var(--text-color);\n  margin-bottom: 5px;\n}\n\n.settings-user-role {\n  font-size: 14px;\n  color: #888;\n}\n\n.settings-logout-button {\n  width: 100%;\n  padding: 10px 15px;\n  background-color: #cc3636;\n  border: none;\n  border-radius: 4px;\n  color: white;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.settings-logout-button:hover {\n  background-color: #e04444;\n}\n\n.settings-option {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px 0;\n  border-bottom: 1px solid #252525;\n}\n\n.settings-label {\n  color: var(--text-color);\n}\n\n/* Custom checkbox and toggle styling */\n.toggle-switch {\n  position: relative;\n  display: inline-block;\n  width: 50px;\n  height: 24px;\n}\n\n.toggle-switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.toggle-slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #444;\n  transition: .4s;\n  border-radius: 24px;\n}\n\n.toggle-slider:before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: .4s;\n  border-radius: 50%;\n}\n\ninput:checked + .toggle-slider {\n  background-color: var(--primary-color);\n}\n\ninput:checked + .toggle-slider:before {\n  transform: translateX(26px);\n}\n\n/* Application Window Styles */\n.app-window {\n  position: absolute;\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  border-radius: 4px;\n  box-shadow: 0 8px 24px var(--shadow-color);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  z-index: 100;\n  user-select: none;\n}\n\n.window-titlebar {\n  height: 36px;\n  background-color: var(--window-header);\n  border-bottom: 1px solid var(--window-border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 10px;\n  cursor: move;\n}\n\n.window-title-left {\n  display: flex;\n  align-items: center;\n}\n\n.window-icon {\n  margin-right: 8px;\n  font-size: 16px;\n}\n\n.window-title {\n  color: var(--primary-color);\n  font-size: 14px;\n  font-weight: 500;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.window-controls {\n  display: flex;\n  gap: 6px;\n}\n\n.window-control {\n  width: 16px;\n  height: 16px;\n  border: none;\n  background: none;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  border-radius: 50%;\n  color: var(--text-color);\n}\n\n.window-control.minimize {\n  background-color: #747474;\n}\n\n.window-control.maximize {\n  background-color: #747474;\n}\n\n.window-control.close {\n  background-color: #cc3636;\n}\n\n.window-control:hover {\n  opacity: 0.8;\n}\n\n.window-content {\n  flex: 1;\n  overflow: auto;\n  padding: 10px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n}\n\n.app-window.maximized {\n  box-shadow: none;\n  border-radius: 0;\n}\n\n/* Poignées de redimensionnement */\n.window-resize-handle {\n  position: absolute;\n  background: transparent;\n  z-index: 101;\n}\n\n/* Coins */\n.nw-resize {\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.ne-resize {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.sw-resize {\n  bottom: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.se-resize {\n  bottom: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.se-resize::after {\n  content: \"\";\n  position: absolute;\n  right: 3px;\n  bottom: 3px;\n  width: 8px;\n  height: 8px;\n  border-bottom: 2px solid var(--primary-color);\n  border-right: 2px solid var(--primary-color);\n}\n\n/* Bords */\n.n-resize {\n  top: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.e-resize {\n  top: 8px;\n  right: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n.s-resize {\n  bottom: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.w-resize {\n  top: 8px;\n  left: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n/* Calculator App Styles */\n.calculator-container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--bg-light);\n  border-radius: 4px;\n  overflow: hidden;\n}\n\n.calculator-display {\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  padding: 20px;\n  text-align: right;\n  font-size: 36px;\n  font-weight: bold;\n  height: 80px;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  border-bottom: 1px solid var(--window-border);\n}\n\n.calculator-keypad {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 1px;\n  flex: 1;\n  background-color: var(--window-border);\n}\n\n.calculator-button {\n  background-color: var(--bg-lighter);\n  border: none;\n  font-size: 24px;\n  color: var(--text-color);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.calculator-button:hover {\n  background-color: #333;\n}\n\n.calculator-button:active {\n  background-color: #444;\n}\n\n.calculator-button.zero {\n  grid-column: span 2;\n}\n\n.calculator-button.operator {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.calculator-button.operator:hover {\n  background-color: #e48419;\n}\n\n.calculator-button.special {\n  background-color: #2a2a2a;\n}\n\n/* Notepad App Styles */\n.notepad-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n  background-color: var(--bg-light);\n}\n\n.notepad-toolbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px;\n  background-color: var(--bg-lighter);\n  border-bottom: 1px solid var(--window-border);\n}\n\n.notepad-buttons {\n  display: flex;\n  gap: 10px;\n}\n\n.notepad-button {\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  color: var(--primary-color);\n  padding: 6px 12px;\n  border-radius: 3px;\n  cursor: pointer;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n\n.notepad-button:hover {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.notepad-filename {\n  color: var(--text-color);\n  font-size: 14px;\n  padding: 0 10px;\n}\n\n.notepad-editor {\n  flex: 1;\n  border: none;\n  resize: none;\n  padding: 15px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n  font-size: 16px;\n  line-height: 1.5;\n  font-family: 'Courier New', monospace;\n}\n\n.notepad-editor:focus {\n  outline: none;\n}\n\n.notepad-editor::placeholder {\n  color: #666;\n}\n\n/* TicTacToe App Styles */\n.tictactoe-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 20px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n  height: 100%;\n  width: 100%;\n}\n\n.tictactoe-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 20px;\n}\n\n.tictactoe-header h3 {\n  color: var(--primary-color);\n  font-size: 24px;\n  margin: 0;\n}\n\n.tictactoe-reset-button {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n  border: none;\n  padding: 8px 16px;\n  border-radius: 4px;\n  cursor: pointer;\n  font-size: 14px;\n  transition: background-color 0.2s;\n}\n\n.tictactoe-reset-button:hover {\n  background-color: #e48419;\n}\n\n.tictactoe-status {\n  font-size: 18px;\n  margin-bottom: 20px;\n  padding: 10px;\n  border-radius: 4px;\n  text-align: center;\n  width: 100%;\n  background-color: var(--bg-lighter);\n}\n\n.tictactoe-status.winner {\n  background-color: rgba(76, 175, 80, 0.2);\n  color: #4CAF50;\n}\n\n.tictactoe-status.draw {\n  background-color: rgba(255, 152, 0, 0.2);\n  color: #FF9800;\n}\n\n.tictactoe-board {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  background-color: var(--window-border);\n}\n\n.tictactoe-row {\n  display: flex;\n  gap: 5px;\n}\n\n.tictactoe-square {\n  width: 80px;\n  height: 80px;\n  background-color: var(--bg-lighter);\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 36px;\n  font-weight: bold;\n  cursor: pointer;\n  color: var(--text-color);\n}\n\n.tictactoe-square:hover {\n  background-color: #333;\n}\n\n/* Navbar User Display */\n.nav-user {\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n  color: var(--text-color);\n  padding: 6px 12px;\n  border-radius: 20px;\n  background-color: rgba(255, 255, 255, 0.05);\n}\n\n.nav-user-icon {\n  font-size: 20px;\n  margin-right: 8px;\n}\n\n.nav-user-name {\n  font-size: 14px;\n}\n\n.nav-clock {\n  font-size: 14px;\n  color: var(--text-color);\n  background-color: rgba(255, 255, 255, 0.05);\n  padding: 6px 12px;\n  border-radius: 20px;\n}\n\n/* Loading Screen Styles */\n.loading-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n}\n\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.loading-logo {\n  width: 100px;\n  height: 100px;\n  margin-bottom: 20px;\n}\n\n.loading-spinner {\n  width: 40px;\n  height: 40px;\n  border: 4px solid rgba(248, 148, 34, 0.2);\n  border-top: 4px solid var(--primary-color);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-bottom: 20px;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n.loading-text {\n  color: var(--primary-color);\n  font-size: 24px;\n  font-weight: bold;\n}\n\n/* Login Screen Styles */\n.login-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n  background-image: linear-gradient(to bottom right, rgba(20, 20, 20, 0.9), rgba(5, 5, 5, 0.95));\n}\n\n.login-container {\n  width: 400px;\n  padding: 30px;\n  border-radius: 8px;\n  background-color: var(--bg-light);\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);\n  text-align: center;\n  animation: fadeIn 0.5s ease-in-out;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(-20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.login-logo {\n  margin-bottom: 30px;\n}\n\n.login-logo img {\n  width: 80px;\n  height: 80px;\n  margin-bottom: 15px;\n}\n\n.login-logo h1 {\n  font-size: 32px;\n  font-weight: bold;\n  color: var(--primary-color);\n  margin: 0;\n}\n\n.login-form {\n  text-align: left;\n}\n\n.login-error {\n  background-color: rgba(255, 76, 76, 0.1);\n  color: #ff4c4c;\n  border: 1px solid #ff4c4c;\n  padding: 10px;\n  border-radius: 4px;\n  margin-bottom: 15px;\n  font-size: 14px;\n}\n\n.form-group {\n  margin-bottom: 20px;\n}\n\n.form-group label {\n  display: block;\n  color: var(--text-color);\n  margin-bottom: 8px;\n  font-weight: 500;\n}\n\n.form-group input {\n  width: 100%;\n  padding: 12px;\n  border-radius: 4px;\n  background-color: var(--bg-color);\n  border: 1px solid var(--window-border);\n  color: var(--text-color);\n  font-size: 16px;\n  transition: border 0.3s;\n}\n\n.form-group input:focus {\n  outline: none;\n  border-color: var(--primary-color);\n}\n\n.form-group small {\n  display: block;\n  color: #888;\n  margin-top: 6px;\n  font-size: 12px;\n}\n\n.login-button {\n  width: 100%;\n  padding: 12px;\n  background-color: var(--primary-color);\n  color: white;\n  border: none;\n  border-radius: 4px;\n  font-size: 16px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.login-button:hover {\n  background-color: #e48419;\n}\n\n.login-button:disabled {\n  background-color: #a16012;\n  cursor: not-allowed;\n}\n\n.login-version {\n  margin-top: 30px;\n  color: #777;\n  font-size: 12px;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = [];
+
+  // return the list of modules as css string
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+      content += cssWithMappingToString(item);
+      if (needLayer) {
+        content += "}";
+      }
+      if (item[2]) {
+        content += "}";
+      }
+      if (item[4]) {
+        content += "}";
+      }
+      return content;
+    }).join("");
+  };
+
+  // import a list of modules into the list
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+    var alreadyImportedModules = {};
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+      list.push(item);
+    }
+  };
+  return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
+/*!************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
+  \************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (item) {
+  var content = item[1];
+  var cssMapping = item[3];
+  if (!cssMapping) {
+    return content;
+  }
+  if (typeof btoa === "function") {
+    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
+    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+    var sourceMapping = "/*# ".concat(data, " */");
+    return [content].concat([sourceMapping]).join("\n");
+  }
+  return [content].join("\n");
+};
+
+/***/ }),
+
 /***/ "./node_modules/html-parse-stringify/dist/html-parse-stringify.module.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/html-parse-stringify/dist/html-parse-stringify.module.js ***!
@@ -5071,6 +6085,279 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var stylesInDOM = [];
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+  for (var i = 0; i < stylesInDOM.length; i++) {
+    if (stylesInDOM[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+  return result;
+}
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var indexByIdentifier = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3],
+      supports: item[4],
+      layer: item[5]
+    };
+    if (indexByIdentifier !== -1) {
+      stylesInDOM[indexByIdentifier].references++;
+      stylesInDOM[indexByIdentifier].updater(obj);
+    } else {
+      var updater = addElementStyle(obj, options);
+      options.byIndex = i;
+      stylesInDOM.splice(i, 0, {
+        identifier: identifier,
+        updater: updater,
+        references: 1
+      });
+    }
+    identifiers.push(identifier);
+  }
+  return identifiers;
+}
+function addElementStyle(obj, options) {
+  var api = options.domAPI(options);
+  api.update(obj);
+  var updater = function updater(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
+        return;
+      }
+      api.update(obj = newObj);
+    } else {
+      api.remove();
+    }
+  };
+  return updater;
+}
+module.exports = function (list, options) {
+  options = options || {};
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDOM[index].references--;
+    }
+    var newLastIdentifiers = modulesToDom(newList, options);
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+      var _index = getIndexByIdentifier(_identifier);
+      if (stylesInDOM[_index].references === 0) {
+        stylesInDOM[_index].updater();
+        stylesInDOM.splice(_index, 1);
+      }
+    }
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var memo = {};
+
+/* istanbul ignore next  */
+function getTarget(target) {
+  if (typeof memo[target] === "undefined") {
+    var styleTarget = document.querySelector(target);
+
+    // Special case to return head of iframe instead of iframe itself
+    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+      try {
+        // This will throw an exception if access to iframe is blocked
+        // due to cross-origin restrictions
+        styleTarget = styleTarget.contentDocument.head;
+      } catch (e) {
+        // istanbul ignore next
+        styleTarget = null;
+      }
+    }
+    memo[target] = styleTarget;
+  }
+  return memo[target];
+}
+
+/* istanbul ignore next  */
+function insertBySelector(insert, style) {
+  var target = getTarget(insert);
+  if (!target) {
+    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+  }
+  target.appendChild(style);
+}
+module.exports = insertBySelector;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function insertStyleElement(options) {
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
+}
+module.exports = insertStyleElement;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \**********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+module.exports = setAttributesWithoutAttributes;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function apply(styleElement, options, obj) {
+  var css = "";
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
+  }
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+  var needLayer = typeof obj.layer !== "undefined";
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+  css += obj.css;
+  if (needLayer) {
+    css += "}";
+  }
+  if (obj.media) {
+    css += "}";
+  }
+  if (obj.supports) {
+    css += "}";
+  }
+  var sourceMap = obj.sourceMap;
+  if (sourceMap && typeof btoa !== "undefined") {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  }
+
+  // For old IE
+  /* istanbul ignore if  */
+  options.styleTagTransform(css, styleElement, options.options);
+}
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+  styleElement.parentNode.removeChild(styleElement);
+}
+
+/* istanbul ignore next  */
+function domAPI(options) {
+  if (typeof document === "undefined") {
+    return {
+      update: function update() {},
+      remove: function remove() {}
+    };
+  }
+  var styleElement = options.insertStyleElement(options);
+  return {
+    update: function update(obj) {
+      apply(styleElement, options, obj);
+    },
+    remove: function remove() {
+      removeStyleElement(styleElement);
+    }
+  };
+}
+module.exports = domAPI;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+    styleElement.appendChild(document.createTextNode(css));
+  }
+}
+module.exports = styleTagTransform;
+
+/***/ }),
+
 /***/ "./node_modules/void-elements/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/void-elements/index.js ***!
@@ -6702,6 +7989,59 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(react_i18next__WEBPACK_IMPOR
 "use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"login":{"username":"Nom d\'utilisateur","usernamePlaceholder":"Entrez votre nom d\'utilisateur","password":"Mot de passe","passwordPlaceholder":"Entrez votre mot de passe","passwordHint":"Pour cette démo, n\'importe quel mot de passe fonctionnera","login":"Se connecter","loggingIn":"Connexion en cours...","errors":{"noUsername":"Veuillez entrer un nom d\'utilisateur","wrongPassword":"Mot de passe incorrect"}},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice","notepad":"Bloc-notes","tictactoe":"Morpion"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"user":"Utilisateur","logout":"Se déconnecter","appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"},"apps":{"calculator":{"title":"Calculatrice"},"notepad":{"title":"Bloc-notes","untitled":"Sans titre","new":"Nouveau","save":"Enregistrer","rename":"Renommer","confirmNew":"Le document actuel n\'est pas enregistré. Voulez-vous continuer?","promptRename":"Entrez un nouveau nom pour le document:","placeholder":"Commencez à écrire ici..."},"tictactoe":{"title":"Morpion","newGame":"Nouvelle partie","nextPlayer":"Tour du joueur: {{player}}","winner":"Le joueur {{player}} a gagné!","draw":"Match nul!"}}}');
 
+/***/ }),
+
+/***/ "./src/styles/global.css":
+/*!*******************************!*\
+  !*** ./src/styles/global.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_global_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./global.css */ "./node_modules/css-loader/dist/cjs.js!./src/styles/global.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_global_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_global_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_global_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_global_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
 /***/ })
 
 /******/ 	});
@@ -6783,6 +8123,11 @@ module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","descriptio
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
@@ -6797,6 +8142,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/App */ "./src/components/App.jsx");
 /* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./i18n */ "./src/i18n.js");
+/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/global.css */ "./src/styles/global.css");
+
 
 
 
