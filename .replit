@@ -1,0 +1,52 @@
+modules = ["nodejs-20"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "BeaverOS"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "beaveros_app"
+
+[[workflows.workflow]]
+name = "BeaverOS"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm install && npm install nw react react-dom i18next react-i18next babel-loader @babel/core @babel/preset-env @babel/preset-react style-loader css-loader webpack webpack-cli electron-installer-debian && npx webpack && nw ."
+waitForPort = 5000
+
+[[workflows.workflow]]
+name = "beaveros_app"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd $(pwd) && npm install -g nw && npm install react react-dom i18next react-i18next @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader style-loader webpack webpack-cli electron-installer-debian && npx webpack && nw ."
+
+[deployment]
+run = ["sh", "-c", "npm install && npm install nw react react-dom i18next react-i18next babel-loader @babel/core @babel/preset-env @babel/preset-react style-loader css-loader webpack webpack-cli electron-installer-debian && npx webpack && nw ."]

@@ -1,0 +1,48 @@
+{
+  "app": {
+    "title": "BeaverOS",
+    "description": "Système d'exploitation de bureau"
+  },
+  "navbar": {
+    "desktop": "Bureau",
+    "files": "Fichiers",
+    "apps": "Applications",
+    "settings": "Paramètres"
+  },
+  "desktop": {
+    "terminal": "Terminal",
+    "settings": "Paramètres",
+    "browser": "Navigateur",
+    "files": "Fichiers",
+    "music": "Musique",
+    "calendar": "Calendrier",
+    "mail": "Courrier",
+    "calculator": "Calculatrice"
+  },
+  "views": {
+    "files": {
+      "title": "Gestionnaire de Fichiers",
+      "noFiles": "Aucun fichier trouvé",
+      "createFolder": "Nouveau Dossier",
+      "upload": "Téléverser"
+    },
+    "apps": {
+      "title": "Centre d'Applications",
+      "install": "Installer",
+      "uninstall": "Désinstaller",
+      "update": "Mettre à jour"
+    }
+  },
+  "settings": {
+    "appearance": "Apparence",
+    "darkTheme": "Thème sombre",
+    "language": "Langue",
+    "notifications": "Notifications",
+    "enableNotifications": "Activer les notifications",
+    "system": "Système",
+    "autoStart": "Démarrer avec le système",
+    "about": "À propos de BeaverOS",
+    "viewInfo": "Voir les informations",
+    "version": "Version"
+  }
+}
