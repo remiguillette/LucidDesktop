@@ -5,7 +5,7 @@ import Desktop from './Desktop';
 import SettingsView from './Settings';
 import Login from './Login';
 import userService from '../services/userService';
-import { Home, FolderOpen, Apps, Settings } from 'lucide-react';
+import { Home, FolderOpen, Apps, Settings as SettingsIcon } from 'lucide-react';
 
 const App = () => {
   const { t } = useTranslation();
@@ -49,7 +49,7 @@ const App = () => {
     { id: 'desktop', label: t('navbar.desktop'), icon: <Home size={24} color="#f89422" /> },
     { id: 'files', label: t('navbar.files'), icon: <FolderOpen size={24} color="#f89422" /> },
     { id: 'apps', label: t('navbar.apps'), icon: <Apps size={24} color="#f89422" /> },
-    { id: 'settings', label: t('navbar.settings'), icon: <Settings size={24} color="#f89422" /> }
+    { id: 'settings', label: t('navbar.settings'), icon: <SettingsIcon size={24} color="#f89422" /> }
   ];
 
   // Render the current view based on navigation selection
