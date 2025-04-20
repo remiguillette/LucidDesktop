@@ -8,12 +8,26 @@
     "usernamePlaceholder": "Entrez votre nom d'utilisateur",
     "password": "Mot de passe",
     "passwordPlaceholder": "Entrez votre mot de passe",
-    "passwordHint": "Pour cette démo, n'importe quel mot de passe fonctionnera",
+    "passwordHint": "Par défaut: admin/admin",
     "login": "Se connecter",
     "loggingIn": "Connexion en cours...",
+    "createAccount": "Créer un compte",
+    "createNewAccount": "Créer un nouveau compte",
+    "register": "S'inscrire",
+    "registering": "Inscription en cours...",
+    "displayName": "Nom affiché",
+    "displayNamePlaceholder": "Votre nom affiché",
+    "confirmPassword": "Confirmez le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "backToLogin": "Retour à la connexion",
     "errors": {
       "noUsername": "Veuillez entrer un nom d'utilisateur",
-      "wrongPassword": "Mot de passe incorrect"
+      "noPassword": "Veuillez entrer un mot de passe",
+      "invalidCredentials": "Identifiants invalides",
+      "userNotFound": "Utilisateur non trouvé",
+      "wrongPassword": "Mot de passe incorrect",
+      "usernameExists": "Ce nom d'utilisateur existe déjà",
+      "passwordMismatch": "Les mots de passe ne correspondent pas"
     }
   },
   "navbar": {

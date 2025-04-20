@@ -4,21 +4,22 @@ import NavBar from './NavBar';
 import Desktop from './Desktop';
 import Settings from './Settings';
 import Login from './Login';
+import userService from '../services/userService';
 
 const App = () => {
   const { t } = useTranslation();
   const [currentView, setCurrentView] = useState('desktop');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
+  const [currentUser, setCurrentUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   // Vérifier si l'utilisateur est déjà connecté au chargement
   useEffect(() => {
     // Simuler un chargement initial
     const timer = setTimeout(() => {
-      const savedUsername = localStorage.getItem('beaveros-username');
-      if (savedUsername) {
-        setUsername(savedUsername);
+      const user = userService.getLoggedInUser();
+      if (user) {
+        setCurrentUser(user);
         setIsLoggedIn(true);
       }
       setIsLoading(false);
@@ -28,16 +29,16 @@ const App = () => {
   }, []);
 
   // Gérer la connexion utilisateur
-  const handleLogin = (username) => {
-    localStorage.setItem('beaveros-username', username);
-    setUsername(username);
+  const handleLogin = (user) => {
+    userService.saveLoggedInUser(user);
+    setCurrentUser(user);
     setIsLoggedIn(true);
   };
 
   // Gérer la déconnexion utilisateur
   const handleLogout = () => {
-    localStorage.removeItem('beaveros-username');
-    setUsername('');
+    userService.clearUserSession();
+    setCurrentUser(null);
     setIsLoggedIn(false);
     setCurrentView('desktop');
   };
@@ -60,7 +61,7 @@ const App = () => {
       case 'apps':
         return <div className="main-content">{t('views.apps.title')}</div>;
       case 'settings':
-        return <Settings onLogout={handleLogout} username={username} />;
+        return <Settings onLogout={handleLogout} username={currentUser?.displayName || currentUser?.username} />;
       default:
         return <Desktop />;
     }
@@ -92,7 +93,7 @@ const App = () => {
         items={navItems} 
         activeItem={currentView} 
         onSelect={setCurrentView} 
-        username={username}
+        username={currentUser?.displayName || currentUser?.username}
       />
     </div>
   );

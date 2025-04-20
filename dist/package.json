@@ -3,7 +3,7 @@
   "displayName": "BeaverOS",
   "description": "BeaverOS - Système d'exploitation de bureau",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "index.html",
   "window": {
     "title": "BeaverOS",
     "icon": "src/assets/logo.png",

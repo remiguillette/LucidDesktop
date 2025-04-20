@@ -31843,12 +31843,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Desktop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Desktop */ "./src/components/Desktop.jsx");
 /* harmony import */ var _Settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Settings */ "./src/components/Settings.jsx");
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Login */ "./src/components/Login.jsx");
+/* harmony import */ var _services_userService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/userService */ "./src/services/userService.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -31866,10 +31868,10 @@ var App = function App() {
     _useState4 = _slicedToArray(_useState3, 2),
     isLoggedIn = _useState4[0],
     setIsLoggedIn = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState6 = _slicedToArray(_useState5, 2),
-    username = _useState6[0],
-    setUsername = _useState6[1];
+    currentUser = _useState6[0],
+    setCurrentUser = _useState6[1];
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
     _useState8 = _slicedToArray(_useState7, 2),
     isLoading = _useState8[0],
@@ -31879,9 +31881,9 @@ var App = function App() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     // Simuler un chargement initial
     var timer = setTimeout(function () {
-      var savedUsername = localStorage.getItem('beaveros-username');
-      if (savedUsername) {
-        setUsername(savedUsername);
+      var user = _services_userService__WEBPACK_IMPORTED_MODULE_6__["default"].getLoggedInUser();
+      if (user) {
+        setCurrentUser(user);
         setIsLoggedIn(true);
       }
       setIsLoading(false);
@@ -31892,16 +31894,16 @@ var App = function App() {
   }, []);
 
   // Gérer la connexion utilisateur
-  var handleLogin = function handleLogin(username) {
-    localStorage.setItem('beaveros-username', username);
-    setUsername(username);
+  var handleLogin = function handleLogin(user) {
+    _services_userService__WEBPACK_IMPORTED_MODULE_6__["default"].saveLoggedInUser(user);
+    setCurrentUser(user);
     setIsLoggedIn(true);
   };
 
   // Gérer la déconnexion utilisateur
   var handleLogout = function handleLogout() {
-    localStorage.removeItem('beaveros-username');
-    setUsername('');
+    _services_userService__WEBPACK_IMPORTED_MODULE_6__["default"].clearUserSession();
+    setCurrentUser(null);
     setIsLoggedIn(false);
     setCurrentView('desktop');
   };
@@ -31941,7 +31943,7 @@ var App = function App() {
       case 'settings':
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Settings__WEBPACK_IMPORTED_MODULE_4__["default"], {
           onLogout: handleLogout,
-          username: username
+          username: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.displayName) || (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
         });
       default:
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Desktop__WEBPACK_IMPORTED_MODULE_3__["default"], null);
@@ -31979,7 +31981,7 @@ var App = function App() {
     items: navItems,
     activeItem: currentView,
     onSelect: setCurrentView,
-    username: username
+    username: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.displayName) || (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -33423,7 +33425,169 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(react_i18next__WEBPACK_IMPOR
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"login":{"username":"Nom d\'utilisateur","usernamePlaceholder":"Entrez votre nom d\'utilisateur","password":"Mot de passe","passwordPlaceholder":"Entrez votre mot de passe","passwordHint":"Pour cette démo, n\'importe quel mot de passe fonctionnera","login":"Se connecter","loggingIn":"Connexion en cours...","errors":{"noUsername":"Veuillez entrer un nom d\'utilisateur","wrongPassword":"Mot de passe incorrect"}},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice","notepad":"Bloc-notes","tictactoe":"Morpion"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"user":"Utilisateur","logout":"Se déconnecter","appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"},"apps":{"calculator":{"title":"Calculatrice"},"notepad":{"title":"Bloc-notes","untitled":"Sans titre","new":"Nouveau","save":"Enregistrer","rename":"Renommer","confirmNew":"Le document actuel n\'est pas enregistré. Voulez-vous continuer?","promptRename":"Entrez un nouveau nom pour le document:","placeholder":"Commencez à écrire ici..."},"tictactoe":{"title":"Morpion","newGame":"Nouvelle partie","nextPlayer":"Tour du joueur: {{player}}","winner":"Le joueur {{player}} a gagné!","draw":"Match nul!"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"login":{"username":"Nom d\'utilisateur","usernamePlaceholder":"Entrez votre nom d\'utilisateur","password":"Mot de passe","passwordPlaceholder":"Entrez votre mot de passe","passwordHint":"Par défaut: admin/admin","login":"Se connecter","loggingIn":"Connexion en cours...","createAccount":"Créer un compte","createNewAccount":"Créer un nouveau compte","register":"S\'inscrire","registering":"Inscription en cours...","displayName":"Nom affiché","displayNamePlaceholder":"Votre nom affiché","confirmPassword":"Confirmez le mot de passe","confirmPasswordPlaceholder":"Confirmez votre mot de passe","backToLogin":"Retour à la connexion","errors":{"noUsername":"Veuillez entrer un nom d\'utilisateur","noPassword":"Veuillez entrer un mot de passe","invalidCredentials":"Identifiants invalides","userNotFound":"Utilisateur non trouvé","wrongPassword":"Mot de passe incorrect","usernameExists":"Ce nom d\'utilisateur existe déjà","passwordMismatch":"Les mots de passe ne correspondent pas"}},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice","notepad":"Bloc-notes","tictactoe":"Morpion"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"user":"Utilisateur","logout":"Se déconnecter","appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"},"apps":{"calculator":{"title":"Calculatrice"},"notepad":{"title":"Bloc-notes","untitled":"Sans titre","new":"Nouveau","save":"Enregistrer","rename":"Renommer","confirmNew":"Le document actuel n\'est pas enregistré. Voulez-vous continuer?","promptRename":"Entrez un nouveau nom pour le document:","placeholder":"Commencez à écrire ici..."},"tictactoe":{"title":"Morpion","newGame":"Nouvelle partie","nextPlayer":"Tour du joueur: {{player}}","winner":"Le joueur {{player}} a gagné!","draw":"Match nul!"}}}');
+
+/***/ }),
+
+/***/ "./src/services/userService.js":
+/*!*************************************!*\
+  !*** ./src/services/userService.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+// Service de gestion des utilisateurs pour BeaverOS
+// Utilise le localStorage pour persister les données entre les sessions
+
+// Utilisateur par défaut (admin/admin)
+var DEFAULT_USERS = [{
+  id: 1,
+  username: 'admin',
+  password: 'admin',
+  displayName: 'Administrateur',
+  role: 'admin',
+  created: new Date().toISOString(),
+  lastLogin: null
+}];
+
+// Initialiser le stockage des utilisateurs
+var initializeUserStorage = function initializeUserStorage() {
+  if (!localStorage.getItem('beaveros-users')) {
+    localStorage.setItem('beaveros-users', JSON.stringify(DEFAULT_USERS));
+  }
+};
+
+// Obtenir tous les utilisateurs
+var getAllUsers = function getAllUsers() {
+  initializeUserStorage();
+  return JSON.parse(localStorage.getItem('beaveros-users') || '[]');
+};
+
+// Trouver un utilisateur par nom d'utilisateur
+var findUserByUsername = function findUserByUsername(username) {
+  var users = getAllUsers();
+  return users.find(function (user) {
+    return user.username.toLowerCase() === username.toLowerCase();
+  });
+};
+
+// Authentifier un utilisateur
+var authenticateUser = function authenticateUser(username, password) {
+  var user = findUserByUsername(username);
+  if (!user) {
+    return {
+      success: false,
+      message: 'user_not_found'
+    };
+  }
+  if (user.password !== password) {
+    return {
+      success: false,
+      message: 'invalid_password'
+    };
+  }
+
+  // Mettre à jour la dernière connexion
+  updateLastLogin(user.id);
+  return {
+    success: true,
+    user: {
+      id: user.id,
+      username: user.username,
+      displayName: user.displayName,
+      role: user.role
+    }
+  };
+};
+
+// Mettre à jour la dernière connexion
+var updateLastLogin = function updateLastLogin(userId) {
+  var users = getAllUsers();
+  var userIndex = users.findIndex(function (user) {
+    return user.id === userId;
+  });
+  if (userIndex !== -1) {
+    users[userIndex].lastLogin = new Date().toISOString();
+    localStorage.setItem('beaveros-users', JSON.stringify(users));
+  }
+};
+
+// Créer un nouvel utilisateur
+var createUser = function createUser(userData) {
+  var users = getAllUsers();
+
+  // Vérifier si l'utilisateur existe déjà
+  if (findUserByUsername(userData.username)) {
+    return {
+      success: false,
+      message: 'username_exists'
+    };
+  }
+
+  // Créer le nouvel utilisateur
+  var newUser = {
+    id: users.length > 0 ? Math.max.apply(Math, _toConsumableArray(users.map(function (u) {
+      return u.id;
+    }))) + 1 : 1,
+    username: userData.username,
+    password: userData.password,
+    displayName: userData.displayName || userData.username,
+    role: userData.role || 'user',
+    created: new Date().toISOString(),
+    lastLogin: null
+  };
+  users.push(newUser);
+  localStorage.setItem('beaveros-users', JSON.stringify(users));
+  return {
+    success: true,
+    user: {
+      id: newUser.id,
+      username: newUser.username,
+      displayName: newUser.displayName,
+      role: newUser.role
+    }
+  };
+};
+
+// Récupérer les infos de session pour l'utilisateur connecté
+var getLoggedInUser = function getLoggedInUser() {
+  var userSession = localStorage.getItem('beaveros-session');
+  if (!userSession) return null;
+  try {
+    return JSON.parse(userSession);
+  } catch (e) {
+    return null;
+  }
+};
+
+// Sauvegarde les info de l'utilisateur connecté
+var saveLoggedInUser = function saveLoggedInUser(userData) {
+  localStorage.setItem('beaveros-session', JSON.stringify(userData));
+};
+
+// Effacer les données de session
+var clearUserSession = function clearUserSession() {
+  localStorage.removeItem('beaveros-session');
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  authenticateUser: authenticateUser,
+  findUserByUsername: findUserByUsername,
+  createUser: createUser,
+  getAllUsers: getAllUsers,
+  getLoggedInUser: getLoggedInUser,
+  saveLoggedInUser: saveLoggedInUser,
+  clearUserSession: clearUserSession
+});
 
 /***/ }),
 
