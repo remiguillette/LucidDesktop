@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import NavBar from './NavBar';
 import Desktop from './Desktop';
-import Settings from './Settings';
+import SettingsView from './Settings';
 import Login from './Login';
 import userService from '../services/userService';
-import { Home, FolderOpen, Apps, Settings as SettingsIcon } from 'lucide-react';
+import { Home, FolderOpen, Apps, Settings } from 'lucide-react';
 
 const App = () => {
   const { t } = useTranslation();
@@ -49,7 +49,7 @@ const App = () => {
     { id: 'desktop', label: t('navbar.desktop'), icon: <Home size={24} color="#f89422" /> },
     { id: 'files', label: t('navbar.files'), icon: <FolderOpen size={24} color="#f89422" /> },
     { id: 'apps', label: t('navbar.apps'), icon: <Apps size={24} color="#f89422" /> },
-    { id: 'settings', label: t('navbar.settings'), icon: <SettingsIcon size={24} color="#f89422" /> }
+    { id: 'settings', label: t('navbar.settings'), icon: <Settings size={24} color="#f89422" /> }
   ];
 
   // Render the current view based on navigation selection
@@ -62,7 +62,7 @@ const App = () => {
       case 'apps':
         return <div className="main-content">{t('views.apps.title')}</div>;
       case 'settings':
-        return <Settings onLogout={handleLogout} username={currentUser?.displayName || currentUser?.username} />;
+        return <SettingsView onLogout={handleLogout} username={currentUser?.displayName || currentUser?.username} />;
       default:
         return <Desktop />;
     }
