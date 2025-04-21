@@ -632,6 +632,17 @@ input:checked + .toggle-slider:before {
   color: var(--text-color);
   font-size: 14px;
   padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-message {
+  color: var(--primary-color);
+  font-size: 12px;
+  padding: 4px 8px;
+  background: rgba(248, 148, 34, 0.1);
+  border-radius: 4px;
 }
 
 .notepad-editor {

@@ -1,32 +1,38 @@
+
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import fileSystemService from '../../services/fileSystemService';
 
 const Notepad = () => {
   const { t } = useTranslation();
   const [content, setContent] = useState('');
   const [fileName, setFileName] = useState(t('apps.notepad.untitled'));
   const [isSaved, setIsSaved] = useState(true);
+  const [statusMessage, setStatusMessage] = useState('');
 
-  // Détecter les changements de contenu
   useEffect(() => {
     if (content !== '') {
       setIsSaved(false);
     }
   }, [content]);
 
-  // Gérer les changements dans la zone de texte
   const handleChange = (e) => {
     setContent(e.target.value);
   };
 
-  // Simuler une opération de sauvegarde
   const handleSave = () => {
-    console.log(`Saving: ${fileName} with content: ${content}`);
-    setIsSaved(true);
-    // Dans une véritable application, cela sauvegarderait le contenu dans un système de fichiers
+    const path = '/Documents';
+    const success = fileSystemService.createFile(path, fileName + '.txt', content);
+    if (success) {
+      setIsSaved(true);
+      setStatusMessage('Document saved successfully');
+      setTimeout(() => setStatusMessage(''), 2000);
+    } else {
+      setStatusMessage('Error saving document');
+      setTimeout(() => setStatusMessage(''), 2000);
+    }
   };
 
-  // Simuler une opération "nouveau document"
   const handleNew = () => {
     if (!isSaved) {
       const confirmNew = window.confirm(t('apps.notepad.confirmNew'));
@@ -37,11 +43,11 @@ const Notepad = () => {
     setIsSaved(true);
   };
 
-  // Simuler une opération de changement de nom
   const handleRename = () => {
     const newName = prompt(t('apps.notepad.promptRename'), fileName);
     if (newName && newName.trim() !== '') {
       setFileName(newName.trim());
+      setIsSaved(false);
     }
   };
 
@@ -61,6 +67,7 @@ const Notepad = () => {
         </div>
         <div className="notepad-filename">
           {fileName}{!isSaved && ' *'}
+          {statusMessage && <span className="status-message">{statusMessage}</span>}
         </div>
       </div>
       <textarea
