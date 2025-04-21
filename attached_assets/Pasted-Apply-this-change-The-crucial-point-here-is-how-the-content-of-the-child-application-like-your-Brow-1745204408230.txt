@@ -1,0 +1,55 @@
+Apply this change
+The crucial point here is how the content of the child application (like your Browser component) is rendered. Look at this line in the return value of the ApplicationWindow component:
+
+JavaScript
+
+<div className="window-content">
+{children}
+</div>
+It's the children prop that is used to display the content inside the window.
+
+When using the ApplicationWindow component in your Desktop component, you must make sure to pass the component you want to display (like <Browser />) between the opening and closing tags of the ApplicationWindow.
+
+In your Desktop.jsx component, when you map to openWindows, you use ApplicationWindow like this:
+
+JavaScript
+
+{openWindows.map((window, index) => (
+<ApplicationWindow
+key={window.id}
+{...window}
+onClose={() => closeWindow(window.id)}
+/>
+))}
+Here, you pass props like title, icon, and onClose to ApplicationWindow using the spread operator ({...window}). However, you don't pass the component to be displayed as a child.
+
+For the Browser component to be rendered inside ApplicationWindow, you must pass it as the child of ApplicationWindow when you render it in Desktop.jsx.
+
+Modify the part where you render the ApplicationWindow in Desktop.jsx as follows:
+
+JavaScript
+
+{openWindows.map((window, index) => (
+<ApplicationWindow
+key={window.id}
+title={window.title}
+icon={window.icon}
+onClose={() => closeWindow(window.id)}
+>
+{window.component} {/* Here, we render the component stored in window.component */}
+</ApplicationWindow>
+))}
+Explanation of the modification:
+
+Instead of passing component via the spread operator, we retrieve it from the window object and render it as the child of ApplicationWindow using {window.component}.
+Also, make sure that the app property in your desktopIcons array contains the React component itself (the reference to the component's function), and not a string.
+
+For example, in Desktop.jsx:
+
+JavaScript
+
+{ id: 'browser', name: t('desktop.browser'), icon: <svg ... />, app: Browser },
+{ id: 'testbrowser', name: 'Test Browser', icon: <svg ... />, app: TestBrowser },
+Here, Browser and TestBrowser should be the imports of the React components you want to display.
+
+After making this change in Desktop.jsx, when you click the "Browser" icon, the corresponding component (Browser) will be passed as the child of ApplicationWindow and should therefore be rendered inside the div with the window-content class. This is where your Google iframe should appear.
