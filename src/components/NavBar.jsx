@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-const NavBar = ({ items, activeItem, onSelect, username }) => {
+const NavBar = ({ activeItem, onSelect, username }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -24,22 +24,37 @@ const NavBar = ({ items, activeItem, onSelect, username }) => {
     month: 'short',
     day: 'numeric'
   });
-  
+
+  const navItems = [
+    { id: 'apps', label: 'Applications', icon: '📱', submenu: [
+      { id: 'desktop', label: 'Bureau', icon: '🏠' },
+      { id: 'files', label: 'Fichiers', icon: '📁' },
+      { id: 'settings', label: 'Paramètres', icon: '⚙️' }
+    ]}
+  ];
+
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        {items.map(item => (
-          <div
-            key={item.id}
-            className={`nav-item ${activeItem === item.id ? 'active' : ''}`}
-            onClick={() => onSelect(item.id)}
-          >
+        {navItems.map(item => (
+          <div key={item.id} className={`nav-item ${activeItem === item.id ? 'active' : ''}`} onClick={() => onSelect(item.id)}>
             <span className="nav-icon">{item.icon}</span>
             <span className="nav-text">{item.label}</span>
+            {item.submenu && (
+              <div className="submenu">
+                {item.submenu.map(subItem => (
+                  <div key={subItem.id} className={`submenu-item ${activeItem === subItem.id ? 'active' : ''}`} onClick={() => onSelect(subItem.id)}>
+                    <span className="nav-icon">{subItem.icon}</span>
+                    <span className="nav-text">{subItem.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
-      
+
       <div className="navbar-right">
         {username && (
           <div className="nav-user">
