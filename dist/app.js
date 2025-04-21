@@ -32318,7 +32318,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
 /* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
 /* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
-/* harmony import */ var _apps_TestBrowser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/TestBrowser */ "./src/components/apps/TestBrowser.jsx");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './apps/TestBrowser'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -32444,44 +32444,6 @@ var Desktop = function Desktop() {
       y2: "14"
     })),
     app: _apps_Browser__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }, {
-    id: 'testbrowser',
-    name: 'Test Browser',
-    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      width: "24",
-      height: "24",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-      cx: "12",
-      cy: "12",
-      r: "10"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-      cx: "12",
-      cy: "12",
-      r: "4"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
-      x1: "21.17",
-      x2: "12",
-      y1: "8",
-      y2: "8"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
-      x1: "3.95",
-      x2: "8.54",
-      y1: "6.06",
-      y2: "14"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("line", {
-      x1: "10.88",
-      x2: "15.46",
-      y1: "21.94",
-      y2: "14"
-    })),
-    app: _apps_TestBrowser__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     id: 'files',
     name: t('desktop.files'),
@@ -33456,59 +33418,6 @@ var Notepad = function Notepad() {
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Notepad);
-
-/***/ }),
-
-/***/ "./src/components/apps/TestBrowser.jsx":
-/*!*********************************************!*\
-  !*** ./src/components/apps/TestBrowser.jsx ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
-
-var TestBrowser = function TestBrowser() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('https://www.google.com'),
-    _useState2 = _slicedToArray(_useState, 2),
-    url = _useState2[0],
-    setUrl = _useState2[1];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "browser-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "browser-form"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    type: "text",
-    value: url,
-    onChange: function onChange(e) {
-      return setUrl(e.target.value);
-    },
-    className: "browser-input",
-    placeholder: "Enter URL"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
-    src: url,
-    style: {
-      width: '100%',
-      height: 'calc(100vh - 140px)',
-      border: 'none',
-      marginTop: '10px'
-    },
-    title: "browser-frame",
-    sandbox: "allow-same-origin allow-scripts allow-popups allow-forms allow-presentation allow-modals allow-top-navigation"
-  }));
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TestBrowser);
 
 /***/ }),
 
