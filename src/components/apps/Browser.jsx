@@ -1,19 +1,20 @@
+
 import React from 'react';
 
 const Browser = () => {
   const url = 'http://localhost:5000/';
 
   return (
-    <div className="browser-container">
+    <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
       <iframe
         src={url}
         style={{
+          flexGrow: 1,
           width: '100%',
-          height: 'calc(100vh - 50px)', // Ajustement de la hauteur
+          height: '100%',
           border: 'none',
-          marginTop: '0px' // Suppression de la marge du haut
         }}
-        title="Google Frame"
+        title="Browser Frame"
       />
     </div>
   );
