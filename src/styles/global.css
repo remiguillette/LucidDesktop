@@ -801,3 +801,35 @@ input:checked + .toggle-slider:before {
   color: #a16012;
   cursor: not-allowed;
 }
+
+/* Browser styles */
+.browser-container {
+  padding: 20px;
+}
+
+.browser-form {
+  display: flex;
+  gap: 10px;
+}
+
+.browser-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.browser-button {
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.browser-button:hover {
+  background: #45a049;
+}
+
+/* App styles */
