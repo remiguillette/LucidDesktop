@@ -88,7 +88,9 @@
       "rename": "Renommer",
       "confirmNew": "Le document actuel n'est pas enregistré. Voulez-vous continuer?",
       "promptRename": "Entrez un nouveau nom pour le document:",
-      "placeholder": "Commencez à écrire ici..."
+      "placeholder": "Commencez à écrire ici...",
+      "recent": "Récents",
+      "noRecent": "Aucune note récente"
     },
     "tictactoe": {
       "title": "Morpion",

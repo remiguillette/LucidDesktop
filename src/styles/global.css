@@ -665,6 +665,40 @@ input:checked + .toggle-slider:before {
   color: #666;
 }
 
+.recent-notes-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.recent-notes-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--bg-lighter);
+  border: 1px solid var(--window-border);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.recent-note-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: background-color 0.2s;
+}
+
+.recent-note-item:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.recent-note-item.no-notes {
+  cursor: default;
+  color: #666;
+}
+
 
 
 /* Navbar User Display */

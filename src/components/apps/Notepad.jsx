@@ -51,9 +51,56 @@ const Notepad = () => {
     }
   };
 
+  const [showRecent, setShowRecent] = useState(false);
+  const [recentNotes, setRecentNotes] = useState([]);
+
+  useEffect(() => {
+    setRecentNotes(fileSystemService.getRecentNotes());
+  }, []);
+
+  const handleOpenRecent = (note) => {
+    if (!isSaved) {
+      const confirmOpen = window.confirm(t('apps.notepad.confirmNew'));
+      if (!confirmOpen) return;
+    }
+    setContent(note.content);
+    setFileName(note.name.replace('.txt', ''));
+    setIsSaved(true);
+    setShowRecent(false);
+  };
+
   return (
     <div className="notepad-container">
       <div className="notepad-toolbar">
+        <div className="notepad-buttons">
+          <div className="recent-notes-dropdown">
+            <button 
+              className="notepad-button" 
+              onClick={() => setShowRecent(!showRecent)}
+              title={t('apps.notepad.recent')}
+            >
+              {t('apps.notepad.recent')}
+            </button>
+            {showRecent && (
+              <div className="recent-notes-menu">
+                {recentNotes.length > 0 ? (
+                  recentNotes.map((note, index) => (
+                    <div 
+                      key={index} 
+                      className="recent-note-item"
+                      onClick={() => handleOpenRecent(note)}
+                    >
+                      {note.name}
+                    </div>
+                  ))
+                ) : (
+                  <div className="recent-note-item no-notes">
+                    {t('apps.notepad.noRecent')}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
         <div className="notepad-buttons">
           <button className="notepad-button" onClick={handleNew} title={t('apps.notepad.new')}>
             {t('apps.notepad.new')}
