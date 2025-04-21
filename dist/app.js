@@ -32650,7 +32650,8 @@ var Desktop = function Desktop() {
       cx: "18",
       cy: "6",
       r: "3"
-    }))
+    })),
+    app: _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, {
     id: 'browser',
     name: t('desktop.browser'),
