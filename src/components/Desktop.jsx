@@ -4,7 +4,7 @@ import ApplicationWindow from './ApplicationWindow';
 import Calculator from './apps/Calculator';
 import Notepad from './apps/Notepad';
 import Browser from './apps/Browser';
-import TestBrowser from './apps/TestBrowser';
+
 
 const Desktop = () => {
   const { t } = useTranslation();
