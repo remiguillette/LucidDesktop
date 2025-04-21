@@ -24,7 +24,7 @@ const Browser = () => {
           marginTop: '10px'
         }}
         title="browser-frame"
-        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation allow-modals allow-top-navigation"
       />
     </div>
   );
