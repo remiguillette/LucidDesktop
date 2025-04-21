@@ -723,16 +723,6 @@ input:checked + .toggle-slider:before {
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
-  object-fit: contain;
-  background-color: transparent;
-}
-
-.beaver-logo {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  background-color: transparent;
-  margin-bottom: 10px;
 }
 
 .loading-spinner {
@@ -787,10 +777,9 @@ input:checked + .toggle-slider:before {
 }
 
 .login-logo img {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 15px;
-  object-fit: contain;
 }
 
 .login-logo h1 {

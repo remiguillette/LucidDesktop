@@ -746,16 +746,6 @@ input:checked + .toggle-slider:before {
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
-  object-fit: contain;
-  background-color: transparent;
-}
-
-.beaver-logo {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  background-color: transparent;
-  margin-bottom: 10px;
 }
 
 .loading-spinner {
@@ -810,10 +800,9 @@ input:checked + .toggle-slider:before {
 }
 
 .login-logo img {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 15px;
-  object-fit: contain;
 }
 
 .login-logo h1 {
@@ -922,7 +911,7 @@ input:checked + .toggle-slider:before {
   color: #a16012;
   cursor: not-allowed;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/global.css"],"names":[],"mappings":"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","sourcesContent":["/* Global CSS for BeaverOS */\n:root {\n  --primary-color: #f89422;\n  --bg-color: #121212;\n  --bg-light: #1e1e1e;\n  --bg-lighter: #252525;\n  --text-color: #f5f5f5;\n  --navbar-height: 60px;\n  --window-header: #1a1a1a;\n  --window-border: #333;\n  --shadow-color: rgba(0, 0, 0, 0.5);\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  overflow: hidden;\n  height: 100vh;\n  width: 100vw;\n}\n\nbutton, input, select, textarea {\n  font-family: inherit;\n  color: inherit;\n}\n\na {\n  color: var(--primary-color);\n  text-decoration: none;\n}\n\n#root {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  width: 100vw;\n}\n\n.app-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.main-content {\n  flex: 1;\n  overflow: auto;\n  padding: 20px;\n}\n\n.navbar {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: var(--navbar-height);\n  background-color: var(--bg-light);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-top: 1px solid #333;\n  z-index: 1000;\n  padding: 0 15px;\n}\n\n.navbar-left, .navbar-right {\n  display: flex;\n  align-items: center;\n}\n\n.navbar-left {\n  justify-content: flex-start;\n}\n\n.navbar-right {\n  justify-content: flex-end;\n}\n\n.nav-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 8px 16px;\n  color: var(--primary-color);\n  cursor: pointer;\n  transition: all 0.2s ease;\n}\n\n.nav-item:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.nav-item.active {\n  background-color: rgba(248, 148, 34, 0.2);\n}\n\n.nav-icon {\n  font-size: 24px;\n  margin-bottom: 4px;\n}\n\n.nav-text {\n  font-size: 12px;\n}\n\n.desktop {\n  position: relative;\n  height: calc(100vh - var(--navbar-height));\n  background-color: var(--bg-color);\n  padding: 20px;\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  grid-gap: 20px;\n  overflow: auto;\n}\n\n.desktop-icon {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  padding: 10px;\n  border-radius: 5px;\n}\n\n.desktop-icon:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.desktop-icon-img {\n  width: 48px;\n  height: 48px;\n  margin-bottom: 8px;\n}\n\n.desktop-icon-text {\n  color: var(--primary-color);\n  text-align: center;\n  font-size: 14px;\n  word-break: break-word;\n}\n\n.settings-container {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.settings-section {\n  margin-bottom: 30px;\n}\n\n.settings-title {\n  color: var(--primary-color);\n  margin-bottom: 15px;\n  border-bottom: 1px solid #333;\n  padding-bottom: 10px;\n}\n\n.settings-user-info {\n  display: flex;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\n.settings-user-avatar {\n  width: 64px;\n  height: 64px;\n  background-color: var(--primary-color);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 32px;\n  margin-right: 15px;\n}\n\n.settings-user-details {\n  flex: 1;\n}\n\n.settings-username {\n  font-size: 18px;\n  font-weight: 500;\n  color: var(--text-color);\n  margin-bottom: 5px;\n}\n\n.settings-user-role {\n  font-size: 14px;\n  color: #888;\n}\n\n.settings-logout-button {\n  width: 100%;\n  padding: 10px 15px;\n  background-color: #cc3636;\n  border: none;\n  border-radius: 4px;\n  color: white;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.settings-logout-button:hover {\n  background-color: #e04444;\n}\n\n.settings-option {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px 0;\n  border-bottom: 1px solid #252525;\n}\n\n.settings-label {\n  color: var(--text-color);\n}\n\n/* Custom checkbox and toggle styling */\n.toggle-switch {\n  position: relative;\n  display: inline-block;\n  width: 50px;\n  height: 24px;\n}\n\n.toggle-switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.toggle-slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #444;\n  transition: .4s;\n  border-radius: 24px;\n}\n\n.toggle-slider:before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: .4s;\n  border-radius: 50%;\n}\n\ninput:checked + .toggle-slider {\n  background-color: var(--primary-color);\n}\n\ninput:checked + .toggle-slider:before {\n  transform: translateX(26px);\n}\n\n/* Application Window Styles */\n.app-window {\n  position: absolute;\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  border-radius: 4px;\n  box-shadow: 0 8px 24px var(--shadow-color);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  z-index: 100;\n  user-select: none;\n}\n\n.window-titlebar {\n  height: 36px;\n  background-color: var(--window-header);\n  border-bottom: 1px solid var(--window-border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 10px;\n  cursor: move;\n}\n\n.window-title-left {\n  display: flex;\n  align-items: center;\n}\n\n.window-icon {\n  margin-right: 8px;\n  font-size: 16px;\n}\n\n.window-title {\n  color: var(--primary-color);\n  font-size: 14px;\n  font-weight: 500;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.window-controls {\n  display: flex;\n  gap: 6px;\n}\n\n.window-control {\n  width: 16px;\n  height: 16px;\n  border: none;\n  background: none;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  border-radius: 50%;\n  color: var(--text-color);\n}\n\n.window-control.minimize {\n  background-color: #747474;\n}\n\n.window-control.maximize {\n  background-color: #747474;\n}\n\n.window-control.close {\n  background-color: #cc3636;\n}\n\n.window-control:hover {\n  opacity: 0.8;\n}\n\n.window-content {\n  flex: 1;\n  overflow: auto;\n  padding: 10px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n}\n\n.app-window.maximized {\n  box-shadow: none;\n  border-radius: 0;\n}\n\n/* Poignées de redimensionnement */\n.window-resize-handle {\n  position: absolute;\n  background: transparent;\n  z-index: 101;\n}\n\n/* Coins */\n.nw-resize {\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.ne-resize {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.sw-resize {\n  bottom: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.se-resize {\n  bottom: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.se-resize::after {\n  content: \"\";\n  position: absolute;\n  right: 3px;\n  bottom: 3px;\n  width: 8px;\n  height: 8px;\n  border-bottom: 2px solid var(--primary-color);\n  border-right: 2px solid var(--primary-color);\n}\n\n/* Bords */\n.n-resize {\n  top: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.e-resize {\n  top: 8px;\n  right: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n.s-resize {\n  bottom: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.w-resize {\n  top: 8px;\n  left: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n/* Calculator App Styles */\n.calculator-container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--bg-light);\n  border-radius: 4px;\n  overflow: hidden;\n}\n\n.calculator-display {\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  padding: 20px;\n  text-align: right;\n  font-size: 36px;\n  font-weight: bold;\n  height: 80px;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  border-bottom: 1px solid var(--window-border);\n}\n\n.calculator-keypad {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 1px;\n  flex: 1;\n  background-color: var(--window-border);\n}\n\n.calculator-button {\n  background-color: var(--bg-lighter);\n  border: none;\n  font-size: 24px;\n  color: var(--text-color);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.calculator-button:hover {\n  background-color: #333;\n}\n\n.calculator-button:active {\n  background-color: #444;\n}\n\n.calculator-button.zero {\n  grid-column: span 2;\n}\n\n.calculator-button.operator {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.calculator-button.operator:hover {\n  background-color: #e48419;\n}\n\n.calculator-button.special {\n  background-color: #2a2a2a;\n}\n\n/* Notepad App Styles */\n.notepad-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n  background-color: var(--bg-light);\n}\n\n.notepad-toolbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px;\n  background-color: var(--bg-lighter);\n  border-bottom: 1px solid var(--window-border);\n}\n\n.notepad-buttons {\n  display: flex;\n  gap: 10px;\n}\n\n.notepad-button {\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  color: var(--primary-color);\n  padding: 6px 12px;\n  border-radius: 3px;\n  cursor: pointer;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n\n.notepad-button:hover {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.notepad-filename {\n  color: var(--text-color);\n  font-size: 14px;\n  padding: 0 10px;\n}\n\n.notepad-editor {\n  flex: 1;\n  border: none;\n  resize: none;\n  padding: 15px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n  font-size: 16px;\n  line-height: 1.5;\n  font-family: 'Courier New', monospace;\n}\n\n.notepad-editor:focus {\n  outline: none;\n}\n\n.notepad-editor::placeholder {\n  color: #666;\n}\n\n/* TicTacToe App Styles */\n.tictactoe-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 20px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n  height: 100%;\n  width: 100%;\n}\n\n.tictactoe-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 20px;\n}\n\n.tictactoe-header h3 {\n  color: var(--primary-color);\n  font-size: 24px;\n  margin: 0;\n}\n\n.tictactoe-reset-button {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n  border: none;\n  padding: 8px 16px;\n  border-radius: 4px;\n  cursor: pointer;\n  font-size: 14px;\n  transition: background-color 0.2s;\n}\n\n.tictactoe-reset-button:hover {\n  background-color: #e48419;\n}\n\n.tictactoe-status {\n  font-size: 18px;\n  margin-bottom: 20px;\n  padding: 10px;\n  border-radius: 4px;\n  text-align: center;\n  width: 100%;\n  background-color: var(--bg-lighter);\n}\n\n.tictactoe-status.winner {\n  background-color: rgba(76, 175, 80, 0.2);\n  color: #4CAF50;\n}\n\n.tictactoe-status.draw {\n  background-color: rgba(255, 152, 0, 0.2);\n  color: #FF9800;\n}\n\n.tictactoe-board {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  background-color: var(--window-border);\n}\n\n.tictactoe-row {\n  display: flex;\n  gap: 5px;\n}\n\n.tictactoe-square {\n  width: 80px;\n  height: 80px;\n  background-color: var(--bg-lighter);\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 36px;\n  font-weight: bold;\n  cursor: pointer;\n  color: var(--text-color);\n}\n\n.tictactoe-square:hover {\n  background-color: #333;\n}\n\n/* Navbar User Display */\n.nav-user {\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n  color: var(--text-color);\n  padding: 6px 12px;\n  border-radius: 20px;\n  background-color: rgba(255, 255, 255, 0.05);\n}\n\n.nav-user-icon {\n  font-size: 20px;\n  margin-right: 8px;\n}\n\n.nav-user-name {\n  font-size: 14px;\n}\n\n.nav-clock {\n  font-size: 14px;\n  color: var(--text-color);\n  background-color: rgba(255, 255, 255, 0.05);\n  padding: 6px 12px;\n  border-radius: 20px;\n}\n\n/* Loading Screen Styles */\n.loading-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n}\n\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.loading-logo {\n  width: 100px;\n  height: 100px;\n  margin-bottom: 20px;\n  object-fit: contain;\n  background-color: transparent;\n}\n\n.beaver-logo {\n  width: 120px;\n  height: 120px;\n  object-fit: contain;\n  background-color: transparent;\n  margin-bottom: 10px;\n}\n\n.loading-spinner {\n  width: 40px;\n  height: 40px;\n  border: 4px solid rgba(248, 148, 34, 0.2);\n  border-top: 4px solid var(--primary-color);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-bottom: 20px;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n.loading-text {\n  color: var(--primary-color);\n  font-size: 24px;\n  font-weight: bold;\n}\n\n/* Login Screen Styles */\n.login-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n  background-image: linear-gradient(to bottom right, rgba(20, 20, 20, 0.9), rgba(5, 5, 5, 0.95));\n}\n\n.login-container {\n  width: 400px;\n  padding: 30px;\n  border-radius: 8px;\n  background-color: var(--bg-light);\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);\n  text-align: center;\n  animation: fadeIn 0.5s ease-in-out;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(-20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.login-logo {\n  margin-bottom: 30px;\n}\n\n.login-logo img {\n  width: 120px;\n  height: 120px;\n  margin-bottom: 15px;\n  object-fit: contain;\n}\n\n.login-logo h1 {\n  font-size: 32px;\n  font-weight: bold;\n  color: var(--primary-color);\n  margin: 0;\n}\n\n.login-form {\n  text-align: left;\n}\n\n.login-error {\n  background-color: rgba(255, 76, 76, 0.1);\n  color: #ff4c4c;\n  border: 1px solid #ff4c4c;\n  padding: 10px;\n  border-radius: 4px;\n  margin-bottom: 15px;\n  font-size: 14px;\n}\n\n.form-group {\n  margin-bottom: 20px;\n}\n\n.form-group label {\n  display: block;\n  color: var(--text-color);\n  margin-bottom: 8px;\n  font-weight: 500;\n}\n\n.form-group input {\n  width: 100%;\n  padding: 12px;\n  border-radius: 4px;\n  background-color: var(--bg-color);\n  border: 1px solid var(--window-border);\n  color: var(--text-color);\n  font-size: 16px;\n  transition: border 0.3s;\n}\n\n.form-group input:focus {\n  outline: none;\n  border-color: var(--primary-color);\n}\n\n.form-group small {\n  display: block;\n  color: #888;\n  margin-top: 6px;\n  font-size: 12px;\n}\n\n.login-button {\n  width: 100%;\n  padding: 12px;\n  background-color: var(--primary-color);\n  color: white;\n  border: none;\n  border-radius: 4px;\n  font-size: 16px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.login-button:hover {\n  background-color: #e48419;\n}\n\n.login-button:disabled {\n  background-color: #a16012;\n  cursor: not-allowed;\n}\n\n.login-version {\n  margin-top: 30px;\n  color: #777;\n  font-size: 12px;\n}\n\n.login-options {\n  margin-top: 20px;\n  text-align: center;\n}\n\n.login-link-button {\n  background: none;\n  border: none;\n  color: var(--primary-color);\n  font-size: 14px;\n  cursor: pointer;\n  text-decoration: underline;\n  padding: 5px 10px;\n}\n\n.login-link-button:hover {\n  color: #e48419;\n}\n\n.login-link-button:disabled {\n  color: #a16012;\n  cursor: not-allowed;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/global.css"],"names":[],"mappings":"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","sourcesContent":["/* Global CSS for BeaverOS */\n:root {\n  --primary-color: #f89422;\n  --bg-color: #121212;\n  --bg-light: #1e1e1e;\n  --bg-lighter: #252525;\n  --text-color: #f5f5f5;\n  --navbar-height: 60px;\n  --window-header: #1a1a1a;\n  --window-border: #333;\n  --shadow-color: rgba(0, 0, 0, 0.5);\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  overflow: hidden;\n  height: 100vh;\n  width: 100vw;\n}\n\nbutton, input, select, textarea {\n  font-family: inherit;\n  color: inherit;\n}\n\na {\n  color: var(--primary-color);\n  text-decoration: none;\n}\n\n#root {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  width: 100vw;\n}\n\n.app-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.main-content {\n  flex: 1;\n  overflow: auto;\n  padding: 20px;\n}\n\n.navbar {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: var(--navbar-height);\n  background-color: var(--bg-light);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-top: 1px solid #333;\n  z-index: 1000;\n  padding: 0 15px;\n}\n\n.navbar-left, .navbar-right {\n  display: flex;\n  align-items: center;\n}\n\n.navbar-left {\n  justify-content: flex-start;\n}\n\n.navbar-right {\n  justify-content: flex-end;\n}\n\n.nav-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 8px 16px;\n  color: var(--primary-color);\n  cursor: pointer;\n  transition: all 0.2s ease;\n}\n\n.nav-item:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.nav-item.active {\n  background-color: rgba(248, 148, 34, 0.2);\n}\n\n.nav-icon {\n  font-size: 24px;\n  margin-bottom: 4px;\n}\n\n.nav-text {\n  font-size: 12px;\n}\n\n.desktop {\n  position: relative;\n  height: calc(100vh - var(--navbar-height));\n  background-color: var(--bg-color);\n  padding: 20px;\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  grid-gap: 20px;\n  overflow: auto;\n}\n\n.desktop-icon {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  padding: 10px;\n  border-radius: 5px;\n}\n\n.desktop-icon:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.desktop-icon-img {\n  width: 48px;\n  height: 48px;\n  margin-bottom: 8px;\n}\n\n.desktop-icon-text {\n  color: var(--primary-color);\n  text-align: center;\n  font-size: 14px;\n  word-break: break-word;\n}\n\n.settings-container {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.settings-section {\n  margin-bottom: 30px;\n}\n\n.settings-title {\n  color: var(--primary-color);\n  margin-bottom: 15px;\n  border-bottom: 1px solid #333;\n  padding-bottom: 10px;\n}\n\n.settings-user-info {\n  display: flex;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\n.settings-user-avatar {\n  width: 64px;\n  height: 64px;\n  background-color: var(--primary-color);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 32px;\n  margin-right: 15px;\n}\n\n.settings-user-details {\n  flex: 1;\n}\n\n.settings-username {\n  font-size: 18px;\n  font-weight: 500;\n  color: var(--text-color);\n  margin-bottom: 5px;\n}\n\n.settings-user-role {\n  font-size: 14px;\n  color: #888;\n}\n\n.settings-logout-button {\n  width: 100%;\n  padding: 10px 15px;\n  background-color: #cc3636;\n  border: none;\n  border-radius: 4px;\n  color: white;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.settings-logout-button:hover {\n  background-color: #e04444;\n}\n\n.settings-option {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px 0;\n  border-bottom: 1px solid #252525;\n}\n\n.settings-label {\n  color: var(--text-color);\n}\n\n/* Custom checkbox and toggle styling */\n.toggle-switch {\n  position: relative;\n  display: inline-block;\n  width: 50px;\n  height: 24px;\n}\n\n.toggle-switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.toggle-slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #444;\n  transition: .4s;\n  border-radius: 24px;\n}\n\n.toggle-slider:before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: .4s;\n  border-radius: 50%;\n}\n\ninput:checked + .toggle-slider {\n  background-color: var(--primary-color);\n}\n\ninput:checked + .toggle-slider:before {\n  transform: translateX(26px);\n}\n\n/* Application Window Styles */\n.app-window {\n  position: absolute;\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  border-radius: 4px;\n  box-shadow: 0 8px 24px var(--shadow-color);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  z-index: 100;\n  user-select: none;\n}\n\n.window-titlebar {\n  height: 36px;\n  background-color: var(--window-header);\n  border-bottom: 1px solid var(--window-border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 10px;\n  cursor: move;\n}\n\n.window-title-left {\n  display: flex;\n  align-items: center;\n}\n\n.window-icon {\n  margin-right: 8px;\n  font-size: 16px;\n}\n\n.window-title {\n  color: var(--primary-color);\n  font-size: 14px;\n  font-weight: 500;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.window-controls {\n  display: flex;\n  gap: 6px;\n}\n\n.window-control {\n  width: 16px;\n  height: 16px;\n  border: none;\n  background: none;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  border-radius: 50%;\n  color: var(--text-color);\n}\n\n.window-control.minimize {\n  background-color: #747474;\n}\n\n.window-control.maximize {\n  background-color: #747474;\n}\n\n.window-control.close {\n  background-color: #cc3636;\n}\n\n.window-control:hover {\n  opacity: 0.8;\n}\n\n.window-content {\n  flex: 1;\n  overflow: auto;\n  padding: 10px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n}\n\n.app-window.maximized {\n  box-shadow: none;\n  border-radius: 0;\n}\n\n/* Poignées de redimensionnement */\n.window-resize-handle {\n  position: absolute;\n  background: transparent;\n  z-index: 101;\n}\n\n/* Coins */\n.nw-resize {\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.ne-resize {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.sw-resize {\n  bottom: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.se-resize {\n  bottom: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.se-resize::after {\n  content: \"\";\n  position: absolute;\n  right: 3px;\n  bottom: 3px;\n  width: 8px;\n  height: 8px;\n  border-bottom: 2px solid var(--primary-color);\n  border-right: 2px solid var(--primary-color);\n}\n\n/* Bords */\n.n-resize {\n  top: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.e-resize {\n  top: 8px;\n  right: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n.s-resize {\n  bottom: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.w-resize {\n  top: 8px;\n  left: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n/* Calculator App Styles */\n.calculator-container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--bg-light);\n  border-radius: 4px;\n  overflow: hidden;\n}\n\n.calculator-display {\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  padding: 20px;\n  text-align: right;\n  font-size: 36px;\n  font-weight: bold;\n  height: 80px;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  border-bottom: 1px solid var(--window-border);\n}\n\n.calculator-keypad {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 1px;\n  flex: 1;\n  background-color: var(--window-border);\n}\n\n.calculator-button {\n  background-color: var(--bg-lighter);\n  border: none;\n  font-size: 24px;\n  color: var(--text-color);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.calculator-button:hover {\n  background-color: #333;\n}\n\n.calculator-button:active {\n  background-color: #444;\n}\n\n.calculator-button.zero {\n  grid-column: span 2;\n}\n\n.calculator-button.operator {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.calculator-button.operator:hover {\n  background-color: #e48419;\n}\n\n.calculator-button.special {\n  background-color: #2a2a2a;\n}\n\n/* Notepad App Styles */\n.notepad-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n  background-color: var(--bg-light);\n}\n\n.notepad-toolbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px;\n  background-color: var(--bg-lighter);\n  border-bottom: 1px solid var(--window-border);\n}\n\n.notepad-buttons {\n  display: flex;\n  gap: 10px;\n}\n\n.notepad-button {\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  color: var(--primary-color);\n  padding: 6px 12px;\n  border-radius: 3px;\n  cursor: pointer;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n\n.notepad-button:hover {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.notepad-filename {\n  color: var(--text-color);\n  font-size: 14px;\n  padding: 0 10px;\n}\n\n.notepad-editor {\n  flex: 1;\n  border: none;\n  resize: none;\n  padding: 15px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n  font-size: 16px;\n  line-height: 1.5;\n  font-family: 'Courier New', monospace;\n}\n\n.notepad-editor:focus {\n  outline: none;\n}\n\n.notepad-editor::placeholder {\n  color: #666;\n}\n\n/* TicTacToe App Styles */\n.tictactoe-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 20px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n  height: 100%;\n  width: 100%;\n}\n\n.tictactoe-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 20px;\n}\n\n.tictactoe-header h3 {\n  color: var(--primary-color);\n  font-size: 24px;\n  margin: 0;\n}\n\n.tictactoe-reset-button {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n  border: none;\n  padding: 8px 16px;\n  border-radius: 4px;\n  cursor: pointer;\n  font-size: 14px;\n  transition: background-color 0.2s;\n}\n\n.tictactoe-reset-button:hover {\n  background-color: #e48419;\n}\n\n.tictactoe-status {\n  font-size: 18px;\n  margin-bottom: 20px;\n  padding: 10px;\n  border-radius: 4px;\n  text-align: center;\n  width: 100%;\n  background-color: var(--bg-lighter);\n}\n\n.tictactoe-status.winner {\n  background-color: rgba(76, 175, 80, 0.2);\n  color: #4CAF50;\n}\n\n.tictactoe-status.draw {\n  background-color: rgba(255, 152, 0, 0.2);\n  color: #FF9800;\n}\n\n.tictactoe-board {\n  display: flex;\n  flex-direction: column;\n  gap: 5px;\n  background-color: var(--window-border);\n}\n\n.tictactoe-row {\n  display: flex;\n  gap: 5px;\n}\n\n.tictactoe-square {\n  width: 80px;\n  height: 80px;\n  background-color: var(--bg-lighter);\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 36px;\n  font-weight: bold;\n  cursor: pointer;\n  color: var(--text-color);\n}\n\n.tictactoe-square:hover {\n  background-color: #333;\n}\n\n/* Navbar User Display */\n.nav-user {\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n  color: var(--text-color);\n  padding: 6px 12px;\n  border-radius: 20px;\n  background-color: rgba(255, 255, 255, 0.05);\n}\n\n.nav-user-icon {\n  font-size: 20px;\n  margin-right: 8px;\n}\n\n.nav-user-name {\n  font-size: 14px;\n}\n\n.nav-clock {\n  font-size: 14px;\n  color: var(--text-color);\n  background-color: rgba(255, 255, 255, 0.05);\n  padding: 6px 12px;\n  border-radius: 20px;\n}\n\n/* Loading Screen Styles */\n.loading-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n}\n\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.loading-logo {\n  width: 100px;\n  height: 100px;\n  margin-bottom: 20px;\n}\n\n.loading-spinner {\n  width: 40px;\n  height: 40px;\n  border: 4px solid rgba(248, 148, 34, 0.2);\n  border-top: 4px solid var(--primary-color);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-bottom: 20px;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n.loading-text {\n  color: var(--primary-color);\n  font-size: 24px;\n  font-weight: bold;\n}\n\n/* Login Screen Styles */\n.login-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n  background-image: linear-gradient(to bottom right, rgba(20, 20, 20, 0.9), rgba(5, 5, 5, 0.95));\n}\n\n.login-container {\n  width: 400px;\n  padding: 30px;\n  border-radius: 8px;\n  background-color: var(--bg-light);\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);\n  text-align: center;\n  animation: fadeIn 0.5s ease-in-out;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(-20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.login-logo {\n  margin-bottom: 30px;\n}\n\n.login-logo img {\n  width: 80px;\n  height: 80px;\n  margin-bottom: 15px;\n}\n\n.login-logo h1 {\n  font-size: 32px;\n  font-weight: bold;\n  color: var(--primary-color);\n  margin: 0;\n}\n\n.login-form {\n  text-align: left;\n}\n\n.login-error {\n  background-color: rgba(255, 76, 76, 0.1);\n  color: #ff4c4c;\n  border: 1px solid #ff4c4c;\n  padding: 10px;\n  border-radius: 4px;\n  margin-bottom: 15px;\n  font-size: 14px;\n}\n\n.form-group {\n  margin-bottom: 20px;\n}\n\n.form-group label {\n  display: block;\n  color: var(--text-color);\n  margin-bottom: 8px;\n  font-weight: 500;\n}\n\n.form-group input {\n  width: 100%;\n  padding: 12px;\n  border-radius: 4px;\n  background-color: var(--bg-color);\n  border: 1px solid var(--window-border);\n  color: var(--text-color);\n  font-size: 16px;\n  transition: border 0.3s;\n}\n\n.form-group input:focus {\n  outline: none;\n  border-color: var(--primary-color);\n}\n\n.form-group small {\n  display: block;\n  color: #888;\n  margin-top: 6px;\n  font-size: 12px;\n}\n\n.login-button {\n  width: 100%;\n  padding: 12px;\n  background-color: var(--primary-color);\n  color: white;\n  border: none;\n  border-radius: 4px;\n  font-size: 16px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.login-button:hover {\n  background-color: #e48419;\n}\n\n.login-button:disabled {\n  background-color: #a16012;\n  cursor: not-allowed;\n}\n\n.login-version {\n  margin-top: 30px;\n  color: #777;\n  font-size: 12px;\n}\n\n.login-options {\n  margin-top: 20px;\n  text-align: center;\n}\n\n.login-link-button {\n  background: none;\n  border: none;\n  color: var(--primary-color);\n  font-size: 14px;\n  cursor: pointer;\n  text-decoration: underline;\n  padding: 5px 10px;\n}\n\n.login-link-button:hover {\n  color: #e48419;\n}\n\n.login-link-button:disabled {\n  color: #a16012;\n  cursor: not-allowed;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3331,271 +3320,6 @@ const loadNamespaces = instance.loadNamespaces;
 const loadLanguages = instance.loadLanguages;
 
 
-
-
-/***/ }),
-
-/***/ "./node_modules/lucide-react/dist/esm/Icon.js":
-/*!****************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/Icon.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Icon)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _defaultAttributes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defaultAttributes.js */ "./node_modules/lucide-react/dist/esm/defaultAttributes.js");
-/* harmony import */ var _shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/src/utils.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils.js");
-/**
- * @license lucide-react v0.501.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-const Icon = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
-  ({
-    color = "currentColor",
-    size = 24,
-    strokeWidth = 2,
-    absoluteStrokeWidth,
-    className = "",
-    children,
-    iconNode,
-    ...rest
-  }, ref) => {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(
-      "svg",
-      {
-        ref,
-        ..._defaultAttributes_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-        width: size,
-        height: size,
-        stroke: color,
-        strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
-        className: (0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.mergeClasses)("lucide", className),
-        ...!children && !(0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.hasA11yProp)(rest) && { "aria-hidden": "true" },
-        ...rest
-      },
-      [
-        ...iconNode.map(([tag, attrs]) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(tag, attrs)),
-        ...Array.isArray(children) ? children : [children]
-      ]
-    );
-  }
-);
-
-
-//# sourceMappingURL=Icon.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/lucide-react/dist/esm/createLucideIcon.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/createLucideIcon.js ***!
-  \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ createLucideIcon)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/src/utils.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils.js");
-/* harmony import */ var _Icon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Icon.js */ "./node_modules/lucide-react/dist/esm/Icon.js");
-/**
- * @license lucide-react v0.501.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-const createLucideIcon = (iconName, iconNode) => {
-  const Component = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
-    ({ className, ...props }, ref) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Icon_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      ref,
-      iconNode,
-      className: (0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.mergeClasses)(
-        `lucide-${(0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.toKebabCase)((0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.toPascalCase)(iconName))}`,
-        `lucide-${iconName}`,
-        className
-      ),
-      ...props
-    })
-  );
-  Component.displayName = (0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.toPascalCase)(iconName);
-  return Component;
-};
-
-
-//# sourceMappingURL=createLucideIcon.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/lucide-react/dist/esm/defaultAttributes.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/defaultAttributes.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ defaultAttributes)
-/* harmony export */ });
-/**
- * @license lucide-react v0.501.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-var defaultAttributes = {
-  xmlns: "http://www.w3.org/2000/svg",
-  width: 24,
-  height: 24,
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 2,
-  strokeLinecap: "round",
-  strokeLinejoin: "round"
-};
-
-
-//# sourceMappingURL=defaultAttributes.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/lucide-react/dist/esm/icons/clock.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/icons/clock.js ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
-/* harmony export */   "default": () => (/* binding */ Clock)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
-/**
- * @license lucide-react v0.501.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const __iconNode = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
-];
-const Clock = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("clock", __iconNode);
-
-
-//# sourceMappingURL=clock.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/lucide-react/dist/esm/icons/user.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/icons/user.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
-/* harmony export */   "default": () => (/* binding */ User)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
-/**
- * @license lucide-react v0.501.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const __iconNode = [
-  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
-  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
-];
-const User = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("user", __iconNode);
-
-
-//# sourceMappingURL=user.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/lucide-react/dist/esm/shared/src/utils.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/lucide-react/dist/esm/shared/src/utils.js ***!
-  \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   hasA11yProp: () => (/* binding */ hasA11yProp),
-/* harmony export */   mergeClasses: () => (/* binding */ mergeClasses),
-/* harmony export */   toCamelCase: () => (/* binding */ toCamelCase),
-/* harmony export */   toKebabCase: () => (/* binding */ toKebabCase),
-/* harmony export */   toPascalCase: () => (/* binding */ toPascalCase)
-/* harmony export */ });
-/**
- * @license lucide-react v0.501.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-const toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
-const toCamelCase = (string) => string.replace(
-  /^([A-Z])|[\s-_]+(\w)/g,
-  (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
-);
-const toPascalCase = (string) => {
-  const camelCase = toCamelCase(string);
-  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
-};
-const mergeClasses = (...classes) => classes.filter((className, index, array) => {
-  return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
-}).join(" ").trim();
-const hasA11yProp = (props) => {
-  for (const prop in props) {
-    if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
-      return true;
-    }
-  }
-};
-
-
-//# sourceMappingURL=utils.js.map
 
 
 /***/ }),
@@ -32138,15 +31862,151 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Desktop__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Desktop */ "./src/components/Desktop.jsx");
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
 /* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBar */ "./src/components/NavBar.jsx");
+/* harmony import */ var _Desktop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Desktop */ "./src/components/Desktop.jsx");
+/* harmony import */ var _Settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Settings */ "./src/components/Settings.jsx");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Login */ "./src/components/Login.jsx");
+/* harmony import */ var _services_userService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/userService */ "./src/services/userService.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
 
 
 
 var App = function App() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('desktop'),
+    _useState2 = _slicedToArray(_useState, 2),
+    currentView = _useState2[0],
+    setCurrentView = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    isLoggedIn = _useState4[0],
+    setIsLoggedIn = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState6 = _slicedToArray(_useState5, 2),
+    currentUser = _useState6[0],
+    setCurrentUser = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isLoading = _useState8[0],
+    setIsLoading = _useState8[1];
+
+  // Vérifier si l'utilisateur est déjà connecté au chargement
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    // Simuler un chargement initial
+    var timer = setTimeout(function () {
+      var user = _services_userService__WEBPACK_IMPORTED_MODULE_6__["default"].getLoggedInUser();
+      if (user) {
+        setCurrentUser(user);
+        setIsLoggedIn(true);
+      }
+      setIsLoading(false);
+    }, 1000);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, []);
+
+  // Gérer la connexion utilisateur
+  var handleLogin = function handleLogin(user) {
+    _services_userService__WEBPACK_IMPORTED_MODULE_6__["default"].saveLoggedInUser(user);
+    setCurrentUser(user);
+    setIsLoggedIn(true);
+  };
+
+  // Gérer la déconnexion utilisateur
+  var handleLogout = function handleLogout() {
+    _services_userService__WEBPACK_IMPORTED_MODULE_6__["default"].clearUserSession();
+    setCurrentUser(null);
+    setIsLoggedIn(false);
+    setCurrentView('desktop');
+  };
+
+  // Navigation items for the bottom navbar
+  var navItems = [{
+    id: 'desktop',
+    label: t('navbar.desktop'),
+    icon: '🏠'
+  }, {
+    id: 'files',
+    label: t('navbar.files'),
+    icon: '📁'
+  }, {
+    id: 'apps',
+    label: t('navbar.apps'),
+    icon: '📱'
+  }, {
+    id: 'settings',
+    label: t('navbar.settings'),
+    icon: '⚙️'
+  }];
+
+  // Render the current view based on navigation selection
+  var renderView = function renderView() {
+    switch (currentView) {
+      case 'desktop':
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Desktop__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      case 'files':
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          className: "main-content"
+        }, t('views.files.title'));
+      case 'apps':
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+          className: "main-content"
+        }, t('views.apps.title'));
+      case 'settings':
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Settings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          onLogout: handleLogout,
+          username: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.displayName) || (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
+        });
+      default:
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Desktop__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+    }
+  };
+
+  // Afficher un écran de chargement
+  if (isLoading) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "loading-screen"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "loading-container"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: "./assets/logo.svg",
+      alt: "BeaverOS Logo",
+      className: "loading-logo"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "loading-spinner"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "loading-text"
+    }, "BeaverOS")));
+  }
+
+  // Afficher l'écran de connexion si l'utilisateur n'est pas connecté
+  if (!isLoggedIn) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Login__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      onLogin: handleLogin
+    });
+  }
+
+  // Afficher l'interface principale si l'utilisateur est connecté
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "app"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Desktop__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+    className: "app-container"
+  }, renderView(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    items: navItems,
+    activeItem: currentView,
+    onSelect: setCurrentView,
+    username: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.displayName) || (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -32504,20 +32364,51 @@ var Desktop = function Desktop() {
 
   // Desktop icons configuration
   var desktopIcons = [{
+    id: 'terminal',
+    name: t('desktop.terminal'),
+    icon: '🖥️'
+  }, {
+    id: 'settings',
+    name: t('desktop.settings'),
+    icon: '⚙️'
+  }, {
+    id: 'browser',
+    name: t('desktop.browser'),
+    icon: '🌐'
+  }, {
+    id: 'files',
+    name: t('desktop.files'),
+    icon: '📁'
+  }, {
+    id: 'music',
+    name: t('desktop.music'),
+    icon: '🎵'
+  }, {
+    id: 'calendar',
+    name: t('desktop.calendar'),
+    icon: '📅'
+  }, {
+    id: 'mail',
+    name: t('desktop.mail'),
+    icon: '✉️'
+  }, {
     id: 'calculator',
     name: t('desktop.calculator'),
+    icon: '🧮',
     app: _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     id: 'notepad',
     name: t('desktop.notepad'),
+    icon: '📝',
     app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     id: 'tictactoe',
     name: t('desktop.tictactoe'),
+    icon: '🎮',
     app: _apps_TicTacToe__WEBPACK_IMPORTED_MODULE_5__["default"]
   }];
 
-  // Open an application window
+  // Ouvrir une fenêtre d'application
   var openApplication = function openApplication(app) {
     var appExists = desktopIcons.find(function (icon) {
       return icon.id === app;
@@ -32526,23 +32417,28 @@ var Desktop = function Desktop() {
       console.error("Application ".concat(app, " not found"));
       return;
     }
+
+    // Générer un ID unique pour cette instance de fenêtre
     var windowId = "".concat(app, "-").concat(Date.now());
+
+    // Ajouter la fenêtre à l'état
     setOpenWindows([].concat(_toConsumableArray(openWindows), [{
       id: windowId,
       appId: app,
       title: appExists.name,
+      icon: appExists.icon,
       component: appExists.app
     }]));
   };
 
-  // Close an application window
+  // Fermer une fenêtre d'application
   var closeWindow = function closeWindow(windowId) {
     setOpenWindows(openWindows.filter(function (window) {
       return window.id !== windowId;
     }));
   };
 
-  // Handle desktop icon click
+  // Gestion du clic sur une icône du bureau
   var handleIconClick = function handleIconClick(iconId) {
     console.log("Opening ".concat(iconId));
     openApplication(iconId);
@@ -32557,6 +32453,8 @@ var Desktop = function Desktop() {
         return handleIconClick(icon.id);
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "desktop-icon-img"
+    }, icon.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "desktop-icon-text"
     }, icon.name));
   }), openWindows.map(function (window) {
@@ -32564,6 +32462,7 @@ var Desktop = function Desktop() {
     return AppComponent ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: window.id,
       title: window.title,
+      icon: window.icon,
       onClose: function onClose() {
         return closeWindow(window.id);
       },
@@ -32582,6 +32481,284 @@ var Desktop = function Desktop() {
 
 /***/ }),
 
+/***/ "./src/components/Login.jsx":
+/*!**********************************!*\
+  !*** ./src/components/Login.jsx ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var _services_userService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/userService */ "./src/services/userService.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+var Login = function Login(_ref) {
+  var onLogin = _ref.onLogin;
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    username = _useState2[0],
+    setUsername = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    password = _useState4[0],
+    setPassword = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    displayName = _useState6[0],
+    setDisplayName = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState8 = _slicedToArray(_useState7, 2),
+    confirmPassword = _useState8[0],
+    setConfirmPassword = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState10 = _slicedToArray(_useState9, 2),
+    error = _useState10[0],
+    setError = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState12 = _slicedToArray(_useState11, 2),
+    isLoading = _useState12[0],
+    setIsLoading = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState14 = _slicedToArray(_useState13, 2),
+    isRegistering = _useState14[0],
+    setIsRegistering = _useState14[1];
+
+  // Gérer le processus de connexion
+  var handleLogin = function handleLogin(e) {
+    e.preventDefault();
+    if (!username) {
+      setError(t('login.errors.noUsername'));
+      return;
+    }
+    if (!password) {
+      setError(t('login.errors.noPassword'));
+      return;
+    }
+    setIsLoading(true);
+    setError('');
+
+    // Authentifier l'utilisateur via le service
+    setTimeout(function () {
+      var result = _services_userService__WEBPACK_IMPORTED_MODULE_2__["default"].authenticateUser(username, password);
+      setIsLoading(false);
+      if (result.success) {
+        onLogin(result.user);
+      } else {
+        // Afficher le message d'erreur approprié
+        switch (result.message) {
+          case 'user_not_found':
+            setError(t('login.errors.userNotFound'));
+            break;
+          case 'invalid_password':
+            setError(t('login.errors.wrongPassword'));
+            break;
+          default:
+            setError(t('login.errors.invalidCredentials'));
+        }
+      }
+    }, 1000);
+  };
+
+  // Gérer le processus d'inscription
+  var handleRegister = function handleRegister(e) {
+    e.preventDefault();
+    if (!username) {
+      setError(t('login.errors.noUsername'));
+      return;
+    }
+    if (!password) {
+      setError(t('login.errors.noPassword'));
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError(t('login.errors.passwordMismatch'));
+      return;
+    }
+    setIsLoading(true);
+    setError('');
+
+    // Créer un nouvel utilisateur via le service
+    setTimeout(function () {
+      var result = _services_userService__WEBPACK_IMPORTED_MODULE_2__["default"].createUser({
+        username: username,
+        password: password,
+        displayName: displayName || username
+      });
+      setIsLoading(false);
+      if (result.success) {
+        onLogin(result.user);
+      } else {
+        // Afficher le message d'erreur approprié
+        switch (result.message) {
+          case 'username_exists':
+            setError(t('login.errors.usernameExists'));
+            break;
+          default:
+            setError(t('login.errors.invalidCredentials'));
+        }
+      }
+    }, 1000);
+  };
+
+  // Basculer entre la connexion et l'inscription
+  var toggleRegisterMode = function toggleRegisterMode() {
+    setIsRegistering(!isRegistering);
+    setError('');
+    setUsername('');
+    setPassword('');
+    setDisplayName('');
+    setConfirmPassword('');
+  };
+
+  // Formulaire de connexion
+  var loginForm = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    className: "login-form",
+    onSubmit: handleLogin
+  }, error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-error"
+  }, error), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "username"
+  }, t('login.username')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    id: "username",
+    value: username,
+    onChange: function onChange(e) {
+      return setUsername(e.target.value);
+    },
+    placeholder: t('login.usernamePlaceholder'),
+    disabled: isLoading,
+    autoFocus: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "password"
+  }, t('login.password')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "password",
+    id: "password",
+    value: password,
+    onChange: function onChange(e) {
+      return setPassword(e.target.value);
+    },
+    placeholder: t('login.passwordPlaceholder'),
+    disabled: isLoading
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("small", null, t('login.passwordHint'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "submit",
+    className: "login-button",
+    disabled: isLoading
+  }, isLoading ? t('login.loggingIn') : t('login.login')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-options"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "button",
+    className: "login-link-button",
+    onClick: toggleRegisterMode,
+    disabled: isLoading
+  }, t('login.createAccount'))));
+
+  // Formulaire d'inscription
+  var registerForm = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    className: "login-form",
+    onSubmit: handleRegister
+  }, error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-error"
+  }, error), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "username"
+  }, t('login.username')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    id: "username",
+    value: username,
+    onChange: function onChange(e) {
+      return setUsername(e.target.value);
+    },
+    placeholder: t('login.usernamePlaceholder'),
+    disabled: isLoading,
+    autoFocus: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "displayName"
+  }, t('login.displayName')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    id: "displayName",
+    value: displayName,
+    onChange: function onChange(e) {
+      return setDisplayName(e.target.value);
+    },
+    placeholder: t('login.displayNamePlaceholder'),
+    disabled: isLoading
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "password"
+  }, t('login.password')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "password",
+    id: "password",
+    value: password,
+    onChange: function onChange(e) {
+      return setPassword(e.target.value);
+    },
+    placeholder: t('login.passwordPlaceholder'),
+    disabled: isLoading
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    htmlFor: "confirmPassword"
+  }, t('login.confirmPassword')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "password",
+    id: "confirmPassword",
+    value: confirmPassword,
+    onChange: function onChange(e) {
+      return setConfirmPassword(e.target.value);
+    },
+    placeholder: t('login.confirmPasswordPlaceholder'),
+    disabled: isLoading
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "submit",
+    className: "login-button",
+    disabled: isLoading
+  }, isLoading ? t('login.registering') : t('login.register')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-options"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    type: "button",
+    className: "login-link-button",
+    onClick: toggleRegisterMode,
+    disabled: isLoading
+  }, t('login.backToLogin'))));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-screen"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-logo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+    src: "./assets/logo.svg",
+    alt: "BeaverOS Logo"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "BeaverOS")), isRegistering ? registerForm : loginForm, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "login-version"
+  }, "BeaverOS v1.0.0")));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
+
+/***/ }),
+
 /***/ "./src/components/NavBar.jsx":
 /*!***********************************!*\
   !*** ./src/components/NavBar.jsx ***!
@@ -32595,15 +32772,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/user.js");
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/clock.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
-
 
 var NavBar = function NavBar(_ref) {
   var items = _ref.items,
@@ -32650,20 +32824,164 @@ var NavBar = function NavBar(_ref) {
     className: "navbar-right"
   }, username && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav-user"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    size: 20,
-    color: "#f89422",
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "nav-user-icon"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+  }, "\uD83D\uDC64"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "nav-user-name"
   }, username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav-clock"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    size: 16,
-    className: "nav-clock-icon"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, currentTime))));
+  }, currentTime)));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavBar);
+
+/***/ }),
+
+/***/ "./src/components/Settings.jsx":
+/*!*************************************!*\
+  !*** ./src/components/Settings.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var Settings = function Settings(_ref) {
+  var onLogout = _ref.onLogout,
+    username = _ref.username;
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t,
+    i18n = _useTranslation.i18n;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState2 = _slicedToArray(_useState, 2),
+    darkTheme = _useState2[0],
+    setDarkTheme = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    notifications = _useState4[0],
+    setNotifications = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    autoStart = _useState6[0],
+    setAutoStart = _useState6[1];
+
+  // Toggle theme function (in a real app, this would change the theme)
+  var handleThemeToggle = function handleThemeToggle() {
+    setDarkTheme(!darkTheme);
+    // Implement theme change logic here
+  };
+
+  // Change language function
+  var changeLanguage = function changeLanguage(lng) {
+    i18n.changeLanguage(lng);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "settings-title"
+  }, t('settings.user')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-user-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-user-avatar"
+  }, "\uD83D\uDC64"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-user-details"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-username"
+  }, username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-user-role"
+  }, "Administrateur"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "settings-logout-button",
+    onClick: onLogout
+  }, t('settings.logout')))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "settings-title"
+  }, t('settings.appearance')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "settings-label"
+  }, t('settings.darkTheme')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "toggle-switch"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "checkbox",
+    checked: darkTheme,
+    onChange: handleThemeToggle
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "toggle-slider"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "settings-label"
+  }, t('settings.language')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
+    value: i18n.language,
+    onChange: function onChange(e) {
+      return changeLanguage(e.target.value);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "fr"
+  }, "Fran\xE7ais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
+    value: "en"
+  }, "English")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "settings-title"
+  }, t('settings.notifications')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "settings-label"
+  }, t('settings.enableNotifications')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "toggle-switch"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "checkbox",
+    checked: notifications,
+    onChange: function onChange() {
+      return setNotifications(!notifications);
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "toggle-slider"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "settings-title"
+  }, t('settings.system')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "settings-label"
+  }, t('settings.autoStart')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "toggle-switch"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "checkbox",
+    checked: autoStart,
+    onChange: function onChange() {
+      return setAutoStart(!autoStart);
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "toggle-slider"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "settings-option"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "settings-label"
+  }, t('settings.about')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", null, t('settings.viewInfo'))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Settings);
 
 /***/ }),
 
@@ -33295,6 +33613,168 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(react_i18next__WEBPACK_IMPOR
 
 "use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"login":{"username":"Nom d\'utilisateur","usernamePlaceholder":"Entrez votre nom d\'utilisateur","password":"Mot de passe","passwordPlaceholder":"Entrez votre mot de passe","passwordHint":"Par défaut: admin/admin","login":"Se connecter","loggingIn":"Connexion en cours...","createAccount":"Créer un compte","createNewAccount":"Créer un nouveau compte","register":"S\'inscrire","registering":"Inscription en cours...","displayName":"Nom affiché","displayNamePlaceholder":"Votre nom affiché","confirmPassword":"Confirmez le mot de passe","confirmPasswordPlaceholder":"Confirmez votre mot de passe","backToLogin":"Retour à la connexion","errors":{"noUsername":"Veuillez entrer un nom d\'utilisateur","noPassword":"Veuillez entrer un mot de passe","invalidCredentials":"Identifiants invalides","userNotFound":"Utilisateur non trouvé","wrongPassword":"Mot de passe incorrect","usernameExists":"Ce nom d\'utilisateur existe déjà","passwordMismatch":"Les mots de passe ne correspondent pas"}},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice","notepad":"Bloc-notes","tictactoe":"Morpion"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"user":"Utilisateur","logout":"Se déconnecter","appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"},"apps":{"calculator":{"title":"Calculatrice"},"notepad":{"title":"Bloc-notes","untitled":"Sans titre","new":"Nouveau","save":"Enregistrer","rename":"Renommer","confirmNew":"Le document actuel n\'est pas enregistré. Voulez-vous continuer?","promptRename":"Entrez un nouveau nom pour le document:","placeholder":"Commencez à écrire ici..."},"tictactoe":{"title":"Morpion","newGame":"Nouvelle partie","nextPlayer":"Tour du joueur: {{player}}","winner":"Le joueur {{player}} a gagné!","draw":"Match nul!"}}}');
+
+/***/ }),
+
+/***/ "./src/services/userService.js":
+/*!*************************************!*\
+  !*** ./src/services/userService.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+// Service de gestion des utilisateurs pour BeaverOS
+// Utilise le localStorage pour persister les données entre les sessions
+
+// Utilisateur par défaut (admin/admin)
+var DEFAULT_USERS = [{
+  id: 1,
+  username: 'admin',
+  password: 'admin',
+  displayName: 'Administrateur',
+  role: 'admin',
+  created: new Date().toISOString(),
+  lastLogin: null
+}];
+
+// Initialiser le stockage des utilisateurs
+var initializeUserStorage = function initializeUserStorage() {
+  if (!localStorage.getItem('beaveros-users')) {
+    localStorage.setItem('beaveros-users', JSON.stringify(DEFAULT_USERS));
+  }
+};
+
+// Obtenir tous les utilisateurs
+var getAllUsers = function getAllUsers() {
+  initializeUserStorage();
+  return JSON.parse(localStorage.getItem('beaveros-users') || '[]');
+};
+
+// Trouver un utilisateur par nom d'utilisateur
+var findUserByUsername = function findUserByUsername(username) {
+  var users = getAllUsers();
+  return users.find(function (user) {
+    return user.username.toLowerCase() === username.toLowerCase();
+  });
+};
+
+// Authentifier un utilisateur
+var authenticateUser = function authenticateUser(username, password) {
+  var user = findUserByUsername(username);
+  if (!user) {
+    return {
+      success: false,
+      message: 'user_not_found'
+    };
+  }
+  if (user.password !== password) {
+    return {
+      success: false,
+      message: 'invalid_password'
+    };
+  }
+
+  // Mettre à jour la dernière connexion
+  updateLastLogin(user.id);
+  return {
+    success: true,
+    user: {
+      id: user.id,
+      username: user.username,
+      displayName: user.displayName,
+      role: user.role
+    }
+  };
+};
+
+// Mettre à jour la dernière connexion
+var updateLastLogin = function updateLastLogin(userId) {
+  var users = getAllUsers();
+  var userIndex = users.findIndex(function (user) {
+    return user.id === userId;
+  });
+  if (userIndex !== -1) {
+    users[userIndex].lastLogin = new Date().toISOString();
+    localStorage.setItem('beaveros-users', JSON.stringify(users));
+  }
+};
+
+// Créer un nouvel utilisateur
+var createUser = function createUser(userData) {
+  var users = getAllUsers();
+
+  // Vérifier si l'utilisateur existe déjà
+  if (findUserByUsername(userData.username)) {
+    return {
+      success: false,
+      message: 'username_exists'
+    };
+  }
+
+  // Créer le nouvel utilisateur
+  var newUser = {
+    id: users.length > 0 ? Math.max.apply(Math, _toConsumableArray(users.map(function (u) {
+      return u.id;
+    }))) + 1 : 1,
+    username: userData.username,
+    password: userData.password,
+    displayName: userData.displayName || userData.username,
+    role: userData.role || 'user',
+    created: new Date().toISOString(),
+    lastLogin: null
+  };
+  users.push(newUser);
+  localStorage.setItem('beaveros-users', JSON.stringify(users));
+  return {
+    success: true,
+    user: {
+      id: newUser.id,
+      username: newUser.username,
+      displayName: newUser.displayName,
+      role: newUser.role
+    }
+  };
+};
+
+// Récupérer les infos de session pour l'utilisateur connecté
+var getLoggedInUser = function getLoggedInUser() {
+  var userSession = localStorage.getItem('beaveros-session');
+  if (!userSession) return null;
+  try {
+    return JSON.parse(userSession);
+  } catch (e) {
+    return null;
+  }
+};
+
+// Sauvegarde les info de l'utilisateur connecté
+var saveLoggedInUser = function saveLoggedInUser(userData) {
+  localStorage.setItem('beaveros-session', JSON.stringify(userData));
+};
+
+// Effacer les données de session
+var clearUserSession = function clearUserSession() {
+  localStorage.removeItem('beaveros-session');
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  authenticateUser: authenticateUser,
+  findUserByUsername: findUserByUsername,
+  createUser: createUser,
+  getAllUsers: getAllUsers,
+  getLoggedInUser: getLoggedInUser,
+  saveLoggedInUser: saveLoggedInUser,
+  clearUserSession: clearUserSession
+});
 
 /***/ }),
 

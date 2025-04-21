@@ -5,7 +5,7 @@ channel = "stable-24_05"
 packages = ["glib", "gtk3", "nss", "alsa-lib", "atk", "at-spi2-atk", "xorg.libXtst", "xorg.libXScrnSaver", "liberation_ttf", "cairo", "pango", "gdk-pixbuf", "imagemagick", "libxkbcommon"]
 
 [workflows]
-runButton = "BeaverOS-Dev"
+runButton = "Project"
 
 [[workflows.workflow]]
 name = "Project"
@@ -66,15 +66,6 @@ task = "packager.installForAll"
 task = "shell.exec"
 args = "npx webpack && cp -r src/assets dist/ && node dev-server.js"
 waitForPort = 5000
-
-[[workflows.workflow]]
-name = "BeaverOS-Dev"
-author = 41747276
-mode = "sequential"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npx webpack && cp -r src/assets dist/ && node dev-server.js"
 
 [deployment]
 run = ["sh", "-c", "npm install && npm install nw react react-dom i18next react-i18next babel-loader @babel/core @babel/preset-env @babel/preset-react style-loader css-loader webpack webpack-cli electron-installer-debian && npx webpack && nw ."]

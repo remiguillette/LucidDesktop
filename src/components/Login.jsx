@@ -240,7 +240,7 @@ const Login = ({ onLogin }) => {
     <div className="login-screen">
       <div className="login-container">
         <div className="login-logo">
-          <img src="./assets/beaver.png" alt="BeaverOS Logo" className="beaver-logo" />
+          <img src="./assets/logo.svg" alt="BeaverOS Logo" />
           <h1>BeaverOS</h1>
         </div>
         
