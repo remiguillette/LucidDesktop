@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 
 const Calendar = () => {
-  const [currentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [showYearSelect, setShowYearSelect] = useState(false);
 
   const daysInMonth = new Date(
     currentDate.getFullYear(),
@@ -16,11 +17,44 @@ const Calendar = () => {
     1
   ).getDay();
 
+  const changeMonth = (offset) => {
+    const newDate = new Date(currentDate);
+    newDate.setMonth(currentDate.getMonth() + offset);
+    setCurrentDate(newDate);
+  };
+
+  const changeYear = (year) => {
+    const newDate = new Date(currentDate);
+    newDate.setFullYear(year);
+    setCurrentDate(newDate);
+    setShowYearSelect(false);
+  };
+
+  const renderYearSelect = () => {
+    const currentYear = currentDate.getFullYear();
+    const years = [];
+    for (let i = currentYear - 5; i <= currentYear + 5; i++) {
+      years.push(
+        <div
+          key={i}
+          className={`year-option ${i === currentYear ? 'selected' : ''}`}
+          onClick={() => changeYear(i)}
+        >
+          {i}
+        </div>
+      );
+    }
+    return (
+      <div className="year-select">
+        {years}
+      </div>
+    );
+  };
+
   const renderCalendar = () => {
     const days = [];
     const weekDays = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
 
-    // Afficher les jours de la semaine
     weekDays.forEach(day => {
       days.push(
         <div key={`header-${day}`} className="calendar-header-cell">
@@ -29,14 +63,15 @@ const Calendar = () => {
       );
     });
 
-    // Ajouter les cases vides pour le début du mois
     for (let i = 0; i < firstDayOfMonth; i++) {
       days.push(<div key={`empty-${i}`} className="calendar-cell empty"></div>);
     }
 
-    // Ajouter les jours du mois
     for (let day = 1; day <= daysInMonth; day++) {
-      const isToday = day === currentDate.getDate();
+      const isToday = 
+        day === new Date().getDate() && 
+        currentDate.getMonth() === new Date().getMonth() &&
+        currentDate.getFullYear() === new Date().getFullYear();
       days.push(
         <div
           key={`day-${day}`}
@@ -52,12 +87,17 @@ const Calendar = () => {
 
   return (
     <div className="calendar-container">
-      <div className="calendar-header">
-        {currentDate.toLocaleDateString('fr-CA', {
-          month: 'long',
-          year: 'numeric'
-        })}
+      <div className="calendar-nav">
+        <button onClick={() => changeMonth(-1)}>&lt;</button>
+        <div className="calendar-title" onClick={() => setShowYearSelect(!showYearSelect)}>
+          {currentDate.toLocaleDateString('fr-CA', {
+            month: 'long',
+            year: 'numeric'
+          })}
+        </div>
+        <button onClick={() => changeMonth(1)}>&gt;</button>
       </div>
+      {showYearSelect && renderYearSelect()}
       <div className="calendar-grid">{renderCalendar()}</div>
     </div>
   );

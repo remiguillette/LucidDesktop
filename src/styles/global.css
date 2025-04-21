@@ -905,6 +905,54 @@ input:checked + .toggle-slider:before {
   border-radius: 8px;
 }
 
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-nav button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.calendar-title {
+  cursor: pointer;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.year-select {
+  position: absolute;
+  background: var(--bg-light);
+  border: 1px solid var(--window-border);
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.year-option {
+  padding: 8px 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.year-option:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.year-option.selected {
+  background: var(--primary-color);
+  color: white;
+}
+
 .calendar-header {
   text-align: center;
   margin-bottom: 20px;
