@@ -37,6 +37,7 @@
     "settings": "Paramètres"
   },
   "desktop": {
+    "trash": "Corbeille",
     "terminal": "Terminal",
     "settings": "Paramètres",
     "browser": "Navigateur",
@@ -76,6 +77,12 @@
     "user": "Utilisateur",
     "logout": "Se déconnecter",
     "appearance": "Apparence",
+
+    "trash": {
+      "title": "Corbeille",
+      "empty": "La corbeille est vide"
+    },
+
     "darkTheme": "Thème sombre",
     "language": "Langue",
     "notifications": "Notifications",
