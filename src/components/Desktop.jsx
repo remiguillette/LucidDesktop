@@ -26,15 +26,15 @@ const Desktop = () => {
   // Ouvrir une fenêtre d'application
   const openApplication = (app) => {
     const appExists = desktopIcons.find(icon => icon.id === app);
-    
+
     if (!appExists) {
       console.error(`Application ${app} not found`);
       return;
     }
-    
+
     // Générer un ID unique pour cette instance de fenêtre
     const windowId = `${app}-${Date.now()}`;
-    
+
     // Ajouter la fenêtre à l'état
     setOpenWindows([
       ...openWindows,
@@ -63,8 +63,8 @@ const Desktop = () => {
     <div className="desktop">
       {/* Icônes du bureau */}
       {desktopIcons.map((icon) => (
-        <div 
-          key={icon.id} 
+        <div
+          key={icon.id}
           className="desktop-icon"
           onClick={() => handleIconClick(icon.id)}
         >
@@ -72,24 +72,11 @@ const Desktop = () => {
           <div className="desktop-icon-text">{icon.name}</div>
         </div>
       ))}
-      
+
       {/* Fenêtres d'applications ouvertes */}
-      {openWindows.map((window) => {
-        const AppComponent = window.component;
-        
-        return AppComponent ? (
-          <ApplicationWindow
-            key={window.id}
-            title={window.title}
-            icon={window.icon}
-            onClose={() => closeWindow(window.id)}
-            initialPosition={{ x: 100 + (openWindows.indexOf(window) * 30), y: 50 + (openWindows.indexOf(window) * 30) }}
-            initialSize={{ width: 600, height: 400 }}
-          >
-            <AppComponent />
-          </ApplicationWindow>
-        ) : null;
-      })}
+      {openWindows.map((window, index) => (
+        <ApplicationWindow key={index} {...window} />
+      ))}
     </div>
   );
 };

@@ -1,106 +1,88 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 const Calculator = () => {
-  const { t } = useTranslation();
   const [display, setDisplay] = useState('0');
-  const [firstOperand, setFirstOperand] = useState(null);
-  const [operator, setOperator] = useState(null);
-  const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
+  const [lastNumber, setLastNumber] = useState(null);
+  const [operation, setOperation] = useState(null);
+  const [newNumber, setNewNumber] = useState(true);
 
-  // Fonction pour gérer les clics sur les touches numériques
   const inputDigit = (digit) => {
-    if (waitingForSecondOperand) {
+    if (newNumber) {
       setDisplay(digit);
-      setWaitingForSecondOperand(false);
+      setNewNumber(false);
     } else {
       setDisplay(display === '0' ? digit : display + digit);
     }
   };
 
-  // Fonction pour gérer la décimale
   const inputDecimal = () => {
-    if (waitingForSecondOperand) {
+    if (newNumber) {
       setDisplay('0.');
-      setWaitingForSecondOperand(false);
+      setNewNumber(false);
       return;
     }
-
     if (!display.includes('.')) {
       setDisplay(display + '.');
     }
   };
 
-  // Fonction pour gérer les opérateurs
   const handleOperator = (nextOperator) => {
     const inputValue = parseFloat(display);
-
-    if (firstOperand === null) {
-      setFirstOperand(inputValue);
-    } else if (operator) {
+    if (lastNumber === null) {
+      setLastNumber(inputValue);
+    } else if (operation) {
       const result = performCalculation();
       setDisplay(String(result));
-      setFirstOperand(result);
+      setLastNumber(result);
     }
-
-    setWaitingForSecondOperand(true);
-    setOperator(nextOperator);
+    setOperation(nextOperator);
+    setNewNumber(true);
   };
 
-  // Fonction pour effectuer le calcul
   const performCalculation = () => {
     const inputValue = parseFloat(display);
-    
-    if (operator === '+') {
-      return firstOperand + inputValue;
-    } else if (operator === '-') {
-      return firstOperand - inputValue;
-    } else if (operator === '*') {
-      return firstOperand * inputValue;
-    } else if (operator === '/') {
-      return firstOperand / inputValue;
+    if (operation === '+') {
+      return lastNumber + inputValue;
+    } else if (operation === '-') {
+      return lastNumber - inputValue;
+    } else if (operation === '*') {
+      return lastNumber * inputValue;
+    } else if (operation === '/') {
+      return lastNumber / inputValue;
     }
-    
     return inputValue;
   };
 
-  // Fonction pour calculer le résultat final (=)
   const calculateResult = () => {
-    if (!operator || firstOperand === null) {
+    if (!operation || lastNumber === null) {
       return;
     }
-
     const inputValue = parseFloat(display);
     const result = performCalculation();
-    
     setDisplay(String(result));
-    setFirstOperand(result);
-    setOperator(null);
-    setWaitingForSecondOperand(false);
+    setLastNumber(result);
+    setOperation(null);
+    setNewNumber(true);
   };
 
-  // Fonction pour réinitialiser la calculatrice
   const resetCalculator = () => {
     setDisplay('0');
-    setFirstOperand(null);
-    setOperator(null);
-    setWaitingForSecondOperand(false);
+    setLastNumber(null);
+    setOperation(null);
+    setNewNumber(true);
   };
 
-  // Fonction pour changer le signe
   const toggleSign = () => {
     const newValue = parseFloat(display) * -1;
     setDisplay(String(newValue));
   };
 
-  // Fonction pour calculer le pourcentage
   const calculatePercentage = () => {
     const currentValue = parseFloat(display);
     const percentValue = currentValue / 100;
     setDisplay(String(percentValue));
   };
 
-  // Disposition des boutons de la calculatrice
   const calculatorButtons = [
     { text: 'C', action: resetCalculator, className: 'calculator-button special' },
     { text: '+/-', action: toggleSign, className: 'calculator-button special' },
@@ -128,8 +110,8 @@ const Calculator = () => {
       <div className="calculator-display">{display}</div>
       <div className="calculator-keypad">
         {calculatorButtons.map((button, index) => (
-          <button 
-            key={index} 
+          <button
+            key={index}
             className={button.className}
             onClick={button.action}
           >
