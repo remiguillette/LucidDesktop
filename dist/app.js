@@ -32079,6 +32079,10 @@ var ApplicationWindow = function ApplicationWindow(_ref) {
     _useState14 = _slicedToArray(_useState13, 2),
     isMaximized = _useState14[0],
     setIsMaximized = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState16 = _slicedToArray(_useState15, 2),
+    isMinimized = _useState16[0],
+    setIsMinimized = _useState16[1];
   var windowRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var prevSizeRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var prevPositionRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
@@ -32218,12 +32222,13 @@ var ApplicationWindow = function ApplicationWindow(_ref) {
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     ref: windowRef,
-    className: "app-window ".concat(isMaximized ? 'maximized' : ''),
+    className: "app-window ".concat(isMaximized ? 'maximized' : '', " ").concat(isMinimized ? 'minimized' : ''),
     style: {
       width: "".concat(size.width, "px"),
       height: "".concat(size.height, "px"),
       left: "".concat(position.x, "px"),
-      top: "".concat(position.y, "px")
+      top: "".concat(position.y, "px"),
+      display: isMinimized ? 'none' : 'flex'
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "window-titlebar",
@@ -32239,7 +32244,10 @@ var ApplicationWindow = function ApplicationWindow(_ref) {
     className: "window-controls"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "window-control minimize",
-    title: "Minimiser"
+    title: "Minimiser",
+    onClick: function onClick() {
+      return setIsMinimized(true);
+    }
   }, "_"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "window-control maximize",
     title: isMaximized ? "Restaurer" : "Maximiser",
