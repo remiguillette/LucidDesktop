@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import ApplicationWindow from './ApplicationWindow';
 import Calculator from './apps/Calculator';
@@ -7,7 +7,7 @@ import Browser from './apps/Browser';
 import Mail from './apps/Mail';
 import FileExplorer from './apps/FileExplorer';
 import Calendar from './apps/Calendar';
-import SystemSettings from './apps/SystemSettings';
+import SystemSettings from './apps/SystemSettings.jsx';
 import Trash from './apps/Trash';
 
 

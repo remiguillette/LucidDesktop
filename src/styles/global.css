@@ -150,7 +150,7 @@ a {
 
 /* Context Menu Styles */
 .context-menu {
-  background: var(--bg-dark);
+  background: var(--bg-light);
   border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 4px 0;
