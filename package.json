@@ -23,7 +23,9 @@
     "react-dom": "^19.1.0",
     "react-i18next": "^15.4.1",
     "style-loader": "^4.0.0",
-    "webpack": "^5.99.6",
+    "webpack": "^5.99.6"
+  },
+  "devDependencies": {
     "webpack-cli": "^6.0.1"
   }
 }
