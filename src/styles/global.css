@@ -197,6 +197,56 @@ a {
 }
 
 .file-item:hover {
+
+/* System Settings Styles */
+.system-settings {
+  display: flex;
+  height: 100%;
+  background: var(--bg-light);
+}
+
+.settings-sidebar {
+  width: 250px;
+  background: var(--bg-dark);
+  padding: 20px 0;
+  border-right: 1px solid var(--border-color);
+}
+
+.settings-sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.settings-sidebar-item:hover {
+  background-color: var(--hover-color);
+}
+
+.settings-sidebar-item.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.settings-sidebar-icon {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.settings-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.settings-panel {
+  background: var(--bg-light);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
   background: #333;
 }
 

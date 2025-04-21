@@ -63,6 +63,16 @@
     }
   },
   "settings": {
+    "sections": {
+      "account": "Compte",
+      "appearance": "Fond d'écran et style",
+      "network": "Réseau et Bluetooth",
+      "users": "Utilisateurs",
+      "apps": "Applications et notifications"
+    },
+    "account": {
+      "title": "Paramètres du compte"
+    },
     "user": "Utilisateur",
     "logout": "Se déconnecter",
     "appearance": "Apparence",

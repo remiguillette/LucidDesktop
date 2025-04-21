@@ -7,6 +7,7 @@ import Browser from './apps/Browser';
 import Mail from './apps/Mail';
 import FileExplorer from './apps/FileExplorer';
 import Calendar from './apps/Calendar';
+import SystemSettings from './apps/SystemSettings';
 
 
 const Desktop = () => {
