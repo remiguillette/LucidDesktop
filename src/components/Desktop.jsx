@@ -21,6 +21,7 @@ const Desktop = () => {
   const { t } = useTranslation();
   const [openWindows, setOpenWindows] = useState([]);
 
+  // Desktop icons configuration
   const desktopIcons = [
     { id: 'terminal', name: t('desktop.terminal'), icon: <Terminal size={24} color="#f89422" /> },
     { id: 'settings', name: t('desktop.settings'), icon: <Settings size={24} color="#f89422" /> },
@@ -34,24 +35,45 @@ const Desktop = () => {
     { id: 'tictactoe', name: t('desktop.tictactoe'), icon: <Gamepad2 size={24} color="#f89422" />, app: TicTacToe }
   ];
 
-  const handleIconClick = (iconId) => {
-    const icon = desktopIcons.find(i => i.id === iconId);
-    if (icon && icon.app) {
-      setOpenWindows(prev => [...prev, {
-        id: `${iconId}-${Date.now()}`,
-        title: icon.name,
-        icon: icon.icon,
-        component: icon.app
-      }]);
+  // Ouvrir une fenêtre d'application
+  const openApplication = (app) => {
+    const appExists = desktopIcons.find(icon => icon.id === app);
+    
+    if (!appExists) {
+      console.error(`Application ${app} not found`);
+      return;
     }
+    
+    // Générer un ID unique pour cette instance de fenêtre
+    const windowId = `${app}-${Date.now()}`;
+    
+    // Ajouter la fenêtre à l'état
+    setOpenWindows([
+      ...openWindows,
+      {
+        id: windowId,
+        appId: app,
+        title: appExists.name,
+        icon: appExists.icon,
+        component: appExists.app
+      }
+    ]);
   };
 
+  // Fermer une fenêtre d'application
   const closeWindow = (windowId) => {
-    setOpenWindows(prev => prev.filter(window => window.id !== windowId));
+    setOpenWindows(openWindows.filter(window => window.id !== windowId));
+  };
+
+  // Gestion du clic sur une icône du bureau
+  const handleIconClick = (iconId) => {
+    console.log(`Opening ${iconId}`);
+    openApplication(iconId);
   };
 
   return (
     <div className="desktop">
+      {/* Icônes du bureau */}
       {desktopIcons.map((icon) => (
         <div 
           key={icon.id} 
@@ -62,9 +84,11 @@ const Desktop = () => {
           <div className="desktop-icon-text">{icon.name}</div>
         </div>
       ))}
-
+      
+      {/* Fenêtres d'applications ouvertes */}
       {openWindows.map((window) => {
         const AppComponent = window.component;
+        
         return AppComponent ? (
           <ApplicationWindow
             key={window.id}
