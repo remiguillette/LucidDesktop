@@ -34,6 +34,7 @@ const resources = {
         "settings": "Settings"
       },
       "desktop": {
+        "trash": "Trash",
         "terminal": "Terminal",
         "settings": "Settings",
         "browser": "Browser",
