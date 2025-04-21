@@ -33048,9 +33048,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var Browser = function Browser() {
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
-    window.location.href = 'https://www.google.com';
+    // Open Google in a new tab
+    window.open('https://www.google.com', '_blank');
   }, []);
-  return null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "browser-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Browser opened in new tab"));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Browser);
 
