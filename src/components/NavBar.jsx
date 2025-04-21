@@ -27,9 +27,15 @@ const NavBar = ({ activeItem, onSelect, username }) => {
 
   const navItems = [
     { id: 'apps', label: 'Applications', icon: '📱', submenu: [
-      { id: 'desktop', label: 'Bureau', icon: '🏠' },
-      { id: 'files', label: 'Fichiers', icon: '📁' },
-      { id: 'settings', label: 'Paramètres', icon: '⚙️' }
+      { id: 'bureau', label: 'Bureau', icon: '🏠' },
+      { id: 'fichiers', label: 'Fichiers', icon: '📁' },
+      { id: 'parametres', label: 'Paramètres', icon: '⚙️' },
+      { id: 'calculator', label: 'Calculatrice', icon: '🔢' },
+      { id: 'notepad', label: 'Bloc-notes', icon: '📝' },
+      { id: 'browser', label: 'Navigateur', icon: '🌐' },
+      { id: 'mail', label: 'Courrier', icon: '✉️' },
+      { id: 'calendar', label: 'Calendrier', icon: '📅' },
+      { id: 'trash', label: 'Corbeille', icon: '🗑️' }
     ]}
   ];
 
