@@ -32506,7 +32506,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ApplicationWindow */ "./src/components/ApplicationWindow.jsx");
 /* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
 /* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
-/* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_apps_Notepad__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
 /* harmony import */ var _apps_Mail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/Mail */ "./src/components/apps/Mail.jsx");
 /* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
@@ -32782,7 +32781,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M21 12H3"
     })),
-    app: (_apps_Notepad__WEBPACK_IMPORTED_MODULE_4___default())
+    app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__["default"]
   }];
 
   // Ouvrir une fenêtre d'application
@@ -33806,9 +33805,156 @@ var Mail = function Mail() {
 /*!*****************************************!*\
   !*** ./src/components/apps/Notepad.jsx ***!
   \*****************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/runner/workspace/src/components/apps/Notepad.jsx: Unterminated JSX contents. (126:10)\n\n\u001b[0m \u001b[90m 124 |\u001b[39m         placeholder\u001b[33m=\u001b[39m{t(\u001b[32m'apps.notepad.placeholder'\u001b[39m)}\n \u001b[90m 125 |\u001b[39m       \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 126 |\u001b[39m     \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m     |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 127 |\u001b[39m   )\u001b[33m;\u001b[39m\n \u001b[90m 128 |\u001b[39m }\u001b[33m;\u001b[39m\n \u001b[90m 129 |\u001b[39m\u001b[0m\n    at constructor (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:360:19)\n    at JSXParserMixin.raise (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:3338:19)\n    at JSXParserMixin.jsxReadToken (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6634:20)\n    at JSXParserMixin.getTokenFromCode (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6960:12)\n    at JSXParserMixin.nextToken (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:2521:10)\n    at JSXParserMixin.next (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:2434:10)\n    at JSXParserMixin.eat (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:2438:12)\n    at JSXParserMixin.expect (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:3667:15)\n    at JSXParserMixin.jsxParseClosingElementAt (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6866:10)\n    at JSXParserMixin.jsxParseElementAt (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6881:37)\n    at JSXParserMixin.jsxParseElementAt (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6884:32)\n    at JSXParserMixin.jsxParseElement (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6935:17)\n    at JSXParserMixin.parseExprAtom (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6945:19)\n    at JSXParserMixin.parseExprSubscripts (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10785:23)\n    at JSXParserMixin.parseUpdate (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10770:21)\n    at JSXParserMixin.parseMaybeUnary (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10750:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10603:61)\n    at JSXParserMixin.parseExprOps (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10608:23)\n    at JSXParserMixin.parseMaybeConditional (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10585:23)\n    at JSXParserMixin.parseMaybeAssign (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10538:21)\n    at /home/runner/workspace/node_modules/@babel/parser/lib/index.js:10507:39\n    at JSXParserMixin.allowInAnd (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12126:12)\n    at JSXParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10507:17)\n    at JSXParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11386:28)\n    at JSXParserMixin.parseExprAtom (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11033:23)\n    at JSXParserMixin.parseExprAtom (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6950:20)\n    at JSXParserMixin.parseExprSubscripts (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10785:23)\n    at JSXParserMixin.parseUpdate (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10770:21)\n    at JSXParserMixin.parseMaybeUnary (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10750:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10603:61)\n    at JSXParserMixin.parseExprOps (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10608:23)\n    at JSXParserMixin.parseMaybeConditional (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10585:23)\n    at JSXParserMixin.parseMaybeAssign (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10538:21)\n    at JSXParserMixin.parseExpressionBase (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10491:23)\n    at /home/runner/workspace/node_modules/@babel/parser/lib/index.js:10487:39\n    at JSXParserMixin.allowInAnd (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12121:16)\n    at JSXParserMixin.parseExpression (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10487:17)\n    at JSXParserMixin.parseReturnStatement (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12806:28)\n    at JSXParserMixin.parseStatementContent (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12463:21)\n    at JSXParserMixin.parseStatementLike (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12432:17)\n    at JSXParserMixin.parseStatementListItem (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12412:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12980:61)\n    at JSXParserMixin.parseBlockBody (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12973:10)\n    at JSXParserMixin.parseBlock (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12961:10)\n    at JSXParserMixin.parseFunctionBody (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11810:24)\n    at JSXParserMixin.parseArrowExpression (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11785:10)\n    at JSXParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11398:12)\n    at JSXParserMixin.parseExprAtom (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11033:23)\n    at JSXParserMixin.parseExprAtom (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6950:20)\n    at JSXParserMixin.parseExprSubscripts (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10785:23)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/fileSystemService */ "./src/services/fileSystemService.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+var Notepad = function Notepad() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(t('apps.notepad.untitled')),
+    _useState4 = _slicedToArray(_useState3, 2),
+    fileName = _useState4[0],
+    setFileName = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isSaved = _useState6[0],
+    setIsSaved = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState8 = _slicedToArray(_useState7, 2),
+    statusMessage = _useState8[0],
+    setStatusMessage = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState10 = _slicedToArray(_useState9, 2),
+    showRecent = _useState10[0],
+    setShowRecent = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState12 = _slicedToArray(_useState11, 2),
+    recentNotes = _useState12[0],
+    setRecentNotes = _useState12[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (content !== '') {
+      setIsSaved(false);
+    }
+  }, [content]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setRecentNotes(_services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].getRecentNotes());
+  }, []);
+  var handleChange = function handleChange(e) {
+    setContent(e.target.value);
+  };
+  var handleSave = function handleSave() {
+    var path = '/Documents';
+    var success = _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].createFile(path, fileName + '.txt', content);
+    if (success) {
+      setIsSaved(true);
+      setStatusMessage('Document saved successfully');
+      setTimeout(function () {
+        return setStatusMessage('');
+      }, 2000);
+    } else {
+      setStatusMessage('Error saving document');
+      setTimeout(function () {
+        return setStatusMessage('');
+      }, 2000);
+    }
+  };
+  var handleNew = function handleNew() {
+    if (!isSaved) {
+      var confirmNew = window.confirm(t('apps.notepad.confirmNew'));
+      if (!confirmNew) return;
+    }
+    setContent('');
+    setFileName(t('apps.notepad.untitled'));
+    setIsSaved(true);
+  };
+  var handleRename = function handleRename() {
+    var newName = prompt(t('apps.notepad.promptRename'), fileName);
+    if (newName && newName.trim() !== '') {
+      setFileName(newName.trim());
+      setIsSaved(false);
+    }
+  };
+  var handleOpenRecent = function handleOpenRecent(note) {
+    if (!isSaved) {
+      var confirmOpen = window.confirm(t('apps.notepad.confirmNew'));
+      if (!confirmOpen) return;
+    }
+    setContent(note.content);
+    setFileName(note.name.replace('.txt', ''));
+    setIsSaved(true);
+    setShowRecent(false);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-toolbar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-buttons"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "recent-notes-dropdown"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: function onClick() {
+      return setShowRecent(!showRecent);
+    },
+    title: t('apps.notepad.recent')
+  }, t('apps.notepad.recent')), showRecent && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "recent-notes-menu"
+  }, recentNotes.length > 0 ? recentNotes.map(function (note, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: index,
+      className: "recent-note-item",
+      onClick: function onClick() {
+        return handleOpenRecent(note);
+      }
+    }, note.name);
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "recent-note-item no-notes"
+  }, t('apps.notepad.noRecent')))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleNew,
+    title: t('apps.notepad.new')
+  }, t('apps.notepad.new')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleSave,
+    title: t('apps.notepad.save')
+  }, t('apps.notepad.save')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleRename,
+    title: t('apps.notepad.rename')
+  }, t('apps.notepad.rename'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-filename"
+  }, fileName, !isSaved && ' *', statusMessage && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "status-message"
+  }, statusMessage))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
+    className: "notepad-editor",
+    value: content,
+    onChange: handleChange,
+    placeholder: t('apps.notepad.placeholder')
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Notepad);
 
 /***/ }),
 
@@ -33949,6 +34095,149 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(react_i18next__WEBPACK_IMPOR
 
 "use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"login":{"username":"Nom d\'utilisateur","usernamePlaceholder":"Entrez votre nom d\'utilisateur","password":"Mot de passe","passwordPlaceholder":"Entrez votre mot de passe","passwordHint":"Par défaut: admin/admin","login":"Se connecter","loggingIn":"Connexion en cours...","createAccount":"Créer un compte","createNewAccount":"Créer un nouveau compte","register":"S\'inscrire","registering":"Inscription en cours...","displayName":"Nom affiché","displayNamePlaceholder":"Votre nom affiché","confirmPassword":"Confirmez le mot de passe","confirmPasswordPlaceholder":"Confirmez votre mot de passe","backToLogin":"Retour à la connexion","errors":{"noUsername":"Veuillez entrer un nom d\'utilisateur","noPassword":"Veuillez entrer un mot de passe","invalidCredentials":"Identifiants invalides","userNotFound":"Utilisateur non trouvé","wrongPassword":"Mot de passe incorrect","usernameExists":"Ce nom d\'utilisateur existe déjà","passwordMismatch":"Les mots de passe ne correspondent pas"}},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice","notepad":"Bloc-notes","tictactoe":"Morpion"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"user":"Utilisateur","logout":"Se déconnecter","appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"},"apps":{"calculator":{"title":"Calculatrice"},"notepad":{"title":"Bloc-notes","untitled":"Sans titre","new":"Nouveau","save":"Enregistrer","rename":"Renommer","confirmNew":"Le document actuel n\'est pas enregistré. Voulez-vous continuer?","promptRename":"Entrez un nouveau nom pour le document:","placeholder":"Commencez à écrire ici...","recent":"Récents","noRecent":"Aucune note récente"},"tictactoe":{"title":"Morpion","newGame":"Nouvelle partie","nextPlayer":"Tour du joueur: {{player}}","winner":"Le joueur {{player}} a gagné!","draw":"Match nul!"}}}');
+
+/***/ }),
+
+/***/ "./src/services/fileSystemService.js":
+/*!*******************************************!*\
+  !*** ./src/services/fileSystemService.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+// Simple in-memory file system service
+var fileSystem = {
+  root: {
+    type: 'directory',
+    name: 'root',
+    children: {
+      'Documents': {
+        type: 'directory',
+        name: 'Documents',
+        children: {
+          'notes.txt': {
+            type: 'file',
+            name: 'notes.txt',
+            content: 'Welcome to BeaverOS!',
+            created: new Date().toISOString(),
+            modified: new Date().toISOString()
+          }
+        }
+      },
+      'Images': {
+        type: 'directory',
+        name: 'Images',
+        children: {}
+      },
+      'Downloads': {
+        type: 'directory',
+        name: 'Downloads',
+        children: {}
+      }
+    }
+  }
+};
+var getDirectory = function getDirectory(path) {
+  var parts = path.split('/').filter(function (p) {
+    return p;
+  });
+  var current = fileSystem.root;
+  var _iterator = _createForOfIteratorHelper(parts),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var part = _step.value;
+      if (!current.children[part]) return null;
+      current = current.children[part];
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  return current;
+};
+var createFile = function createFile(path, name) {
+  var content = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+  var dir = getDirectory(path);
+  if (!dir) return false;
+  dir.children[name] = {
+    type: 'file',
+    name: name,
+    content: content,
+    created: new Date().toISOString(),
+    modified: new Date().toISOString()
+  };
+  return true;
+};
+var createDirectory = function createDirectory(path, name) {
+  var dir = getDirectory(path);
+  if (!dir) return false;
+  dir.children[name] = {
+    type: 'directory',
+    name: name,
+    children: {}
+  };
+  return true;
+};
+var deleteItem = function deleteItem(path, name) {
+  var dir = getDirectory(path);
+  if (!dir || !dir.children[name]) return false;
+  delete dir.children[name];
+  return true;
+};
+var readFile = function readFile(path) {
+  var parts = path.split('/').filter(function (p) {
+    return p;
+  });
+  var fileName = parts.pop();
+  var dir = getDirectory(parts.join('/'));
+  if (!dir || !dir.children[fileName] || dir.children[fileName].type !== 'file') {
+    return null;
+  }
+  return dir.children[fileName];
+};
+var listFiles = function listFiles(path) {
+  var dir = getDirectory(path);
+  return dir ? Object.keys(dir.children) : [];
+};
+var getFile = function getFile(path) {
+  return readFile(path);
+};
+var getRecentNotes = function getRecentNotes() {
+  var path = '/Documents';
+  var files = listFiles(path);
+  return files.filter(function (file) {
+    return file.endsWith('.txt');
+  }).map(function (file) {
+    var _getFile, _getFile2;
+    return {
+      name: file,
+      content: ((_getFile = getFile(path + '/' + file)) === null || _getFile === void 0 ? void 0 : _getFile.content) || '',
+      //Added ?.content to handle null
+      lastModified: new Date(((_getFile2 = getFile(path + '/' + file)) === null || _getFile2 === void 0 ? void 0 : _getFile2.modified) || new Date()) //Handle potential null modified
+    };
+  }).sort(function (a, b) {
+    return b.lastModified - a.lastModified;
+  }).slice(0, 5);
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  getDirectory: getDirectory,
+  createFile: createFile,
+  createDirectory: createDirectory,
+  deleteItem: deleteItem,
+  readFile: readFile,
+  listFiles: listFiles,
+  getFile: getFile,
+  getRecentNotes: getRecentNotes
+});
 
 /***/ }),
 
