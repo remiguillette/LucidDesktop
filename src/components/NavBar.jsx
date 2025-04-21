@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from 'react';
 
 const NavBar = ({ items, activeItem, onSelect, username }) => {
-  const [currentTime, setCurrentTime] = useState(
-    new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-  );
+  const [currentTime, setCurrentTime] = useState(new Date());
   
-  // Mettre à jour l'heure chaque minute
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-    }, 60000);
+      setCurrentTime(new Date());
+    }, 1000);
     
     return () => clearInterval(timer);
   }, []);
+
+  const timeString = currentTime.toLocaleTimeString('fr-CA', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+    timeZone: 'America/Toronto'
+  });
+
+  const dateString = currentTime.toLocaleDateString('fr-CA', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric'
+  });
   
   return (
     <nav className="navbar">
@@ -37,7 +48,8 @@ const NavBar = ({ items, activeItem, onSelect, username }) => {
           </div>
         )}
         <div className="nav-clock">
-          {currentTime}
+          <div>{dateString}</div>
+          <div>{timeString}</div>
         </div>
       </div>
     </nav>
