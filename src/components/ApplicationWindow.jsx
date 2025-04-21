@@ -8,6 +8,7 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
   const [resizeDirection, setResizeDirection] = useState({ x: 0, y: 0 });
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [isMaximized, setIsMaximized] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
   const windowRef = useRef(null);
   const prevSizeRef = useRef(null);
   const prevPositionRef = useRef(null);
@@ -145,12 +146,13 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
   return (
     <div
       ref={windowRef}
-      className={`app-window ${isMaximized ? 'maximized' : ''}`}
+      className={`app-window ${isMaximized ? 'maximized' : ''} ${isMinimized ? 'minimized' : ''}`}
       style={{
         width: `${size.width}px`,
         height: `${size.height}px`,
         left: `${position.x}px`,
-        top: `${position.y}px`
+        top: `${position.y}px`,
+        display: isMinimized ? 'none' : 'flex'
       }}
     >
       {/* Barre de titre de la fenêtre */}
@@ -164,7 +166,11 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
           <span className="window-title">{title}</span>
         </div>
         <div className="window-controls">
-          <button className="window-control minimize" title="Minimiser">
+          <button 
+            className="window-control minimize" 
+            title="Minimiser"
+            onClick={() => setIsMinimized(true)}
+          >
             _
           </button>
           <button 
