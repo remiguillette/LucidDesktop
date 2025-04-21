@@ -20,8 +20,8 @@ const Browser = () => {
       return;
     }
 
-    // Open URL in Google Chrome using the full path
-    exec(`/usr/bin/google-chrome "${url}"`, (err, stdout, stderr) => {
+    // Open URL in default browser using xdg-open
+    exec(`xdg-open "${url}"`, (err, stdout, stderr) => {
       if (err) {
         console.error('Failed to open browser:', err);
         setError('Failed to open browser');
