@@ -41,6 +41,8 @@
     "terminal": "Terminal",
     "settings": "Paramètres",
     "browser": "Navigateur",
+    "hideIcons": "Masquer les icônes",
+    "showIcons": "Afficher les icônes",
     "files": "Fichiers",
     "music": "Musique",
     "calendar": "Calendrier",

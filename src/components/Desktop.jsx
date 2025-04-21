@@ -14,6 +14,30 @@ import Trash from './apps/Trash';
 const Desktop = () => {
   const { t } = useTranslation();
   const [openWindows, setOpenWindows] = useState([]);
+  const [showIcons, setShowIcons] = useState(true);
+  const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
+
+  // Handle context menu
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+    setContextMenu({
+      show: true,
+      x: e.clientX,
+      y: e.clientY
+    });
+  };
+
+  // Hide context menu when clicking outside
+  const handleClick = () => {
+    setContextMenu({ show: false, x: 0, y: 0 });
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
 
   // Desktop icons configuration
   const desktopIcons = [
@@ -64,9 +88,30 @@ const Desktop = () => {
   };
 
   return (
-    <div className="desktop">
+    <div 
+      className="desktop"
+      onContextMenu={handleContextMenu}
+    >
+      {/* Context Menu */}
+      {contextMenu.show && (
+        <div 
+          className="context-menu"
+          style={{ 
+            position: 'fixed',
+            top: `${contextMenu.y}px`,
+            left: `${contextMenu.x}px`
+          }}
+        >
+          <div 
+            className="context-menu-item"
+            onClick={() => setShowIcons(!showIcons)}
+          >
+            {showIcons ? t('desktop.hideIcons') : t('desktop.showIcons')}
+          </div>
+        </div>
+      )}
       {/* Icônes du bureau */}
-      {desktopIcons.map((icon) => (
+      {showIcons && desktopIcons.map((icon) => (
         <div
           key={icon.id}
           className="desktop-icon"
