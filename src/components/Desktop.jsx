@@ -76,10 +76,13 @@ const Desktop = () => {
       {/* Fenêtres d'applications ouvertes */}
       {openWindows.map((window, index) => (
         <ApplicationWindow 
-          key={window.id} 
-          {...window} 
+          key={window.id}
+          title={window.title}
+          icon={window.icon}
           onClose={() => closeWindow(window.id)}
-        />
+        >
+          {window.component && <window.component />}
+        </ApplicationWindow>
       ))}
     </div>
   );
