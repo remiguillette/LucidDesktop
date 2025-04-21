@@ -32672,10 +32672,6 @@ var Desktop = function Desktop() {
     })),
     app: _apps_Calendar__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
-    id: 'mail',
-    name: t('desktop.mail'),
-    icon: '✉️'
-  }, {
     id: 'calculator',
     name: t('desktop.calculator'),
     icon: '🧮',
