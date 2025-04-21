@@ -353,6 +353,10 @@ input:checked + .toggle-slider:before {
   background-color: #747474;
 }
 
+.window-control.fullscreen {
+  background-color: #747474;
+}
+
 .window-control.close {
   background-color: #cc3636;
 }

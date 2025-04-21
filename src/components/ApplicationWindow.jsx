@@ -181,6 +181,22 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
             {isMaximized ? '❐' : '□'}
           </button>
           <button 
+            className="window-control fullscreen" 
+            title="Plein écran"
+            onClick={() => {
+              const content = windowRef.current.querySelector('.window-content');
+              if (content) {
+                if (document.fullscreenElement) {
+                  document.exitFullscreen();
+                } else {
+                  content.requestFullscreen();
+                }
+              }
+            }}
+          >
+            ⛶
+          </button>
+          <button 
             className="window-control close" 
             title="Fermer"
             onClick={() => {
