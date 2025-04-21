@@ -32462,8 +32462,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
 /* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
 /* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
-/* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
-/* harmony import */ var _apps_Calendar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./apps/Calendar */ "./src/components/apps/Calendar.jsx");
+/* harmony import */ var _apps_Mail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/Mail */ "./src/components/apps/Mail.jsx");
+/* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
+/* harmony import */ var _apps_Calendar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./apps/Calendar */ "./src/components/apps/Calendar.jsx");
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -32474,6 +32475,7 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -32591,6 +32593,29 @@ var Desktop = function Desktop() {
     })),
     app: _apps_Browser__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
+    id: 'mail',
+    name: t('desktop.mail'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("rect", {
+      width: "20",
+      height: "16",
+      x: "2",
+      y: "4",
+      rx: "2"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+    })),
+    app: _apps_Mail__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }, {
     id: 'files',
     name: t('desktop.files'),
     icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
@@ -32606,7 +32631,7 @@ var Desktop = function Desktop() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"
     })),
-    app: _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_6__["default"]
+    app: _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
     id: 'calendar',
     name: t('desktop.calendar'),
@@ -32645,7 +32670,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M16 18h.01"
     })),
-    app: _apps_Calendar__WEBPACK_IMPORTED_MODULE_7__["default"]
+    app: _apps_Calendar__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
     id: 'mail',
     name: t('desktop.mail'),
@@ -33639,6 +33664,43 @@ var MyComponent = function MyComponent() {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyComponent);
+
+/***/ }),
+
+/***/ "./src/components/apps/Mail.jsx":
+/*!**************************************!*\
+  !*** ./src/components/apps/Mail.jsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var Mail = function Mail() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
+    src: "https://mail.google.com",
+    style: {
+      flexGrow: 1,
+      width: '100%',
+      height: '100%',
+      border: 'none'
+    },
+    title: "Mail Frame"
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Mail);
 
 /***/ }),
 
