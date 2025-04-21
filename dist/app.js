@@ -3335,6 +3335,650 @@ const loadLanguages = instance.loadLanguages;
 
 /***/ }),
 
+/***/ "./node_modules/lucide-react/dist/esm/Icon.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/Icon.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Icon)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _defaultAttributes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defaultAttributes.js */ "./node_modules/lucide-react/dist/esm/defaultAttributes.js");
+/* harmony import */ var _shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/src/utils.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+const Icon = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
+  ({
+    color = "currentColor",
+    size = 24,
+    strokeWidth = 2,
+    absoluteStrokeWidth,
+    className = "",
+    children,
+    iconNode,
+    ...rest
+  }, ref) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(
+      "svg",
+      {
+        ref,
+        ..._defaultAttributes_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+        width: size,
+        height: size,
+        stroke: color,
+        strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+        className: (0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.mergeClasses)("lucide", className),
+        ...!children && !(0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.hasA11yProp)(rest) && { "aria-hidden": "true" },
+        ...rest
+      },
+      [
+        ...iconNode.map(([tag, attrs]) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(tag, attrs)),
+        ...Array.isArray(children) ? children : [children]
+      ]
+    );
+  }
+);
+
+
+//# sourceMappingURL=Icon.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/createLucideIcon.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/createLucideIcon.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ createLucideIcon)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/src/utils.js */ "./node_modules/lucide-react/dist/esm/shared/src/utils.js");
+/* harmony import */ var _Icon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Icon.js */ "./node_modules/lucide-react/dist/esm/Icon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+const createLucideIcon = (iconName, iconNode) => {
+  const Component = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(
+    ({ className, ...props }, ref) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Icon_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      ref,
+      iconNode,
+      className: (0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.mergeClasses)(
+        `lucide-${(0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.toKebabCase)((0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.toPascalCase)(iconName))}`,
+        `lucide-${iconName}`,
+        className
+      ),
+      ...props
+    })
+  );
+  Component.displayName = (0,_shared_src_utils_js__WEBPACK_IMPORTED_MODULE_2__.toPascalCase)(iconName);
+  return Component;
+};
+
+
+//# sourceMappingURL=createLucideIcon.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/defaultAttributes.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/defaultAttributes.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ defaultAttributes)
+/* harmony export */ });
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+var defaultAttributes = {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: 24,
+  height: 24,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 2,
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+};
+
+
+//# sourceMappingURL=defaultAttributes.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/calculator.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/calculator.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Calculator)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["rect", { width: "16", height: "20", x: "4", y: "2", rx: "2", key: "1nb95v" }],
+  ["line", { x1: "8", x2: "16", y1: "6", y2: "6", key: "x4nwl0" }],
+  ["line", { x1: "16", x2: "16", y1: "14", y2: "18", key: "wjye3r" }],
+  ["path", { d: "M16 10h.01", key: "1m94wz" }],
+  ["path", { d: "M12 10h.01", key: "1nrarc" }],
+  ["path", { d: "M8 10h.01", key: "19clt8" }],
+  ["path", { d: "M12 14h.01", key: "1etili" }],
+  ["path", { d: "M8 14h.01", key: "6423bh" }],
+  ["path", { d: "M12 18h.01", key: "mhygvu" }],
+  ["path", { d: "M8 18h.01", key: "lrp35t" }]
+];
+const Calculator = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("calculator", __iconNode);
+
+
+//# sourceMappingURL=calculator.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/calendar.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/calendar.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Calendar)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }]
+];
+const Calendar = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("calendar", __iconNode);
+
+
+//# sourceMappingURL=calendar.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/clock.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/clock.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Clock)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
+];
+const Clock = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("clock", __iconNode);
+
+
+//# sourceMappingURL=clock.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/file-pen.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/file-pen.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ FilePen)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M12.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v9.5", key: "1couwa" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  [
+    "path",
+    {
+      d: "M13.378 15.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z",
+      key: "1y4qbx"
+    }
+  ]
+];
+const FilePen = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("file-pen", __iconNode);
+
+
+//# sourceMappingURL=file-pen.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/folder-open.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/folder-open.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ FolderOpen)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  [
+    "path",
+    {
+      d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2",
+      key: "usdka0"
+    }
+  ]
+];
+const FolderOpen = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("folder-open", __iconNode);
+
+
+//# sourceMappingURL=folder-open.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/gamepad-2.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/gamepad-2.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Gamepad2)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["line", { x1: "6", x2: "10", y1: "11", y2: "11", key: "1gktln" }],
+  ["line", { x1: "8", x2: "8", y1: "9", y2: "13", key: "qnk9ow" }],
+  ["line", { x1: "15", x2: "15.01", y1: "12", y2: "12", key: "krot7o" }],
+  ["line", { x1: "18", x2: "18.01", y1: "10", y2: "10", key: "1lcuu1" }],
+  [
+    "path",
+    {
+      d: "M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z",
+      key: "mfqc10"
+    }
+  ]
+];
+const Gamepad2 = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("gamepad-2", __iconNode);
+
+
+//# sourceMappingURL=gamepad-2.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/globe.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/globe.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Globe)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("globe", __iconNode);
+
+
+//# sourceMappingURL=globe.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/mail.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/mail.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Mail)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["rect", { width: "20", height: "16", x: "2", y: "4", rx: "2", key: "18n3k1" }],
+  ["path", { d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7", key: "1ocrg3" }]
+];
+const Mail = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("mail", __iconNode);
+
+
+//# sourceMappingURL=mail.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/music.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/music.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Music)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M9 18V5l12-2v13", key: "1jmyc2" }],
+  ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
+  ["circle", { cx: "18", cy: "16", r: "3", key: "1hluhg" }]
+];
+const Music = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("music", __iconNode);
+
+
+//# sourceMappingURL=music.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/settings.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/settings.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Settings)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  [
+    "path",
+    {
+      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z",
+      key: "1qme2f"
+    }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+];
+const Settings = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("settings", __iconNode);
+
+
+//# sourceMappingURL=settings.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/terminal.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/terminal.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ Terminal)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["polyline", { points: "4 17 10 11 4 5", key: "akl6gq" }],
+  ["line", { x1: "12", x2: "20", y1: "19", y2: "19", key: "q2wloq" }]
+];
+const Terminal = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("terminal", __iconNode);
+
+
+//# sourceMappingURL=terminal.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/user.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/user.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   __iconNode: () => (/* binding */ __iconNode),
+/* harmony export */   "default": () => (/* binding */ User)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
+  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
+];
+const User = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("user", __iconNode);
+
+
+//# sourceMappingURL=user.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/shared/src/utils.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/shared/src/utils.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   hasA11yProp: () => (/* binding */ hasA11yProp),
+/* harmony export */   mergeClasses: () => (/* binding */ mergeClasses),
+/* harmony export */   toCamelCase: () => (/* binding */ toCamelCase),
+/* harmony export */   toKebabCase: () => (/* binding */ toKebabCase),
+/* harmony export */   toPascalCase: () => (/* binding */ toPascalCase)
+/* harmony export */ });
+/**
+ * @license lucide-react v0.501.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+const toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const toCamelCase = (string) => string.replace(
+  /^([A-Z])|[\s-_]+(\w)/g,
+  (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
+);
+const toPascalCase = (string) => {
+  const camelCase = toCamelCase(string);
+  return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+const mergeClasses = (...classes) => classes.filter((className, index, array) => {
+  return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
+}).join(" ").trim();
+const hasA11yProp = (props) => {
+  for (const prop in props) {
+    if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
+      return true;
+    }
+  }
+};
+
+
+//# sourceMappingURL=utils.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/react-dom/cjs/react-dom-client.development.js":
 /*!********************************************************************!*\
   !*** ./node_modules/react-dom/cjs/react-dom-client.development.js ***!
@@ -31874,20 +32518,1106 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var _Desktop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Desktop */ "./src/components/Desktop.jsx");
+/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NavBar */ "./src/components/NavBar.jsx");
+
+
 
 
 var App = function App() {
   var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
     t = _useTranslation.t;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "test-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "BeaverOS Test"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, t('login.username')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    src: "./assets/beaver.png",
-    alt: "BeaverOS Logo",
-    width: "100"
-  }));
+    className: "app-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Desktop__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NavBar__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+/***/ }),
+
+/***/ "./src/components/ApplicationWindow.jsx":
+/*!**********************************************!*\
+  !*** ./src/components/ApplicationWindow.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+var ApplicationWindow = function ApplicationWindow(_ref) {
+  var title = _ref.title,
+    icon = _ref.icon,
+    initialPosition = _ref.initialPosition,
+    initialSize = _ref.initialSize,
+    children = _ref.children,
+    onClose = _ref.onClose;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialPosition || {
+      x: 50,
+      y: 50
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    position = _useState2[0],
+    setPosition = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialSize || {
+      width: 600,
+      height: 400
+    }),
+    _useState4 = _slicedToArray(_useState3, 2),
+    size = _useState4[0],
+    setSize = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isDragging = _useState6[0],
+    setIsDragging = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isResizing = _useState8[0],
+    setIsResizing = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      x: 0,
+      y: 0
+    }),
+    _useState10 = _slicedToArray(_useState9, 2),
+    resizeDirection = _useState10[0],
+    setResizeDirection = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      x: 0,
+      y: 0
+    }),
+    _useState12 = _slicedToArray(_useState11, 2),
+    dragOffset = _useState12[0],
+    setDragOffset = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState14 = _slicedToArray(_useState13, 2),
+    isMaximized = _useState14[0],
+    setIsMaximized = _useState14[1];
+  var windowRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var prevSizeRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var prevPositionRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  // Position initiale au centre de l'écran si non spécifiée
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!initialPosition && windowRef.current) {
+      var centerX = (window.innerWidth - size.width) / 2;
+      var centerY = (window.innerHeight - size.height) / 3;
+      setPosition({
+        x: Math.max(0, centerX),
+        y: Math.max(0, centerY)
+      });
+    }
+  }, []);
+
+  // Gestionnaire pour commencer le glissement
+  var handleDragStart = function handleDragStart(e) {
+    if (isMaximized) return; // Pas de glissement en mode maximisé
+    e.preventDefault();
+    setIsDragging(true);
+    var rect = e.currentTarget.getBoundingClientRect();
+    setDragOffset({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+  };
+
+  // Gestionnaire pour commencer le redimensionnement
+  var handleResizeStart = function handleResizeStart(e, direction) {
+    if (isMaximized) return; // Pas de redimensionnement en mode maximisé
+    e.preventDefault();
+    e.stopPropagation();
+    setIsResizing(true);
+    setResizeDirection(direction);
+    setDragOffset({
+      x: e.clientX,
+      y: e.clientY,
+      initialWidth: size.width,
+      initialHeight: size.height,
+      initialX: position.x,
+      initialY: position.y
+    });
+  };
+
+  // Gestionnaire de mouvement (glissement et redimensionnement)
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleMouseMove = function handleMouseMove(e) {
+      if (isDragging) {
+        var newX = e.clientX - dragOffset.x;
+        var newY = e.clientY - dragOffset.y;
+
+        // S'assurer que la fenêtre reste dans les limites visibles
+        setPosition({
+          x: Math.max(0, Math.min(newX, window.innerWidth - size.width)),
+          y: Math.max(0, Math.min(newY, window.innerHeight - size.height))
+        });
+      } else if (isResizing) {
+        var deltaX = e.clientX - dragOffset.x;
+        var deltaY = e.clientY - dragOffset.y;
+
+        // Calcul de la nouvelle taille et position en fonction de la direction
+        var newWidth = dragOffset.initialWidth;
+        var newHeight = dragOffset.initialHeight;
+        var _newX = dragOffset.initialX;
+        var _newY = dragOffset.initialY;
+
+        // Redimensionnement horizontal
+        if (resizeDirection.x !== 0) {
+          if (resizeDirection.x < 0) {
+            // Redimensionner depuis la gauche
+            newWidth = Math.max(200, dragOffset.initialWidth - deltaX);
+            _newX = dragOffset.initialX + dragOffset.initialWidth - newWidth;
+          } else {
+            // Redimensionner depuis la droite
+            newWidth = Math.max(200, dragOffset.initialWidth + deltaX);
+          }
+        }
+
+        // Redimensionnement vertical
+        if (resizeDirection.y !== 0) {
+          if (resizeDirection.y < 0) {
+            // Redimensionner depuis le haut
+            newHeight = Math.max(150, dragOffset.initialHeight - deltaY);
+            _newY = dragOffset.initialY + dragOffset.initialHeight - newHeight;
+          } else {
+            // Redimensionner depuis le bas
+            newHeight = Math.max(150, dragOffset.initialHeight + deltaY);
+          }
+        }
+        setSize({
+          width: newWidth,
+          height: newHeight
+        });
+        setPosition({
+          x: _newX,
+          y: _newY
+        });
+      }
+    };
+    var handleMouseUp = function handleMouseUp() {
+      setIsDragging(false);
+      setIsResizing(false);
+    };
+    if (isDragging || isResizing) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    }
+    return function () {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging, isResizing, dragOffset, resizeDirection]);
+
+  // Fonction pour maximiser/restaurer la fenêtre
+  var toggleMaximize = function toggleMaximize() {
+    if (isMaximized) {
+      // Restaurer la taille et la position précédentes
+      setSize(prevSizeRef.current);
+      setPosition(prevPositionRef.current);
+    } else {
+      // Sauvegarder la taille et la position actuelles
+      prevSizeRef.current = size;
+      prevPositionRef.current = position;
+
+      // Maximiser la fenêtre (avec marge de 5px pour les bords de l'écran)
+      setSize({
+        width: window.innerWidth - 10,
+        height: window.innerHeight - 65 // Tenir compte de la barre de navigation
+      });
+      setPosition({
+        x: 5,
+        y: 5
+      });
+    }
+    setIsMaximized(!isMaximized);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    ref: windowRef,
+    className: "app-window ".concat(isMaximized ? 'maximized' : ''),
+    style: {
+      width: "".concat(size.width, "px"),
+      height: "".concat(size.height, "px"),
+      left: "".concat(position.x, "px"),
+      top: "".concat(position.y, "px")
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-titlebar",
+    onMouseDown: handleDragStart,
+    onDoubleClick: toggleMaximize
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-title-left"
+  }, icon && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "window-icon"
+  }, icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "window-title"
+  }, title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-controls"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "window-control minimize",
+    title: "Minimiser"
+  }, "_"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "window-control maximize",
+    title: isMaximized ? "Restaurer" : "Maximiser",
+    onClick: toggleMaximize
+  }, isMaximized ? '❐' : '□'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "window-control close",
+    title: "Fermer",
+    onClick: onClose
+  }, "\xD7"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-content"
+  }, children), !isMaximized && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle nw-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: -1,
+        y: -1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle n-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 0,
+        y: -1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle ne-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 1,
+        y: -1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle e-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 1,
+        y: 0
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle se-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 1,
+        y: 1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle s-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: 0,
+        y: 1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle sw-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: -1,
+        y: 1
+      });
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "window-resize-handle w-resize",
+    onMouseDown: function onMouseDown(e) {
+      return handleResizeStart(e, {
+        x: -1,
+        y: 0
+      });
+    }
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ApplicationWindow);
+
+/***/ }),
+
+/***/ "./src/components/Desktop.jsx":
+/*!************************************!*\
+  !*** ./src/components/Desktop.jsx ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var _ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ApplicationWindow */ "./src/components/ApplicationWindow.jsx");
+/* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
+/* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
+/* harmony import */ var _apps_TicTacToe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/TicTacToe */ "./src/components/apps/TicTacToe.jsx");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/terminal.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/settings.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/globe.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/folder-open.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/music.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/calendar.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/mail.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/calculator.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/file-pen.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/gamepad-2.js");
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+
+var Desktop = function Desktop() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    openWindows = _useState2[0],
+    setOpenWindows = _useState2[1];
+
+  // Desktop icons configuration
+  var desktopIcons = [{
+    id: 'terminal',
+    name: t('desktop.terminal'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      size: 24,
+      color: "#f89422"
+    })
+  }, {
+    id: 'settings',
+    name: t('desktop.settings'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      size: 24,
+      color: "#f89422"
+    })
+  }, {
+    id: 'browser',
+    name: t('desktop.browser'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      size: 24,
+      color: "#f89422"
+    })
+  }, {
+    id: 'files',
+    name: t('desktop.files'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      size: 24,
+      color: "#f89422"
+    })
+  }, {
+    id: 'music',
+    name: t('desktop.music'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      size: 24,
+      color: "#f89422"
+    })
+  }, {
+    id: 'calendar',
+    name: t('desktop.calendar'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      size: 24,
+      color: "#f89422"
+    })
+  }, {
+    id: 'mail',
+    name: t('desktop.mail'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      size: 24,
+      color: "#f89422"
+    })
+  }, {
+    id: 'calculator',
+    name: t('desktop.calculator'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      size: 24,
+      color: "#f89422"
+    }),
+    app: _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    id: 'notepad',
+    name: t('desktop.notepad'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      size: 24,
+      color: "#f89422"
+    }),
+    app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    id: 'tictactoe',
+    name: t('desktop.tictactoe'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      size: 24,
+      color: "#f89422"
+    }),
+    app: _apps_TicTacToe__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }];
+
+  // Ouvrir une fenêtre d'application
+  var openApplication = function openApplication(app) {
+    var appExists = desktopIcons.find(function (icon) {
+      return icon.id === app;
+    });
+    if (!appExists) {
+      console.error("Application ".concat(app, " not found"));
+      return;
+    }
+
+    // Générer un ID unique pour cette instance de fenêtre
+    var windowId = "".concat(app, "-").concat(Date.now());
+
+    // Ajouter la fenêtre à l'état
+    setOpenWindows([].concat(_toConsumableArray(openWindows), [{
+      id: windowId,
+      appId: app,
+      title: appExists.name,
+      icon: appExists.icon,
+      component: appExists.app
+    }]));
+  };
+
+  // Fermer une fenêtre d'application
+  var closeWindow = function closeWindow(windowId) {
+    setOpenWindows(openWindows.filter(function (window) {
+      return window.id !== windowId;
+    }));
+  };
+
+  // Gestion du clic sur une icône du bureau
+  var handleIconClick = function handleIconClick(iconId) {
+    console.log("Opening ".concat(iconId));
+    openApplication(iconId);
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "desktop"
+  }, desktopIcons.map(function (icon) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: icon.id,
+      className: "desktop-icon",
+      onClick: function onClick() {
+        return handleIconClick(icon.id);
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "desktop-icon-img"
+    }, icon.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "desktop-icon-text"
+    }, icon.name));
+  }), openWindows.map(function (window) {
+    var AppComponent = window.component;
+    return AppComponent ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: window.id,
+      title: window.title,
+      icon: window.icon,
+      onClose: function onClose() {
+        return closeWindow(window.id);
+      },
+      initialPosition: {
+        x: 100 + openWindows.indexOf(window) * 30,
+        y: 50 + openWindows.indexOf(window) * 30
+      },
+      initialSize: {
+        width: 600,
+        height: 400
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(AppComponent, null)) : null;
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Desktop);
+
+/***/ }),
+
+/***/ "./src/components/NavBar.jsx":
+/*!***********************************!*\
+  !*** ./src/components/NavBar.jsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/user.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/clock.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var NavBar = function NavBar(_ref) {
+  var items = _ref.items,
+    activeItem = _ref.activeItem,
+    onSelect = _ref.onSelect,
+    username = _ref.username;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date().toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit'
+    })),
+    _useState2 = _slicedToArray(_useState, 2),
+    currentTime = _useState2[0],
+    setCurrentTime = _useState2[1];
+
+  // Mettre à jour l'heure chaque minute
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var timer = setInterval(function () {
+      setCurrentTime(new Date().toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+      }));
+    }, 60000);
+    return function () {
+      return clearInterval(timer);
+    };
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
+    className: "navbar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "navbar-left"
+  }, items.map(function (item) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: item.id,
+      className: "nav-item ".concat(activeItem === item.id ? 'active' : ''),
+      onClick: function onClick() {
+        return onSelect(item.id);
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "nav-icon"
+    }, item.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "nav-text"
+    }, item.label));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "navbar-right"
+  }, username && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "nav-user"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    size: 20,
+    color: "#f89422",
+    className: "nav-user-icon"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "nav-user-name"
+  }, username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "nav-clock"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: 16,
+    className: "nav-clock-icon"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, currentTime))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavBar);
+
+/***/ }),
+
+/***/ "./src/components/apps/Calculator.jsx":
+/*!********************************************!*\
+  !*** ./src/components/apps/Calculator.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var Calculator = function Calculator() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('0'),
+    _useState2 = _slicedToArray(_useState, 2),
+    display = _useState2[0],
+    setDisplay = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState4 = _slicedToArray(_useState3, 2),
+    firstOperand = _useState4[0],
+    setFirstOperand = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState6 = _slicedToArray(_useState5, 2),
+    operator = _useState6[0],
+    setOperator = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    waitingForSecondOperand = _useState8[0],
+    setWaitingForSecondOperand = _useState8[1];
+
+  // Fonction pour gérer les clics sur les touches numériques
+  var inputDigit = function inputDigit(digit) {
+    if (waitingForSecondOperand) {
+      setDisplay(digit);
+      setWaitingForSecondOperand(false);
+    } else {
+      setDisplay(display === '0' ? digit : display + digit);
+    }
+  };
+
+  // Fonction pour gérer la décimale
+  var inputDecimal = function inputDecimal() {
+    if (waitingForSecondOperand) {
+      setDisplay('0.');
+      setWaitingForSecondOperand(false);
+      return;
+    }
+    if (!display.includes('.')) {
+      setDisplay(display + '.');
+    }
+  };
+
+  // Fonction pour gérer les opérateurs
+  var handleOperator = function handleOperator(nextOperator) {
+    var inputValue = parseFloat(display);
+    if (firstOperand === null) {
+      setFirstOperand(inputValue);
+    } else if (operator) {
+      var result = performCalculation();
+      setDisplay(String(result));
+      setFirstOperand(result);
+    }
+    setWaitingForSecondOperand(true);
+    setOperator(nextOperator);
+  };
+
+  // Fonction pour effectuer le calcul
+  var performCalculation = function performCalculation() {
+    var inputValue = parseFloat(display);
+    if (operator === '+') {
+      return firstOperand + inputValue;
+    } else if (operator === '-') {
+      return firstOperand - inputValue;
+    } else if (operator === '*') {
+      return firstOperand * inputValue;
+    } else if (operator === '/') {
+      return firstOperand / inputValue;
+    }
+    return inputValue;
+  };
+
+  // Fonction pour calculer le résultat final (=)
+  var calculateResult = function calculateResult() {
+    if (!operator || firstOperand === null) {
+      return;
+    }
+    var inputValue = parseFloat(display);
+    var result = performCalculation();
+    setDisplay(String(result));
+    setFirstOperand(result);
+    setOperator(null);
+    setWaitingForSecondOperand(false);
+  };
+
+  // Fonction pour réinitialiser la calculatrice
+  var resetCalculator = function resetCalculator() {
+    setDisplay('0');
+    setFirstOperand(null);
+    setOperator(null);
+    setWaitingForSecondOperand(false);
+  };
+
+  // Fonction pour changer le signe
+  var toggleSign = function toggleSign() {
+    var newValue = parseFloat(display) * -1;
+    setDisplay(String(newValue));
+  };
+
+  // Fonction pour calculer le pourcentage
+  var calculatePercentage = function calculatePercentage() {
+    var currentValue = parseFloat(display);
+    var percentValue = currentValue / 100;
+    setDisplay(String(percentValue));
+  };
+
+  // Disposition des boutons de la calculatrice
+  var calculatorButtons = [{
+    text: 'C',
+    action: resetCalculator,
+    className: 'calculator-button special'
+  }, {
+    text: '+/-',
+    action: toggleSign,
+    className: 'calculator-button special'
+  }, {
+    text: '%',
+    action: calculatePercentage,
+    className: 'calculator-button special'
+  }, {
+    text: '÷',
+    action: function action() {
+      return handleOperator('/');
+    },
+    className: 'calculator-button operator'
+  }, {
+    text: '7',
+    action: function action() {
+      return inputDigit('7');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '8',
+    action: function action() {
+      return inputDigit('8');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '9',
+    action: function action() {
+      return inputDigit('9');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '×',
+    action: function action() {
+      return handleOperator('*');
+    },
+    className: 'calculator-button operator'
+  }, {
+    text: '4',
+    action: function action() {
+      return inputDigit('4');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '5',
+    action: function action() {
+      return inputDigit('5');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '6',
+    action: function action() {
+      return inputDigit('6');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '-',
+    action: function action() {
+      return handleOperator('-');
+    },
+    className: 'calculator-button operator'
+  }, {
+    text: '1',
+    action: function action() {
+      return inputDigit('1');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '2',
+    action: function action() {
+      return inputDigit('2');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '3',
+    action: function action() {
+      return inputDigit('3');
+    },
+    className: 'calculator-button'
+  }, {
+    text: '+',
+    action: function action() {
+      return handleOperator('+');
+    },
+    className: 'calculator-button operator'
+  }, {
+    text: '0',
+    action: function action() {
+      return inputDigit('0');
+    },
+    className: 'calculator-button zero'
+  }, {
+    text: '.',
+    action: inputDecimal,
+    className: 'calculator-button'
+  }, {
+    text: '=',
+    action: calculateResult,
+    className: 'calculator-button operator'
+  }];
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "calculator-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "calculator-display"
+  }, display), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "calculator-keypad"
+  }, calculatorButtons.map(function (button, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      key: index,
+      className: button.className,
+      onClick: button.action
+    }, button.text);
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Calculator);
+
+/***/ }),
+
+/***/ "./src/components/apps/Notepad.jsx":
+/*!*****************************************!*\
+  !*** ./src/components/apps/Notepad.jsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var Notepad = function Notepad() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    content = _useState2[0],
+    setContent = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(t('apps.notepad.untitled')),
+    _useState4 = _slicedToArray(_useState3, 2),
+    fileName = _useState4[0],
+    setFileName = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isSaved = _useState6[0],
+    setIsSaved = _useState6[1];
+
+  // Détecter les changements de contenu
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (content !== '') {
+      setIsSaved(false);
+    }
+  }, [content]);
+
+  // Gérer les changements dans la zone de texte
+  var handleChange = function handleChange(e) {
+    setContent(e.target.value);
+  };
+
+  // Simuler une opération de sauvegarde
+  var handleSave = function handleSave() {
+    console.log("Saving: ".concat(fileName, " with content: ").concat(content));
+    setIsSaved(true);
+    // Dans une véritable application, cela sauvegarderait le contenu dans un système de fichiers
+  };
+
+  // Simuler une opération "nouveau document"
+  var handleNew = function handleNew() {
+    if (!isSaved) {
+      var confirmNew = window.confirm(t('apps.notepad.confirmNew'));
+      if (!confirmNew) return;
+    }
+    setContent('');
+    setFileName(t('apps.notepad.untitled'));
+    setIsSaved(true);
+  };
+
+  // Simuler une opération de changement de nom
+  var handleRename = function handleRename() {
+    var newName = prompt(t('apps.notepad.promptRename'), fileName);
+    if (newName && newName.trim() !== '') {
+      setFileName(newName.trim());
+    }
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-toolbar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-buttons"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleNew,
+    title: t('apps.notepad.new')
+  }, t('apps.notepad.new')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleSave,
+    title: t('apps.notepad.save')
+  }, t('apps.notepad.save')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "notepad-button",
+    onClick: handleRename,
+    title: t('apps.notepad.rename')
+  }, t('apps.notepad.rename'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "notepad-filename"
+  }, fileName, !isSaved && ' *')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
+    className: "notepad-editor",
+    value: content,
+    onChange: handleChange,
+    placeholder: t('apps.notepad.placeholder')
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Notepad);
+
+/***/ }),
+
+/***/ "./src/components/apps/TicTacToe.jsx":
+/*!*******************************************!*\
+  !*** ./src/components/apps/TicTacToe.jsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+var TicTacToe = function TicTacToe() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(Array(9).fill(null)),
+    _useState2 = _slicedToArray(_useState, 2),
+    board = _useState2[0],
+    setBoard = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    xIsNext = _useState4[0],
+    setXIsNext = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('playing'),
+    _useState6 = _slicedToArray(_useState5, 2),
+    gameStatus = _useState6[0],
+    setGameStatus = _useState6[1]; // 'playing', 'draw', 'winner'
+
+  // Vérifier s'il y a un gagnant
+  var calculateWinner = function calculateWinner(squares) {
+    var lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+    for (var i = 0; i < lines.length; i++) {
+      var _lines$i = _slicedToArray(lines[i], 3),
+        a = _lines$i[0],
+        b = _lines$i[1],
+        c = _lines$i[2];
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        return squares[a];
+      }
+    }
+    return null;
+  };
+
+  // Gérer le clic sur une case
+  var handleClick = function handleClick(i) {
+    // Ne rien faire si le jeu est terminé ou si la case est déjà remplie
+    if (gameStatus !== 'playing' || board[i]) {
+      return;
+    }
+    var newBoard = board.slice();
+    newBoard[i] = xIsNext ? 'X' : 'O';
+    setBoard(newBoard);
+    setXIsNext(!xIsNext);
+
+    // Vérifier s'il y a un gagnant ou un match nul
+    var winner = calculateWinner(newBoard);
+    if (winner) {
+      setGameStatus('winner');
+    } else if (newBoard.every(function (square) {
+      return square !== null;
+    })) {
+      setGameStatus('draw');
+    }
+  };
+
+  // Réinitialiser le jeu
+  var resetGame = function resetGame() {
+    setBoard(Array(9).fill(null));
+    setXIsNext(true);
+    setGameStatus('playing');
+  };
+
+  // Rendu de chaque case
+  var renderSquare = function renderSquare(i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      className: "tictactoe-square",
+      onClick: function onClick() {
+        return handleClick(i);
+      }
+    }, board[i]);
+  };
+
+  // Message d'état du jeu
+  var renderStatus = function renderStatus() {
+    if (gameStatus === 'winner') {
+      var winner = calculateWinner(board);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "tictactoe-status winner"
+      }, t('apps.tictactoe.winner', {
+        player: winner
+      }));
+    } else if (gameStatus === 'draw') {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "tictactoe-status draw"
+      }, t('apps.tictactoe.draw'));
+    } else {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        className: "tictactoe-status"
+      }, t('apps.tictactoe.nextPlayer', {
+        player: xIsNext ? 'X' : 'O'
+      }));
+    }
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, t('apps.tictactoe.title')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "tictactoe-reset-button",
+    onClick: resetGame
+  }, t('apps.tictactoe.newGame'))), renderStatus(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-board"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-row"
+  }, renderSquare(0), renderSquare(1), renderSquare(2)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-row"
+  }, renderSquare(3), renderSquare(4), renderSquare(5)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "tictactoe-row"
+  }, renderSquare(6), renderSquare(7), renderSquare(8))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TicTacToe);
 
 /***/ }),
 

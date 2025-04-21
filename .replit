@@ -86,3 +86,5 @@ run = ["sh", "-c", "npm install && npm install nw react react-dom i18next react-
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+
