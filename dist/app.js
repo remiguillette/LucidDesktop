@@ -33387,27 +33387,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-var Browser = function Browser() {
-  var url = 'https://drive.google.com/drive/u/0/';
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+var MyComponent = function MyComponent() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
+    src: "https://drive.google.com/embeddedfolderview?id=1YIZ4VKNKUUoxwGWpb1zABIEBE3aiuWvM#list",
     style: {
       width: '100%',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column'
+      height: '600px',
+      border: '0'
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
-    src: url,
-    style: {
-      flexGrow: 1,
-      width: '100%',
-      height: '100%',
-      border: 'none'
-    },
-    title: "Browser Frame"
-  }));
+  });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Browser);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyComponent);
 
 /***/ }),
 

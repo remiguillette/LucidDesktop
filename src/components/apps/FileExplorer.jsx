@@ -1,23 +1,12 @@
-
 import React from 'react';
 
-const Browser = () => {
-  const url = 'https://drive.google.com/drive/u/0/';
-
+const MyComponent = () => {
   return (
-    <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <iframe
-        src={url}
-        style={{
-          flexGrow: 1,
-          width: '100%',
-          height: '100%',
-          border: 'none',
-        }}
-        title="Browser Frame"
-      />
-    </div>
+    <iframe 
+      src="https://drive.google.com/embeddedfolderview?id=1YIZ4VKNKUUoxwGWpb1zABIEBE3aiuWvM#list" 
+      style={{ width: '100%', height: '600px', border: '0' }}>
+    </iframe>
   );
 };
 
-export default Browser;
+export default MyComponent;
