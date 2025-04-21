@@ -39,6 +39,7 @@
   "desktop": {
     "terminal": "Terminal",
     "settings": "Paramètres",
+    "systemSettings": "Paramètres système",
     "browser": "Navigateur",
     "files": "Fichiers",
     "music": "Musique",
@@ -75,6 +76,15 @@
     "about": "À propos de BeaverOS",
     "viewInfo": "Voir les informations",
     "version": "Version"
+  },
+  "systemSettings": {
+    "sections": {
+      "account": "Compte",
+      "appearance": "Fond d'écran et style",
+      "network": "Réseau et Bluetooth",
+      "users": "Utilisateurs",
+      "apps": "Applications et notifications"
+    }
   },
   "apps": {
     "calculator": {
