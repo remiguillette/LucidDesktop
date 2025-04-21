@@ -33255,8 +33255,7 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 var NavBar = function NavBar(_ref) {
-  var items = _ref.items,
-    activeItem = _ref.activeItem,
+  var activeItem = _ref.activeItem,
     onSelect = _ref.onSelect,
     username = _ref.username;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date()),
@@ -33283,11 +33282,29 @@ var NavBar = function NavBar(_ref) {
     month: 'short',
     day: 'numeric'
   });
+  var navItems = [{
+    id: 'apps',
+    label: 'Applications',
+    icon: '📱',
+    submenu: [{
+      id: 'desktop',
+      label: 'Bureau',
+      icon: '🏠'
+    }, {
+      id: 'files',
+      label: 'Fichiers',
+      icon: '📁'
+    }, {
+      id: 'settings',
+      label: 'Paramètres',
+      icon: '⚙️'
+    }]
+  }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     className: "navbar"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "navbar-left"
-  }, items.map(function (item) {
+  }, navItems.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       key: item.id,
       className: "nav-item ".concat(activeItem === item.id ? 'active' : ''),
@@ -33298,7 +33315,21 @@ var NavBar = function NavBar(_ref) {
       className: "nav-icon"
     }, item.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "nav-text"
-    }, item.label));
+    }, item.label), item.submenu && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "submenu"
+    }, item.submenu.map(function (subItem) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+        key: subItem.id,
+        className: "submenu-item ".concat(activeItem === subItem.id ? 'active' : ''),
+        onClick: function onClick() {
+          return onSelect(subItem.id);
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+        className: "nav-icon"
+      }, subItem.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+        className: "nav-text"
+      }, subItem.label));
+    })));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "navbar-right"
   }, username && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
