@@ -1,20 +1,31 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+const { exec } = window.require('child_process');
 
 const Browser = () => {
   const { t } = useTranslation();
   const [url, setUrl] = useState('https://www.google.com');
+  const [error, setError] = useState('');
 
   const handleNavigate = (e) => {
     e.preventDefault();
-    // Using our NW.js polyfill's Shell.openExternal
-    if (window.nw && window.nw.Shell) {
-      window.nw.Shell.openExternal(url);
-    } else {
-      // Fallback for development environment
-      window.open(url, '_blank');
+    
+    // Validate URL
+    try {
+      new URL(url);
+    } catch {
+      setError('Invalid URL format');
+      return;
     }
+
+    // Open URL in system browser
+    exec(`xdg-open "${url}"`, (err) => {
+      if (err) {
+        console.error('Failed to open browser:', err);
+        setError('Failed to open browser');
+      }
+    });
   };
 
   return (
@@ -23,7 +34,10 @@ const Browser = () => {
         <input
           type="url"
           value={url}
-          onChange={(e) => setUrl(e.target.value)}
+          onChange={(e) => {
+            setUrl(e.target.value);
+            setError('');
+          }}
           placeholder="Enter URL"
           className="browser-input"
         />
@@ -31,6 +45,7 @@ const Browser = () => {
           {t('apps.browser.navigate')}
         </button>
       </form>
+      {error && <div className="browser-error">{error}</div>}
     </div>
   );
 };

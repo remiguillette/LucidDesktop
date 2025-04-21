@@ -29,6 +29,13 @@ body {
 button, input, select, textarea {
   font-family: inherit;
   color: inherit;
+
+.browser-error {
+  color: #ff0000;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 }
 
 a {
