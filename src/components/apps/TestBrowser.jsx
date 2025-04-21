@@ -1,18 +1,31 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 const TestBrowser = () => {
-  React.useEffect(() => {
-    // Open Google in a new tab
-    const win = window.open('https://www.google.com', '_blank');
-    if (win) {
-      win.focus();
-    }
-  }, []);
+  const [url, setUrl] = useState('https://www.google.com');
 
   return (
     <div className="browser-container">
-      <h2>Test Browser opened in new tab</h2>
+      <div className="browser-form">
+        <input 
+          type="text" 
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          className="browser-input"
+          placeholder="Enter URL"
+        />
+      </div>
+      <iframe
+        src={url}
+        style={{
+          width: '100%',
+          height: 'calc(100vh - 140px)',
+          border: 'none',
+          marginTop: '10px'
+        }}
+        title="browser-frame"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+      />
     </div>
   );
 };
