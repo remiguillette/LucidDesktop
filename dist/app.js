@@ -33067,6 +33067,10 @@ var Browser = function Browser() {
     _useState4 = _slicedToArray(_useState3, 2),
     error = _useState4[0],
     setError = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    debugInfo = _useState6[0],
+    setDebugInfo = _useState6[1];
   var handleNavigate = function handleNavigate(e) {
     e.preventDefault();
 
@@ -33075,14 +33079,24 @@ var Browser = function Browser() {
       new URL(url);
     } catch (_unused) {
       setError('Invalid URL format');
+      setDebugInfo('');
       return;
     }
 
-    // Open URL in system browser
-    exec("xdg-open \"".concat(url, "\""), function (err) {
+    // Open URL in Google Chrome using the full path
+    exec("/usr/bin/google-chrome \"".concat(url, "\""), function (err, stdout, stderr) {
       if (err) {
         console.error('Failed to open browser:', err);
         setError('Failed to open browser');
+        setDebugInfo("Error: ".concat(err.message));
+      }
+      if (stderr) {
+        console.error('stderr:', stderr);
+        setDebugInfo("stderr: ".concat(stderr));
+      }
+      if (stdout) {
+        console.log('stdout:', stdout);
+        setDebugInfo("stdout: ".concat(stdout));
       }
     });
   };
@@ -33097,6 +33111,7 @@ var Browser = function Browser() {
     onChange: function onChange(e) {
       setUrl(e.target.value);
       setError('');
+      setDebugInfo('');
     },
     placeholder: "Enter URL",
     className: "browser-input"
@@ -33105,7 +33120,9 @@ var Browser = function Browser() {
     className: "browser-button"
   }, t('apps.browser.navigate'))), error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "browser-error"
-  }, error));
+  }, error), debugInfo && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "browser-debug"
+  }, debugInfo));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Browser);
 
