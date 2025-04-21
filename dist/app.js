@@ -32247,7 +32247,11 @@ var ApplicationWindow = function ApplicationWindow(_ref) {
   }, isMaximized ? '❐' : '□'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "window-control close",
     title: "Fermer",
-    onClick: onClose
+    onClick: function onClick() {
+      if (typeof onClose === 'function') {
+        onClose();
+      }
+    }
   }, "\xD7"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "window-content"
   }, children), !isMaximized && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -32460,8 +32464,12 @@ var Desktop = function Desktop() {
     }, icon.name));
   }), openWindows.map(function (window, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({
-      key: index
-    }, window));
+      key: window.id
+    }, window, {
+      onClose: function onClose() {
+        return closeWindow(window.id);
+      }
+    }));
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Desktop);
