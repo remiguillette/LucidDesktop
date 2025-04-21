@@ -33386,95 +33386,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
-/* harmony import */ var _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/fileSystemService */ "./src/services/fileSystemService.js");
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
-
-
-var FileExplorer = function FileExplorer() {
-  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
-    t = _useTranslation.t;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-    _useState2 = _slicedToArray(_useState, 2),
-    currentPath = _useState2[0],
-    setCurrentPath = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-    _useState4 = _slicedToArray(_useState3, 2),
-    selectedItem = _useState4[0],
-    setSelectedItem = _useState4[1];
-  var currentDir = _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].getDirectory(currentPath) || _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].getDirectory('');
-  var handleNavigate = function handleNavigate(itemName) {
-    var newPath = currentPath ? "".concat(currentPath, "/").concat(itemName) : itemName;
-    setCurrentPath(newPath);
-    setSelectedItem(null);
-  };
-  var handleBack = function handleBack() {
-    var parts = currentPath.split('/').filter(function (p) {
-      return p;
-    });
-    parts.pop();
-    setCurrentPath(parts.join('/'));
-    setSelectedItem(null);
-  };
-  var handleCreateFolder = function handleCreateFolder() {
-    var name = prompt(t('apps.files.newFolderPrompt'));
-    if (name && _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].createDirectory(currentPath, name)) {
-      setSelectedItem(null);
-    }
-  };
-  var handleCreateFile = function handleCreateFile() {
-    var name = prompt(t('apps.files.newFilePrompt'));
-    if (name && _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].createFile(currentPath, name)) {
-      setSelectedItem(null);
-    }
-  };
-  var handleDelete = function handleDelete() {
-    if (selectedItem && confirm(t('apps.files.deleteConfirm'))) {
-      _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].deleteItem(currentPath, selectedItem.name);
-      setSelectedItem(null);
-    }
-  };
+var Browser = function Browser() {
+  var url = 'https://drive.google.com/drive/u/0/';
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "file-explorer"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "file-toolbar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    onClick: handleBack,
-    disabled: !currentPath
-  }, "\u2B05\uFE0F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    onClick: handleCreateFolder
-  }, "\uD83D\uDCC1 ", t('apps.files.newFolder')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    onClick: handleCreateFile
-  }, "\uD83D\uDCC4 ", t('apps.files.newFile')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    onClick: handleDelete,
-    disabled: !selectedItem
-  }, "\uD83D\uDDD1\uFE0F ", t('apps.files.delete'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "file-path"
-  }, "\uD83D\uDCC1 ", currentPath || 'root'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "file-list"
-  }, Object.entries(currentDir.children).map(function (_ref) {
-    var _ref2 = _slicedToArray(_ref, 2),
-      name = _ref2[0],
-      item = _ref2[1];
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: name,
-      className: "file-item ".concat((selectedItem === null || selectedItem === void 0 ? void 0 : selectedItem.name) === name ? 'selected' : ''),
-      onClick: function onClick() {
-        return setSelectedItem(item);
-      },
-      onDoubleClick: function onDoubleClick() {
-        return item.type === 'directory' && handleNavigate(name);
-      }
-    }, item.type === 'directory' ? '📁' : '📄', " ", name);
-  })));
+    style: {
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
+    src: url,
+    style: {
+      flexGrow: 1,
+      width: '100%',
+      height: '100%',
+      border: 'none'
+    },
+    title: "Browser Frame"
+  }));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FileExplorer);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Browser);
 
 /***/ }),
 
@@ -33721,122 +33654,6 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(react_i18next__WEBPACK_IMPOR
 
 "use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"login":{"username":"Nom d\'utilisateur","usernamePlaceholder":"Entrez votre nom d\'utilisateur","password":"Mot de passe","passwordPlaceholder":"Entrez votre mot de passe","passwordHint":"Par défaut: admin/admin","login":"Se connecter","loggingIn":"Connexion en cours...","createAccount":"Créer un compte","createNewAccount":"Créer un nouveau compte","register":"S\'inscrire","registering":"Inscription en cours...","displayName":"Nom affiché","displayNamePlaceholder":"Votre nom affiché","confirmPassword":"Confirmez le mot de passe","confirmPasswordPlaceholder":"Confirmez votre mot de passe","backToLogin":"Retour à la connexion","errors":{"noUsername":"Veuillez entrer un nom d\'utilisateur","noPassword":"Veuillez entrer un mot de passe","invalidCredentials":"Identifiants invalides","userNotFound":"Utilisateur non trouvé","wrongPassword":"Mot de passe incorrect","usernameExists":"Ce nom d\'utilisateur existe déjà","passwordMismatch":"Les mots de passe ne correspondent pas"}},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice","notepad":"Bloc-notes","tictactoe":"Morpion"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"user":"Utilisateur","logout":"Se déconnecter","appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"},"apps":{"calculator":{"title":"Calculatrice"},"notepad":{"title":"Bloc-notes","untitled":"Sans titre","new":"Nouveau","save":"Enregistrer","rename":"Renommer","confirmNew":"Le document actuel n\'est pas enregistré. Voulez-vous continuer?","promptRename":"Entrez un nouveau nom pour le document:","placeholder":"Commencez à écrire ici..."},"tictactoe":{"title":"Morpion","newGame":"Nouvelle partie","nextPlayer":"Tour du joueur: {{player}}","winner":"Le joueur {{player}} a gagné!","draw":"Match nul!"}}}');
-
-/***/ }),
-
-/***/ "./src/services/fileSystemService.js":
-/*!*******************************************!*\
-  !*** ./src/services/fileSystemService.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-// Simple in-memory file system service
-var fileSystem = {
-  root: {
-    type: 'directory',
-    name: 'root',
-    children: {
-      'Documents': {
-        type: 'directory',
-        name: 'Documents',
-        children: {
-          'notes.txt': {
-            type: 'file',
-            name: 'notes.txt',
-            content: 'Welcome to BeaverOS!',
-            created: new Date().toISOString(),
-            modified: new Date().toISOString()
-          }
-        }
-      },
-      'Images': {
-        type: 'directory',
-        name: 'Images',
-        children: {}
-      },
-      'Downloads': {
-        type: 'directory',
-        name: 'Downloads',
-        children: {}
-      }
-    }
-  }
-};
-var getDirectory = function getDirectory(path) {
-  var parts = path.split('/').filter(function (p) {
-    return p;
-  });
-  var current = fileSystem.root;
-  var _iterator = _createForOfIteratorHelper(parts),
-    _step;
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var part = _step.value;
-      if (!current.children[part]) return null;
-      current = current.children[part];
-    }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
-  }
-  return current;
-};
-var createFile = function createFile(path, name) {
-  var content = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
-  var dir = getDirectory(path);
-  if (!dir) return false;
-  dir.children[name] = {
-    type: 'file',
-    name: name,
-    content: content,
-    created: new Date().toISOString(),
-    modified: new Date().toISOString()
-  };
-  return true;
-};
-var createDirectory = function createDirectory(path, name) {
-  var dir = getDirectory(path);
-  if (!dir) return false;
-  dir.children[name] = {
-    type: 'directory',
-    name: name,
-    children: {}
-  };
-  return true;
-};
-var deleteItem = function deleteItem(path, name) {
-  var dir = getDirectory(path);
-  if (!dir || !dir.children[name]) return false;
-  delete dir.children[name];
-  return true;
-};
-var readFile = function readFile(path) {
-  var parts = path.split('/').filter(function (p) {
-    return p;
-  });
-  var fileName = parts.pop();
-  var dir = getDirectory(parts.join('/'));
-  if (!dir || !dir.children[fileName] || dir.children[fileName].type !== 'file') {
-    return null;
-  }
-  return dir.children[fileName];
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  getDirectory: getDirectory,
-  createFile: createFile,
-  createDirectory: createDirectory,
-  deleteItem: deleteItem,
-  readFile: readFile
-});
 
 /***/ }),
 
