@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Browser = () => {
-  const url = 'https://www.google.com';
+  const url = 'http://localhost:5000/';
 
   return (
     <div className="browser-container">

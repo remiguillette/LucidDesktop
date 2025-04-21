@@ -32302,7 +32302,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
 /* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
 /* harmony import */ var _apps_TestBrowser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/TestBrowser */ "./src/components/apps/TestBrowser.jsx");
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -32552,13 +32551,14 @@ var Desktop = function Desktop() {
       className: "desktop-icon-text"
     }, icon.name));
   }), openWindows.map(function (window, index) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({
-      key: window.id
-    }, window, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: window.id,
+      title: window.title,
+      icon: window.icon,
       onClose: function onClose() {
         return closeWindow(window.id);
       }
-    }));
+    }, window.component && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(window.component, null));
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Desktop);
@@ -33084,7 +33084,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 var Browser = function Browser() {
-  var url = 'https://www.google.com';
+  var url = 'http://localhost:5000/';
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "browser-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
