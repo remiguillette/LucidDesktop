@@ -74,11 +74,11 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm install"
+args = "npm install "
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npx webpack serve --mode development"
+args = "node dev-server.js"
 
 [deployment]
 run = ["sh", "-c", "npm install && npm install nw react react-dom i18next react-i18next babel-loader @babel/core @babel/preset-env @babel/preset-react style-loader css-loader webpack webpack-cli electron-installer-debian && npx webpack && nw ."]
