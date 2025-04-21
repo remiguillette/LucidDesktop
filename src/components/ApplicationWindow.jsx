@@ -177,7 +177,11 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
           <button 
             className="window-control close" 
             title="Fermer"
-            onClick={onClose}
+            onClick={() => {
+              if (typeof onClose === 'function') {
+                onClose();
+              }
+            }}
           >
             ×
           </button>
