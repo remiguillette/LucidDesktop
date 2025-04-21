@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import NavBar from './NavBar';
@@ -5,7 +6,6 @@ import Desktop from './Desktop';
 import Settings from './Settings';
 import Login from './Login';
 import userService from '../services/userService';
-import { Home, FolderOpen, Apps, Settings as SettingsIcon } from 'lucide-react';
 
 const App = () => {
   const { t } = useTranslation();
@@ -14,9 +14,7 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Vérifier si l'utilisateur est déjà connecté au chargement
   useEffect(() => {
-    // Simuler un chargement initial
     const timer = setTimeout(() => {
       const user = userService.getLoggedInUser();
       if (user) {
@@ -29,14 +27,12 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Gérer la connexion utilisateur
   const handleLogin = (user) => {
     userService.saveLoggedInUser(user);
     setCurrentUser(user);
     setIsLoggedIn(true);
   };
 
-  // Gérer la déconnexion utilisateur
   const handleLogout = () => {
     userService.clearUserSession();
     setCurrentUser(null);
@@ -44,15 +40,13 @@ const App = () => {
     setCurrentView('desktop');
   };
 
-  // Navigation items for the bottom navbar
   const navItems = [
-    { id: 'desktop', label: t('navbar.desktop'), icon: <Home size={24} color="#f89422" /> },
-    { id: 'files', label: t('navbar.files'), icon: <FolderOpen size={24} color="#f89422" /> },
-    { id: 'apps', label: t('navbar.apps'), icon: <Apps size={24} color="#f89422" /> },
-    { id: 'settings', label: t('navbar.settings'), icon: <SettingsIcon size={24} color="#f89422" /> }
+    { id: 'desktop', label: t('navbar.desktop') },
+    { id: 'files', label: t('navbar.files') },
+    { id: 'apps', label: t('navbar.apps') },
+    { id: 'settings', label: t('navbar.settings') }
   ];
 
-  // Render the current view based on navigation selection
   const renderView = () => {
     switch (currentView) {
       case 'desktop':
@@ -68,7 +62,6 @@ const App = () => {
     }
   };
 
-  // Afficher un écran de chargement
   if (isLoading) {
     return (
       <div className="loading-screen">
@@ -81,12 +74,10 @@ const App = () => {
     );
   }
 
-  // Afficher l'écran de connexion si l'utilisateur n'est pas connecté
   if (!isLoggedIn) {
     return <Login onLogin={handleLogin} />;
   }
 
-  // Afficher l'interface principale si l'utilisateur est connecté
   return (
     <div className="app-container">
       {renderView()}
