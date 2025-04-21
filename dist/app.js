@@ -32591,6 +32591,26 @@ var Desktop = function Desktop() {
 
   // Desktop icons configuration
   var desktopIcons = [{
+    id: 'trash',
+    name: t('desktop.trash'),
+    icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "currentColor",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M3 6h18"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
+    }))
+  }, {
     id: 'terminal',
     name: t('desktop.terminal'),
     icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
@@ -34101,6 +34121,7 @@ var resources = {
         "settings": "Settings"
       },
       "desktop": {
+        "trash": "Trash",
         "terminal": "Terminal",
         "settings": "Settings",
         "browser": "Browser",
