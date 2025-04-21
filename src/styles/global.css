@@ -127,8 +127,10 @@ a {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  width: 90px;
+  margin: auto;
 }
 
 .desktop-icon:hover {
