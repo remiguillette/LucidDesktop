@@ -32618,8 +32618,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apps_Mail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/Mail */ "./src/components/apps/Mail.jsx");
 /* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
 /* harmony import */ var _apps_Calendar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./apps/Calendar */ "./src/components/apps/Calendar.jsx");
-/* harmony import */ var _apps_SystemSettings_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./apps/SystemSettings.jsx */ "./src/components/apps/SystemSettings.jsx");
-/* harmony import */ var _apps_Trash__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./apps/Trash */ "./src/components/apps/Trash.jsx");
+/* harmony import */ var _apps_Trash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./apps/Trash */ "./src/components/apps/Trash.jsx");
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -32630,7 +32629,6 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
-
 
 
 
@@ -32660,8 +32658,6 @@ var Desktop = function Desktop() {
     _useState6 = _slicedToArray(_useState5, 2),
     contextMenu = _useState6[0],
     setContextMenu = _useState6[1];
-
-  // Handle context menu
   var handleContextMenu = function handleContextMenu(e) {
     e.preventDefault();
     setContextMenu({
@@ -32670,8 +32666,6 @@ var Desktop = function Desktop() {
       y: e.clientY
     });
   };
-
-  // Hide context menu when clicking outside
   var handleClick = function handleClick() {
     setContextMenu({
       show: false,
@@ -32685,8 +32679,6 @@ var Desktop = function Desktop() {
       document.removeEventListener('click', handleClick);
     };
   }, []);
-
-  // Desktop icons configuration
   var desktopIcons = [{
     id: 'trash',
     name: t('desktop.trash'),
@@ -32707,7 +32699,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
     })),
-    app: _apps_Trash__WEBPACK_IMPORTED_MODULE_10__["default"]
+    app: _apps_Trash__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, {
     id: 'terminal',
     name: t('desktop.terminal'),
@@ -32913,8 +32905,6 @@ var Desktop = function Desktop() {
     })),
     app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__["default"]
   }];
-
-  // Ouvrir une fenêtre d'application
   var openApplication = function openApplication(app) {
     var appExists = desktopIcons.find(function (icon) {
       return icon.id === app;
@@ -32923,11 +32913,7 @@ var Desktop = function Desktop() {
       console.error("Application ".concat(app, " not found"));
       return;
     }
-
-    // Générer un ID unique pour cette instance de fenêtre
     var windowId = "".concat(app, "-").concat(Date.now());
-
-    // Ajouter la fenêtre à l'état
     setOpenWindows([].concat(_toConsumableArray(openWindows), [{
       id: windowId,
       appId: app,
@@ -32936,17 +32922,12 @@ var Desktop = function Desktop() {
       component: appExists.app
     }]));
   };
-
-  // Fermer une fenêtre d'application
   var closeWindow = function closeWindow(windowId) {
     setOpenWindows(openWindows.filter(function (window) {
       return window.id !== windowId;
     }));
   };
-
-  // Gestion du clic sur une icône du bureau
   var handleIconClick = function handleIconClick(iconId) {
-    console.log("Opening ".concat(iconId));
     openApplication(iconId);
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -32976,7 +32957,7 @@ var Desktop = function Desktop() {
     }, icon.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "desktop-icon-text"
     }, icon.name));
-  }), openWindows.map(function (window, index) {
+  }), openWindows.map(function (window) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: window.id,
       title: window.title,
@@ -34153,87 +34134,6 @@ var Notepad = function Notepad() {
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Notepad);
-
-/***/ }),
-
-/***/ "./src/components/apps/SystemSettings.jsx":
-/*!************************************************!*\
-  !*** ./src/components/apps/SystemSettings.jsx ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
-
-
-var SystemSettings = function SystemSettings() {
-  var _sections$find;
-  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
-    t = _useTranslation.t;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('account'),
-    _useState2 = _slicedToArray(_useState, 2),
-    activeSection = _useState2[0],
-    setActiveSection = _useState2[1];
-  var sections = [{
-    id: 'account',
-    icon: '👤',
-    label: t('settings.sections.account')
-  }, {
-    id: 'appearance',
-    icon: '🎨',
-    label: t('settings.sections.appearance')
-  }, {
-    id: 'network',
-    icon: '🌐',
-    label: t('settings.sections.network')
-  }, {
-    id: 'users',
-    icon: '👥',
-    label: t('settings.sections.users')
-  }, {
-    id: 'apps',
-    icon: '📱',
-    label: t('settings.sections.apps')
-  }];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "system-settings"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "settings-sidebar"
-  }, sections.map(function (section) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: section.id,
-      className: "settings-sidebar-item ".concat(activeSection === section.id ? 'active' : ''),
-      onClick: function onClick() {
-        return setActiveSection(section.id);
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-      className: "settings-sidebar-icon"
-    }, section.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-      className: "settings-sidebar-label"
-    }, section.label));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "settings-content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, (_sections$find = sections.find(function (s) {
-    return s.id === activeSection;
-  })) === null || _sections$find === void 0 ? void 0 : _sections$find.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "settings-panel"
-  }, activeSection === 'account' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "settings-section"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, t('settings.account.title'))))));
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SystemSettings);
 
 /***/ }),
 
