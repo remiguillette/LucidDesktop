@@ -7,9 +7,7 @@ import Browser from './apps/Browser';
 import Mail from './apps/Mail';
 import FileExplorer from './apps/FileExplorer';
 import Calendar from './apps/Calendar';
-import SystemSettings from './apps/SystemSettings.jsx';
 import Trash from './apps/Trash';
-
 
 const Desktop = () => {
   const { t } = useTranslation();
@@ -17,7 +15,6 @@ const Desktop = () => {
   const [showIcons, setShowIcons] = useState(true);
   const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
 
-  // Handle context menu
   const handleContextMenu = (e) => {
     e.preventDefault();
     setContextMenu({
@@ -27,7 +24,6 @@ const Desktop = () => {
     });
   };
 
-  // Hide context menu when clicking outside
   const handleClick = () => {
     setContextMenu({ show: false, x: 0, y: 0 });
   };
@@ -39,7 +35,6 @@ const Desktop = () => {
     };
   }, []);
 
-  // Desktop icons configuration
   const desktopIcons = [
     { id: 'trash', name: t('desktop.trash'), icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>, app: Trash },
     { id: 'terminal', name: t('desktop.terminal'), icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg> },
@@ -51,19 +46,14 @@ const Desktop = () => {
     { id: 'notepad', name: t('desktop.notepad'), icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18H3"/><path d="M17 6H3"/><path d="M21 12H3"/></svg>, app: Notepad }
   ];
 
-  // Ouvrir une fenêtre d'application
   const openApplication = (app) => {
     const appExists = desktopIcons.find(icon => icon.id === app);
-
     if (!appExists) {
       console.error(`Application ${app} not found`);
       return;
     }
 
-    // Générer un ID unique pour cette instance de fenêtre
     const windowId = `${app}-${Date.now()}`;
-
-    // Ajouter la fenêtre à l'état
     setOpenWindows([
       ...openWindows,
       {
@@ -76,23 +66,16 @@ const Desktop = () => {
     ]);
   };
 
-  // Fermer une fenêtre d'application
   const closeWindow = (windowId) => {
     setOpenWindows(openWindows.filter(window => window.id !== windowId));
   };
 
-  // Gestion du clic sur une icône du bureau
   const handleIconClick = (iconId) => {
-    console.log(`Opening ${iconId}`);
     openApplication(iconId);
   };
 
   return (
-    <div 
-      className="desktop"
-      onContextMenu={handleContextMenu}
-    >
-      {/* Context Menu */}
+    <div className="desktop" onContextMenu={handleContextMenu}>
       {contextMenu.show && (
         <div 
           className="context-menu"
@@ -110,7 +93,7 @@ const Desktop = () => {
           </div>
         </div>
       )}
-      {/* Icônes du bureau */}
+
       {showIcons && desktopIcons.map((icon) => (
         <div
           key={icon.id}
@@ -122,8 +105,7 @@ const Desktop = () => {
         </div>
       ))}
 
-      {/* Fenêtres d'applications ouvertes */}
-      {openWindows.map((window, index) => (
+      {openWindows.map((window) => (
         <ApplicationWindow 
           key={window.id}
           title={window.title}
