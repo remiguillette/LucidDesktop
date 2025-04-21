@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Desktop from './Desktop';
-import NavBar from './NavBar';
+import Desktop from './Desktop.jsx';
+import NavBar from './NavBar.jsx';
 
 const App = () => {
   const { t } = useTranslation();
