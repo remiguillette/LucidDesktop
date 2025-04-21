@@ -9,12 +9,18 @@ const Notepad = () => {
   const [fileName, setFileName] = useState(t('apps.notepad.untitled'));
   const [isSaved, setIsSaved] = useState(true);
   const [statusMessage, setStatusMessage] = useState('');
+  const [showRecent, setShowRecent] = useState(false);
+  const [recentNotes, setRecentNotes] = useState([]);
 
   useEffect(() => {
     if (content !== '') {
       setIsSaved(false);
     }
   }, [content]);
+
+  useEffect(() => {
+    setRecentNotes(fileSystemService.getRecentNotes());
+  }, []);
 
   const handleChange = (e) => {
     setContent(e.target.value);
@@ -50,13 +56,6 @@ const Notepad = () => {
       setIsSaved(false);
     }
   };
-
-  const [showRecent, setShowRecent] = useState(false);
-  const [recentNotes, setRecentNotes] = useState([]);
-
-  useEffect(() => {
-    setRecentNotes(fileSystemService.getRecentNotes());
-  }, []);
 
   const handleOpenRecent = (note) => {
     if (!isSaved) {
@@ -101,7 +100,6 @@ const Notepad = () => {
               </div>
             )}
           </div>
-        <div className="notepad-buttons">
           <button className="notepad-button" onClick={handleNew} title={t('apps.notepad.new')}>
             {t('apps.notepad.new')}
           </button>
