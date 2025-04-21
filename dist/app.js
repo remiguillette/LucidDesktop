@@ -170,6 +170,63 @@ a {
 .desktop-icon-img {
   width: 48px;
   height: 48px;
+
+/* File Explorer Styles */
+.file-explorer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #1a1a1a;
+  color: #f89422;
+}
+
+.file-toolbar {
+  padding: 8px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  gap: 8px;
+}
+
+.file-toolbar button {
+  padding: 4px 8px;
+  background: #333;
+  border: none;
+  color: #f89422;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.file-toolbar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.file-path {
+  padding: 8px;
+  background: #242424;
+  border-bottom: 1px solid #333;
+}
+
+.file-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.file-item {
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.file-item:hover {
+  background: #333;
+}
+
+.file-item.selected {
+  background: #444;
+}
+
   margin-bottom: 8px;
 }
 
@@ -866,7 +923,7 @@ input:checked + .toggle-slider:before {
   background: #45a049;
 }
 
-/* App styles */`, "",{"version":3,"sources":["webpack://./src/styles/global.css"],"names":[],"mappings":"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","sourcesContent":["/* Global CSS for BeaverOS */\n:root {\n  --primary-color: #f89422;\n  --bg-color: #121212;\n  --bg-light: #1e1e1e;\n  --bg-lighter: #252525;\n  --text-color: #f5f5f5;\n  --navbar-height: 60px;\n  --window-header: #1a1a1a;\n  --window-border: #333;\n  --shadow-color: rgba(0, 0, 0, 0.5);\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  overflow: hidden;\n  height: 100vh;\n  width: 100vw;\n}\n\nbutton, input, select, textarea {\n  font-family: inherit;\n  color: inherit;\n\n.browser-error {\n  color: #ff0000;\n  margin-top: 10px;\n  font-size: 14px;\n}\n\n}\n\na {\n  color: var(--primary-color);\n  text-decoration: none;\n}\n\n#root {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  width: 100vw;\n}\n\n.app-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.main-content {\n  flex: 1;\n  overflow: auto;\n  padding: 20px;\n}\n\n.navbar {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: var(--navbar-height);\n  background-color: var(--bg-light);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-top: 1px solid #333;\n  z-index: 1000;\n  padding: 0 15px;\n}\n\n.navbar-left, .navbar-right {\n  display: flex;\n  align-items: center;\n}\n\n.navbar-left {\n  justify-content: flex-start;\n}\n\n.navbar-right {\n  justify-content: flex-end;\n}\n\n.nav-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 8px 16px;\n  color: var(--primary-color);\n  cursor: pointer;\n  transition: all 0.2s ease;\n}\n\n.nav-item:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.nav-item.active {\n  background-color: rgba(248, 148, 34, 0.2);\n}\n\n.nav-icon {\n  font-size: 24px;\n  margin-bottom: 4px;\n}\n\n.nav-text {\n  font-size: 12px;\n}\n\n.desktop {\n  position: relative;\n  height: calc(100vh - var(--navbar-height));\n  background-color: var(--bg-color);\n  padding: 20px;\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  grid-gap: 20px;\n  overflow: auto;\n}\n\n.desktop-icon {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  padding: 8px;\n  border-radius: 4px;\n  width: 90px;\n  margin: auto;\n}\n\n.desktop-icon:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.desktop-icon-img {\n  width: 48px;\n  height: 48px;\n  margin-bottom: 8px;\n}\n\n.desktop-icon-text {\n  color: var(--primary-color);\n  text-align: center;\n  font-size: 14px;\n  word-break: break-word;\n}\n\n.settings-container {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.settings-section {\n  margin-bottom: 30px;\n}\n\n.settings-title {\n  color: var(--primary-color);\n  margin-bottom: 15px;\n  border-bottom: 1px solid #333;\n  padding-bottom: 10px;\n}\n\n.settings-user-info {\n  display: flex;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\n.settings-user-avatar {\n  width: 64px;\n  height: 64px;\n  background-color: var(--primary-color);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 32px;\n  margin-right: 15px;\n}\n\n.settings-user-details {\n  flex: 1;\n}\n\n.settings-username {\n  font-size: 18px;\n  font-weight: 500;\n  color: var(--text-color);\n  margin-bottom: 5px;\n}\n\n.settings-user-role {\n  font-size: 14px;\n  color: #888;\n}\n\n.settings-logout-button {\n  width: 100%;\n  padding: 10px 15px;\n  background-color: #cc3636;\n  border: none;\n  border-radius: 4px;\n  color: white;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.settings-logout-button:hover {\n  background-color: #e04444;\n}\n\n.settings-option {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px 0;\n  border-bottom: 1px solid #252525;\n}\n\n.settings-label {\n  color: var(--text-color);\n}\n\n/* Custom checkbox and toggle styling */\n.toggle-switch {\n  position: relative;\n  display: inline-block;\n  width: 50px;\n  height: 24px;\n}\n\n.toggle-switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.toggle-slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #444;\n  transition: .4s;\n  border-radius: 24px;\n}\n\n.toggle-slider:before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: .4s;\n  border-radius: 50%;\n}\n\ninput:checked + .toggle-slider {\n  background-color: var(--primary-color);\n}\n\ninput:checked + .toggle-slider:before {\n  transform: translateX(26px);\n}\n\n/* Application Window Styles */\n.app-window {\n  position: absolute;\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  border-radius: 4px;\n  box-shadow: 0 8px 24px var(--shadow-color);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  z-index: 100;\n  user-select: none;\n}\n\n.window-titlebar {\n  height: 36px;\n  background-color: var(--window-header);\n  border-bottom: 1px solid var(--window-border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 10px;\n  cursor: move;\n}\n\n.window-title-left {\n  display: flex;\n  align-items: center;\n}\n\n.window-icon {\n  margin-right: 8px;\n  font-size: 16px;\n}\n\n.window-title {\n  color: var(--primary-color);\n  font-size: 14px;\n  font-weight: 500;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.window-controls {\n  display: flex;\n  gap: 6px;\n}\n\n.window-control {\n  width: 16px;\n  height: 16px;\n  border: none;\n  background: none;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  border-radius: 50%;\n  color: var(--text-color);\n}\n\n.window-control.minimize {\n  background-color: #747474;\n}\n\n.window-control.maximize {\n  background-color: #747474;\n}\n\n.window-control.fullscreen {\n  background-color: #747474;\n}\n\n.window-control.close {\n  background-color: #cc3636;\n}\n\n.window-control:hover {\n  opacity: 0.8;\n}\n\n.window-content {\n  flex: 1;\n  overflow: auto;\n  padding: 10px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n}\n\n.app-window.maximized {\n  box-shadow: none;\n  border-radius: 0;\n}\n\n/* Poignées de redimensionnement */\n.window-resize-handle {\n  position: absolute;\n  background: transparent;\n  z-index: 101;\n}\n\n/* Coins */\n.nw-resize {\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.ne-resize {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.sw-resize {\n  bottom: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.se-resize {\n  bottom: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.se-resize::after {\n  content: \"\";\n  position: absolute;\n  right: 3px;\n  bottom: 3px;\n  width: 8px;\n  height: 8px;\n  border-bottom: 2px solid var(--primary-color);\n  border-right: 2px solid var(--primary-color);\n}\n\n/* Bords */\n.n-resize {\n  top: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.e-resize {\n  top: 8px;\n  right: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n.s-resize {\n  bottom: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.w-resize {\n  top: 8px;\n  left: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n/* Calculator App Styles */\n.calculator-container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--bg-light);\n  border-radius: 4px;\n  overflow: hidden;\n}\n\n.calculator-display {\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  padding: 20px;\n  text-align: right;\n  font-size: 36px;\n  font-weight: bold;\n  height: 80px;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  border-bottom: 1px solid var(--window-border);\n}\n\n.calculator-keypad {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 1px;\n  flex: 1;\n  background-color: var(--window-border);\n}\n\n.calculator-button {\n  background-color: var(--bg-lighter);\n  border: none;\n  font-size: 24px;\n  color: var(--text-color);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.calculator-button:hover {\n  background-color: #333;\n}\n\n.calculator-button:active {\n  background-color: #444;\n}\n\n.calculator-button.zero {\n  grid-column: span 2;\n}\n\n.calculator-button.operator {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.calculator-button.operator:hover {\n  background-color: #e48419;\n}\n\n.calculator-button.special {\n  background-color: #2a2a2a;\n}\n\n/* Notepad App Styles */\n.notepad-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n  background-color: var(--bg-light);\n}\n\n.notepad-toolbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px;\n  background-color: var(--bg-lighter);\n  border-bottom: 1px solid var(--window-border);\n}\n\n.notepad-buttons {\n  display: flex;\n  gap: 10px;\n}\n\n.notepad-button {\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  color: var(--primary-color);\n  padding: 6px 12px;\n  border-radius: 3px;\n  cursor: pointer;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n\n.notepad-button:hover {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.notepad-filename {\n  color: var(--text-color);\n  font-size: 14px;\n  padding: 0 10px;\n}\n\n.notepad-editor {\n  flex: 1;\n  border: none;\n  resize: none;\n  padding: 15px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n  font-size: 16px;\n  line-height: 1.5;\n  font-family: 'Courier New', monospace;\n}\n\n.notepad-editor:focus {\n  outline: none;\n}\n\n.notepad-editor::placeholder {\n  color: #666;\n}\n\n\n\n/* Navbar User Display */\n.nav-user {\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n  color: var(--text-color);\n  padding: 6px 12px;\n  border-radius: 20px;\n  background-color: rgba(255, 255, 255, 0.05);\n}\n\n.nav-user-icon {\n  font-size: 20px;\n  margin-right: 8px;\n}\n\n.nav-user-name {\n  font-size: 14px;\n}\n\n.nav-clock {\n  font-size: 14px;\n  color: var(--text-color);\n  background-color: rgba(255, 255, 255, 0.05);\n  padding: 6px 12px;\n  border-radius: 20px;\n}\n\n/* Loading Screen Styles */\n.loading-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n}\n\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.loading-logo {\n  width: 100px;\n  height: 100px;\n  margin-bottom: 20px;\n}\n\n.loading-spinner {\n  width: 40px;\n  height: 40px;\n  border: 4px solid rgba(248, 148, 34, 0.2);\n  border-top: 4px solid var(--primary-color);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-bottom: 20px;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n.loading-text {\n  color: var(--primary-color);\n  font-size: 24px;\n  font-weight: bold;\n}\n\n/* Login Screen Styles */\n.login-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n  background-image: linear-gradient(to bottom right, rgba(20, 20, 20, 0.9), rgba(5, 5, 5, 0.95));\n}\n\n.login-container {\n  width: 400px;\n  padding: 30px;\n  border-radius: 8px;\n  background-color: var(--bg-light);\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);\n  text-align: center;\n  animation: fadeIn 0.5s ease-in-out;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(-20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.login-logo {\n  margin-bottom: 30px;\n}\n\n.login-logo img {\n  width: 80px;\n  height: 80px;\n  margin-bottom: 15px;\n}\n\n.login-logo h1 {\n  font-size: 32px;\n  font-weight: bold;\n  color: var(--primary-color);\n  margin: 0;\n}\n\n.login-form {\n  text-align: left;\n}\n\n.login-error {\n  background-color: rgba(255, 76, 76, 0.1);\n  color: #ff4c4c;\n  border: 1px solid #ff4c4c;\n  padding: 10px;\n  border-radius: 4px;\n  margin-bottom: 15px;\n  font-size: 14px;\n}\n\n.form-group {\n  margin-bottom: 20px;\n}\n\n.form-group label {\n  display: block;\n  color: var(--text-color);\n  margin-bottom: 8px;\n  font-weight: 500;\n}\n\n.form-group input {\n  width: 100%;\n  padding: 12px;\n  border-radius: 4px;\n  background-color: var(--bg-color);\n  border: 1px solid var(--window-border);\n  color: var(--text-color);\n  font-size: 16px;\n  transition: border 0.3s;\n}\n\n.form-group input:focus {\n  outline: none;\n  border-color: var(--primary-color);\n}\n\n.form-group small {\n  display: block;\n  color: #888;\n  margin-top: 6px;\n  font-size: 12px;\n}\n\n.login-button {\n  width: 100%;\n  padding: 12px;\n  background-color: var(--primary-color);\n  color: white;\n  border: none;\n  border-radius: 4px;\n  font-size: 16px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.login-button:hover {\n  background-color: #e48419;\n}\n\n.login-button:disabled {\n  background-color: #a16012;\n  cursor: not-allowed;\n}\n\n.login-version {\n  margin-top: 30px;\n  color: #777;\n  font-size: 12px;\n}\n\n.login-options {\n  margin-top: 20px;\n  text-align: center;\n}\n\n.login-link-button {\n  background: none;\n  border: none;\n  color: var(--primary-color);\n  font-size: 14px;\n  cursor: pointer;\n  text-decoration: underline;\n  padding: 5px 10px;\n}\n\n.login-link-button:hover {\n  color: #e48419;\n}\n\n.login-link-button:disabled {\n  color: #a16012;\n  cursor: not-allowed;\n}\n\n/* Browser styles */\n.browser-container {\n  padding: 20px;\n}\n\n.browser-form {\n  display: flex;\n  gap: 10px;\n}\n\n.browser-input {\n  flex: 1;\n  padding: 8px;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\n\n.browser-button {\n  padding: 8px 16px;\n  background: #4CAF50;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\n.browser-button:hover {\n  background: #45a049;\n}\n\n/* App styles */"],"sourceRoot":""}]);
+/* App styles */`, "",{"version":3,"sources":["webpack://./src/styles/global.css"],"names":[],"mappings":"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","sourcesContent":["/* Global CSS for BeaverOS */\n:root {\n  --primary-color: #f89422;\n  --bg-color: #121212;\n  --bg-light: #1e1e1e;\n  --bg-lighter: #252525;\n  --text-color: #f5f5f5;\n  --navbar-height: 60px;\n  --window-header: #1a1a1a;\n  --window-border: #333;\n  --shadow-color: rgba(0, 0, 0, 0.5);\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  overflow: hidden;\n  height: 100vh;\n  width: 100vw;\n}\n\nbutton, input, select, textarea {\n  font-family: inherit;\n  color: inherit;\n\n.browser-error {\n  color: #ff0000;\n  margin-top: 10px;\n  font-size: 14px;\n}\n\n}\n\na {\n  color: var(--primary-color);\n  text-decoration: none;\n}\n\n#root {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  width: 100vw;\n}\n\n.app-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.main-content {\n  flex: 1;\n  overflow: auto;\n  padding: 20px;\n}\n\n.navbar {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: var(--navbar-height);\n  background-color: var(--bg-light);\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-top: 1px solid #333;\n  z-index: 1000;\n  padding: 0 15px;\n}\n\n.navbar-left, .navbar-right {\n  display: flex;\n  align-items: center;\n}\n\n.navbar-left {\n  justify-content: flex-start;\n}\n\n.navbar-right {\n  justify-content: flex-end;\n}\n\n.nav-item {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 8px 16px;\n  color: var(--primary-color);\n  cursor: pointer;\n  transition: all 0.2s ease;\n}\n\n.nav-item:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.nav-item.active {\n  background-color: rgba(248, 148, 34, 0.2);\n}\n\n.nav-icon {\n  font-size: 24px;\n  margin-bottom: 4px;\n}\n\n.nav-text {\n  font-size: 12px;\n}\n\n.desktop {\n  position: relative;\n  height: calc(100vh - var(--navbar-height));\n  background-color: var(--bg-color);\n  padding: 20px;\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));\n  grid-gap: 20px;\n  overflow: auto;\n}\n\n.desktop-icon {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  padding: 8px;\n  border-radius: 4px;\n  width: 90px;\n  margin: auto;\n}\n\n.desktop-icon:hover {\n  background-color: rgba(248, 148, 34, 0.1);\n}\n\n.desktop-icon-img {\n  width: 48px;\n  height: 48px;\n\n/* File Explorer Styles */\n.file-explorer {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  background: #1a1a1a;\n  color: #f89422;\n}\n\n.file-toolbar {\n  padding: 8px;\n  border-bottom: 1px solid #333;\n  display: flex;\n  gap: 8px;\n}\n\n.file-toolbar button {\n  padding: 4px 8px;\n  background: #333;\n  border: none;\n  color: #f89422;\n  cursor: pointer;\n  border-radius: 4px;\n}\n\n.file-toolbar button:disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n}\n\n.file-path {\n  padding: 8px;\n  background: #242424;\n  border-bottom: 1px solid #333;\n}\n\n.file-list {\n  flex: 1;\n  overflow-y: auto;\n  padding: 8px;\n}\n\n.file-item {\n  padding: 4px 8px;\n  cursor: pointer;\n  border-radius: 4px;\n}\n\n.file-item:hover {\n  background: #333;\n}\n\n.file-item.selected {\n  background: #444;\n}\n\n  margin-bottom: 8px;\n}\n\n.desktop-icon-text {\n  color: var(--primary-color);\n  text-align: center;\n  font-size: 14px;\n  word-break: break-word;\n}\n\n.settings-container {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n.settings-section {\n  margin-bottom: 30px;\n}\n\n.settings-title {\n  color: var(--primary-color);\n  margin-bottom: 15px;\n  border-bottom: 1px solid #333;\n  padding-bottom: 10px;\n}\n\n.settings-user-info {\n  display: flex;\n  align-items: center;\n  margin-bottom: 20px;\n}\n\n.settings-user-avatar {\n  width: 64px;\n  height: 64px;\n  background-color: var(--primary-color);\n  border-radius: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 32px;\n  margin-right: 15px;\n}\n\n.settings-user-details {\n  flex: 1;\n}\n\n.settings-username {\n  font-size: 18px;\n  font-weight: 500;\n  color: var(--text-color);\n  margin-bottom: 5px;\n}\n\n.settings-user-role {\n  font-size: 14px;\n  color: #888;\n}\n\n.settings-logout-button {\n  width: 100%;\n  padding: 10px 15px;\n  background-color: #cc3636;\n  border: none;\n  border-radius: 4px;\n  color: white;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.settings-logout-button:hover {\n  background-color: #e04444;\n}\n\n.settings-option {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px 0;\n  border-bottom: 1px solid #252525;\n}\n\n.settings-label {\n  color: var(--text-color);\n}\n\n/* Custom checkbox and toggle styling */\n.toggle-switch {\n  position: relative;\n  display: inline-block;\n  width: 50px;\n  height: 24px;\n}\n\n.toggle-switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.toggle-slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #444;\n  transition: .4s;\n  border-radius: 24px;\n}\n\n.toggle-slider:before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 4px;\n  bottom: 4px;\n  background-color: white;\n  transition: .4s;\n  border-radius: 50%;\n}\n\ninput:checked + .toggle-slider {\n  background-color: var(--primary-color);\n}\n\ninput:checked + .toggle-slider:before {\n  transform: translateX(26px);\n}\n\n/* Application Window Styles */\n.app-window {\n  position: absolute;\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  border-radius: 4px;\n  box-shadow: 0 8px 24px var(--shadow-color);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  z-index: 100;\n  user-select: none;\n}\n\n.window-titlebar {\n  height: 36px;\n  background-color: var(--window-header);\n  border-bottom: 1px solid var(--window-border);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0 10px;\n  cursor: move;\n}\n\n.window-title-left {\n  display: flex;\n  align-items: center;\n}\n\n.window-icon {\n  margin-right: 8px;\n  font-size: 16px;\n}\n\n.window-title {\n  color: var(--primary-color);\n  font-size: 14px;\n  font-weight: 500;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.window-controls {\n  display: flex;\n  gap: 6px;\n}\n\n.window-control {\n  width: 16px;\n  height: 16px;\n  border: none;\n  background: none;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 14px;\n  border-radius: 50%;\n  color: var(--text-color);\n}\n\n.window-control.minimize {\n  background-color: #747474;\n}\n\n.window-control.maximize {\n  background-color: #747474;\n}\n\n.window-control.fullscreen {\n  background-color: #747474;\n}\n\n.window-control.close {\n  background-color: #cc3636;\n}\n\n.window-control:hover {\n  opacity: 0.8;\n}\n\n.window-content {\n  flex: 1;\n  overflow: auto;\n  padding: 10px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n}\n\n.app-window.maximized {\n  box-shadow: none;\n  border-radius: 0;\n}\n\n/* Poignées de redimensionnement */\n.window-resize-handle {\n  position: absolute;\n  background: transparent;\n  z-index: 101;\n}\n\n/* Coins */\n.nw-resize {\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.ne-resize {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.sw-resize {\n  bottom: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nesw-resize;\n}\n\n.se-resize {\n  bottom: 0;\n  right: 0;\n  width: 8px;\n  height: 8px;\n  cursor: nwse-resize;\n}\n\n.se-resize::after {\n  content: \"\";\n  position: absolute;\n  right: 3px;\n  bottom: 3px;\n  width: 8px;\n  height: 8px;\n  border-bottom: 2px solid var(--primary-color);\n  border-right: 2px solid var(--primary-color);\n}\n\n/* Bords */\n.n-resize {\n  top: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.e-resize {\n  top: 8px;\n  right: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n.s-resize {\n  bottom: 0;\n  left: 8px;\n  right: 8px;\n  height: 4px;\n  cursor: ns-resize;\n}\n\n.w-resize {\n  top: 8px;\n  left: 0;\n  bottom: 8px;\n  width: 4px;\n  cursor: ew-resize;\n}\n\n/* Calculator App Styles */\n.calculator-container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--bg-light);\n  border-radius: 4px;\n  overflow: hidden;\n}\n\n.calculator-display {\n  background-color: var(--bg-color);\n  color: var(--primary-color);\n  padding: 20px;\n  text-align: right;\n  font-size: 36px;\n  font-weight: bold;\n  height: 80px;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  border-bottom: 1px solid var(--window-border);\n}\n\n.calculator-keypad {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 1px;\n  flex: 1;\n  background-color: var(--window-border);\n}\n\n.calculator-button {\n  background-color: var(--bg-lighter);\n  border: none;\n  font-size: 24px;\n  color: var(--text-color);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.calculator-button:hover {\n  background-color: #333;\n}\n\n.calculator-button:active {\n  background-color: #444;\n}\n\n.calculator-button.zero {\n  grid-column: span 2;\n}\n\n.calculator-button.operator {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.calculator-button.operator:hover {\n  background-color: #e48419;\n}\n\n.calculator-button.special {\n  background-color: #2a2a2a;\n}\n\n/* Notepad App Styles */\n.notepad-container {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n  background-color: var(--bg-light);\n}\n\n.notepad-toolbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 10px;\n  background-color: var(--bg-lighter);\n  border-bottom: 1px solid var(--window-border);\n}\n\n.notepad-buttons {\n  display: flex;\n  gap: 10px;\n}\n\n.notepad-button {\n  background-color: var(--bg-light);\n  border: 1px solid var(--window-border);\n  color: var(--primary-color);\n  padding: 6px 12px;\n  border-radius: 3px;\n  cursor: pointer;\n  font-size: 14px;\n  transition: all 0.2s;\n}\n\n.notepad-button:hover {\n  background-color: var(--primary-color);\n  color: var(--bg-color);\n}\n\n.notepad-filename {\n  color: var(--text-color);\n  font-size: 14px;\n  padding: 0 10px;\n}\n\n.notepad-editor {\n  flex: 1;\n  border: none;\n  resize: none;\n  padding: 15px;\n  background-color: var(--bg-light);\n  color: var(--text-color);\n  font-size: 16px;\n  line-height: 1.5;\n  font-family: 'Courier New', monospace;\n}\n\n.notepad-editor:focus {\n  outline: none;\n}\n\n.notepad-editor::placeholder {\n  color: #666;\n}\n\n\n\n/* Navbar User Display */\n.nav-user {\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n  color: var(--text-color);\n  padding: 6px 12px;\n  border-radius: 20px;\n  background-color: rgba(255, 255, 255, 0.05);\n}\n\n.nav-user-icon {\n  font-size: 20px;\n  margin-right: 8px;\n}\n\n.nav-user-name {\n  font-size: 14px;\n}\n\n.nav-clock {\n  font-size: 14px;\n  color: var(--text-color);\n  background-color: rgba(255, 255, 255, 0.05);\n  padding: 6px 12px;\n  border-radius: 20px;\n}\n\n/* Loading Screen Styles */\n.loading-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n}\n\n.loading-container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.loading-logo {\n  width: 100px;\n  height: 100px;\n  margin-bottom: 20px;\n}\n\n.loading-spinner {\n  width: 40px;\n  height: 40px;\n  border: 4px solid rgba(248, 148, 34, 0.2);\n  border-top: 4px solid var(--primary-color);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin-bottom: 20px;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n\n.loading-text {\n  color: var(--primary-color);\n  font-size: 24px;\n  font-weight: bold;\n}\n\n/* Login Screen Styles */\n.login-screen {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: var(--bg-color);\n  background-image: linear-gradient(to bottom right, rgba(20, 20, 20, 0.9), rgba(5, 5, 5, 0.95));\n}\n\n.login-container {\n  width: 400px;\n  padding: 30px;\n  border-radius: 8px;\n  background-color: var(--bg-light);\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);\n  text-align: center;\n  animation: fadeIn 0.5s ease-in-out;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(-20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.login-logo {\n  margin-bottom: 30px;\n}\n\n.login-logo img {\n  width: 80px;\n  height: 80px;\n  margin-bottom: 15px;\n}\n\n.login-logo h1 {\n  font-size: 32px;\n  font-weight: bold;\n  color: var(--primary-color);\n  margin: 0;\n}\n\n.login-form {\n  text-align: left;\n}\n\n.login-error {\n  background-color: rgba(255, 76, 76, 0.1);\n  color: #ff4c4c;\n  border: 1px solid #ff4c4c;\n  padding: 10px;\n  border-radius: 4px;\n  margin-bottom: 15px;\n  font-size: 14px;\n}\n\n.form-group {\n  margin-bottom: 20px;\n}\n\n.form-group label {\n  display: block;\n  color: var(--text-color);\n  margin-bottom: 8px;\n  font-weight: 500;\n}\n\n.form-group input {\n  width: 100%;\n  padding: 12px;\n  border-radius: 4px;\n  background-color: var(--bg-color);\n  border: 1px solid var(--window-border);\n  color: var(--text-color);\n  font-size: 16px;\n  transition: border 0.3s;\n}\n\n.form-group input:focus {\n  outline: none;\n  border-color: var(--primary-color);\n}\n\n.form-group small {\n  display: block;\n  color: #888;\n  margin-top: 6px;\n  font-size: 12px;\n}\n\n.login-button {\n  width: 100%;\n  padding: 12px;\n  background-color: var(--primary-color);\n  color: white;\n  border: none;\n  border-radius: 4px;\n  font-size: 16px;\n  font-weight: 500;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n\n.login-button:hover {\n  background-color: #e48419;\n}\n\n.login-button:disabled {\n  background-color: #a16012;\n  cursor: not-allowed;\n}\n\n.login-version {\n  margin-top: 30px;\n  color: #777;\n  font-size: 12px;\n}\n\n.login-options {\n  margin-top: 20px;\n  text-align: center;\n}\n\n.login-link-button {\n  background: none;\n  border: none;\n  color: var(--primary-color);\n  font-size: 14px;\n  cursor: pointer;\n  text-decoration: underline;\n  padding: 5px 10px;\n}\n\n.login-link-button:hover {\n  color: #e48419;\n}\n\n.login-link-button:disabled {\n  color: #a16012;\n  cursor: not-allowed;\n}\n\n/* Browser styles */\n.browser-container {\n  padding: 20px;\n}\n\n.browser-form {\n  display: flex;\n  gap: 10px;\n}\n\n.browser-input {\n  flex: 1;\n  padding: 8px;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\n\n.browser-button {\n  padding: 8px 16px;\n  background: #4CAF50;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\n.browser-button:hover {\n  background: #45a049;\n}\n\n/* App styles */"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -32318,6 +32375,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
 /* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
 /* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
+/* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -32328,6 +32386,7 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -32457,7 +32516,8 @@ var Desktop = function Desktop() {
       strokeLinejoin: "round"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"
-    }))
+    })),
+    app: _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     id: 'calendar',
     name: t('desktop.calendar'),
@@ -33313,6 +33373,111 @@ var Calculator = function Calculator() {
 
 /***/ }),
 
+/***/ "./src/components/apps/FileExplorer.jsx":
+/*!**********************************************!*\
+  !*** ./src/components/apps/FileExplorer.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
+/* harmony import */ var _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/fileSystemService */ "./src/services/fileSystemService.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+var FileExplorer = function FileExplorer() {
+  var _useTranslation = (0,react_i18next__WEBPACK_IMPORTED_MODULE_1__.useTranslation)(),
+    t = _useTranslation.t;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    currentPath = _useState2[0],
+    setCurrentPath = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState4 = _slicedToArray(_useState3, 2),
+    selectedItem = _useState4[0],
+    setSelectedItem = _useState4[1];
+  var currentDir = _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].getDirectory(currentPath) || _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].getDirectory('');
+  var handleNavigate = function handleNavigate(itemName) {
+    var newPath = currentPath ? "".concat(currentPath, "/").concat(itemName) : itemName;
+    setCurrentPath(newPath);
+    setSelectedItem(null);
+  };
+  var handleBack = function handleBack() {
+    var parts = currentPath.split('/').filter(function (p) {
+      return p;
+    });
+    parts.pop();
+    setCurrentPath(parts.join('/'));
+    setSelectedItem(null);
+  };
+  var handleCreateFolder = function handleCreateFolder() {
+    var name = prompt(t('apps.files.newFolderPrompt'));
+    if (name && _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].createDirectory(currentPath, name)) {
+      setSelectedItem(null);
+    }
+  };
+  var handleCreateFile = function handleCreateFile() {
+    var name = prompt(t('apps.files.newFilePrompt'));
+    if (name && _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].createFile(currentPath, name)) {
+      setSelectedItem(null);
+    }
+  };
+  var handleDelete = function handleDelete() {
+    if (selectedItem && confirm(t('apps.files.deleteConfirm'))) {
+      _services_fileSystemService__WEBPACK_IMPORTED_MODULE_2__["default"].deleteItem(currentPath, selectedItem.name);
+      setSelectedItem(null);
+    }
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "file-explorer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "file-toolbar"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: handleBack,
+    disabled: !currentPath
+  }, "\u2B05\uFE0F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: handleCreateFolder
+  }, "\uD83D\uDCC1 ", t('apps.files.newFolder')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: handleCreateFile
+  }, "\uD83D\uDCC4 ", t('apps.files.newFile')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: handleDelete,
+    disabled: !selectedItem
+  }, "\uD83D\uDDD1\uFE0F ", t('apps.files.delete'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "file-path"
+  }, "\uD83D\uDCC1 ", currentPath || 'root'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "file-list"
+  }, Object.entries(currentDir.children).map(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+      name = _ref2[0],
+      item = _ref2[1];
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: name,
+      className: "file-item ".concat((selectedItem === null || selectedItem === void 0 ? void 0 : selectedItem.name) === name ? 'selected' : ''),
+      onClick: function onClick() {
+        return setSelectedItem(item);
+      },
+      onDoubleClick: function onDoubleClick() {
+        return item.type === 'directory' && handleNavigate(name);
+      }
+    }, item.type === 'directory' ? '📁' : '📄', " ", name);
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FileExplorer);
+
+/***/ }),
+
 /***/ "./src/components/apps/Notepad.jsx":
 /*!*****************************************!*\
   !*** ./src/components/apps/Notepad.jsx ***!
@@ -33556,6 +33721,122 @@ i18next__WEBPACK_IMPORTED_MODULE_0__["default"].use(react_i18next__WEBPACK_IMPOR
 
 "use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"app":{"title":"BeaverOS","description":"Système d\'exploitation de bureau"},"login":{"username":"Nom d\'utilisateur","usernamePlaceholder":"Entrez votre nom d\'utilisateur","password":"Mot de passe","passwordPlaceholder":"Entrez votre mot de passe","passwordHint":"Par défaut: admin/admin","login":"Se connecter","loggingIn":"Connexion en cours...","createAccount":"Créer un compte","createNewAccount":"Créer un nouveau compte","register":"S\'inscrire","registering":"Inscription en cours...","displayName":"Nom affiché","displayNamePlaceholder":"Votre nom affiché","confirmPassword":"Confirmez le mot de passe","confirmPasswordPlaceholder":"Confirmez votre mot de passe","backToLogin":"Retour à la connexion","errors":{"noUsername":"Veuillez entrer un nom d\'utilisateur","noPassword":"Veuillez entrer un mot de passe","invalidCredentials":"Identifiants invalides","userNotFound":"Utilisateur non trouvé","wrongPassword":"Mot de passe incorrect","usernameExists":"Ce nom d\'utilisateur existe déjà","passwordMismatch":"Les mots de passe ne correspondent pas"}},"navbar":{"desktop":"Bureau","files":"Fichiers","apps":"Applications","settings":"Paramètres"},"desktop":{"terminal":"Terminal","settings":"Paramètres","browser":"Navigateur","files":"Fichiers","music":"Musique","calendar":"Calendrier","mail":"Courrier","calculator":"Calculatrice","notepad":"Bloc-notes","tictactoe":"Morpion"},"views":{"files":{"title":"Gestionnaire de Fichiers","noFiles":"Aucun fichier trouvé","createFolder":"Nouveau Dossier","upload":"Téléverser"},"apps":{"title":"Centre d\'Applications","install":"Installer","uninstall":"Désinstaller","update":"Mettre à jour"}},"settings":{"user":"Utilisateur","logout":"Se déconnecter","appearance":"Apparence","darkTheme":"Thème sombre","language":"Langue","notifications":"Notifications","enableNotifications":"Activer les notifications","system":"Système","autoStart":"Démarrer avec le système","about":"À propos de BeaverOS","viewInfo":"Voir les informations","version":"Version"},"apps":{"calculator":{"title":"Calculatrice"},"notepad":{"title":"Bloc-notes","untitled":"Sans titre","new":"Nouveau","save":"Enregistrer","rename":"Renommer","confirmNew":"Le document actuel n\'est pas enregistré. Voulez-vous continuer?","promptRename":"Entrez un nouveau nom pour le document:","placeholder":"Commencez à écrire ici..."},"tictactoe":{"title":"Morpion","newGame":"Nouvelle partie","nextPlayer":"Tour du joueur: {{player}}","winner":"Le joueur {{player}} a gagné!","draw":"Match nul!"}}}');
+
+/***/ }),
+
+/***/ "./src/services/fileSystemService.js":
+/*!*******************************************!*\
+  !*** ./src/services/fileSystemService.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+// Simple in-memory file system service
+var fileSystem = {
+  root: {
+    type: 'directory',
+    name: 'root',
+    children: {
+      'Documents': {
+        type: 'directory',
+        name: 'Documents',
+        children: {
+          'notes.txt': {
+            type: 'file',
+            name: 'notes.txt',
+            content: 'Welcome to BeaverOS!',
+            created: new Date().toISOString(),
+            modified: new Date().toISOString()
+          }
+        }
+      },
+      'Images': {
+        type: 'directory',
+        name: 'Images',
+        children: {}
+      },
+      'Downloads': {
+        type: 'directory',
+        name: 'Downloads',
+        children: {}
+      }
+    }
+  }
+};
+var getDirectory = function getDirectory(path) {
+  var parts = path.split('/').filter(function (p) {
+    return p;
+  });
+  var current = fileSystem.root;
+  var _iterator = _createForOfIteratorHelper(parts),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var part = _step.value;
+      if (!current.children[part]) return null;
+      current = current.children[part];
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  return current;
+};
+var createFile = function createFile(path, name) {
+  var content = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+  var dir = getDirectory(path);
+  if (!dir) return false;
+  dir.children[name] = {
+    type: 'file',
+    name: name,
+    content: content,
+    created: new Date().toISOString(),
+    modified: new Date().toISOString()
+  };
+  return true;
+};
+var createDirectory = function createDirectory(path, name) {
+  var dir = getDirectory(path);
+  if (!dir) return false;
+  dir.children[name] = {
+    type: 'directory',
+    name: name,
+    children: {}
+  };
+  return true;
+};
+var deleteItem = function deleteItem(path, name) {
+  var dir = getDirectory(path);
+  if (!dir || !dir.children[name]) return false;
+  delete dir.children[name];
+  return true;
+};
+var readFile = function readFile(path) {
+  var parts = path.split('/').filter(function (p) {
+    return p;
+  });
+  var fileName = parts.pop();
+  var dir = getDirectory(parts.join('/'));
+  if (!dir || !dir.children[fileName] || dir.children[fileName].type !== 'file') {
+    return null;
+  }
+  return dir.children[fileName];
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  getDirectory: getDirectory,
+  createFile: createFile,
+  createDirectory: createDirectory,
+  deleteItem: deleteItem,
+  readFile: readFile
+});
 
 /***/ }),
 
