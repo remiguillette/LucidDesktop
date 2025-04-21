@@ -33086,17 +33086,21 @@ __webpack_require__.r(__webpack_exports__);
 var Browser = function Browser() {
   var url = 'http://localhost:5000/';
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "browser-container"
+    style: {
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("iframe", {
     src: url,
     style: {
+      flexGrow: 1,
       width: '100%',
-      height: 'calc(100vh - 50px)',
-      // Ajustement de la hauteur
-      border: 'none',
-      marginTop: '0px' // Suppression de la marge du haut
+      height: '100%',
+      border: 'none'
     },
-    title: "Google Frame"
+    title: "Browser Frame"
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Browser);
