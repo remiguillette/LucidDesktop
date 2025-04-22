@@ -83,7 +83,7 @@ const Desktop = () => {
 
   const handleIconClick = (iconId) => {
     const appMap = {
-      'bureau': 'desktop',
+      'minimize': () => setOpenWindows([]),
       'files': 'files', 
       'settings': 'settings',
       'calculator': 'calculator',
@@ -94,9 +94,22 @@ const Desktop = () => {
       'trash': 'trash'
     };
 
-    const appId = appMap[iconId] || iconId;
-    openApplication(appId);
+    if (typeof appMap[iconId] === 'function') {
+      appMap[iconId]();
+    } else {
+      const appId = appMap[iconId] || iconId;
+      openApplication(appId);
+    }
   };
+
+  useEffect(() => {
+    window.addEventListener('openApp', (event) => {
+      const { id } = event.detail;
+      if (id === 'settings') {
+        openApplication('settings');
+      }
+    });
+  }, []);
 
   return (
     <div className="desktop" onContextMenu={handleContextMenu}>

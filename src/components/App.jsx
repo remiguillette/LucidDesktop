@@ -60,8 +60,6 @@ const App = () => {
         return <div className="main-content">{t('views.files.title')}</div>;
       case 'apps':
         return <div className="main-content">{t('views.apps.title')}</div>;
-      case 'settings':
-        return <Settings onLogout={handleLogout} username={currentUser?.displayName || currentUser?.username} />;
       default:
         return <Desktop />;
     }
