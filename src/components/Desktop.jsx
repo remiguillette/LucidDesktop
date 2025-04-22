@@ -36,12 +36,18 @@ const Desktop = () => {
       const { id, label, icon } = event.detail;
       openApplication(id);
     };
+
+    const handleMinimizeAll = () => {
+      setOpenWindows([]);
+    };
     
     window.addEventListener('openApp', handleOpenApp);
+    window.addEventListener('minimizeAll', handleMinimizeAll);
     
     return () => {
       document.removeEventListener('click', handleClick);
       window.removeEventListener('openApp', handleOpenApp);
+      window.removeEventListener('minimizeAll', handleMinimizeAll);
     };
   }, []);
 

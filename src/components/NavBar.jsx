@@ -61,15 +61,20 @@ const NavBar = ({ activeItem, onSelect }) => {
             className={`nav-item ${activeItem === item.id ? 'active' : ''}`}
             onClick={() => {
               if (!item.submenu) {
-              onSelect(item.id);
-              window.dispatchEvent(new CustomEvent('openApp', { 
-                detail: { 
-                  id: item.id,
-                  label: item.label,
-                  icon: item.icon 
+                onSelect(item.id);
+                if (item.id === 'minimize') {
+                  // Dispatch event to minimize all windows
+                  window.dispatchEvent(new CustomEvent('minimizeAll'));
+                } else {
+                  window.dispatchEvent(new CustomEvent('openApp', { 
+                    detail: { 
+                      id: item.id,
+                      label: item.label,
+                      icon: item.icon 
+                    }
+                  }));
                 }
-              }));
-            }
+              }
             }}
           >
             {item.submenu}
