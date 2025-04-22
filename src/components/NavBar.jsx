@@ -3,6 +3,37 @@ import React, { useState, useEffect } from 'react';
 
 const NavBar = ({ activeItem, onSelect }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [activeWindows, setActiveWindows] = useState([]);
+  const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0, windowId: null });
+
+  useEffect(() => {
+    const handleWindowOpen = (event) => {
+      const { id, label, icon } = event.detail;
+      setActiveWindows(prev => [...prev, { id: `${id}-${Date.now()}`, label, icon, minimized: false }]);
+    };
+
+    const handleWindowClose = (event) => {
+      const { windowId } = event.detail;
+      setActiveWindows(prev => prev.filter(w => w.id !== windowId));
+    };
+
+    const handleWindowMinimize = (event) => {
+      const { windowId } = event.detail;
+      setActiveWindows(prev => prev.map(w => 
+        w.id === windowId ? { ...w, minimized: true } : w
+      ));
+    };
+
+    window.addEventListener('openApp', handleWindowOpen);
+    window.addEventListener('closeWindow', handleWindowClose);
+    window.addEventListener('minimizeWindow', handleWindowMinimize);
+
+    return () => {
+      window.removeEventListener('openApp', handleWindowOpen);
+      window.removeEventListener('closeWindow', handleWindowClose);
+      window.removeEventListener('minimizeWindow', handleWindowMinimize);
+    };
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -82,7 +113,85 @@ const NavBar = ({ activeItem, onSelect }) => {
             <span className="nav-text">{item.label}</span>
           </div>
         ))}
+        <div className="navbar-windows">
+          {activeWindows.map(window => (
+            <div
+              key={window.id}
+              className={`window-item ${window.minimized ? 'minimized' : 'active'}`}
+              onClick={() => {
+                if (window.minimized) {
+                  window.dispatchEvent(new CustomEvent('restoreWindow', { 
+                    detail: { windowId: window.id }
+                  }));
+                  setActiveWindows(prev => prev.map(w => 
+                    w.id === window.id ? { ...w, minimized: false } : w
+                  ));
+                } else {
+                  window.dispatchEvent(new CustomEvent('minimizeWindow', { 
+                    detail: { windowId: window.id }
+                  }));
+                }
+              }}
+              onContextMenu={(e) => {
+                e.preventDefault();
+                setContextMenu({
+                  show: true,
+                  x: e.clientX,
+                  y: e.clientY,
+                  windowId: window.id
+                });
+              }}
+            >
+              <span className="window-icon">{window.icon}</span>
+              <span className="window-label">{window.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {contextMenu.show && (
+        <div 
+          className="window-context-menu"
+          style={{ 
+            position: 'fixed',
+            top: `${contextMenu.y}px`,
+            left: `${contextMenu.x}px`
+          }}
+        >
+          <div 
+            className="context-menu-item"
+            onClick={() => {
+              const window = activeWindows.find(w => w.id === contextMenu.windowId);
+              if (window?.minimized) {
+                window.dispatchEvent(new CustomEvent('restoreWindow', { 
+                  detail: { windowId: contextMenu.windowId }
+                }));
+                setActiveWindows(prev => prev.map(w => 
+                  w.id === contextMenu.windowId ? { ...w, minimized: false } : w
+                ));
+              } else {
+                window.dispatchEvent(new CustomEvent('minimizeWindow', { 
+                  detail: { windowId: contextMenu.windowId }
+                }));
+              }
+              setContextMenu({ show: false, x: 0, y: 0, windowId: null });
+            }}
+          >
+            {activeWindows.find(w => w.id === contextMenu.windowId)?.minimized ? 'Restore' : 'Minimize'}
+          </div>
+          <div 
+            className="context-menu-item"
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('closeWindow', { 
+                detail: { windowId: contextMenu.windowId }
+              }));
+              setContextMenu({ show: false, x: 0, y: 0, windowId: null });
+            }}
+          >
+            Close
+          </div>
+        </div>
+      )}
 
       <div className="navbar-right">
         <div className="nav-clock">
