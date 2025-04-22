@@ -31,7 +31,6 @@ const NavBar = ({ activeItem, onSelect, username }) => {
   const navItems = [
     { id: 'desktop', label: 'Bureau', icon: '🏠' },
     { id: 'settings', label: 'Paramètres', icon: '⚙️' },
-    { id: 'notepad', label: 'Bloc-notes', icon: '📝' },
     { id: 'browser', label: 'Navigateur', icon: '🌐' },
     { id: 'mail', label: 'Courrier', icon: '✉️' },
     { id: 'calendar', label: 'Calendrier', icon: '📅' },
