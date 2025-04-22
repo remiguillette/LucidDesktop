@@ -60,9 +60,10 @@ const NavBar = ({ activeItem, onSelect, username }) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       onSelect(subItem.id);
+                      const appId = subItem.id;
                       window.dispatchEvent(new CustomEvent('openApp', { 
                         detail: { 
-                          id: subItem.id,
+                          id: appId,
                           label: subItem.label,
                           icon: subItem.icon 
                         }
