@@ -32,10 +32,13 @@ button, input, select, textarea {
 
 .taskbar-windows {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 8px;
-  padding: 8px;
-  margin-right: 20px;
-  min-height: 40px;
+  padding: 0 8px;
+  height: var(--navbar-height);
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .taskbar-window {
@@ -47,8 +50,10 @@ button, input, select, textarea {
   border: 1px solid var(--window-border);
   border-radius: 4px;
   cursor: pointer;
-  min-width: 120px;
-  max-width: 200px;
+  height: 40px;
+  min-width: 100px;
+  max-width: 150px;
+  white-space: nowrap;
 }
 
 .taskbar-window span {
