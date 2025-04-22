@@ -33413,9 +33413,10 @@ var NavBar = function NavBar(_ref) {
         onClick: function onClick(e) {
           e.stopPropagation();
           onSelect(subItem.id);
+          var appId = subItem.id;
           window.dispatchEvent(new CustomEvent('openApp', {
             detail: {
-              id: subItem.id,
+              id: appId,
               label: subItem.label,
               icon: subItem.icon
             }
