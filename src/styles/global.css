@@ -104,7 +104,8 @@ a {
 
 .submenu {
   position: absolute;
-  bottom: 100%;
+  top: auto;
+  bottom: var(--navbar-height);
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--bg-light);
