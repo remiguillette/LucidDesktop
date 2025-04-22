@@ -33388,7 +33388,22 @@ var NavBar = function NavBar(_ref) {
       x: "3",
       y: "14",
       rx: "1"
-    }))
+    })),
+    submenu: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "submenu"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "submenu-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "nav-icon"
+    }, "\uD83D\uDCCB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Nouvelle grille")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "submenu-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "nav-icon"
+    }, "\uD83D\uDD0D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Rechercher")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "submenu-item"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+      className: "nav-icon"
+    }, "\u2699\uFE0F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "Param\xE8tres")))
   }, {
     id: 'settings',
     label: 'Paramètres',
@@ -33403,16 +33418,18 @@ var NavBar = function NavBar(_ref) {
       key: item.id,
       className: "nav-item ".concat(activeItem === item.id ? 'active' : ''),
       onClick: function onClick() {
-        onSelect(item.id);
-        window.dispatchEvent(new CustomEvent('openApp', {
-          detail: {
-            id: item.id,
-            label: item.label,
-            icon: item.icon
-          }
-        }));
+        if (!item.submenu) {
+          onSelect(item.id);
+          window.dispatchEvent(new CustomEvent('openApp', {
+            detail: {
+              id: item.id,
+              label: item.label,
+              icon: item.icon
+            }
+          }));
+        }
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    }, item.submenu, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "nav-icon"
     }, item.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "nav-text"
