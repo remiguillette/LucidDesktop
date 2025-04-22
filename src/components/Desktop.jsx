@@ -13,6 +13,7 @@ import SystemSettings from './apps/SystemSettings';
 const Desktop = () => {
   const { t } = useTranslation();
   const [openWindows, setOpenWindows] = useState([]);
+const [minimizedWindows, setMinimizedWindows] = useState([]);
   const [showIcons, setShowIcons] = useState(true);
   const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
 
@@ -85,6 +86,23 @@ const Desktop = () => {
 
   const closeWindow = (windowId) => {
     setOpenWindows(openWindows.filter(window => window.id !== windowId));
+    setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
+  };
+
+  const minimizeWindow = (windowId) => {
+    const windowToMinimize = openWindows.find(window => window.id === windowId);
+    if (windowToMinimize) {
+      setOpenWindows(openWindows.filter(window => window.id !== windowId));
+      setMinimizedWindows([...minimizedWindows, windowToMinimize]);
+    }
+  };
+
+  const restoreWindow = (windowId) => {
+    const windowToRestore = minimizedWindows.find(window => window.id === windowId);
+    if (windowToRestore) {
+      setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
+      setOpenWindows([...openWindows, windowToRestore]);
+    }
   };
 
   const handleIconClick = (iconId) => {
@@ -154,10 +172,23 @@ const Desktop = () => {
           title={window.title}
           icon={window.icon}
           onClose={() => closeWindow(window.id)}
+          onMinimize={() => minimizeWindow(window.id)}
         >
-          {window.component && <window.component />}
+          {window.component && <window.component key={window.id} />}
         </ApplicationWindow>
       ))}
+      <div className="taskbar-windows">
+        {minimizedWindows.map((window) => (
+          <div 
+            key={window.id} 
+            className="taskbar-window"
+            onClick={() => restoreWindow(window.id)}
+          >
+            {window.icon}
+            <span>{window.title}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -169,7 +169,7 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
           <button 
             className="window-control minimize" 
             title="Minimiser"
-            onClick={() => setIsMinimized(true)}
+            onClick={() => onMinimize && onMinimize()}
           >
             _
           </button>
