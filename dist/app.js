@@ -32951,7 +32951,19 @@ var Desktop = function Desktop() {
     }));
   };
   var handleIconClick = function handleIconClick(iconId) {
-    openApplication(iconId);
+    var appMap = {
+      'bureau': 'desktop',
+      'fichiers': 'files',
+      'parametres': 'settings',
+      'calculator': 'calculator',
+      'notepad': 'notepad',
+      'browser': 'browser',
+      'mail': 'mail',
+      'calendar': 'calendar',
+      'trash': 'trash'
+    };
+    var appId = appMap[iconId] || iconId;
+    openApplication(appId);
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "desktop",
@@ -33384,6 +33396,10 @@ var NavBar = function NavBar(_ref) {
         onClick: function onClick(e) {
           e.stopPropagation();
           onSelect(subItem.id);
+          var event = new CustomEvent('openApp', {
+            detail: subItem.id
+          });
+          window.dispatchEvent(event);
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
         className: "nav-icon"
