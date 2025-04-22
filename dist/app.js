@@ -32669,15 +32669,10 @@ var Desktop = function Desktop() {
         icon = _event$detail.icon;
       openApplication(id);
     };
-    var handleMinimizeAll = function handleMinimizeAll() {
-      setOpenWindows([]);
-    };
     window.addEventListener('openApp', handleOpenApp);
-    window.addEventListener('minimizeAll', handleMinimizeAll);
     return function () {
       document.removeEventListener('click', handleClick);
       window.removeEventListener('openApp', handleOpenApp);
-      window.removeEventListener('minimizeAll', handleMinimizeAll);
     };
   }, []);
   var desktopIcons = [{
@@ -33446,18 +33441,13 @@ var NavBar = function NavBar(_ref) {
       onClick: function onClick() {
         if (!item.submenu) {
           onSelect(item.id);
-          if (item.id === 'minimize') {
-            // Dispatch event to minimize all windows
-            window.dispatchEvent(new CustomEvent('minimizeAll'));
-          } else {
-            window.dispatchEvent(new CustomEvent('openApp', {
-              detail: {
-                id: item.id,
-                label: item.label,
-                icon: item.icon
-              }
-            }));
-          }
+          window.dispatchEvent(new CustomEvent('openApp', {
+            detail: {
+              id: item.id,
+              label: item.label,
+              icon: item.icon
+            }
+          }));
         }
       }
     }, item.submenu, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
