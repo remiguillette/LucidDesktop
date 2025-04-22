@@ -12,6 +12,14 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [minimizedWindows, setMinimizedWindows] = useState([]);
+
+  const restoreWindow = (windowId) => {
+    const windowToRestore = minimizedWindows.find(window => window.id === windowId);
+    if (windowToRestore) {
+      setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
+    }
+  };
 
   // Vérifier si l'utilisateur est déjà connecté au chargement
   useEffect(() => {

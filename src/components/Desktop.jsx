@@ -93,15 +93,6 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
     const windowToMinimize = openWindows.find(window => window.id === windowId);
     if (windowToMinimize) {
       setOpenWindows(openWindows.filter(window => window.id !== windowId));
-      setMinimizedWindows([...minimizedWindows, windowToMinimize]);
-    }
-  };
-
-  const restoreWindow = (windowId) => {
-    const windowToRestore = minimizedWindows.find(window => window.id === windowId);
-    if (windowToRestore) {
-      setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
-      setOpenWindows([...openWindows, windowToRestore]);
     }
   };
 
@@ -127,12 +118,17 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
   };
 
   useEffect(() => {
-    window.addEventListener('openApp', (event) => {
+    const handleOpenApp = (event) => {
       const { id } = event.detail;
       if (id === 'settings') {
         openApplication('settings');
       }
-    });
+    };
+
+    document.addEventListener('openApp', handleOpenApp);
+    return () => {
+      document.removeEventListener('openApp', handleOpenApp);
+    };
   }, []);
 
   return (
