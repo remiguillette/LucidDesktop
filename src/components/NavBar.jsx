@@ -26,19 +26,16 @@ const NavBar = ({ activeItem, onSelect, username }) => {
   });
 
   const navItems = [
-    { id: 'apps', label: 'Applications', icon: '📱', submenu: [
-      { id: 'desktop', label: 'Bureau', icon: '🏠' },
-      { id: 'settings', label: 'Paramètres', icon: '⚙️' },
-      { id: 'calculator', label: 'Calculatrice', icon: '🔢' },
-      { id: 'notepad', label: 'Bloc-notes', icon: '📝' },
-      { id: 'browser', label: 'Navigateur', icon: '🌐' },
-      { id: 'mail', label: 'Courrier', icon: '✉️' },
-      { id: 'calendar', label: 'Calendrier', icon: '📅' },
-      { id: 'files', label: 'Fichiers', icon: '📁' },
-      { id: 'trash', label: 'Corbeille', icon: '🗑️' }
-    ]}
+    { id: 'desktop', label: 'Bureau', icon: '🏠' },
+    { id: 'settings', label: 'Paramètres', icon: '⚙️' },
+    { id: 'calculator', label: 'Calculatrice', icon: '🔢' },
+    { id: 'notepad', label: 'Bloc-notes', icon: '📝' },
+    { id: 'browser', label: 'Navigateur', icon: '🌐' },
+    { id: 'mail', label: 'Courrier', icon: '✉️' },
+    { id: 'calendar', label: 'Calendrier', icon: '📅' },
+    { id: 'files', label: 'Fichiers', icon: '📁' },
+    { id: 'trash', label: 'Corbeille', icon: '🗑️' }
   ];
-
 
   return (
     <nav className="navbar">
@@ -47,35 +44,19 @@ const NavBar = ({ activeItem, onSelect, username }) => {
           <div 
             key={item.id} 
             className={`nav-item ${activeItem === item.id ? 'active' : ''}`}
-            onClick={() => onSelect(item.id)}
+            onClick={() => {
+              onSelect(item.id);
+              window.dispatchEvent(new CustomEvent('openApp', { 
+                detail: { 
+                  id: item.id,
+                  label: item.label,
+                  icon: item.icon 
+                }
+              }));
+            }}
           >
             <span className="nav-icon">{item.icon}</span>
             <span className="nav-text">{item.label}</span>
-            {item.submenu && (
-              <div className="submenu">
-                {item.submenu.map(subItem => (
-                  <div 
-                    key={subItem.id} 
-                    className={`submenu-item ${activeItem === subItem.id ? 'active' : ''}`} 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onSelect(subItem.id);
-                      const appId = subItem.id;
-                      window.dispatchEvent(new CustomEvent('openApp', { 
-                        detail: { 
-                          id: appId,
-                          label: subItem.label,
-                          icon: subItem.icon 
-                        }
-                      }));
-                    }}
-                  >
-                    <span className="nav-icon">{subItem.icon}</span>
-                    <span className="nav-text">{subItem.label}</span>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         ))}
       </div>
