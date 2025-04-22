@@ -44,7 +44,11 @@ const NavBar = ({ activeItem, onSelect, username }) => {
     <nav className="navbar">
       <div className="navbar-left">
         {navItems.map(item => (
-          <div key={item.id} className={`nav-item ${activeItem === item.id ? 'active' : ''}`}>
+          <div 
+            key={item.id} 
+            className={`nav-item ${activeItem === item.id ? 'active' : ''}`}
+            onClick={() => onSelect(item.id)}
+          >
             <span className="nav-icon">{item.icon}</span>
             <span className="nav-text">{item.label}</span>
             {item.submenu && (
@@ -56,8 +60,13 @@ const NavBar = ({ activeItem, onSelect, username }) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       onSelect(subItem.id);
-                      const event = new CustomEvent('openApp', { detail: subItem.id });
-                      window.dispatchEvent(event);
+                      window.dispatchEvent(new CustomEvent('openApp', { 
+                        detail: { 
+                          id: subItem.id,
+                          label: subItem.label,
+                          icon: subItem.icon 
+                        }
+                      }));
                     }}
                   >
                     <span className="nav-icon">{subItem.icon}</span>
