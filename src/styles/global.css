@@ -118,22 +118,27 @@ a {
   overflow: visible;
 }
 
-.navbar-left, .navbar-right {
+.navbar-left {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  min-width: 200px;
 }
 
-.navbar-left {
-  justify-content: flex-start;
+.navbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  overflow: hidden;
+  margin: 0 15px;
 }
 
 .navbar-right {
-  justify-content: flex-end;
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex: 1;
-  overflow: hidden;
+  justify-content: flex-end;
+  min-width: 120px;
 }
 
 .nav-item {

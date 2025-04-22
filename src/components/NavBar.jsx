@@ -84,7 +84,7 @@ const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => 
         ))}
       </div>
 
-      <div className="navbar-right">
+      <div className="navbar-center">
         <div className="taskbar-windows">
           {minimizedWindows?.map((window) => (
             <div 
@@ -97,6 +97,8 @@ const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => 
             </div>
           ))}
         </div>
+      </div>
+      <div className="navbar-right">
         <div className="nav-clock">
           <div>{dateString}</div>
           <div>{timeString}</div>
