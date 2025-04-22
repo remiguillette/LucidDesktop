@@ -33391,10 +33391,6 @@ var NavBar = function NavBar(_ref) {
     label: 'Paramètres',
     icon: '⚙️'
   }, {
-    id: 'calculator',
-    label: 'Calculatrice',
-    icon: '🔢'
-  }, {
     id: 'notepad',
     label: 'Bloc-notes',
     icon: '📝'
