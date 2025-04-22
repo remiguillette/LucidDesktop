@@ -177,18 +177,6 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
           {window.component && <window.component key={window.id} />}
         </ApplicationWindow>
       ))}
-      <div className="taskbar-windows">
-        {minimizedWindows.map((window) => (
-          <div 
-            key={window.id} 
-            className="taskbar-window"
-            onClick={() => restoreWindow(window.id)}
-          >
-            {window.icon}
-            <span>{window.title}</span>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

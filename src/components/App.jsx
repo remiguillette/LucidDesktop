@@ -92,6 +92,8 @@ const App = () => {
         activeItem={currentView} 
         onSelect={setCurrentView} 
         username={currentUser?.displayName || currentUser?.username}
+        minimizedWindows={minimizedWindows}
+        onRestoreWindow={restoreWindow}
       />
     </div>
   );

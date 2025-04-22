@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-const NavBar = ({ activeItem, onSelect }) => {
+const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -85,6 +85,18 @@ const NavBar = ({ activeItem, onSelect }) => {
       </div>
 
       <div className="navbar-right">
+        <div className="taskbar-windows">
+          {minimizedWindows?.map((window) => (
+            <div 
+              key={window.id} 
+              className="taskbar-window"
+              onClick={() => onRestoreWindow?.(window.id)}
+            >
+              {window.icon}
+              <span>{window.title}</span>
+            </div>
+          ))}
+        </div>
         <div className="nav-clock">
           <div>{dateString}</div>
           <div>{timeString}</div>
