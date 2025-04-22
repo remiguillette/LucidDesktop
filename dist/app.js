@@ -33356,10 +33356,6 @@ var NavBar = function NavBar(_ref) {
       label: 'Bureau',
       icon: '🏠'
     }, {
-      id: 'files',
-      label: 'Fichiers',
-      icon: '📁'
-    }, {
       id: 'settings',
       label: 'Paramètres',
       icon: '⚙️'
