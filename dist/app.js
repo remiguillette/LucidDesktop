@@ -33370,10 +33370,7 @@ var NavBar = function NavBar(_ref) {
   }, navItems.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       key: item.id,
-      className: "nav-item ".concat(activeItem === item.id ? 'active' : ''),
-      onClick: function onClick() {
-        return onSelect(item.id);
-      }
+      className: "nav-item ".concat(activeItem === item.id ? 'active' : '')
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "nav-icon"
     }, item.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
@@ -33384,8 +33381,9 @@ var NavBar = function NavBar(_ref) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
         key: subItem.id,
         className: "submenu-item ".concat(activeItem === subItem.id ? 'active' : ''),
-        onClick: function onClick() {
-          return onSelect(subItem.id);
+        onClick: function onClick(e) {
+          e.stopPropagation();
+          onSelect(subItem.id);
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
         className: "nav-icon"
