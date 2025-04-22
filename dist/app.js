@@ -33355,26 +33355,6 @@ var NavBar = function NavBar(_ref) {
     id: 'settings',
     label: 'Paramètres',
     icon: '⚙️'
-  }, {
-    id: 'browser',
-    label: 'Navigateur',
-    icon: '🌐'
-  }, {
-    id: 'mail',
-    label: 'Courrier',
-    icon: '✉️'
-  }, {
-    id: 'calendar',
-    label: 'Calendrier',
-    icon: '📅'
-  }, {
-    id: 'files',
-    label: 'Fichiers',
-    icon: '📁'
-  }, {
-    id: 'trash',
-    label: 'Corbeille',
-    icon: '🗑️'
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     className: "navbar"
