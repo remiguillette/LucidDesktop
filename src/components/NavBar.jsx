@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-const NavBar = ({ activeItem, onSelect, username }) => {
+const NavBar = ({ activeItem, onSelect }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -80,12 +80,6 @@ const NavBar = ({ activeItem, onSelect, username }) => {
       </div>
 
       <div className="navbar-right">
-        {username && (
-          <div className="nav-user">
-            <span className="nav-user-icon">👤</span>
-            <span className="nav-user-name">{username}</span>
-          </div>
-        )}
         <div className="nav-clock">
           <div>{dateString}</div>
           <div>{timeString}</div>
