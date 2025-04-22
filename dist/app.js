@@ -32280,7 +32280,9 @@ var App = function App() {
     items: navItems,
     activeItem: currentView,
     onSelect: setCurrentView,
-    username: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.displayName) || (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
+    username: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.displayName) || (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username),
+    minimizedWindows: minimizedWindows,
+    onRestoreWindow: restoreWindow
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -33088,17 +33090,7 @@ var Desktop = function Desktop() {
     }, window.component && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(window.component, {
       key: window.id
     }));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "taskbar-windows"
-  }, minimizedWindows.map(function (window) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: window.id,
-      className: "taskbar-window",
-      onClick: function onClick() {
-        return restoreWindow(window.id);
-      }
-    }, window.icon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, window.title));
-  })));
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Desktop);
 
@@ -33404,7 +33396,9 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 var NavBar = function NavBar(_ref) {
   var activeItem = _ref.activeItem,
-    onSelect = _ref.onSelect;
+    onSelect = _ref.onSelect,
+    minimizedWindows = _ref.minimizedWindows,
+    onRestoreWindow = _ref.onRestoreWindow;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date()),
     _useState2 = _slicedToArray(_useState, 2),
     currentTime = _useState2[0],
@@ -33552,6 +33546,16 @@ var NavBar = function NavBar(_ref) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "navbar-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "taskbar-windows"
+  }, minimizedWindows === null || minimizedWindows === void 0 ? void 0 : minimizedWindows.map(function (window) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: window.id,
+      className: "taskbar-window",
+      onClick: function onClick() {
+        return onRestoreWindow === null || onRestoreWindow === void 0 ? void 0 : onRestoreWindow(window.id);
+      }
+    }, window.icon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, window.title));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav-clock"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, dateString), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, timeString))));
 };
