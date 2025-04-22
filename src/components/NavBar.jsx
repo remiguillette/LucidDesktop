@@ -84,7 +84,7 @@ const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => 
         ))}
       </div>
 
-      <div className="navbar-center" style={{ overflow: 'hidden' }}>
+      <div className="navbar-center">
         <div className="taskbar-windows">
           {minimizedWindows?.map((window) => (
             <div 
