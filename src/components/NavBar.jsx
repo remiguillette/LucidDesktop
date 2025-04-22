@@ -113,8 +113,9 @@ const NavBar = ({ activeItem, onSelect }) => {
             <span className="nav-text">{item.label}</span>
           </div>
         ))}
-        <div className="navbar-windows">
-          {activeWindows.map(window => (
+        </div>
+      <div className="navbar-windows">
+        {activeWindows.map(window => (
             <div
               key={window.id}
               className={`window-item ${window.minimized ? 'minimized' : 'active'}`}
