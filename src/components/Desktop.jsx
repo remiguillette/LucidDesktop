@@ -85,23 +85,7 @@ const Desktop = () => {
 
   const closeWindow = (windowId) => {
     setOpenWindows(openWindows.filter(window => window.id !== windowId));
-    window.dispatchEvent(new CustomEvent('closeWindow', { 
-      detail: { windowId }
-    }));
   };
-
-  // Emit initial windows state
-  useEffect(() => {
-    openWindows.forEach(window => {
-      window.dispatchEvent(new CustomEvent('openApp', {
-        detail: {
-          id: window.id,
-          label: window.title,
-          icon: window.icon
-        }
-      }));
-    });
-  }, [openWindows]);
 
   const handleIconClick = (iconId) => {
     const appMap = {

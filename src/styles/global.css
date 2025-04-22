@@ -104,20 +104,7 @@ a {
   margin: 0 20px;
   gap: 8px;
   overflow-x: auto;
-  min-width: 200px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
-}
-
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  max-width: 60%;
 }
 
 .window-item {
