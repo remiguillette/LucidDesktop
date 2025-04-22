@@ -33,8 +33,8 @@ button, input, select, textarea {
 .taskbar-windows {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 8px;
+  gap: 2px;
+  padding: 0 4px;
   height: 45px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -42,21 +42,25 @@ button, input, select, textarea {
   flex-direction: row;
   flex-wrap: nowrap;
   white-space: nowrap;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+
+.taskbar-windows::-webkit-scrollbar {
+  display: none;
 }
 
 .taskbar-window {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 4px 12px;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 8px;
   background: var(--window-header);
   border: 1px solid var(--window-border);
   border-radius: 4px;
   cursor: pointer;
   height: 40px;
-  min-width: 100px;
-  max-width: 150px;
+  width: 160px;
   white-space: nowrap;
   flex-shrink: 0;
 }
