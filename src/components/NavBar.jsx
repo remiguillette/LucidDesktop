@@ -84,13 +84,14 @@ const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => 
         ))}
       </div>
 
-      <div className="navbar-center">
+      <div className="navbar-center" style={{ overflow: 'hidden' }}>
         <div className="taskbar-windows">
           {minimizedWindows?.map((window) => (
             <div 
               key={window.id} 
               className="taskbar-window"
               onClick={() => onRestoreWindow?.(window.id)}
+              style={{ flexShrink: 0 }}
             >
               {window.icon}
               <span>{window.title}</span>

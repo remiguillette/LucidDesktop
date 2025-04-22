@@ -41,10 +41,12 @@ button, input, select, textarea {
   flex: 1;
   flex-direction: row;
   flex-wrap: nowrap;
+  white-space: nowrap;
+  scrollbar-width: thin;
 }
 
 .taskbar-window {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 4px 12px;
@@ -56,6 +58,7 @@ button, input, select, textarea {
   min-width: 100px;
   max-width: 150px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .taskbar-window span {
