@@ -38,8 +38,7 @@ button, input, select, textarea {
   height: 45px;
   overflow-x: auto;
   overflow-y: hidden;
-  flex-shrink: 1;
-  max-width: calc(100% - 100px);
+  flex: 1;
   flex-direction: row;
   flex-wrap: nowrap;
 }
@@ -133,7 +132,7 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  max-width: 60%;
+  flex: 1;
   overflow: hidden;
 }
 
