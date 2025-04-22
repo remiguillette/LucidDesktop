@@ -106,9 +106,9 @@ a {
 .submenu {
   position: absolute;
   top: auto;
-  bottom: calc(var(--navbar-height) - 5px);
+  bottom: calc(var(--navbar-height) - 6px);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-30%);
   background-color: var(--bg-light);
   border: 1px solid var(--window-border);
   border-radius: 4px;
