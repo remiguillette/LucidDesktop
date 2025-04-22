@@ -93,6 +93,9 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
     const windowToMinimize = openWindows.find(window => window.id === windowId);
     if (windowToMinimize) {
       setOpenWindows(openWindows.filter(window => window.id !== windowId));
+      window.dispatchEvent(new CustomEvent('minimizeWindow', { 
+        detail: { window: windowToMinimize }
+      }));
     }
   };
 

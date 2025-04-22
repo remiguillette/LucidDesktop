@@ -31,16 +31,10 @@ button, input, select, textarea {
   color: inherit;
 
 .taskbar-windows {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
   gap: 8px;
   padding: 8px;
-  background: var(--bg-light);
-  border-top: 1px solid var(--window-border);
-  z-index: 1000;
+  margin-right: 20px;
   min-height: 40px;
 }
 

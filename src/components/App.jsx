@@ -14,6 +14,16 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [minimizedWindows, setMinimizedWindows] = useState([]);
 
+  useEffect(() => {
+    const handleMinimize = (event) => {
+      const { window } = event.detail;
+      setMinimizedWindows(prev => [...prev, window]);
+    };
+    
+    window.addEventListener('minimizeWindow', handleMinimize);
+    return () => window.removeEventListener('minimizeWindow', handleMinimize);
+  }, []);
+
   const restoreWindow = (windowId) => {
     const windowToRestore = minimizedWindows.find(window => window.id === windowId);
     if (windowToRestore) {
