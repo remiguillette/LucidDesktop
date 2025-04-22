@@ -32206,11 +32206,6 @@ var App = function App() {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
           className: "main-content"
         }, t('views.apps.title'));
-      case 'settings':
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Settings__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          onLogout: handleLogout,
-          username: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.displayName) || (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
-        });
       default:
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Desktop__WEBPACK_IMPORTED_MODULE_3__["default"], null);
     }
@@ -32951,7 +32946,9 @@ var Desktop = function Desktop() {
   };
   var handleIconClick = function handleIconClick(iconId) {
     var appMap = {
-      'bureau': 'desktop',
+      'minimize': function minimize() {
+        return setOpenWindows([]);
+      },
       'files': 'files',
       'settings': 'settings',
       'calculator': 'calculator',
@@ -32961,9 +32958,21 @@ var Desktop = function Desktop() {
       'calendar': 'calendar',
       'trash': 'trash'
     };
-    var appId = appMap[iconId] || iconId;
-    openApplication(appId);
+    if (typeof appMap[iconId] === 'function') {
+      appMap[iconId]();
+    } else {
+      var appId = appMap[iconId] || iconId;
+      openApplication(appId);
+    }
   };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    window.addEventListener('openApp', function (event) {
+      var id = event.detail.id;
+      if (id === 'settings') {
+        openApplication('settings');
+      }
+    });
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "desktop",
     onContextMenu: handleContextMenu
@@ -33332,7 +33341,7 @@ var NavBar = function NavBar(_ref) {
     day: 'numeric'
   });
   var navItems = [{
-    id: 'desktop',
+    id: 'minimize',
     label: 'Bureau',
     icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
@@ -33344,16 +33353,8 @@ var NavBar = function NavBar(_ref) {
       strokeWidth: "2",
       strokeLinecap: "round",
       strokeLinejoin: "round"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
-      cx: "12",
-      cy: "12",
-      r: "10"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-      d: "M17 12h.01"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-      d: "M12 12h.01"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-      d: "M7 12h.01"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
+      d: "M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
     }))
   }, {
     id: 'grid',
