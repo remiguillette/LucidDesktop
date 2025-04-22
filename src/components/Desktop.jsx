@@ -73,7 +73,20 @@ const Desktop = () => {
   };
 
   const handleIconClick = (iconId) => {
-    openApplication(iconId);
+    const appMap = {
+      'bureau': 'desktop',
+      'fichiers': 'files', 
+      'parametres': 'settings',
+      'calculator': 'calculator',
+      'notepad': 'notepad', 
+      'browser': 'browser',
+      'mail': 'mail',
+      'calendar': 'calendar',
+      'trash': 'trash'
+    };
+
+    const appId = appMap[iconId] || iconId;
+    openApplication(appId);
   };
 
   return (
