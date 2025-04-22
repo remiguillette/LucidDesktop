@@ -28,7 +28,27 @@ const NavBar = ({ activeItem, onSelect, username }) => {
 
   const navItems = [
     { id: 'desktop', label: 'Bureau', icon: '🏠' },
-    { id: 'grid', label: 'Grid', icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg> },
+    { 
+      id: 'grid', 
+      label: 'Grid', 
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>,
+      submenu: (
+        <div className="submenu">
+          <div className="submenu-item">
+            <span className="nav-icon">📋</span>
+            <span>Nouvelle grille</span>
+          </div>
+          <div className="submenu-item">
+            <span className="nav-icon">🔍</span>
+            <span>Rechercher</span>
+          </div>
+          <div className="submenu-item">
+            <span className="nav-icon">⚙️</span>
+            <span>Paramètres</span>
+          </div>
+        </div>
+      )
+    },
     { id: 'settings', label: 'Paramètres', icon: '⚙️' }
   ];
 
@@ -40,6 +60,7 @@ const NavBar = ({ activeItem, onSelect, username }) => {
             key={item.id} 
             className={`nav-item ${activeItem === item.id ? 'active' : ''}`}
             onClick={() => {
+              if (!item.submenu) {
               onSelect(item.id);
               window.dispatchEvent(new CustomEvent('openApp', { 
                 detail: { 
@@ -48,8 +69,10 @@ const NavBar = ({ activeItem, onSelect, username }) => {
                   icon: item.icon 
                 }
               }));
+            }
             }}
           >
+            {item.submenu}
             <span className="nav-icon">{item.icon}</span>
             <span className="nav-text">{item.label}</span>
           </div>
