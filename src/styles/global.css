@@ -33,17 +33,14 @@ button, input, select, textarea {
 .taskbar-windows {
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 0 4px;
+  gap: 8px;
+  padding: 0 8px;
   height: 45px;
   overflow-x: auto;
   overflow-y: hidden;
   flex: 1;
-  flex-direction: row;
-  flex-wrap: nowrap;
   white-space: nowrap;
   scrollbar-width: none;
-  justify-content: flex-start;
 }
 
 .taskbar-windows::-webkit-scrollbar {

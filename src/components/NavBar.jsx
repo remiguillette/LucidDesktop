@@ -84,7 +84,7 @@ const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => 
         ))}
       </div>
 
-      <div className="navbar-center">
+      <div className="navbar-center" style={{ display: 'flex', flex: 1 }}>
         <div className="taskbar-windows">
           {minimizedWindows?.map((window) => (
             <div 
