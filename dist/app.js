@@ -32180,6 +32180,20 @@ var App = function App() {
     _useState8 = _slicedToArray(_useState7, 2),
     isLoading = _useState8[0],
     setIsLoading = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState10 = _slicedToArray(_useState9, 2),
+    minimizedWindows = _useState10[0],
+    setMinimizedWindows = _useState10[1];
+  var restoreWindow = function restoreWindow(windowId) {
+    var windowToRestore = minimizedWindows.find(function (window) {
+      return window.id === windowId;
+    });
+    if (windowToRestore) {
+      setMinimizedWindows(minimizedWindows.filter(function (window) {
+        return window.id !== windowId;
+      }));
+    }
+  };
 
   // Vérifier si l'utilisateur est déjà connecté au chargement
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
@@ -33006,18 +33020,6 @@ var Desktop = function Desktop() {
       setOpenWindows(openWindows.filter(function (window) {
         return window.id !== windowId;
       }));
-      setMinimizedWindows([].concat(_toConsumableArray(minimizedWindows), [windowToMinimize]));
-    }
-  };
-  var restoreWindow = function restoreWindow(windowId) {
-    var windowToRestore = minimizedWindows.find(function (window) {
-      return window.id === windowId;
-    });
-    if (windowToRestore) {
-      setMinimizedWindows(minimizedWindows.filter(function (window) {
-        return window.id !== windowId;
-      }));
-      setOpenWindows([].concat(_toConsumableArray(openWindows), [windowToRestore]));
     }
   };
   var handleIconClick = function handleIconClick(iconId) {
@@ -33042,12 +33044,16 @@ var Desktop = function Desktop() {
     }
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    window.addEventListener('openApp', function (event) {
+    var handleOpenApp = function handleOpenApp(event) {
       var id = event.detail.id;
       if (id === 'settings') {
         openApplication('settings');
       }
-    });
+    };
+    document.addEventListener('openApp', handleOpenApp);
+    return function () {
+      document.removeEventListener('openApp', handleOpenApp);
+    };
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "desktop",
