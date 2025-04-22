@@ -113,7 +113,7 @@ const NavBar = ({ activeItem, onSelect }) => {
             <span className="nav-text">{item.label}</span>
           </div>
         ))}
-        </div>
+      </div>
       <div className="navbar-windows">
         {activeWindows.map(window => (
             <div
