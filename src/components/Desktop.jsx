@@ -84,8 +84,8 @@ const Desktop = () => {
   const handleIconClick = (iconId) => {
     const appMap = {
       'bureau': 'desktop',
-      'fichiers': 'files', 
-      'parametres': 'settings',
+      'files': 'files', 
+      'settings': 'settings',
       'calculator': 'calculator',
       'notepad': 'notepad', 
       'browser': 'browser',
