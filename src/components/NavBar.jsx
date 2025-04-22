@@ -44,13 +44,20 @@ const NavBar = ({ activeItem, onSelect, username }) => {
     <nav className="navbar">
       <div className="navbar-left">
         {navItems.map(item => (
-          <div key={item.id} className={`nav-item ${activeItem === item.id ? 'active' : ''}`} onClick={() => onSelect(item.id)}>
+          <div key={item.id} className={`nav-item ${activeItem === item.id ? 'active' : ''}`}>
             <span className="nav-icon">{item.icon}</span>
             <span className="nav-text">{item.label}</span>
             {item.submenu && (
               <div className="submenu">
                 {item.submenu.map(subItem => (
-                  <div key={subItem.id} className={`submenu-item ${activeItem === subItem.id ? 'active' : ''}`} onClick={() => onSelect(subItem.id)}>
+                  <div 
+                    key={subItem.id} 
+                    className={`submenu-item ${activeItem === subItem.id ? 'active' : ''}`} 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onSelect(subItem.id);
+                    }}
+                  >
                     <span className="nav-icon">{subItem.icon}</span>
                     <span className="nav-text">{subItem.label}</span>
                   </div>
