@@ -94,7 +94,6 @@ const NavBar = ({ activeItem, onSelect }) => {
               if (!item.submenu) {
                 onSelect(item.id);
                 if (item.id === 'minimize') {
-                  // Dispatch event to minimize all windows
                   window.dispatchEvent(new CustomEvent('minimizeAll'));
                 } else {
                   window.dispatchEvent(new CustomEvent('openApp', { 
@@ -114,40 +113,40 @@ const NavBar = ({ activeItem, onSelect }) => {
           </div>
         ))}
       </div>
+
       <div className="navbar-windows">
         {activeWindows.map(window => (
-            <div
-              key={window.id}
-              className={`window-item ${window.minimized ? 'minimized' : 'active'}`}
-              onClick={() => {
-                if (window.minimized) {
-                  window.dispatchEvent(new CustomEvent('restoreWindow', { 
-                    detail: { windowId: window.id }
-                  }));
-                  setActiveWindows(prev => prev.map(w => 
-                    w.id === window.id ? { ...w, minimized: false } : w
-                  ));
-                } else {
-                  window.dispatchEvent(new CustomEvent('minimizeWindow', { 
-                    detail: { windowId: window.id }
-                  }));
-                }
-              }}
-              onContextMenu={(e) => {
-                e.preventDefault();
-                setContextMenu({
-                  show: true,
-                  x: e.clientX,
-                  y: e.clientY,
-                  windowId: window.id
-                });
-              }}
-            >
-              <span className="window-icon">{window.icon}</span>
-              <span className="window-label">{window.label}</span>
-            </div>
-          ))}
-        </div>
+          <div
+            key={window.id}
+            className={`window-item ${window.minimized ? 'minimized' : 'active'}`}
+            onClick={() => {
+              if (window.minimized) {
+                window.dispatchEvent(new CustomEvent('restoreWindow', { 
+                  detail: { windowId: window.id }
+                }));
+                setActiveWindows(prev => prev.map(w => 
+                  w.id === window.id ? { ...w, minimized: false } : w
+                ));
+              } else {
+                window.dispatchEvent(new CustomEvent('minimizeWindow', { 
+                  detail: { windowId: window.id }
+                }));
+              }
+            }}
+            onContextMenu={(e) => {
+              e.preventDefault();
+              setContextMenu({
+                show: true,
+                x: e.clientX,
+                y: e.clientY,
+                windowId: window.id
+              });
+            }}
+          >
+            <span className="window-icon">{window.icon}</span>
+            <span className="window-label">{window.label}</span>
+          </div>
+        ))}
       </div>
 
       {contextMenu.show && (
