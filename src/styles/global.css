@@ -40,6 +40,8 @@ button, input, select, textarea {
   overflow-y: hidden;
   flex-shrink: 1;
   max-width: calc(100% - 100px);
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .taskbar-window {
