@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 const NavBar = ({ activeItem, onSelect, username }) => {
@@ -29,21 +30,14 @@ const NavBar = ({ activeItem, onSelect, username }) => {
 
   const navItems = [
     { id: 'desktop', label: 'Bureau', icon: '🏠' },
-    { 
-      id: 'grid', 
-      label: 'Applications', 
-      icon: gridIcon,
-      submenu: [
-        { id: 'settings', label: 'Paramètres', icon: '⚙️' },
-        { id: 'calculator', label: 'Calculatrice', icon: '🔢' },
-        { id: 'notepad', label: 'Bloc-notes', icon: '📝' },
-        { id: 'browser', label: 'Navigateur', icon: '🌐' },
-        { id: 'mail', label: 'Courrier', icon: '✉️' },
-        { id: 'calendar', label: 'Calendrier', icon: '📅' },
-        { id: 'files', label: 'Fichiers', icon: '📁' },
-        { id: 'trash', label: 'Corbeille', icon: '🗑️' }
-      ]
-    }
+    { id: 'settings', label: 'Paramètres', icon: '⚙️' },
+    { id: 'calculator', label: 'Calculatrice', icon: '🔢' },
+    { id: 'notepad', label: 'Bloc-notes', icon: '📝' },
+    { id: 'browser', label: 'Navigateur', icon: '🌐' },
+    { id: 'mail', label: 'Courrier', icon: '✉️' },
+    { id: 'calendar', label: 'Calendrier', icon: '📅' },
+    { id: 'files', label: 'Fichiers', icon: '📁' },
+    { id: 'trash', label: 'Corbeille', icon: '🗑️' }
   ];
 
   return (
