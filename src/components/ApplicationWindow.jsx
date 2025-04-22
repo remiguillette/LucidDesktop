@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children, onClose }) => {
+const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children, onClose, onMinimize }) => {
   const [position, setPosition] = useState(initialPosition || { x: 50, y: 50 });
   const [size, setSize] = useState(initialSize || { width: 600, height: 400 });
   const [isDragging, setIsDragging] = useState(false);
@@ -169,7 +169,10 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
           <button 
             className="window-control minimize" 
             title="Minimiser"
-            onClick={() => onMinimize && onMinimize()}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (onMinimize) onMinimize();
+            }}
           >
             _
           </button>
