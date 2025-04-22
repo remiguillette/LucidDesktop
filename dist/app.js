@@ -33348,46 +33348,41 @@ var NavBar = function NavBar(_ref) {
     day: 'numeric'
   });
   var navItems = [{
-    id: 'apps',
-    label: 'Applications',
-    icon: '📱',
-    submenu: [{
-      id: 'desktop',
-      label: 'Bureau',
-      icon: '🏠'
-    }, {
-      id: 'settings',
-      label: 'Paramètres',
-      icon: '⚙️'
-    }, {
-      id: 'calculator',
-      label: 'Calculatrice',
-      icon: '🔢'
-    }, {
-      id: 'notepad',
-      label: 'Bloc-notes',
-      icon: '📝'
-    }, {
-      id: 'browser',
-      label: 'Navigateur',
-      icon: '🌐'
-    }, {
-      id: 'mail',
-      label: 'Courrier',
-      icon: '✉️'
-    }, {
-      id: 'calendar',
-      label: 'Calendrier',
-      icon: '📅'
-    }, {
-      id: 'files',
-      label: 'Fichiers',
-      icon: '📁'
-    }, {
-      id: 'trash',
-      label: 'Corbeille',
-      icon: '🗑️'
-    }]
+    id: 'desktop',
+    label: 'Bureau',
+    icon: '🏠'
+  }, {
+    id: 'settings',
+    label: 'Paramètres',
+    icon: '⚙️'
+  }, {
+    id: 'calculator',
+    label: 'Calculatrice',
+    icon: '🔢'
+  }, {
+    id: 'notepad',
+    label: 'Bloc-notes',
+    icon: '📝'
+  }, {
+    id: 'browser',
+    label: 'Navigateur',
+    icon: '🌐'
+  }, {
+    id: 'mail',
+    label: 'Courrier',
+    icon: '✉️'
+  }, {
+    id: 'calendar',
+    label: 'Calendrier',
+    icon: '📅'
+  }, {
+    id: 'files',
+    label: 'Fichiers',
+    icon: '📁'
+  }, {
+    id: 'trash',
+    label: 'Corbeille',
+    icon: '🗑️'
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     className: "navbar"
@@ -33398,36 +33393,20 @@ var NavBar = function NavBar(_ref) {
       key: item.id,
       className: "nav-item ".concat(activeItem === item.id ? 'active' : ''),
       onClick: function onClick() {
-        return onSelect(item.id);
+        onSelect(item.id);
+        window.dispatchEvent(new CustomEvent('openApp', {
+          detail: {
+            id: item.id,
+            label: item.label,
+            icon: item.icon
+          }
+        }));
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "nav-icon"
     }, item.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "nav-text"
-    }, item.label), item.submenu && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "submenu"
-    }, item.submenu.map(function (subItem) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        key: subItem.id,
-        className: "submenu-item ".concat(activeItem === subItem.id ? 'active' : ''),
-        onClick: function onClick(e) {
-          e.stopPropagation();
-          onSelect(subItem.id);
-          var appId = subItem.id;
-          window.dispatchEvent(new CustomEvent('openApp', {
-            detail: {
-              id: appId,
-              label: subItem.label,
-              icon: subItem.icon
-            }
-          }));
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-        className: "nav-icon"
-      }, subItem.icon), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-        className: "nav-text"
-      }, subItem.label));
-    })));
+    }, item.label));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "navbar-right"
   }, username && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
