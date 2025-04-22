@@ -33380,6 +33380,10 @@ var NavBar = function NavBar(_ref) {
       label: 'Calendrier',
       icon: '📅'
     }, {
+      id: 'files',
+      label: 'Fichiers',
+      icon: '📁'
+    }, {
       id: 'trash',
       label: 'Corbeille',
       icon: '🗑️'
