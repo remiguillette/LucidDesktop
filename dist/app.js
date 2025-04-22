@@ -33306,8 +33306,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 var NavBar = function NavBar(_ref) {
   var activeItem = _ref.activeItem,
-    onSelect = _ref.onSelect,
-    username = _ref.username;
+    onSelect = _ref.onSelect;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date()),
     _useState2 = _slicedToArray(_useState, 2),
     currentTime = _useState2[0],
@@ -33457,13 +33456,7 @@ var NavBar = function NavBar(_ref) {
     }, item.label));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "navbar-right"
-  }, username && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "nav-user"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: "nav-user-icon"
-  }, "\uD83D\uDC64"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: "nav-user-name"
-  }, username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav-clock"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, dateString), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, timeString))));
 };
