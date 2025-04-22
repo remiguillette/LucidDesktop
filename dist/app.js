@@ -32679,8 +32679,17 @@ var Desktop = function Desktop() {
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     document.addEventListener('click', handleClick);
+    var handleOpenApp = function handleOpenApp(event) {
+      var _event$detail = event.detail,
+        id = _event$detail.id,
+        label = _event$detail.label,
+        icon = _event$detail.icon;
+      openApplication(id);
+    };
+    window.addEventListener('openApp', handleOpenApp);
     return function () {
       document.removeEventListener('click', handleClick);
+      window.removeEventListener('openApp', handleOpenApp);
     };
   }, []);
   var desktopIcons = [{
