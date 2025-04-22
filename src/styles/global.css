@@ -31,7 +31,9 @@ button, input, select, textarea {
   color: inherit;
 
 .taskbar-windows {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   height: 45px;
   padding: 0 8px;
   overflow-x: auto;
@@ -45,18 +47,18 @@ button, input, select, textarea {
 }
 
 .taskbar-window {
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
   height: 40px;
-  width: 140px;
+  min-width: 140px;
   margin-right: 8px;
   padding: 0 12px;
-  line-height: 40px;
   background: var(--window-header);
   border: 1px solid var(--window-border);
   border-radius: 4px;
   cursor: pointer;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .taskbar-window svg {
