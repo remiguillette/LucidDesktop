@@ -31,8 +31,17 @@ const Desktop = () => {
 
   useEffect(() => {
     document.addEventListener('click', handleClick);
+    
+    const handleOpenApp = (event) => {
+      const { id, label, icon } = event.detail;
+      openApplication(id);
+    };
+    
+    window.addEventListener('openApp', handleOpenApp);
+    
     return () => {
       document.removeEventListener('click', handleClick);
+      window.removeEventListener('openApp', handleOpenApp);
     };
   }, []);
 
