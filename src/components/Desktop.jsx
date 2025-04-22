@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import ApplicationWindow from './ApplicationWindow';
 import Calculator from './apps/Calculator';
+import Notepad from './apps/Notepad';
 import Browser from './apps/Browser';
 import Mail from './apps/Mail';
 import FileExplorer from './apps/FileExplorer';
