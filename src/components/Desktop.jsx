@@ -16,12 +16,12 @@ const Desktop = () => {
   const [minimizedWindows, setMinimizedWindows] = useState([]);
 
   const restoreWindow = (windowId) => {
-  const windowToRestore = minimizedWindows.find(window => window.id === windowId);
-  if (windowToRestore) {
-    setOpenWindows([...openWindows, windowToRestore]);
-    setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
-  }
-};
+    const windowToRestore = minimizedWindows.find(window => window.id === windowId);
+    if (windowToRestore) {
+      setMinimizedWindows(prev => prev.filter(window => window.id !== windowId));
+      setOpenWindows(prev => [...prev, windowToRestore]);
+    }
+  };
   const [showIcons, setShowIcons] = useState(true);
   const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
 
@@ -100,10 +100,8 @@ const Desktop = () => {
   const minimizeWindow = (windowId) => {
     const windowToMinimize = openWindows.find(window => window.id === windowId);
     if (windowToMinimize) {
-      setOpenWindows(openWindows.filter(window => window.id !== windowId));
-      window.dispatchEvent(new CustomEvent('minimizeWindow', { 
-        detail: { window: windowToMinimize }
-      }));
+      setOpenWindows(prev => prev.filter(window => window.id !== windowId));
+      setMinimizedWindows(prev => [...prev, windowToMinimize]);
     }
   };
 
