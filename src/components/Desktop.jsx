@@ -185,13 +185,13 @@ const Desktop = () => {
         </ApplicationWindow>
       ))}
       <NavBar
-        items={[]}
-        activeItem="desktop"
-        onSelect={() => {}}
-        minimizedWindows={minimizedWindows}
-        onRestoreWindow={handleRestoreWindow}
-      />
-    </div>
+          items={[]}
+          activeItem="desktop"
+          onSelect={() => {}}
+          minimizedWindows={minimizedWindows}
+          onRestoreWindow={handleRestoreWindow}
+        />
+      </div>
   );
 };
 
