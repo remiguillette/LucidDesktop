@@ -1,0 +1,65 @@
+ERROR in ./src/components/Desktop.jsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/runner/workspace/src/components/Desktop.jsx: Identifier 'openWindows' has already been declared. (17:7)
+
+  15 |   const [openWindows, setOpenWindows] = useState([]);
+  16 | const [minimizedWindows, setMinimizedWindows] = useState([]);
+> 17 | const [openWindows, setOpenWindows] = useState([]);
+     |        ^
+  18 |
+  19 | const restoreWindow = (windowId) => {
+  20 |   const windowToRestore = minimizedWindows.find(window => window.id === windowId);
+    at constructor (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:360:19)
+    at JSXParserMixin.raise (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:3338:19)
+    at ScopeHandler.checkRedeclarationInScope (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:1566:19)
+    at ScopeHandler.declareName (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:1532:12)
+    at JSXParserMixin.declareNameFromIdentifier (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:7494:16)
+    at JSXParserMixin.checkIdentifier (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:7490:12)
+    at JSXParserMixin.checkLVal (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:7431:12)
+    at JSXParserMixin.checkLVal (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:7467:16)
+    at JSXParserMixin.parseVarId (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:13072:10)
+    at JSXParserMixin.parseVar (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:13047:12)
+    at JSXParserMixin.parseVarStatement (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12894:10)
+    at JSXParserMixin.parseStatementContent (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12515:23)
+    at JSXParserMixin.parseStatementLike (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12432:17)
+    at JSXParserMixin.parseStatementListItem (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12412:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12980:61)
+    at JSXParserMixin.parseBlockBody (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12973:10)
+    at JSXParserMixin.parseBlock (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12961:10)
+    at JSXParserMixin.parseFunctionBody (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11810:24)
+    at JSXParserMixin.parseArrowExpression (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11785:10)
+    at JSXParserMixin.parseParenAndDistinguishExpression (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11398:12)
+    at JSXParserMixin.parseExprAtom (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:11033:23)
+    at JSXParserMixin.parseExprAtom (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:6950:20)
+    at JSXParserMixin.parseExprSubscripts (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10785:23)
+    at JSXParserMixin.parseUpdate (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10770:21)
+    at JSXParserMixin.parseMaybeUnary (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10750:23)
+    at JSXParserMixin.parseMaybeUnaryOrPrivate (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10603:61)
+    at JSXParserMixin.parseExprOps (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10608:23)
+    at JSXParserMixin.parseMaybeConditional (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10585:23)
+    at JSXParserMixin.parseMaybeAssign (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10538:21)
+    at /home/runner/workspace/node_modules/@babel/parser/lib/index.js:10507:39
+    at JSXParserMixin.allowInAnd (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12121:16)
+    at JSXParserMixin.parseMaybeAssignAllowIn (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:10507:17)
+    at JSXParserMixin.parseVar (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:13048:91)
+    at JSXParserMixin.parseVarStatement (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12894:10)
+    at JSXParserMixin.parseStatementContent (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12515:23)
+    at JSXParserMixin.parseStatementLike (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12432:17)
+    at JSXParserMixin.parseModuleItem (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12409:17)
+    at JSXParserMixin.parseBlockOrModuleBlockBody (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12980:36)
+    at JSXParserMixin.parseBlockBody (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12973:10)
+    at JSXParserMixin.parseProgram (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12306:10)
+    at JSXParserMixin.parseTopLevel (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:12296:25)
+    at JSXParserMixin.parse (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:14152:10)
+    at parse (/home/runner/workspace/node_modules/@babel/parser/lib/index.js:14186:38)
+    at parser (/home/runner/workspace/node_modules/@babel/core/lib/parser/index.js:41:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/runner/workspace/node_modules/@babel/core/lib/transformation/normalize-file.js:64:37)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/runner/workspace/node_modules/@babel/core/lib/transformation/index.js:22:50)
+    at run.next (<anonymous>)
+    at transform (/home/runner/workspace/node_modules/@babel/core/lib/transform.js:22:33)
+ @ ./src/components/App.jsx 14:0-32 118:48-55 128:48-55
+ @ ./src/app.js 3:0-35 10:102-105
+
+webpack 5.99.6 compiled with 1 error in 3443 ms
