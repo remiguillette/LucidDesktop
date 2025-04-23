@@ -57,6 +57,13 @@ button, input, select, textarea {
   border-radius: 4px;
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+}
+
+.taskbar-window span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .taskbar-window svg {

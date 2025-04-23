@@ -86,15 +86,25 @@ const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => 
 
       <div className="navbar-center" style={{ display: 'flex', flex: 1 }}>
         <div className="taskbar-windows">
-          {minimizedWindows?.map((window) => (
+          {Object.entries(
+            minimizedWindows?.reduce((groups, window) => {
+              const appId = window.appId || 'unknown';
+              if (!groups[appId]) groups[appId] = [];
+              groups[appId].push(window);
+              return groups;
+            }, {}) || {}
+          ).map(([appId, windows]) => (
             <div 
-              key={window.id} 
+              key={appId}
               className="taskbar-window"
-              onClick={() => onRestoreWindow?.(window.id)}
+              onClick={() => windows.length === 1 
+                ? onRestoreWindow?.(windows[0].id)
+                : onRestoreWindow?.(windows[windows.length - 1].id)
+              }
               style={{ flexShrink: 0 }}
             >
-              {window.icon}
-              <span>{window.title}</span>
+              {windows[0].icon}
+              <span>{windows[0].title} {windows.length > 1 ? `(${windows.length})` : ''}</span>
             </div>
           ))}
         </div>
