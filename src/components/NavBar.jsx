@@ -97,10 +97,12 @@ const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => 
             <div 
               key={appId}
               className="taskbar-window"
-              onClick={() => windows.length === 1 
-                ? onRestoreWindow?.(windows[0].id)
-                : onRestoreWindow?.(windows[windows.length - 1].id)
-              }
+              onClick={() => {
+                // Restore all windows of this group
+                windows.forEach(window => {
+                  onRestoreWindow?.(window.id);
+                });
+              }}
               style={{ flexShrink: 0 }}
             >
               {windows[0].icon}
