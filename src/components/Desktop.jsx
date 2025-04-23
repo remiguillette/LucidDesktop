@@ -93,15 +93,13 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
     const windowToMinimize = openWindows.find(window => window.id === windowId);
     if (windowToMinimize) {
       setOpenWindows(openWindows.filter(window => window.id !== windowId));
-      setMinimizedWindows(prev => [...prev, windowToMinimize]);
-    }
-  };
-
-  const restoreWindow = (windowId) => {
-    const windowToRestore = minimizedWindows.find(window => window.id === windowId);
-    if (windowToRestore) {
-      setMinimizedWindows(prev => prev.filter(window => window.id !== windowId));
-      setOpenWindows(prev => [...prev, windowToRestore]);
+      const minimizedWindow = {
+        ...windowToMinimize,
+        width: Math.min(200, windowToMinimize.width || 200)
+      };
+      window.dispatchEvent(new CustomEvent('minimizeWindow', { 
+        detail: { window: minimizedWindow }
+      }));
     }
   };
 
