@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import ApplicationWindow from './ApplicationWindow';
+import NavBar from './NavBar';
 import Calculator from './apps/Calculator';
 import Notepad from './apps/Notepad';
 import Browser from './apps/Browser';
@@ -16,6 +17,11 @@ const Desktop = () => {
   const [minimizedWindows, setMinimizedWindows] = useState([]);
   const [showIcons, setShowIcons] = useState(true);
   const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
+  const [activeItem, setActiveItem] = useState('desktop');
+
+  const handleSelect = (itemId) => {
+    setActiveItem(itemId);
+  };
 
   const handleContextMenu = (e) => {
     e.preventDefault();
