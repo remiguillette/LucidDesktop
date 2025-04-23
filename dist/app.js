@@ -32575,7 +32575,8 @@ var ApplicationWindow = function ApplicationWindow(_ref) {
       height: "".concat(size.height, "px"),
       left: "".concat(position.x, "px"),
       top: "".concat(position.y, "px"),
-      display: isMinimized ? 'none' : 'flex'
+      display: 'flex',
+      visibility: isMinimized ? 'hidden' : 'visible'
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "window-titlebar",
@@ -33081,14 +33082,26 @@ var Desktop = function Desktop() {
       setOpenWindows(openWindows.filter(function (window) {
         return window.id !== windowId;
       }));
-      var minimizedWindow = _objectSpread(_objectSpread({}, windowToMinimize), {}, {
-        width: Math.min(200, windowToMinimize.width || 200)
+      setMinimizedWindows(function (prev) {
+        return [].concat(_toConsumableArray(prev), [windowToMinimize]);
       });
-      window.dispatchEvent(new CustomEvent('minimizeWindow', {
-        detail: {
-          window: minimizedWindow
-        }
-      }));
+    }
+  };
+  var restoreWindow = function restoreWindow(windowId) {
+    var windowToRestore = minimizedWindows.find(function (window) {
+      return window.id === windowId;
+    });
+    if (windowToRestore) {
+      setMinimizedWindows(function (prev) {
+        return prev.filter(function (window) {
+          return window.id !== windowId;
+        });
+      });
+      setOpenWindows(function (prev) {
+        return [].concat(_toConsumableArray(prev), [_objectSpread(_objectSpread({}, windowToRestore), {}, {
+          isMinimized: false
+        })]);
+      });
     }
   };
   var handleIconClick = function handleIconClick(iconId) {
@@ -33639,7 +33652,10 @@ var NavBar = function NavBar(_ref) {
       key: appId,
       className: "taskbar-window",
       onClick: function onClick() {
-        return windows.length === 1 ? onRestoreWindow === null || onRestoreWindow === void 0 ? void 0 : onRestoreWindow(windows[0].id) : onRestoreWindow === null || onRestoreWindow === void 0 ? void 0 : onRestoreWindow(windows[windows.length - 1].id);
+        // Restore all windows of this group
+        windows.forEach(function (window) {
+          onRestoreWindow === null || onRestoreWindow === void 0 || onRestoreWindow(window.id);
+        });
       },
       style: {
         flexShrink: 0
