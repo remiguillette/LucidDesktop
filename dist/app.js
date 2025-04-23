@@ -32700,22 +32700,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
-/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBar */ "./src/components/NavBar.jsx");
-/* harmony import */ var _ApplicationWindow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ApplicationWindow */ "./src/components/ApplicationWindow.jsx");
-/* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
-/* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
-/* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
-/* harmony import */ var _apps_Mail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./apps/Mail */ "./src/components/apps/Mail.jsx");
-/* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
-/* harmony import */ var _apps_Calendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./apps/Calendar */ "./src/components/apps/Calendar.jsx");
-/* harmony import */ var _apps_Trash__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./apps/Trash */ "./src/components/apps/Trash.jsx");
-/* harmony import */ var _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./apps/SystemSettings */ "./src/components/apps/SystemSettings.jsx");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+/* harmony import */ var _ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ApplicationWindow */ "./src/components/ApplicationWindow.jsx");
+/* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
+/* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
+/* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
+/* harmony import */ var _apps_Mail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/Mail */ "./src/components/apps/Mail.jsx");
+/* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
+/* harmony import */ var _apps_Calendar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./apps/Calendar */ "./src/components/apps/Calendar.jsx");
+/* harmony import */ var _apps_Trash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./apps/Trash */ "./src/components/apps/Trash.jsx");
+/* harmony import */ var _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./apps/SystemSettings */ "./src/components/apps/SystemSettings.jsx");
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -32726,7 +32719,6 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
-
 
 
 
@@ -32810,13 +32802,13 @@ var Desktop = function Desktop() {
       strokeLinecap: "round",
       strokeLinejoin: "round"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
       cx: "12",
       cy: "12",
       r: "3"
     })),
-    app: _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_11__["default"]
+    app: _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_10__["default"]
   }, {
     id: 'trash',
     name: t('desktop.trash'),
@@ -32837,7 +32829,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
     })),
-    app: _apps_Trash__WEBPACK_IMPORTED_MODULE_10__["default"]
+    app: _apps_Trash__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, {
     id: 'terminal',
     name: t('desktop.terminal'),
@@ -32896,7 +32888,7 @@ var Desktop = function Desktop() {
       y1: "21.94",
       y2: "14"
     })),
-    app: _apps_Browser__WEBPACK_IMPORTED_MODULE_6__["default"]
+    app: _apps_Browser__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
     id: 'mail',
     name: t('desktop.mail'),
@@ -32919,7 +32911,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
     })),
-    app: _apps_Mail__WEBPACK_IMPORTED_MODULE_7__["default"]
+    app: _apps_Mail__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     id: 'files',
     name: t('desktop.files'),
@@ -32936,7 +32928,7 @@ var Desktop = function Desktop() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"
     })),
-    app: _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_8__["default"]
+    app: _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
     id: 'calendar',
     name: t('desktop.calendar'),
@@ -32975,7 +32967,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M16 18h.01"
     })),
-    app: _apps_Calendar__WEBPACK_IMPORTED_MODULE_9__["default"]
+    app: _apps_Calendar__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
     id: 'calculator',
     name: t('desktop.calculator'),
@@ -33020,7 +33012,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M8 18h.01"
     })),
-    app: _apps_Calculator__WEBPACK_IMPORTED_MODULE_4__["default"]
+    app: _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     id: 'notepad',
     name: t('desktop.notepad'),
@@ -33041,7 +33033,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M21 12H3"
     })),
-    app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_5__["default"]
+    app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__["default"]
   }];
   var openApplication = function openApplication(app) {
     var appExists = desktopIcons.find(function (icon) {
@@ -33076,19 +33068,10 @@ var Desktop = function Desktop() {
       setOpenWindows(openWindows.filter(function (window) {
         return window.id !== windowId;
       }));
-      setMinimizedWindows([].concat(_toConsumableArray(minimizedWindows), [_objectSpread(_objectSpread({}, windowToMinimize), {}, {
-        width: Math.min(200, windowToMinimize.width || 200)
-      })]));
-    }
-  };
-  var handleRestoreWindow = function handleRestoreWindow(windowId) {
-    var windowToRestore = minimizedWindows.find(function (window) {
-      return window.id === windowId;
-    });
-    if (windowToRestore) {
-      setOpenWindows([].concat(_toConsumableArray(openWindows), [windowToRestore]));
-      setMinimizedWindows(minimizedWindows.filter(function (window) {
-        return window.id !== windowId;
+      window.dispatchEvent(new CustomEvent('minimizeWindow', {
+        detail: {
+          window: windowToMinimize
+        }
       }));
     }
   };
@@ -33153,7 +33136,7 @@ var Desktop = function Desktop() {
       className: "desktop-icon-text"
     }, icon.name));
   }), openWindows.map(function (window) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: window.id,
       title: window.title,
       icon: window.icon,
@@ -33166,12 +33149,6 @@ var Desktop = function Desktop() {
     }, window.component && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(window.component, {
       key: window.id
     }));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    items: [],
-    activeItem: "desktop",
-    onSelect: function onSelect() {},
-    minimizedWindows: minimizedWindows,
-    onRestoreWindow: handleRestoreWindow
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Desktop);
@@ -33626,35 +33603,18 @@ var NavBar = function NavBar(_ref) {
       className: "nav-text"
     }, item.label));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "navbar-center",
-    style: {
-      display: 'flex',
-      flex: 1
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "taskbar-windows"
-  }, Object.entries((minimizedWindows === null || minimizedWindows === void 0 ? void 0 : minimizedWindows.reduce(function (groups, window) {
-    var appId = window.appId || 'unknown';
-    if (!groups[appId]) groups[appId] = [];
-    groups[appId].push(window);
-    return groups;
-  }, {})) || {}).map(function (_ref2) {
-    var _ref3 = _slicedToArray(_ref2, 2),
-      appId = _ref3[0],
-      windows = _ref3[1];
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      key: appId,
-      className: "taskbar-window",
-      onClick: function onClick() {
-        return windows.length === 1 ? onRestoreWindow === null || onRestoreWindow === void 0 ? void 0 : onRestoreWindow(windows[0].id) : onRestoreWindow === null || onRestoreWindow === void 0 ? void 0 : onRestoreWindow(windows[windows.length - 1].id);
-      },
-      style: {
-        flexShrink: 0
-      }
-    }, windows[0].icon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, windows[0].title, " ", windows.length > 1 ? "(".concat(windows.length, ")") : ''));
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "navbar-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "taskbar-windows"
+  }, minimizedWindows === null || minimizedWindows === void 0 ? void 0 : minimizedWindows.map(function (window) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: window.id,
+      className: "taskbar-window",
+      onClick: function onClick() {
+        return onRestoreWindow === null || onRestoreWindow === void 0 ? void 0 : onRestoreWindow(window.id);
+      }
+    }, window.icon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, window.title));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "nav-clock"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, dateString), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, timeString))));
 };

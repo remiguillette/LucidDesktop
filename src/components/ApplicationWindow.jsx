@@ -60,7 +60,7 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
       if (isDragging) {
         const newX = e.clientX - dragOffset.x;
         const newY = e.clientY - dragOffset.y;
-        
+
         // S'assurer que la fenêtre reste dans les limites visibles
         setPosition({
           x: Math.max(0, Math.min(newX, window.innerWidth - size.width)),
@@ -69,13 +69,13 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
       } else if (isResizing) {
         const deltaX = e.clientX - dragOffset.x;
         const deltaY = e.clientY - dragOffset.y;
-        
+
         // Calcul de la nouvelle taille et position en fonction de la direction
         let newWidth = dragOffset.initialWidth;
         let newHeight = dragOffset.initialHeight;
         let newX = dragOffset.initialX;
         let newY = dragOffset.initialY;
-        
+
         // Redimensionnement horizontal
         if (resizeDirection.x !== 0) {
           if (resizeDirection.x < 0) {
@@ -87,7 +87,7 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
             newWidth = Math.max(200, dragOffset.initialWidth + deltaX);
           }
         }
-        
+
         // Redimensionnement vertical
         if (resizeDirection.y !== 0) {
           if (resizeDirection.y < 0) {
@@ -99,7 +99,7 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
             newHeight = Math.max(150, dragOffset.initialHeight + deltaY);
           }
         }
-        
+
         setSize({ width: newWidth, height: newHeight });
         setPosition({ x: newX, y: newY });
       }
@@ -131,7 +131,7 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
       // Sauvegarder la taille et la position actuelles
       prevSizeRef.current = size;
       prevPositionRef.current = position;
-      
+
       // Maximiser la fenêtre (avec marge de 5px pour les bords de l'écran)
       setSize({
         width: window.innerWidth - 10,
@@ -139,7 +139,7 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
       });
       setPosition({ x: 5, y: 5 });
     }
-    
+
     setIsMaximized(!isMaximized);
   };
 
@@ -212,12 +212,12 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
           </button>
         </div>
       </div>
-      
+
       {/* Contenu de la fenêtre */}
       <div className="window-content">
         {children}
       </div>
-      
+
       {/* Poignées de redimensionnement (8 directions) */}
       {!isMaximized && (
         <>
@@ -226,43 +226,43 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
             className="window-resize-handle nw-resize" 
             onMouseDown={(e) => handleResizeStart(e, { x: -1, y: -1 })}
           />
-          
+
           {/* Bord supérieur */}
           <div 
             className="window-resize-handle n-resize" 
             onMouseDown={(e) => handleResizeStart(e, { x: 0, y: -1 })}
           />
-          
+
           {/* Coin supérieur droit */}
           <div 
             className="window-resize-handle ne-resize" 
             onMouseDown={(e) => handleResizeStart(e, { x: 1, y: -1 })}
           />
-          
+
           {/* Bord droit */}
           <div 
             className="window-resize-handle e-resize" 
             onMouseDown={(e) => handleResizeStart(e, { x: 1, y: 0 })}
           />
-          
+
           {/* Coin inférieur droit */}
           <div 
             className="window-resize-handle se-resize" 
             onMouseDown={(e) => handleResizeStart(e, { x: 1, y: 1 })}
           />
-          
+
           {/* Bord inférieur */}
           <div 
             className="window-resize-handle s-resize" 
             onMouseDown={(e) => handleResizeStart(e, { x: 0, y: 1 })}
           />
-          
+
           {/* Coin inférieur gauche */}
           <div 
             className="window-resize-handle sw-resize" 
             onMouseDown={(e) => handleResizeStart(e, { x: -1, y: 1 })}
           />
-          
+
           {/* Bord gauche */}
           <div 
             className="window-resize-handle w-resize" 
