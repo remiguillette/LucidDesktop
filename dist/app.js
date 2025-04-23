@@ -32815,7 +32815,7 @@ var Desktop = function Desktop() {
       strokeLinecap: "round",
       strokeLinejoin: "round"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
       cx: "12",
       cy: "12",
@@ -33081,13 +33081,19 @@ var Desktop = function Desktop() {
       setOpenWindows(openWindows.filter(function (window) {
         return window.id !== windowId;
       }));
-      var minimizedWindow = _objectSpread(_objectSpread({}, windowToMinimize), {}, {
+      setMinimizedWindows([].concat(_toConsumableArray(minimizedWindows), [_objectSpread(_objectSpread({}, windowToMinimize), {}, {
         width: Math.min(200, windowToMinimize.width || 200)
-      });
-      window.dispatchEvent(new CustomEvent('minimizeWindow', {
-        detail: {
-          window: minimizedWindow
-        }
+      })]));
+    }
+  };
+  var handleRestoreWindow = function handleRestoreWindow(windowId) {
+    var windowToRestore = minimizedWindows.find(function (window) {
+      return window.id === windowId;
+    });
+    if (windowToRestore) {
+      setOpenWindows([].concat(_toConsumableArray(openWindows), [windowToRestore]));
+      setMinimizedWindows(minimizedWindows.filter(function (window) {
+        return window.id !== windowId;
       }));
     }
   };
@@ -33165,6 +33171,11 @@ var Desktop = function Desktop() {
     }, window.component && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(window.component, {
       key: window.id
     }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(NavBar, {
+    activeItem: activeItem,
+    onSelect: handleSelect,
+    minimizedWindows: minimizedWindows,
+    onRestoreWindow: handleRestoreWindow
   }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Desktop);
