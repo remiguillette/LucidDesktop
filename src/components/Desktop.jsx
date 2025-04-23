@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import ApplicationWindow from './ApplicationWindow';
-import NavBar from './NavBar';
+import NavBar from './NavBar.jsx';
 import Calculator from './apps/Calculator';
 import Notepad from './apps/Notepad';
 import Browser from './apps/Browser';
@@ -191,6 +191,11 @@ const Desktop = () => {
       ))}
       {/* Assuming NavBar component is imported and used here */}
       <NavBar
+        items={[
+          { id: 'minimize', label: 'Bureau', icon: '🏠' },
+          { id: 'files', label: 'Files', icon: '📁' },
+          { id: 'settings', label: 'Settings', icon: '⚙️' }
+        ]}
         activeItem={activeItem}
         onSelect={handleSelect}
         minimizedWindows={minimizedWindows}
