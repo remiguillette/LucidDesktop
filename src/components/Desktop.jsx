@@ -94,7 +94,13 @@ const Desktop = () => {
     const windowToMinimize = openWindows.find(window => window.id === windowId);
     if (windowToMinimize) {
       setOpenWindows(openWindows.filter(window => window.id !== windowId));
-      setMinimizedWindows([...minimizedWindows, { ...windowToMinimize, width: Math.min(200, windowToMinimize.width || 200) }]);
+      setMinimizedWindows([...minimizedWindows, { 
+        ...windowToMinimize,
+        width: Math.min(200, windowToMinimize.width || 200),
+        appId: windowToMinimize.appId,
+        title: windowToMinimize.title,
+        icon: windowToMinimize.icon
+      }]);
     }
   };
 
@@ -188,7 +194,13 @@ const Desktop = () => {
           items={[]}
           activeItem="desktop"
           onSelect={() => {}}
-          minimizedWindows={minimizedWindows}
+          minimizedWindows={minimizedWindows.map(window => ({
+            ...window,
+            id: window.id,
+            appId: window.appId,
+            title: window.title,
+            icon: window.icon
+          }))}
           onRestoreWindow={handleRestoreWindow}
         />
       </div>
