@@ -29,23 +29,21 @@ body {
 button, input, select, textarea {
   font-family: inherit;
   color: inherit;
+}
 
 .taskbar-windows {
-  display: inline-grid;
-  grid-auto-columns: min-content;
-  grid-auto-flow: column;
-  gap: 8px;
+  display: flex; /* Changed from inline-grid to flex to display items in a row */
+  overflow-x: auto;
+  white-space: nowrap;
   width: 100%;
   height: 45px;
   padding: 0 8px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  scrollbar-width: none;
+  gap: 8px;
+  scrollbar-width: none; /* Firefox scrollbar style */
 }
 
 .taskbar-windows::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome scrollbar style */
 }
 
 .taskbar-window {
@@ -68,9 +66,6 @@ button, input, select, textarea {
 
 .taskbar-window span {
   vertical-align: middle;
-}
-
-.taskbar-window span {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,6 +75,22 @@ button, input, select, textarea {
   background: var(--bg-light);
 }
 
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--bg-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #333;
+  z-index: 1000;
+  padding: 0 15px;
+}
+
 
 .browser-error {
   color: #ff0000;
@@ -87,7 +98,6 @@ button, input, select, textarea {
   font-size: 14px;
 }
 
-}
 
 a {
   color: var(--primary-color);
