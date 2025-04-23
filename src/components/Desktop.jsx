@@ -14,6 +14,15 @@ const Desktop = () => {
   const { t } = useTranslation();
   const [openWindows, setOpenWindows] = useState([]);
 const [minimizedWindows, setMinimizedWindows] = useState([]);
+const [openWindows, setOpenWindows] = useState([]);
+
+const restoreWindow = (windowId) => {
+  const windowToRestore = minimizedWindows.find(window => window.id === windowId);
+  if (windowToRestore) {
+    setOpenWindows([...openWindows, windowToRestore]);
+    setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
+  }
+};
   const [showIcons, setShowIcons] = useState(true);
   const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
 

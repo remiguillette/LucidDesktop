@@ -90,7 +90,7 @@ const NavBar = ({ activeItem, onSelect, minimizedWindows, onRestoreWindow }) => 
             <div 
               key={window.id} 
               className="taskbar-window"
-              onClick={() => onRestoreWindow?.(window.id)}
+              onClick={() => onRestoreWindow(window.id)}
             >
               {window.icon}
               <span>{window.title}</span>
