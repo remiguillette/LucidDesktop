@@ -13,7 +13,28 @@ import SystemSettings from './apps/SystemSettings';
 const Desktop = () => {
   const { t } = useTranslation();
   const [openWindows, setOpenWindows] = useState([]);
-const [minimizedWindows, setMinimizedWindows] = useState([]);
+  const [minimizedWindows, setMinimizedWindows] = useState([]);
+  const [windowStates, setWindowStates] = useState({});
+
+  useEffect(() => {
+    const handleWindowStateChange = (event) => {
+      const { windowId, state } = event.detail;
+      if (state.minimized) {
+        setOpenWindows(prev => prev.filter(w => w.id !== windowId));
+        setMinimizedWindows(prev => [...prev, windowStates[windowId]]);
+      } else if (state.restored) {
+        const windowToRestore = windowStates[windowId];
+        if (windowToRestore) {
+          setMinimizedWindows(prev => prev.filter(w => w.id !== windowId));
+          setOpenWindows(prev => [...prev, windowToRestore]);
+        }
+      }
+    };
+
+    window.addEventListener('windowStateChange', handleWindowStateChange);
+    return () => window.removeEventListener('windowStateChange', handleWindowStateChange);
+  }, [windowStates]);
+
   const [showIcons, setShowIcons] = useState(true);
   const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
 
@@ -32,7 +53,7 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
 
   useEffect(() => {
     document.addEventListener('click', handleClick);
-    
+
     const handleOpenApp = (event) => {
       const { id, label, icon } = event.detail;
       openApplication(id);
@@ -41,10 +62,10 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
     const handleMinimizeAll = () => {
       setOpenWindows([]);
     };
-    
+
     window.addEventListener('openApp', handleOpenApp);
     window.addEventListener('minimizeAll', handleMinimizeAll);
-    
+
     return () => {
       document.removeEventListener('click', handleClick);
       window.removeEventListener('openApp', handleOpenApp);
@@ -65,40 +86,52 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
   ];
 
   const openApplication = (app) => {
-    const appExists = desktopIcons.find(icon => icon.id === app);
-    if (!appExists) {
-      console.error(`Application ${app} not found`);
-      return;
-    }
+    try {
+      const appExists = desktopIcons.find(icon => icon.id === app);
+      if (!appExists) {
+        throw new Error(`Application ${app} not found`);
+      }
 
-    const windowId = `${app}-${Date.now()}`;
-    setOpenWindows([
-      ...openWindows,
-      {
+      const windowId = `${app}-${Date.now()}`;
+      const newWindow = {
         id: windowId,
         appId: app,
         title: appExists.name,
         icon: appExists.icon,
-        component: appExists.app
-      }
-    ]);
+        component: appExists.app,
+        position: { x: 50 + (openWindows.length * 30), y: 50 + (openWindows.length * 30) }
+      };
+
+      setWindowStates(prev => ({
+        ...prev,
+        [windowId]: newWindow
+      }));
+
+      setOpenWindows(prev => [...prev, newWindow]);
+    } catch (error) {
+      console.error('Error opening application:', error);
+    }
   };
 
   const closeWindow = (windowId) => {
     setOpenWindows(openWindows.filter(window => window.id !== windowId));
     setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
+    setWindowStates(prev => {
+      const newState = {...prev};
+      delete newState[windowId];
+      return newState;
+    })
   };
 
   const minimizeWindow = (windowId) => {
     const windowToMinimize = openWindows.find(window => window.id === windowId);
     if (windowToMinimize) {
-      setOpenWindows(openWindows.filter(window => window.id !== windowId));
       const minimizedWindow = {
         ...windowToMinimize,
         width: Math.min(200, windowToMinimize.width || 200)
       };
-      window.dispatchEvent(new CustomEvent('minimizeWindow', { 
-        detail: { window: minimizedWindow }
+      window.dispatchEvent(new CustomEvent('windowStateChange', { 
+        detail: { windowId: windowId, state: { minimized: true } }
       }));
     }
   };
@@ -176,6 +209,9 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
           icon={window.icon}
           onClose={() => closeWindow(window.id)}
           onMinimize={() => minimizeWindow(window.id)}
+          onRestore={() => {
+            window.dispatchEvent(new CustomEvent('windowStateChange', { detail: { windowId: window.id, state: { restored: true } } }));
+          }}
         >
           {window.component && <window.component key={window.id} />}
         </ApplicationWindow>
