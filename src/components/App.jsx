@@ -13,50 +13,21 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [minimizedWindows, setMinimizedWindows] = useState([]);
-  const [windowStates, setWindowStates] = useState({});
 
   useEffect(() => {
     const handleMinimize = (event) => {
       const { window } = event.detail;
-      if (window && window.id) {
-        setMinimizedWindows(prev => {
-          const exists = prev.some(w => w.id === window.id);
-          return exists ? prev : [...prev, window];
-        });
-        setWindowStates(prev => ({
-          ...prev,
-          [window.id]: { ...window, minimized: true }
-        }));
-      }
-    };
-
-    const handleWindowStateChange = (event) => {
-      const { windowId, state } = event.detail;
-      setWindowStates(prev => ({
-        ...prev,
-        [windowId]: { ...prev[windowId], ...state }
-      }));
+      setMinimizedWindows(prev => [...prev, window]);
     };
     
     window.addEventListener('minimizeWindow', handleMinimize);
-    window.addEventListener('windowStateChange', handleWindowStateChange);
-    return () => {
-      window.removeEventListener('minimizeWindow', handleMinimize);
-      window.removeEventListener('windowStateChange', handleWindowStateChange);
-    };
+    return () => window.removeEventListener('minimizeWindow', handleMinimize);
   }, []);
 
   const restoreWindow = (windowId) => {
     const windowToRestore = minimizedWindows.find(window => window.id === windowId);
     if (windowToRestore) {
-      setMinimizedWindows(prev => prev.filter(window => window.id !== windowId));
-      setWindowStates(prev => ({
-        ...prev,
-        [windowId]: { ...prev[windowId], minimized: false }
-      }));
-      window.dispatchEvent(new CustomEvent('windowStateChange', {
-        detail: { windowId, state: { minimized: false, restored: true } }
-      }));
+      setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
     }
   };
 
