@@ -32187,6 +32187,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Settings */ "./src/components/Settings.jsx");
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Login */ "./src/components/Login.jsx");
 /* harmony import */ var _services_userService__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/userService */ "./src/services/userService.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
@@ -32227,16 +32233,35 @@ var App = function App() {
     _useState10 = _slicedToArray(_useState9, 2),
     minimizedWindows = _useState10[0],
     setMinimizedWindows = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState12 = _slicedToArray(_useState11, 2),
+    windowStates = _useState12[0],
+    setWindowStates = _useState12[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var handleMinimize = function handleMinimize(event) {
       var window = event.detail.window;
       setMinimizedWindows(function (prev) {
         return [].concat(_toConsumableArray(prev), [window]);
       });
+      setWindowStates(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, window.id, _objectSpread(_objectSpread({}, window), {}, {
+          minimized: true
+        })));
+      });
+    };
+    var handleWindowStateChange = function handleWindowStateChange(event) {
+      var _event$detail = event.detail,
+        windowId = _event$detail.windowId,
+        state = _event$detail.state;
+      setWindowStates(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, windowId, _objectSpread(_objectSpread({}, prev[windowId]), state)));
+      });
     };
     window.addEventListener('minimizeWindow', handleMinimize);
+    window.addEventListener('windowStateChange', handleWindowStateChange);
     return function () {
-      return window.removeEventListener('minimizeWindow', handleMinimize);
+      window.removeEventListener('minimizeWindow', handleMinimize);
+      window.removeEventListener('windowStateChange', handleWindowStateChange);
     };
   }, []);
   var restoreWindow = function restoreWindow(windowId) {
@@ -32244,8 +32269,24 @@ var App = function App() {
       return window.id === windowId;
     });
     if (windowToRestore) {
-      setMinimizedWindows(minimizedWindows.filter(function (window) {
-        return window.id !== windowId;
+      setMinimizedWindows(function (prev) {
+        return prev.filter(function (window) {
+          return window.id !== windowId;
+        });
+      });
+      setWindowStates(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, windowId, _objectSpread(_objectSpread({}, prev[windowId]), {}, {
+          minimized: false
+        })));
+      });
+      window.dispatchEvent(new CustomEvent('windowStateChange', {
+        detail: {
+          windowId: windowId,
+          state: {
+            minimized: false,
+            restored: true
+          }
+        }
       }));
     }
   };
@@ -32754,18 +32795,55 @@ var Desktop = function Desktop() {
     _useState4 = _slicedToArray(_useState3, 2),
     minimizedWindows = _useState4[0],
     setMinimizedWindows = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
     _useState6 = _slicedToArray(_useState5, 2),
-    showIcons = _useState6[0],
-    setShowIcons = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    windowStates = _useState6[0],
+    setWindowStates = _useState6[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleWindowStateChange = function handleWindowStateChange(event) {
+      var _event$detail = event.detail,
+        windowId = _event$detail.windowId,
+        state = _event$detail.state;
+      if (state.minimized) {
+        setOpenWindows(function (prev) {
+          return prev.filter(function (w) {
+            return w.id !== windowId;
+          });
+        });
+        setMinimizedWindows(function (prev) {
+          return [].concat(_toConsumableArray(prev), [windowStates[windowId]]);
+        });
+      } else if (state.restored) {
+        var windowToRestore = windowStates[windowId];
+        if (windowToRestore) {
+          setMinimizedWindows(function (prev) {
+            return prev.filter(function (w) {
+              return w.id !== windowId;
+            });
+          });
+          setOpenWindows(function (prev) {
+            return [].concat(_toConsumableArray(prev), [windowToRestore]);
+          });
+        }
+      }
+    };
+    window.addEventListener('windowStateChange', handleWindowStateChange);
+    return function () {
+      return window.removeEventListener('windowStateChange', handleWindowStateChange);
+    };
+  }, [windowStates]);
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState8 = _slicedToArray(_useState7, 2),
+    showIcons = _useState8[0],
+    setShowIcons = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       show: false,
       x: 0,
       y: 0
     }),
-    _useState8 = _slicedToArray(_useState7, 2),
-    contextMenu = _useState8[0],
-    setContextMenu = _useState8[1];
+    _useState10 = _slicedToArray(_useState9, 2),
+    contextMenu = _useState10[0],
+    setContextMenu = _useState10[1];
   var handleContextMenu = function handleContextMenu(e) {
     e.preventDefault();
     setContextMenu({
@@ -32784,10 +32862,10 @@ var Desktop = function Desktop() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     document.addEventListener('click', handleClick);
     var handleOpenApp = function handleOpenApp(event) {
-      var _event$detail = event.detail,
-        id = _event$detail.id,
-        label = _event$detail.label,
-        icon = _event$detail.icon;
+      var _event$detail2 = event.detail,
+        id = _event$detail2.id,
+        label = _event$detail2.label,
+        icon = _event$detail2.icon;
       openApplication(id);
     };
     var handleMinimizeAll = function handleMinimizeAll() {
@@ -33049,21 +33127,34 @@ var Desktop = function Desktop() {
     app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__["default"]
   }];
   var openApplication = function openApplication(app) {
-    var appExists = desktopIcons.find(function (icon) {
-      return icon.id === app;
-    });
-    if (!appExists) {
-      console.error("Application ".concat(app, " not found"));
-      return;
+    try {
+      var appExists = desktopIcons.find(function (icon) {
+        return icon.id === app;
+      });
+      if (!appExists) {
+        throw new Error("Application ".concat(app, " not found"));
+      }
+      var windowId = "".concat(app, "-").concat(Date.now());
+      var newWindow = {
+        id: windowId,
+        appId: app,
+        title: appExists.name,
+        icon: appExists.icon,
+        component: appExists.app,
+        position: {
+          x: 50 + openWindows.length * 30,
+          y: 50 + openWindows.length * 30
+        }
+      };
+      setWindowStates(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, windowId, newWindow));
+      });
+      setOpenWindows(function (prev) {
+        return [].concat(_toConsumableArray(prev), [newWindow]);
+      });
+    } catch (error) {
+      console.error('Error opening application:', error);
     }
-    var windowId = "".concat(app, "-").concat(Date.now());
-    setOpenWindows([].concat(_toConsumableArray(openWindows), [{
-      id: windowId,
-      appId: app,
-      title: appExists.name,
-      icon: appExists.icon,
-      component: appExists.app
-    }]));
   };
   var closeWindow = function closeWindow(windowId) {
     setOpenWindows(openWindows.filter(function (window) {
@@ -33072,21 +33163,26 @@ var Desktop = function Desktop() {
     setMinimizedWindows(minimizedWindows.filter(function (window) {
       return window.id !== windowId;
     }));
+    setWindowStates(function (prev) {
+      var newState = _objectSpread({}, prev);
+      delete newState[windowId];
+      return newState;
+    });
   };
   var minimizeWindow = function minimizeWindow(windowId) {
     var windowToMinimize = openWindows.find(function (window) {
       return window.id === windowId;
     });
     if (windowToMinimize) {
-      setOpenWindows(openWindows.filter(function (window) {
-        return window.id !== windowId;
-      }));
       var minimizedWindow = _objectSpread(_objectSpread({}, windowToMinimize), {}, {
         width: Math.min(200, windowToMinimize.width || 200)
       });
-      window.dispatchEvent(new CustomEvent('minimizeWindow', {
+      window.dispatchEvent(new CustomEvent('windowStateChange', {
         detail: {
-          window: minimizedWindow
+          windowId: windowId,
+          state: {
+            minimized: true
+          }
         }
       }));
     }
@@ -33161,6 +33257,16 @@ var Desktop = function Desktop() {
       },
       onMinimize: function onMinimize() {
         return minimizeWindow(window.id);
+      },
+      onRestore: function onRestore() {
+        window.dispatchEvent(new CustomEvent('windowStateChange', {
+          detail: {
+            windowId: window.id,
+            state: {
+              restored: true
+            }
+          }
+        }));
       }
     }, window.component && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(window.component, {
       key: window.id
@@ -33581,7 +33687,7 @@ var NavBar = function NavBar(_ref) {
       strokeLinecap: "round",
       strokeLinejoin: "round"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
-      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V4a2 2 0 0 0 2-2z"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", {
       cx: "12",
       cy: "12",
@@ -33627,15 +33733,20 @@ var NavBar = function NavBar(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "taskbar-windows"
   }, Object.entries((minimizedWindows === null || minimizedWindows === void 0 ? void 0 : minimizedWindows.reduce(function (groups, window) {
-    var appId = window.appId || 'unknown';
-    if (!groups[appId]) groups[appId] = [];
-    groups[appId].push(window);
+    if (!window) return groups;
+    try {
+      var appId = window.appId || 'unknown';
+      if (!groups[appId]) groups[appId] = [];
+      groups[appId].push(window);
+    } catch (error) {
+      console.error('Error processing window:', error);
+    }
     return groups;
   }, {})) || {}).map(function (_ref2) {
     var _ref3 = _slicedToArray(_ref2, 2),
       appId = _ref3[0],
       windows = _ref3[1];
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    return windows && windows.length > 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       key: appId,
       className: "taskbar-window",
       onClick: function onClick() {
