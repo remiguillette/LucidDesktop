@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import NavBar from './NavBar';
 import ApplicationWindow from './ApplicationWindow';
 import Calculator from './apps/Calculator';
 import Notepad from './apps/Notepad';
@@ -183,10 +184,10 @@ const Desktop = () => {
           {window.component && <window.component key={window.id} />}
         </ApplicationWindow>
       ))}
-      {/* Assuming NavBar component is imported and used here */}
       <NavBar
-        activeItem={activeItem}
-        onSelect={handleSelect}
+        items={[]}
+        activeItem="desktop"
+        onSelect={() => {}}
         minimizedWindows={minimizedWindows}
         onRestoreWindow={handleRestoreWindow}
       />
