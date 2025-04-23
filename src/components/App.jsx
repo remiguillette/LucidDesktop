@@ -18,11 +18,16 @@ const App = () => {
   useEffect(() => {
     const handleMinimize = (event) => {
       const { window } = event.detail;
-      setMinimizedWindows(prev => [...prev, window]);
-      setWindowStates(prev => ({
-        ...prev,
-        [window.id]: { ...window, minimized: true }
-      }));
+      if (window && window.id) {
+        setMinimizedWindows(prev => {
+          const exists = prev.some(w => w.id === window.id);
+          return exists ? prev : [...prev, window];
+        });
+        setWindowStates(prev => ({
+          ...prev,
+          [window.id]: { ...window, minimized: true }
+        }));
+      }
     };
 
     const handleWindowStateChange = (event) => {
