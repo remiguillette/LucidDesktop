@@ -101,7 +101,10 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
     const windowToRestore = minimizedWindows.find(window => window.id === windowId);
     if (windowToRestore) {
       setMinimizedWindows(prev => prev.filter(window => window.id !== windowId));
-      setOpenWindows(prev => [...prev, windowToRestore]);
+      setOpenWindows(prev => [...prev, {
+        ...windowToRestore,
+        isMinimized: false
+      }]);
     }
   };
 

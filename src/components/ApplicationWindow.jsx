@@ -152,7 +152,8 @@ const ApplicationWindow = ({ title, icon, initialPosition, initialSize, children
         height: `${size.height}px`,
         left: `${position.x}px`,
         top: `${position.y}px`,
-        display: isMinimized ? 'none' : 'flex'
+        display: 'flex',
+        visibility: isMinimized ? 'hidden' : 'visible'
       }}
     >
       {/* Barre de titre de la fenêtre */}
