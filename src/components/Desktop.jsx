@@ -13,10 +13,9 @@ import SystemSettings from './apps/SystemSettings';
 const Desktop = () => {
   const { t } = useTranslation();
   const [openWindows, setOpenWindows] = useState([]);
-const [minimizedWindows, setMinimizedWindows] = useState([]);
-const [openWindows, setOpenWindows] = useState([]);
+  const [minimizedWindows, setMinimizedWindows] = useState([]);
 
-const restoreWindow = (windowId) => {
+  const restoreWindow = (windowId) => {
   const windowToRestore = minimizedWindows.find(window => window.id === windowId);
   if (windowToRestore) {
     setOpenWindows([...openWindows, windowToRestore]);
