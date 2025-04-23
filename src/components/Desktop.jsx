@@ -13,7 +13,7 @@ import SystemSettings from './apps/SystemSettings';
 const Desktop = () => {
   const { t } = useTranslation();
   const [openWindows, setOpenWindows] = useState([]);
-const [minimizedWindows, setMinimizedWindows] = useState([]);
+  const [minimizedWindows, setMinimizedWindows] = useState([]);
   const [showIcons, setShowIcons] = useState(true);
   const [contextMenu, setContextMenu] = useState({ show: false, x: 0, y: 0 });
 
@@ -32,7 +32,7 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
 
   useEffect(() => {
     document.addEventListener('click', handleClick);
-    
+
     const handleOpenApp = (event) => {
       const { id, label, icon } = event.detail;
       openApplication(id);
@@ -41,10 +41,10 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
     const handleMinimizeAll = () => {
       setOpenWindows([]);
     };
-    
+
     window.addEventListener('openApp', handleOpenApp);
     window.addEventListener('minimizeAll', handleMinimizeAll);
-    
+
     return () => {
       document.removeEventListener('click', handleClick);
       window.removeEventListener('openApp', handleOpenApp);
@@ -53,7 +53,7 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
   }, []);
 
   const desktopIcons = [
-    { id: 'settings', name: t('desktop.settings'), icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>, app: SystemSettings },
+    { id: 'settings', name: t('desktop.settings'), icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>, app: SystemSettings },
     { id: 'trash', name: t('desktop.trash'), icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>, app: Trash },
     { id: 'terminal', name: t('desktop.terminal'), icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg> },
     { id: 'browser', name: t('desktop.browser'), icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" x2="12" y1="8" y2="8"/><line x1="3.95" x2="8.54" y1="6.06" y2="14"/><line x1="10.88" x2="15.46" y1="21.94" y2="14"/></svg>, app: Browser },
@@ -93,23 +93,26 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
     const windowToMinimize = openWindows.find(window => window.id === windowId);
     if (windowToMinimize) {
       setOpenWindows(openWindows.filter(window => window.id !== windowId));
-      const minimizedWindow = {
-        ...windowToMinimize,
-        width: Math.min(200, windowToMinimize.width || 200)
-      };
-      window.dispatchEvent(new CustomEvent('minimizeWindow', { 
-        detail: { window: minimizedWindow }
-      }));
+      setMinimizedWindows([...minimizedWindows, { ...windowToMinimize, width: Math.min(200, windowToMinimize.width || 200) }]);
     }
   };
+
+  const handleRestoreWindow = (windowId) => {
+    const windowToRestore = minimizedWindows.find(window => window.id === windowId);
+    if (windowToRestore) {
+      setOpenWindows([...openWindows, windowToRestore]);
+      setMinimizedWindows(minimizedWindows.filter(window => window.id !== windowId));
+    }
+  };
+
 
   const handleIconClick = (iconId) => {
     const appMap = {
       'minimize': () => setOpenWindows([]),
-      'files': 'files', 
+      'files': 'files',
       'settings': 'settings',
       'calculator': 'calculator',
-      'notepad': 'notepad', 
+      'notepad': 'notepad',
       'browser': 'browser',
       'mail': 'mail',
       'calendar': 'calendar',
@@ -141,15 +144,15 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
   return (
     <div className="desktop" onContextMenu={handleContextMenu}>
       {contextMenu.show && (
-        <div 
+        <div
           className="context-menu"
-          style={{ 
+          style={{
             position: 'fixed',
             top: `${contextMenu.y}px`,
             left: `${contextMenu.x}px`
           }}
         >
-          <div 
+          <div
             className="context-menu-item"
             onClick={() => setShowIcons(!showIcons)}
           >
@@ -170,7 +173,7 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
       ))}
 
       {openWindows.map((window) => (
-        <ApplicationWindow 
+        <ApplicationWindow
           key={window.id}
           title={window.title}
           icon={window.icon}
@@ -180,6 +183,13 @@ const [minimizedWindows, setMinimizedWindows] = useState([]);
           {window.component && <window.component key={window.id} />}
         </ApplicationWindow>
       ))}
+      {/* Assuming NavBar component is imported and used here */}
+      <NavBar
+        activeItem={activeItem}
+        onSelect={handleSelect}
+        minimizedWindows={minimizedWindows}
+        onRestoreWindow={handleRestoreWindow}
+      />
     </div>
   );
 };
