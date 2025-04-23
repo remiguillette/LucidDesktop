@@ -32708,14 +32708,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-i18next */ "./node_modules/react-i18next/dist/es/index.js");
 /* harmony import */ var _ApplicationWindow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ApplicationWindow */ "./src/components/ApplicationWindow.jsx");
-/* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
-/* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
-/* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
-/* harmony import */ var _apps_Mail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/Mail */ "./src/components/apps/Mail.jsx");
-/* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
-/* harmony import */ var _apps_Calendar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./apps/Calendar */ "./src/components/apps/Calendar.jsx");
-/* harmony import */ var _apps_Trash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./apps/Trash */ "./src/components/apps/Trash.jsx");
-/* harmony import */ var _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./apps/SystemSettings */ "./src/components/apps/SystemSettings.jsx");
+/* harmony import */ var _NavBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NavBar */ "./src/components/NavBar.jsx");
+/* harmony import */ var _apps_Calculator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./apps/Calculator */ "./src/components/apps/Calculator.jsx");
+/* harmony import */ var _apps_Notepad__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./apps/Notepad */ "./src/components/apps/Notepad.jsx");
+/* harmony import */ var _apps_Browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./apps/Browser */ "./src/components/apps/Browser.jsx");
+/* harmony import */ var _apps_Mail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./apps/Mail */ "./src/components/apps/Mail.jsx");
+/* harmony import */ var _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./apps/FileExplorer */ "./src/components/apps/FileExplorer.jsx");
+/* harmony import */ var _apps_Calendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./apps/Calendar */ "./src/components/apps/Calendar.jsx");
+/* harmony import */ var _apps_Trash__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./apps/Trash */ "./src/components/apps/Trash.jsx");
+/* harmony import */ var _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./apps/SystemSettings */ "./src/components/apps/SystemSettings.jsx");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -32732,6 +32733,7 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -32766,6 +32768,13 @@ var Desktop = function Desktop() {
     _useState8 = _slicedToArray(_useState7, 2),
     contextMenu = _useState8[0],
     setContextMenu = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('desktop'),
+    _useState10 = _slicedToArray(_useState9, 2),
+    activeItem = _useState10[0],
+    setActiveItem = _useState10[1];
+  var handleSelect = function handleSelect(itemId) {
+    setActiveItem(itemId);
+  };
   var handleContextMenu = function handleContextMenu(e) {
     e.preventDefault();
     setContextMenu({
@@ -32821,7 +32830,7 @@ var Desktop = function Desktop() {
       cy: "12",
       r: "3"
     })),
-    app: _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_10__["default"]
+    app: _apps_SystemSettings__WEBPACK_IMPORTED_MODULE_11__["default"]
   }, {
     id: 'trash',
     name: t('desktop.trash'),
@@ -32842,7 +32851,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
     })),
-    app: _apps_Trash__WEBPACK_IMPORTED_MODULE_9__["default"]
+    app: _apps_Trash__WEBPACK_IMPORTED_MODULE_10__["default"]
   }, {
     id: 'terminal',
     name: t('desktop.terminal'),
@@ -32901,7 +32910,7 @@ var Desktop = function Desktop() {
       y1: "21.94",
       y2: "14"
     })),
-    app: _apps_Browser__WEBPACK_IMPORTED_MODULE_5__["default"]
+    app: _apps_Browser__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     id: 'mail',
     name: t('desktop.mail'),
@@ -32924,7 +32933,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
     })),
-    app: _apps_Mail__WEBPACK_IMPORTED_MODULE_6__["default"]
+    app: _apps_Mail__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
     id: 'files',
     name: t('desktop.files'),
@@ -32941,7 +32950,7 @@ var Desktop = function Desktop() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"
     })),
-    app: _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_7__["default"]
+    app: _apps_FileExplorer__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
     id: 'calendar',
     name: t('desktop.calendar'),
@@ -32980,7 +32989,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M16 18h.01"
     })),
-    app: _apps_Calendar__WEBPACK_IMPORTED_MODULE_8__["default"]
+    app: _apps_Calendar__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, {
     id: 'calculator',
     name: t('desktop.calculator'),
@@ -33025,7 +33034,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M8 18h.01"
     })),
-    app: _apps_Calculator__WEBPACK_IMPORTED_MODULE_3__["default"]
+    app: _apps_Calculator__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     id: 'notepad',
     name: t('desktop.notepad'),
@@ -33046,7 +33055,7 @@ var Desktop = function Desktop() {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
       d: "M21 12H3"
     })),
-    app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_4__["default"]
+    app: _apps_Notepad__WEBPACK_IMPORTED_MODULE_5__["default"]
   }];
   var openApplication = function openApplication(app) {
     var appExists = desktopIcons.find(function (icon) {
@@ -33171,7 +33180,7 @@ var Desktop = function Desktop() {
     }, window.component && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(window.component, {
       key: window.id
     }));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(NavBar, {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_NavBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     activeItem: activeItem,
     onSelect: handleSelect,
     minimizedWindows: minimizedWindows,
