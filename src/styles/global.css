@@ -32,14 +32,15 @@ button, input, select, textarea {
 }
 
 .taskbar-windows {
-  display: flex; /* Changed from inline-grid to flex to display items in a row */
+  display: flex;
+  align-items: center;
   overflow-x: auto;
   white-space: nowrap;
   width: 100%;
   height: 45px;
   padding: 0 8px;
   gap: 8px;
-  scrollbar-width: none; /* Firefox scrollbar style */
+  scrollbar-width: none;
 }
 
 .taskbar-windows::-webkit-scrollbar {
