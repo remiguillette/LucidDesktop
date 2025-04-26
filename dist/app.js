@@ -32746,10 +32746,14 @@ var Desktop = function Desktop() {
       return window.id === windowId;
     });
     if (windowToRestore) {
-      setOpenWindows([].concat(_toConsumableArray(openWindows), [windowToRestore]));
-      setMinimizedWindows(minimizedWindows.filter(function (window) {
-        return window.id !== windowId;
-      }));
+      setMinimizedWindows(function (prev) {
+        return prev.filter(function (window) {
+          return window.id !== windowId;
+        });
+      });
+      setOpenWindows(function (prev) {
+        return [].concat(_toConsumableArray(prev), [windowToRestore]);
+      });
     }
   };
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
@@ -33076,14 +33080,14 @@ var Desktop = function Desktop() {
       return window.id === windowId;
     });
     if (windowToMinimize) {
-      setOpenWindows(openWindows.filter(function (window) {
-        return window.id !== windowId;
-      }));
-      window.dispatchEvent(new CustomEvent('minimizeWindow', {
-        detail: {
-          window: windowToMinimize
-        }
-      }));
+      setOpenWindows(function (prev) {
+        return prev.filter(function (window) {
+          return window.id !== windowId;
+        });
+      });
+      setMinimizedWindows(function (prev) {
+        return [].concat(_toConsumableArray(prev), [windowToMinimize]);
+      });
     }
   };
   var handleIconClick = function handleIconClick(iconId) {
